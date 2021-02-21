@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     public Vector2 velocityScale = new Vector2(1f, 10f);
 
-    List<PolygonCollider2D> floorPolygons;
+    public List<PolygonCollider2D> floorPolygons {get; private set;}
     public int currentFloor = 1;
 
     void Start() {

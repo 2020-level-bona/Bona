@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    const int TARGET_WIDTH = 1920;
-    const int TARGET_HEIGHT = 1080;
+    public const int TARGET_WIDTH = 1920;
+    public const int TARGET_HEIGHT = 1080;
     const int PIXELS_PER_UNIT = 100;
 
     Player player;
@@ -14,10 +14,11 @@ public class CameraController : MonoBehaviour
     Vector2 cameraVelocity = Vector2.zero;
     const float cameraSmoothTime = 0.2f;
 
-    Vector2Int backgroundSize = new Vector2Int(TARGET_WIDTH, TARGET_HEIGHT);
+    public Vector2Int backgroundSize {get; private set;} = new Vector2Int(TARGET_WIDTH, TARGET_HEIGHT);
+    public Vector2Int cameraSize {get; private set;}
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         player = FindObjectOfType<Player>();
         cam = FindObjectOfType<Camera>();
@@ -37,6 +38,7 @@ public class CameraController : MonoBehaviour
         } else {
             cam.orthographicSize = (float) TARGET_HEIGHT / PIXELS_PER_UNIT / 2f;
         }
+        cameraSize = new Vector2Int((int) (cam.orthographicSize * 2f * PIXELS_PER_UNIT * ((float) TARGET_WIDTH / TARGET_HEIGHT)), (int) (cam.orthographicSize * 2f * PIXELS_PER_UNIT));
 
         UpdateCameraPosition();
     }
