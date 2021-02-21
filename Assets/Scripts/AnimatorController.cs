@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimatorController : MonoBehaviour
 {
-    public Animator animator;
+    Animator animator;
     SpriteRenderer spriteRenderer;
 
     void Start()
