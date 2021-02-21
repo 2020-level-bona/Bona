@@ -19,6 +19,7 @@ public class Debugger : MonoBehaviour
     List<GameObject> colliderDebugObjects;
 
     Text debugText;
+    string defaultDebugInfoString;
 
     void Start()
     {
@@ -27,6 +28,8 @@ public class Debugger : MonoBehaviour
 
         debugText = GetComponent<Text>();
         debugText.text += $"\n배경: {cameraController.backgroundSize.x}x{cameraController.backgroundSize.y}\n카메라: {cameraController.cameraSize.x}x{cameraController.cameraSize.y}";
+
+        defaultDebugInfoString = debugText.text;
     }
 
     void Update()
@@ -89,6 +92,8 @@ public class Debugger : MonoBehaviour
         if (showColliders) {
             UpdateColliderDebugMaterialColors();
         }
+
+        debugText.text = defaultDebugInfoString + $"\n{(int) (1f / Time.unscaledDeltaTime)} FPS";
     }
 
     void UpdateColliderDebugMaterialColors() {

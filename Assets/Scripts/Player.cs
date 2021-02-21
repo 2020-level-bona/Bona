@@ -4,10 +4,37 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Vector2 velocityScale = new Vector2(1f, 10f);
+    public Vector2 velocityScale = new Vector2(5f, 5f);
 
     public List<PolygonCollider2D> floorPolygons {get; private set;}
     public int currentFloor = 1;
+
+    AnimatorController animatorController;
+
+    static readonly AnimatorState PUT = new AnimatorState("가방에 넣기");
+    static readonly AnimatorState WALK_D = new AnimatorState("걷기(아래)");
+    static readonly AnimatorState WALK_U = new AnimatorState("걷기(위)");
+    static readonly AnimatorState WALK_L = new AnimatorState("걷기(좌)", false);
+    static readonly AnimatorState WALK_R = new AnimatorState("걷기(좌)", true); // FLIP
+    static readonly AnimatorState IDLE = new AnimatorState("기본(좌)");
+    static readonly AnimatorState SURPRISE = new AnimatorState("놀란 표정");
+    static readonly AnimatorState SURPRISE_TALK = new AnimatorState("놀란 표정+말");
+    static readonly AnimatorState THROW = new AnimatorState("던지기");
+    static readonly AnimatorState TALK = new AnimatorState("말");
+    static readonly AnimatorState HUNGRY = new AnimatorState("배고픔");
+    static readonly AnimatorState GET_BREAD = new AnimatorState("빵 받기");
+    static readonly AnimatorState DEPRESS = new AnimatorState("시무룩한 표정");
+    static readonly AnimatorState DEPRESS_TALK = new AnimatorState("시무룩한 표정+말");
+    static readonly AnimatorState HAPPY = new AnimatorState("웃는표정");
+    static readonly AnimatorState HAPPY_TALK = new AnimatorState("웃는표정+말");
+    static readonly AnimatorState NO = new AnimatorState("절레절레");
+    static readonly AnimatorState COLLECT = new AnimatorState("채집");
+    static readonly AnimatorState ANGRY = new AnimatorState("화난 표정");
+    static readonly AnimatorState ANGRY_TALK = new AnimatorState("화난 표정+말");
+
+    void Awake() {
+        animatorController = GetComponentInChildren<AnimatorController>();
+    }
 
     void Start() {
         floorPolygons = new List<PolygonCollider2D>();
@@ -46,60 +73,37 @@ public class Player : MonoBehaviour
         
         Vector3 delta = velocity * Time.deltaTime;
         Vector3 next = current + delta;
-
-        /*RaycastHit2D hit = Physics2D.Raycast(current, velocity);
-        // Debug.Log(hit.distance);
-        if (hit) {
-            
-            delta = velocity.normalized * Mathf.Min(hit.distance - 0.1f, delta.magnitude);
-            transform.position = current + delta;
+        
+        if (!floorPolygons[currentFloor - 1].OverlapPoint(next)) {
+             next = floorPolygons[currentFloor - 1].ClosestPoint(next) ;
         }
-        else {
-            transform.position = current + delta;
-        }*/
+        transform.position = next;
 
-        // Debug.Log(current + delta + " : " + polygon.OverlapPoint(new Vector2(next.x, next.y)));
-
-        if (floorPolygons[currentFloor - 1].OverlapPoint(current + delta)) {
-            transform.position = current + delta;
-        } else {
-            Vector3 point = floorPolygons[currentFloor - 1].ClosestPoint(current + delta) ;
-            /*RaycastHit2D hit = Physics2D.Raycast(current + velocity.normalized * 0.1f, -velocity, 0.2f);
-            if (hit) {
-                Debug.DrawRay(hit.point, hit.normal, Color.blue);
-
-                Vector3 newDelta = Vector3.Project(delta, Vector2.Perpendicular(hit.normal));
-
-                transform.position = new Vector3(hit.point.x + newDelta.x, hit.point.y + newDelta.y, current.z);
-            }*/
-
-            transform.position = new Vector3(point.x, point.y, current.z);
-        }
-
-        /*RaycastHit velocityHit;
-        if (velocity.x != 0 && Physics.Raycast(current + Vector3.up * 1f, new Vector3(velocity.x, 0, 0), out velocityHit)) {
-            if (velocityHit.distance < 0.3f)
-                velocityHit.distance = 0f;
-            delta.x = Mathf.Clamp(delta.x, -velocityHit.distance, velocityHit.distance);
-        }
-        if (velocity.z != 0 && Physics.Raycast(current + Vector3.up * 1f, new Vector3(0, 0, velocity.z), out velocityHit)) {
-            if (velocityHit.distance < 0.3f)
-                velocityHit.distance = 0f;
-            delta.z = Mathf.Clamp(delta.z, -velocityHit.distance, velocityHit.distance);
-            Debug.Log(velocityHit.distance);
-        }
-
-        Vector3 next = current + delta;
-
-        RaycastHit raycastHit;
-        if (Physics.Raycast(next + Vector3.up * 0.5f, Vector3.down, out raycastHit)) {
-            next = raycastHit.point;
-
-            transform.position = next;
-        }*/
+        UpdateAnimation();
     }
 
     PolygonCollider2D GetCurrentFloor() {
         return floorPolygons[currentFloor - 1];
+    }
+
+    void UpdateAnimation() {
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
+
+        if (Mathf.Abs(x) <= 0.1f && Mathf.Abs(y) <= 0.1f) {
+            animatorController.Play(IDLE);
+        } else if (Mathf.Abs(x) >= Mathf.Abs(y)) {
+            if (x > 0) {
+                animatorController.Play(WALK_R);
+            } else {
+                animatorController.Play(WALK_L);
+            }
+        } else {
+            if (y > 0) {
+                animatorController.Play(WALK_U);
+            } else {
+                animatorController.Play(WALK_D);
+            }
+        }
     }
 }
