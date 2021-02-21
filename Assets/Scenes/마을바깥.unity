@@ -367,6 +367,7 @@ MonoBehaviour:
   y: -6.57
   angle: 50.98
   alwaysBehindFloor: -1
+  alwaysFrontFloor: -1
 --- !u!1001 &512759019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,6 +535,7 @@ MonoBehaviour:
   y: -2
   angle: 48
   alwaysBehindFloor: -1
+  alwaysFrontFloor: -1
 --- !u!1 &759902511
 GameObject:
   m_ObjectHideFlags: 0
@@ -596,19 +598,21 @@ PolygonCollider2D:
       - {x: -7.510645, y: 5.2524796}
       - {x: -9.416003, y: 5.254822}
       - {x: -9.424913, y: -5.281074}
-      - {x: -3.3493376, y: -5.259676}
-      - {x: 0.64344215, y: -0.85854226}
-      - {x: 1.1915002, y: -0.8821527}
-      - {x: -2.6867852, y: -5.245041}
+      - {x: -3.457125, y: -5.2476997}
+      - {x: 0.3799619, y: -1.074117}
+      - {x: 1.035532, y: -0.833829}
+      - {x: 1.1076659, y: -1.3372545}
+      - {x: -2.4951632, y: -5.245041}
       - {x: 9.436863, y: -5.2731767}
       - {x: 9.516026, y: 1.2082134}
       - {x: 5.544494, y: -3.9905763}
       - {x: 2.0209818, y: -2.456504}
       - {x: 9.139358, y: 5.2970066}
-      - {x: 6.81213, y: 5.3191996}
-      - {x: 2.2662923, y: 0.28759655}
-      - {x: 1.6240315, y: 0.2931701}
-      - {x: 6.257614, y: 5.3374066}
+      - {x: 6.5011463, y: 5.3088675}
+      - {x: 2.196445, y: 0.48685265}
+      - {x: 1.523392, y: 0.20597772}
+      - {x: 1.4395481, y: 0.573187}
+      - {x: 5.73594, y: 5.337499}
 --- !u!1 &1317621500
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,9 +789,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   z: 0
-  y: -2
+  y: -1.47
   angle: 48
   alwaysBehindFloor: -1
+  alwaysFrontFloor: -1
 --- !u!1 &1923655121
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,6 +891,7 @@ MonoBehaviour:
   y: -2
   angle: 48
   alwaysBehindFloor: -1
+  alwaysFrontFloor: -1
 --- !u!1 &1961193638
 GameObject:
   m_ObjectHideFlags: 0
