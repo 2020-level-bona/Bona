@@ -7,8 +7,6 @@ public class AnimatorController : MonoBehaviour
     public Animator animator;
     SpriteRenderer spriteRenderer;
 
-    bool flipped = false;
-
     void Start()
     {
         animator = GetComponent<Animator>();

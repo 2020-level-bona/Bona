@@ -27,7 +27,8 @@ public class Debugger : MonoBehaviour
         cameraController = FindObjectOfType<CameraController>();
 
         debugText = GetComponent<Text>();
-        debugText.text += $"\n배경: {cameraController.backgroundSize.x}x{cameraController.backgroundSize.y}\n카메라: {cameraController.cameraSize.x}x{cameraController.cameraSize.y}";
+        if (cameraController != null)
+            debugText.text += $"\n배경: {cameraController.backgroundSize.x}x{cameraController.backgroundSize.y}\n카메라: {cameraController.cameraSize.x}x{cameraController.cameraSize.y}";
 
         defaultDebugInfoString = debugText.text;
     }
@@ -71,21 +72,23 @@ public class Debugger : MonoBehaviour
 
                 showColliders = false;
             } else {
-                colliderDebugObjects = new List<GameObject>();
-                foreach (PolygonCollider2D floor in player.floorPolygons) {
-                    GameObject gameObject = new GameObject("Floor Collider Mesh");
-                    gameObject.transform.position = new Vector3(0, 0, -9);
-                    
-                    MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
-                    renderer.sharedMaterial = Instantiate(colliderDebugMaterial);
+                if (player != null) {
+                    colliderDebugObjects = new List<GameObject>();
+                    foreach (PolygonCollider2D floor in player.floorPolygons) {
+                        GameObject gameObject = new GameObject("Floor Collider Mesh");
+                        gameObject.transform.position = new Vector3(0, 0, -9);
+                        
+                        MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
+                        renderer.sharedMaterial = Instantiate(colliderDebugMaterial);
 
-                    MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
-                    meshFilter.mesh = floor.CreateMesh(false, false);
+                        MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
+                        meshFilter.mesh = floor.CreateMesh(false, false);
 
-                    colliderDebugObjects.Add(gameObject);
+                        colliderDebugObjects.Add(gameObject);
+                    }
+
+                    showColliders = true;
                 }
-
-                showColliders = true;
             }
         }
 
