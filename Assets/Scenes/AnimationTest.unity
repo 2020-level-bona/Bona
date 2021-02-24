@@ -153,7 +153,16 @@ MonoBehaviour:
   template: {fileID: 9003976928932209035, guid: e6cb733e89877cd4c8d7dca395918c14,
     type: 3}
   runtimeAnimatorControllers:
-  - {fileID: 9100000, guid: 30745e5005b158e40a3e86c11a36f112, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
+  - {fileID: 9100000, guid: dfd9adde2884aa24384f5225380ad99f, type: 2}
 --- !u!4 &832656309
 Transform:
   m_ObjectHideFlags: 0

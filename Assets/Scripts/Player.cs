@@ -32,11 +32,16 @@ public class Player : MonoBehaviour
     static readonly AnimatorState ANGRY = new AnimatorState("화난 표정");
     static readonly AnimatorState ANGRY_TALK = new AnimatorState("화난 표정+말");
 
+    
+
     void Awake() {
         animatorController = GetComponentInChildren<AnimatorController>();
+
+        
     }
 
     void Start() {
+        
         floorPolygons = new List<PolygonCollider2D>();
 
         int floorIndex = 1;
@@ -62,6 +67,9 @@ public class Player : MonoBehaviour
 
             floorIndex++;
         }
+
+        
+        
     }
 
     void Update() {
@@ -106,4 +114,7 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+    
+    
 }
