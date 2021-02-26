@@ -35,7 +35,7 @@ public class Debugger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (Input.GetKeyDown(KeyCode.Q)) {
             SceneManager.LoadScene("AllScenes");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3)) {
