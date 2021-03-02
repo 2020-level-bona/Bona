@@ -35,9 +35,8 @@ public class Player : MonoBehaviour
     
 
     void Awake() {
+        DontDestroyOnLoad(this.gameObject);
         animatorController = GetComponentInChildren<AnimatorController>();
-
-        
     }
 
     void Start() {
@@ -67,9 +66,6 @@ public class Player : MonoBehaviour
 
             floorIndex++;
         }
-
-        
-        
     }
 
     void Update() {
@@ -114,7 +110,4 @@ public class Player : MonoBehaviour
             }
         }
     }
-
-    
-    
 }
