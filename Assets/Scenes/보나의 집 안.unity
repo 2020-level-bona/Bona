@@ -543,7 +543,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585d5c3e0a25cd54ea0aa5193f09cba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferMapName: 
+  transferMap:
+    sceneAsset: {fileID: 102900000, guid: 90b1ab087795c934b9098251b02711f9, type: 3}
+    scenePath: "Assets/Scenes/\uBCF4\uB098\uC758 \uC9D1 \uBC16.unity"
 --- !u!1 &930728034
 GameObject:
   m_ObjectHideFlags: 0
