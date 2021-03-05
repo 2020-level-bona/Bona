@@ -160,3 +160,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocityScale: {x: 5, y: 5}
   currentFloor: 1
+  sceneContext: {fileID: 11400000, guid: fb878deab5f370e4eafe31bb95f96d2a, type: 2}

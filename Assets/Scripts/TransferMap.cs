@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Trigger))]
 public class TransferMap : MonoBehaviour
 {
-    public SceneReference transferMap; // 이동할 맵
+    [FormerlySerializedAs("transferMap")]
+    public SceneReference targetScene; // 이동할 맵
 
     Trigger trigger;
 
@@ -20,6 +22,6 @@ public class TransferMap : MonoBehaviour
     }
 
     void Transfer() {
-        SceneManager.LoadScene(transferMap);
+        FindObjectOfType<Player>()?.TransferScene(targetScene);
     }
 }
