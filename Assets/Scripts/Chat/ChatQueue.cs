@@ -13,6 +13,12 @@ public class ChatQueue : MonoBehaviour
 
     ChatboxCoordinator chatboxCoordinator;
 
+    public bool IsDisplaying {
+        get {
+            return currentRenderer != null;
+        }
+    }
+
     void Awake() {
         chatboxCoordinator = new ChatboxCoordinator(canvasObject.GetComponent<RectTransform>(), Camera.main);
     }
