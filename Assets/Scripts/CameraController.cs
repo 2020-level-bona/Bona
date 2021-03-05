@@ -40,7 +40,7 @@ public class CameraController : MonoBehaviour
         }
         cameraSize = new Vector2Int((int) (cam.orthographicSize * 2f * PIXELS_PER_UNIT * ((float) TARGET_WIDTH / TARGET_HEIGHT)), (int) (cam.orthographicSize * 2f * PIXELS_PER_UNIT));
 
-        UpdateCameraPosition();
+        UpdateCameraPosition(false);
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour
         UpdateCameraPosition();
     }
 
-    void UpdateCameraPosition() {
+    void UpdateCameraPosition(bool useDamping = true) {
         Vector2 cameraCenter = player.transform.position;
 
         float cameraWidth = cam.orthographicSize * ((float) TARGET_WIDTH / TARGET_HEIGHT) * 2f;
@@ -61,8 +61,9 @@ public class CameraController : MonoBehaviour
         cameraCenter.x = Mathf.Clamp(cameraCenter.x, (-worldWidth + cameraWidth) / 2f, (worldWidth - cameraWidth) / 2f);
         cameraCenter.y = Mathf.Clamp(cameraCenter.y, (-worldHeight + cameraHeight) / 2f, (worldHeight - cameraHeight) / 2f);
 
-        Vector2 damped = Vector2.SmoothDamp(cam.transform.position, cameraCenter, ref cameraVelocity, cameraSmoothTime);
+        if (useDamping)
+            cameraCenter = Vector2.SmoothDamp(cam.transform.position, cameraCenter, ref cameraVelocity, cameraSmoothTime);
 
-        cam.transform.position = new Vector3(damped.x, damped.y, cam.transform.position.z);
+        cam.transform.position = new Vector3(cameraCenter.x, cameraCenter.y, cam.transform.position.z);
     }
 }
