@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(PolygonCollider2D))]
 public class MouseClickTrigger : Trigger
 {
     Camera cam;
