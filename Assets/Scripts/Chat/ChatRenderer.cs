@@ -55,7 +55,10 @@ public class ChatRenderer : MonoBehaviour
     }
 
     public void SkipAnimation() {
-        StopCoroutine(animationCoroutine);
+        if (animationCoroutine != null) {
+            StopCoroutine(animationCoroutine);
+            animationCoroutine = null;
+        }
 
         uiText.text = $"<b>{chat.Message}</b>";
 
