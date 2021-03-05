@@ -56,4 +56,12 @@ public class Inventory {
         }
     }
 
+    public Item[] GetContents() {
+        return items.Clone() as Item[];
+    }
+
+    public void Clear() {
+        items = new Item[NUM_SLOTS];
+    }
+
 }

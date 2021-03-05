@@ -25,4 +25,40 @@ public class Item : ICloneable
     public object Clone() {
         return MemberwiseClone();
     }
+
+    public override bool Equals(object obj)
+    {
+        return this.Equals(obj as Item);
+    }
+
+    public bool Equals(Item item) {
+        if (System.Object.ReferenceEquals(item, null))
+            return false;
+        
+        if (System.Object.ReferenceEquals(this, item))
+            return true;
+        
+        if (this.GetType() != item.GetType())
+            return false;
+        
+        return type == item.type && quantity == item.quantity;
+    }
+
+    public override int GetHashCode()
+    {
+        return (int) type * 1000 + quantity;
+    }
+
+    public static bool operator ==(Item lhs, Item rhs) {
+        if (System.Object.ReferenceEquals(lhs, null)) {
+            if (System.Object.ReferenceEquals(rhs, null))
+                return true;
+            return false;
+        }
+        return lhs.Equals(rhs);
+    }
+
+    public static bool operator !=(Item lhs, Item rhs) {
+        return !(lhs == rhs);
+    }
 }
