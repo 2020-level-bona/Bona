@@ -2,20 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Item")]
-public class Item : ScriptableObject
+public class Item
 {
-   public string objectName;
+    public readonly ItemType type;
 
-   public Sprite sprite;
+    public int quantity;
 
-   public int quantity;
+    public Item(ItemType type, int quantity = 1) {
+        this.type = type;
+        this.quantity = quantity;
+    }
 
-   public bool stackable;
+    public Sprite GetSprite() {
+        return ItemFactory.Instance.GetItemDefinition(type).sprite;
+    }
 
-   public enum ItemType{
-       WATERFAIRY,
-   }
-
-   public ItemType itemType;
+    public bool IsStackable() {
+        return ItemFactory.Instance.GetItemDefinition(type).stackable;
+    }
 }

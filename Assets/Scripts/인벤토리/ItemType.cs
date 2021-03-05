@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Consumable : MonoBehaviour
+public enum ItemType
 {
-    // public Item item;
+    WATERFAIRY,
 }

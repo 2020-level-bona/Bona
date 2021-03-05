@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     
-    public GameObject slot; // Slot의 프리팹 참조
+    /*public GameObject slot; // Slot의 프리팹 참조
 
     public const int numSlots = 10; // 인벤토리 슬롯 바 10개 고정
 
@@ -73,6 +73,6 @@ public class Inventory : MonoBehaviour
             }
         }
         return false;
-    }
+    }*/
     
 }

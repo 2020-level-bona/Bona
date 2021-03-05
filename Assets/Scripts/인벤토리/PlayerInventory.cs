@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public Inventory inventoryPrefab;
+    /*ublic Inventory inventoryPrefab;
 
     Inventory inventory;
     // Start is called before the first frame update
@@ -41,5 +41,5 @@ public class PlayerInventory : MonoBehaviour
             }
            
         }
-    }
+    }*/
 }
