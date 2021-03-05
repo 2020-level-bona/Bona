@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+public class Item : ICloneable
 {
     public readonly ItemType type;
 
@@ -19,5 +20,9 @@ public class Item
 
     public bool IsStackable() {
         return ItemFactory.Instance.GetItemDefinition(type).stackable;
+    }
+
+    public object Clone() {
+        return MemberwiseClone();
     }
 }
