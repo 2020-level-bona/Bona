@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -32,11 +33,14 @@ public class Player : MonoBehaviour
     static readonly AnimatorState ANGRY = new AnimatorState("화난 표정");
     static readonly AnimatorState ANGRY_TALK = new AnimatorState("화난 표정+말");
 
-    
+    public SceneContext sceneContext;
+
 
     void Awake() {
         // DontDestroyOnLoad(this.gameObject);
         animatorController = GetComponentInChildren<AnimatorController>();
+
+        MoveToSpawnPoint();
     }
 
     void Start() {
@@ -109,5 +113,20 @@ public class Player : MonoBehaviour
                 animatorController.Play(WALK_D);
             }
         }
+    }
+
+    public void TransferScene(SceneReference sceneReference) {
+        sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
+        SceneManager.LoadScene(sceneReference);
+    }
+
+    void MoveToSpawnPoint() {
+        foreach (TransferMap transferMap in FindObjectsOfType<TransferMap>()) {
+            if (transferMap.targetScene != null && transferMap.targetScene.ScenePath == sceneContext.LastScenePath) {
+                transform.position = transferMap.transform.position;
+                break;
+            }
+        }
+        // 이전 맵과 일치하는 TransferMap을 찾지 못했다면 위치를 변경하지 않는다.
     }
 }

@@ -500,7 +500,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 441256563}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8, y: 0, z: -8}
+  m_LocalPosition: {x: 7.51, y: -1, z: -8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1055860339}
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 585d5c3e0a25cd54ea0aa5193f09cba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transferMap:
+  targetScene:
     sceneAsset: {fileID: 102900000, guid: 90b1ab087795c934b9098251b02711f9, type: 3}
     scenePath: "Assets/Scenes/\uBCF4\uB098\uC758 \uC9D1 \uBC16.unity"
 --- !u!60 &441256567
@@ -558,10 +558,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.043658257, y: 3.1974373}
-      - {x: -0.38350683, y: 0.27991173}
-      - {x: 0.8529187, y: -2.235168}
-      - {x: 1.2426506, y: 1.6212611}
+    - - {x: 0.44079304, y: 4.3324375}
+      - {x: 0.11478609, y: 1.2764974}
+      - {x: 1.3235283, y: -1.2108991}
+      - {x: 1.7963091, y: 2.714737}
 --- !u!1 &930728034
 GameObject:
   m_ObjectHideFlags: 0
