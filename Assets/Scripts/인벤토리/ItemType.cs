@@ -6,5 +6,5 @@ public enum ItemType
 {
     WATERFAIRY,
     DUMMY,
-    DUMMY3
+    DUMMY2
 }
