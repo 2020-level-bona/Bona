@@ -5,5 +5,6 @@ using UnityEngine;
 public enum ItemType
 {
     WATERFAIRY,
-    DUMMY
+    DUMMY,
+    DUMMY2
 }
