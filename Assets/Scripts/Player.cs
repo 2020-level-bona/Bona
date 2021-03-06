@@ -35,10 +35,13 @@ public class Player : MonoBehaviour
 
     public SceneContext sceneContext;
 
+    public Inventory inventory;
 
     void Awake() {
         // DontDestroyOnLoad(this.gameObject);
         animatorController = GetComponentInChildren<AnimatorController>();
+
+        inventory = new Inventory();
 
         MoveToSpawnPoint();
     }
