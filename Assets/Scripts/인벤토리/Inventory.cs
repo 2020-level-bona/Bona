@@ -9,10 +9,6 @@ public class Inventory {
 
     Item[] items = new Item[NUM_SLOTS];
 
-    public Inventory() {
-
-    }
-
     public void AddItem(Item item) {
         for (int i = 0; i < NUM_SLOTS; i++) {
             if (items[i] != null && items[i].type == item.type && item.IsStackable()) {
