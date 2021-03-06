@@ -2,22 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUI : MonoBehaviour, ISlotListener
+public class InventoryUI : MonoBehaviour, ISlotListener, IInventoryRenderer
 {
     public GameObject InventoryUIPanel;
     public GameObject slotPrefab;
     public Transform slotParent;
 
     bool activeInventory = false;
+
+    bool invalidated = true;
+    
+    Inventory inventory;
+
+    Slot[] slots;
     
     private void Start() {
         Player player = FindObjectOfType<Player>();
-        Inventory inventory = player.inventory;
+        inventory = player.inventory;
+        inventory.SetInventoryRenderer(this);
 
+        slots = new Slot[Inventory.NUM_SLOTS];
         for (int i = 0; i < Inventory.NUM_SLOTS; i++) {
             GameObject gameObject = Instantiate(slotPrefab);
-            Slot slot = gameObject.GetComponent<Slot>();
-            slot.Initialize(i, this);
+            slots[i] = gameObject.GetComponent<Slot>();
+            slots[i].Initialize(i, this);
 
             gameObject.transform.SetParent(slotParent);
             gameObject.transform.localScale = Vector3.one; // WTF?
@@ -31,9 +39,25 @@ public class InventoryUI : MonoBehaviour, ISlotListener
             activeInventory = !activeInventory;
             InventoryUIPanel.SetActive(activeInventory);
         }
+
+        if (invalidated)
+            DrawItems();
     }
 
     public void OnSlotClick(int index) {
         // TODO
+    }
+
+    public void Invalidate() {
+        invalidated = true;
+    }
+
+    void DrawItems() {
+        Item[] contents = inventory.GetContents();
+        for (int i = 0; i < Inventory.NUM_SLOTS; i++) {
+            slots[i].DrawItem(contents[i]);
+        }
+
+        invalidated = false;
     }
 }

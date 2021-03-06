@@ -19,10 +19,35 @@ public class Slot : MonoBehaviour
         this.index = index;
         this.listener = listener;
 
+        qtyText.enabled = false;
+        itemImage.enabled = false;
+
         slotButton.onClick.AddListener(OnClick);
     }
 
     void OnClick() {
         listener.OnSlotClick(index);
+    }
+
+    public void DrawItem(Item item) {
+        if (item == null) {
+            EraseItem();
+            return;
+        }
+
+        if (item.IsStackable()) {
+            qtyText.enabled = true;
+            qtyText.text = item.quantity.ToString();
+        } else {
+            qtyText.enabled = false;
+        }
+
+        itemImage.enabled = true;
+        itemImage.sprite = item.GetSprite();
+    }
+
+    public void EraseItem() {
+        qtyText.enabled = false;
+        itemImage.enabled = false;
     }
 }
