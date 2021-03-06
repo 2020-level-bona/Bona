@@ -9,17 +9,22 @@ public class Inventory {
 
     Item[] items = new Item[NUM_SLOTS];
 
+    IInventoryRenderer inventoryRenderer;
+
     public void AddItem(Item item) {
         for (int i = 0; i < NUM_SLOTS; i++) {
             if (items[i] != null && items[i].type == item.type && item.IsStackable()) {
                 items[i].quantity += item.quantity;
-                return;
+                break;
             }
             if(items[i] == null) {
                 items[i] = item.Clone() as Item;
-                return;
+                break;
             }
         }
+
+        if (inventoryRenderer != null)
+            inventoryRenderer.Invalidate();
     }
 
     public bool ContainsItem(Item item) {
@@ -47,9 +52,12 @@ public class Inventory {
                     items[i] = null;
                 
                 if (count <= 0)
-                    return;
+                    break;
             }
         }
+
+        if (inventoryRenderer != null)
+            inventoryRenderer.Invalidate();
     }
 
     public Item[] GetContents() {
@@ -58,6 +66,13 @@ public class Inventory {
 
     public void Clear() {
         items = new Item[NUM_SLOTS];
+
+        if (inventoryRenderer != null)
+            inventoryRenderer.Invalidate();
+    }
+
+    public void SetInventoryRenderer(IInventoryRenderer inventoryRenderer) {
+        this.inventoryRenderer = inventoryRenderer;
     }
 
 }
