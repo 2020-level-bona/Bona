@@ -22,6 +22,6 @@ public class TransferMap : MonoBehaviour
     }
 
     void Transfer() {
-        FindObjectOfType<Player>()?.TransferScene(targetScene);
+        FindObjectOfType<Game>()?.TransferScene(targetScene);
     }
 }
