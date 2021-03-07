@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Debugger : MonoBehaviour
 {
+    Level level;
     Player player;
     CameraController cameraController;
 
@@ -23,6 +24,7 @@ public class Debugger : MonoBehaviour
 
     void Start()
     {
+        level = FindObjectOfType<Level>();
         player = FindObjectOfType<Player>();
         cameraController = FindObjectOfType<CameraController>();
 
@@ -74,7 +76,7 @@ public class Debugger : MonoBehaviour
             } else {
                 if (player != null) {
                     colliderDebugObjects = new List<GameObject>();
-                    foreach (PolygonCollider2D floor in player.floorPolygons) {
+                    foreach (PolygonCollider2D floor in level.floorPolygons) {
                         GameObject gameObject = new GameObject("Floor Collider Mesh");
                         gameObject.transform.position = new Vector3(0, 0, -9);
                         

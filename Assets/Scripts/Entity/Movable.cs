@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movable : MonoBehaviour
 {
-    void MoveTo(Vector2 position) {
+    public virtual void MoveTo(Vector2 position) {
         transform.position = position;
     }
 }

@@ -9,9 +9,6 @@ public class Player : Character
 
     public Vector2 velocityScale = new Vector2(5f, 5f);
 
-    public List<PolygonCollider2D> floorPolygons {get; private set;}
-    public int currentFloor = 1;
-
     AnimatorController animatorController;
 
     static readonly AnimatorState PUT = new AnimatorState("가방에 넣기");
@@ -39,8 +36,9 @@ public class Player : Character
 
     Game game;
 
-    void Awake() {
-        // DontDestroyOnLoad(this.gameObject);
+    protected override void Awake() {
+        base.Awake();
+        
         animatorController = GetComponentInChildren<AnimatorController>();
 
         game = FindObjectOfType<Game>();
@@ -51,35 +49,12 @@ public class Player : Character
     }
 
     void Start() {
-        
-        floorPolygons = new List<PolygonCollider2D>();
 
-        int floorIndex = 1;
-        while(true) {
-            GameObject gameObject = GameObject.Find("Floor" + floorIndex);
-            if (gameObject == null)
-                break;
-            
-            PolygonCollider2D polygon = gameObject.GetComponent<PolygonCollider2D>();
-            if (polygon == null)
-                break;
-            
-            floorPolygons.Add(polygon);
-
-            // Add Holes
-            for (int i = 0; i < gameObject.transform.childCount; i++) {
-                PolygonCollider2D hole = gameObject.transform.GetChild(i).GetComponent<PolygonCollider2D>();
-                if (hole != null) {
-                    polygon.pathCount++;
-                    polygon.SetPath(polygon.pathCount - 1, hole.GetPath(0));
-                }
-            }
-
-            floorIndex++;
-        }
     }
 
-    void Update() {
+    protected override void Update() {
+        base.Update();
+
         Vector3 current = transform.position;
 
         Vector3 velocity = new Vector3(Input.GetAxis("Horizontal") * velocityScale.x, Input.GetAxis("Vertical") * velocityScale.y, 0);
@@ -87,18 +62,9 @@ public class Player : Character
             return;
         
         Vector3 delta = velocity * Time.deltaTime;
-        Vector3 next = current + delta;
-        
-        if (!floorPolygons[currentFloor - 1].OverlapPoint(next)) {
-             next = floorPolygons[currentFloor - 1].ClosestPoint(next) ;
-        }
-        transform.position = next;
+        MoveDelta(delta);
 
         UpdateAnimation();
-    }
-
-    PolygonCollider2D GetCurrentFloor() {
-        return floorPolygons[currentFloor - 1];
     }
 
     void UpdateAnimation() {
