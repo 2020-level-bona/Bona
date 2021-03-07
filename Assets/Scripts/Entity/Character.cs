@@ -31,8 +31,4 @@ public class Character : Movable
             base.MoveTo(level.floorPolygons[currentFloor - 1].ClosestPoint(position));
         }
     }
-
-    public void MoveDelta(Vector2 positionDelta) {
-        MoveTo((Vector2) transform.position + positionDelta);
-    }
 }
