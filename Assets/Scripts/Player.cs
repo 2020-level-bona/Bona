@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : Character
 {
+    public new const CharacterType type = CharacterType.BONA;
+
     public Vector2 velocityScale = new Vector2(5f, 5f);
 
     public List<PolygonCollider2D> floorPolygons {get; private set;}
