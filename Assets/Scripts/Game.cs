@@ -7,6 +7,10 @@ public class Game : MonoBehaviour
 {
     public SceneContext sceneContext;
 
+    void Start() {
+        Level level = FindObjectOfType<Level>();
+    }
+
     public void TransferScene(SceneReference sceneReference) {
         sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
         SceneManager.LoadScene(sceneReference);
