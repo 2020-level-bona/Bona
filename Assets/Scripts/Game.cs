@@ -44,7 +44,9 @@ public class Game : MonoBehaviour
         CameraLetterbox cameraLetterbox = FindObjectOfType<CameraLetterbox>();
         cameraLetterbox.ShowLetterbox();
 
-        yield return StartCoroutine(coroutine);
+        ChatQueue chatQueue = FindObjectOfType<ChatQueue>();
+
+        yield return StartCoroutine(new CutsceneEnumerator(coroutine, chatQueue));
 
         cameraLetterbox.HideLetterbox();
     }
