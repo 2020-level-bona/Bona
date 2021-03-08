@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 8351511334074601570}
   - component: {fileID: 4798774121467095456}
   - component: {fileID: 7165631593891689510}
+  - component: {fileID: 5902144911853465011}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -129,6 +130,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterPrefabs: {fileID: 11400000, guid: fd66813ffa2d2f54aa42645b779fb645, type: 2}
+--- !u!114 &5902144911853465011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8007945322466567000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4222fb8a19af22946b0796e41615cb78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &304785585896171347
 PrefabInstance:
   m_ObjectHideFlags: 0
