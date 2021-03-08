@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,7 +63,7 @@ public class Character : Movable
         return new Bounds(GetCenter(), size);
     }
 
-    public void Show() {
+    public void Show(float duration = 1f) {
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         
@@ -70,10 +71,10 @@ public class Character : Movable
             Color color = spriteRenderer.color;
             color.a = x;
             spriteRenderer.color = color;
-        }, 0f, 1f, 1f);
+        }, 0f, 1f, duration);
     }
 
-    public void HideAndDestroy() {
+    public void Hide(float duration = 1f, bool destroy = true) {
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         
@@ -81,6 +82,6 @@ public class Character : Movable
             Color color = spriteRenderer.color;
             color.a = x;
             spriteRenderer.color = color;
-        }, 1f, 0f, 1f, () => Destroy(gameObject));
+        }, 1f, 0f, duration, destroy ? (Action) (() => Destroy(gameObject)) : null);
     }
 }
