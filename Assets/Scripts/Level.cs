@@ -8,7 +8,7 @@ public class Level : MonoBehaviour
 
     public CharacterPrefabs characterPrefabs;
 
-    Dictionary<CharacterType, Character> spawnedCharacters;
+    Dictionary<CharacterType, Character> spawnedCharacters = new Dictionary<CharacterType, Character>();
 
     void Awake() {
         floorPolygons = new List<PolygonCollider2D>();
@@ -36,8 +36,6 @@ public class Level : MonoBehaviour
 
             floorIndex++;
         }
-
-        spawnedCharacters = new Dictionary<CharacterType, Character>();
     }
 
     public int GetFloor(Vector2 position) {

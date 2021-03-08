@@ -37,8 +37,6 @@ public class CameraController : MonoBehaviour
         cameraSize = new Vector2Int((int) (cam.orthographicSize * 2f * PIXELS_PER_UNIT * ((float) TARGET_WIDTH / TARGET_HEIGHT)), (int) (cam.orthographicSize * 2f * PIXELS_PER_UNIT));
 
         cameraOperators = new List<ICameraOperator>();
-        
-        cameraOperators.Add(new FollowTransform(FindObjectOfType<Player>().transform, this));
     }
 
     void Update()
@@ -75,5 +73,13 @@ public class CameraController : MonoBehaviour
         cameraCenter.y = Mathf.Clamp(cameraCenter.y, (-worldHeight + cameraHeight) / 2f, (worldHeight - cameraHeight) / 2f);
 
         return cameraCenter;
+    }
+
+    public void AddCameraOperator(ICameraOperator cameraOperator) {
+        cameraOperators.Add(cameraOperator);
+    }
+
+    public void RemoveCameraOperator(ICameraOperator cameraOperator) {
+        cameraOperators.Remove(cameraOperator);
     }
 }

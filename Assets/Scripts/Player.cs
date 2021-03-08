@@ -50,10 +50,6 @@ public class Player : Character
         transform.position = game.GetPlayerSpawnPoint(transform.position);
     }
 
-    protected override void Start() {
-        base.Start();
-    }
-
     protected override void Update() {
         base.Update();
 

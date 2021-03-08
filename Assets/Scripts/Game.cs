@@ -7,8 +7,15 @@ public class Game : MonoBehaviour
 {
     public SceneContext sceneContext;
 
+    CameraController cameraController;
+
+    void Awake() {
+        cameraController = FindObjectOfType<CameraController>();
+    }
+
     void Start() {
         Level level = FindObjectOfType<Level>();
+        cameraController.AddCameraOperator(new FollowTransform(level.GetSpawnedCharacter(CharacterType.BONA).transform, cameraController));
     }
 
     public void TransferScene(SceneReference sceneReference) {
