@@ -16,9 +16,18 @@ public class Character : Movable
 
     SpriteRenderer spriteRenderer;
 
+    Trigger trigger;
+
     protected virtual void Awake() {
         level = FindObjectOfType<Level>();
         level.RegisterSpawnedCharacter(type, this);
+
+        trigger = GetComponent<Trigger>();
+    }
+
+    protected virtual void Start() {
+        if (trigger)
+            trigger.AddListener(() => EventManager.Instance.OnCharacterClicked.Invoke(type));
     }
 
     protected virtual void OnDestroy() {
