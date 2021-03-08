@@ -28,7 +28,10 @@ public class TweenEntry<T> : ITweenEntry
         
         if (start + duration <= Time.time) {
             action(range.Lerp(1f));
-            finishCallback();
+
+            if (finishCallback != null)
+                finishCallback();
+            
             return true;
         }
 
