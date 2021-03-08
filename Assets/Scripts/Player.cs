@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 public class Player : Character
 {
     public override CharacterType type {
-        get {
-            return CharacterType.BONA;
-        }
+        get => CharacterType.BONA;
     }
 
     public Vector2 velocityScale = new Vector2(5f, 5f);
