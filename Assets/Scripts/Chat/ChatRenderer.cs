@@ -42,7 +42,7 @@ public class ChatRenderer : MonoBehaviour
     }
 
     void UpdatePosition() {
-        rectTransform.position = chatboxCoordinator.CalculateRectPosition(chat.Anchor.position, chatboxSize);
+        rectTransform.position = chatboxCoordinator.CalculateRectPosition(chat.GetAnchorPosition(), chatboxSize);
     }
 
     IEnumerator Animate() {
