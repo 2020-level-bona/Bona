@@ -158,5 +158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f60782400417cc4086a157490dd9236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 2
+  size: {x: 2, y: 2.5}
   velocityScale: {x: 5, y: 5}
