@@ -5,5 +5,6 @@ using UnityEngine;
 public enum CharacterType
 {
     UNKNOWN,
-    BONA,
+    BONA, // 보나
+    PRIEST, // 사제
 }
