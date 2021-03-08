@@ -12,7 +12,7 @@ public class FollowCharacters : Follower
     }
 
     protected override Vector2 GetCurrentTarget() {
-        targets.RemoveAll(x => !(bool) x.gameObject);
+        targets.RemoveAll(x => !(bool) x);
         
         if (targets.Count == 0)
             return GetCameraPosition();
