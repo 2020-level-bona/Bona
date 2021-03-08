@@ -38,4 +38,8 @@ public class FollowCharacters : Follower
         if (targets.Contains(character))
             targets.Remove(character);
     }
+
+    public void ClearTargets() {
+        targets.Clear();
+    }
 }

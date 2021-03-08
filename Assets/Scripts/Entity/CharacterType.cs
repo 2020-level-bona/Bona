@@ -7,4 +7,5 @@ public enum CharacterType
     UNKNOWN,
     BONA, // 보나
     PRIEST, // 사제
+    MOLE, // 두더지
 }
