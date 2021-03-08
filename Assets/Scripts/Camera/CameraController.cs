@@ -83,4 +83,12 @@ public class CameraController : MonoBehaviour
     public void RemoveCameraOperator(ICameraOperator cameraOperator) {
         cameraOperators.Remove(cameraOperator);
     }
+
+    public T FindCameraOperator<T>() where T : class, ICameraOperator {
+        foreach (ICameraOperator cameraOperator in cameraOperators) {
+            if (cameraOperator.GetType() == typeof(T))
+                return cameraOperator as T;
+        }
+        return null;
+    }
 }
