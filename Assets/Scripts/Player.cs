@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class Player : Character
 {
-    public new const CharacterType type = CharacterType.BONA;
+    public override CharacterType type {
+        get {
+            return CharacterType.BONA;
+        }
+    }
 
     public Vector2 velocityScale = new Vector2(5f, 5f);
 
@@ -38,7 +42,7 @@ public class Player : Character
 
     protected override void Awake() {
         base.Awake();
-        
+
         animatorController = GetComponentInChildren<AnimatorController>();
 
         game = FindObjectOfType<Game>();
@@ -48,8 +52,8 @@ public class Player : Character
         transform.position = game.GetPlayerSpawnPoint(transform.position);
     }
 
-    void Start() {
-
+    protected override void Start() {
+        base.Start();
     }
 
     protected override void Update() {

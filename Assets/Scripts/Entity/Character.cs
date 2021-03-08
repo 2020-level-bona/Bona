@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Character : Movable
 {
-    public const CharacterType type = CharacterType.UNKNOWN;
+    public virtual CharacterType type {
+        get {
+            return CharacterType.UNKNOWN;
+        }
+    }
 
     public float height = 2f;
 
@@ -14,6 +18,14 @@ public class Character : Movable
 
     protected virtual void Awake() {
         level = FindObjectOfType<Level>();
+    }
+
+    protected virtual void Start() {
+        level.RegisterSpawnedCharacter(type, this);
+    }
+
+    protected virtual void OnDestroy() {
+        level.UnregisterSpawnedCharacter(type);
     }
 
 #if UNITY_EDITOR
