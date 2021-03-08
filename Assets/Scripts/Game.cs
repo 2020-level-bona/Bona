@@ -18,6 +18,10 @@ public class Game : MonoBehaviour
         cameraController.AddCameraOperator(new FollowTransform(level.GetSpawnedCharacter(CharacterType.BONA).transform, cameraController));
     }
 
+    void Update() {
+        Tween.Instance.Update();
+    }
+
     public void TransferScene(SceneReference sceneReference) {
         sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
         SceneManager.LoadScene(sceneReference);
