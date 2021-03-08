@@ -36,6 +36,16 @@ public class Game : MonoBehaviour
     }
 
     public void StartCutscene(IEnumerator coroutine) {
-        StartCoroutine(new CutsceneEnumerator(coroutine));
+        StartCoroutine(WrapCoroutine(coroutine));
+    }
+
+    // 컷씬 시작, 종료 코드를 코루틴에 추가
+    IEnumerator WrapCoroutine(IEnumerator coroutine) {
+        CameraLetterbox cameraLetterbox = FindObjectOfType<CameraLetterbox>();
+        cameraLetterbox.ShowLetterbox();
+
+        yield return StartCoroutine(coroutine);
+
+        cameraLetterbox.HideLetterbox();
     }
 }
