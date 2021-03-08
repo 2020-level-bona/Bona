@@ -56,6 +56,10 @@ public class CameraController : MonoBehaviour
                 cameraCenter += cameraOperator.GetCameraPosition();
         }
 
+        // 카메라 오퍼레이터가 존재하지 않으면 카메라 위치를 변경하지 않는다.
+        if (cameraOperators.Count == 0)
+            return;
+
         cam.transform.position = new Vector3(cameraCenter.x, cameraCenter.y, cam.transform.position.z);
     }
 
