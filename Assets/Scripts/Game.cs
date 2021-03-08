@@ -34,4 +34,8 @@ public class Game : MonoBehaviour
         }
         return defaultSpawnPoint;
     }
+
+    public void StartCutscene(IEnumerator coroutine) {
+        StartCoroutine(new CutsceneEnumerator(coroutine));
+    }
 }
