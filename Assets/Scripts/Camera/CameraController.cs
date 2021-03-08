@@ -38,7 +38,7 @@ public class CameraController : MonoBehaviour
 
         cameraOperators = new List<ICameraOperator>();
         
-        cameraOperators.Add(new FollowPlayer(FindObjectOfType<Player>(), this));
+        cameraOperators.Add(new FollowTransform(FindObjectOfType<Player>().transform, this));
     }
 
     void Update()
@@ -49,7 +49,7 @@ public class CameraController : MonoBehaviour
 
         foreach (ICameraOperator cameraOperator in cameraOperators) {
             cameraOperator.Update();
-            
+
             if (cameraOperator.type == CameraOperatorType.REPLACE)
                 cameraCenter = cameraOperator.GetCameraPosition();
             else
