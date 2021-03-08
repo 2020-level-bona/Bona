@@ -10,12 +10,14 @@ public class TweenEntry<T> : ITweenEntry
     public ILerpable<T> range;
     public float start;
     public float duration;
+    public Action finishCallback;
 
-    public TweenEntry(UnityEngine.Object owner, Action<T> action, ILerpable<T> range, float duration) {
+    public TweenEntry(UnityEngine.Object owner, Action<T> action, ILerpable<T> range, float duration, Action finishCallback) {
         this.owner = owner;
         this.action = action;
         this.range = range;
         this.duration = duration;
+        this.finishCallback = finishCallback;
 
         start = Time.time;
     }
@@ -26,6 +28,7 @@ public class TweenEntry<T> : ITweenEntry
         
         if (start + duration <= Time.time) {
             action(range.Lerp(1f));
+            finishCallback();
             return true;
         }
 

@@ -25,11 +25,11 @@ public class Tween
         }
     }
 
-    public static void Add(UnityEngine.Object owner, Action<float> action, float from, float to, float duration) {
-        Instance.entries.Add(new TweenEntry<float>(owner, action, new FloatLerp(from, to), duration));
+    public static void Add(UnityEngine.Object owner, Action<float> action, float from, float to, float duration, Action finishCallback = null) {
+        Instance.entries.Add(new TweenEntry<float>(owner, action, new FloatLerp(from, to), duration, finishCallback));
     }
 
-    public static void Add(UnityEngine.Object owner, Action<Vector2> action, Vector2 from, Vector2 to, float duration) {
-        Instance.entries.Add(new TweenEntry<Vector2>(owner, action, new Vector2Lerp(from, to), duration));
+    public static void Add(UnityEngine.Object owner, Action<Vector2> action, Vector2 from, Vector2 to, float duration, Action finishCallback = null) {
+        Instance.entries.Add(new TweenEntry<Vector2>(owner, action, new Vector2Lerp(from, to), duration, finishCallback));
     }
 }

@@ -14,6 +14,8 @@ public class Character : Movable
 
     public int currentFloor {get; private set;} = 1;
 
+    SpriteRenderer spriteRenderer;
+
     protected virtual void Awake() {
         level = FindObjectOfType<Level>();
         level.RegisterSpawnedCharacter(type, this);
@@ -49,5 +51,27 @@ public class Character : Movable
 
     public Bounds GetBounds() {
         return new Bounds(GetCenter(), size);
+    }
+
+    public void Show() {
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        
+        Tween.Add(gameObject, x => {
+            Color color = spriteRenderer.color;
+            color.a = x;
+            spriteRenderer.color = color;
+        }, 0f, 1f, 1f);
+    }
+
+    public void HideAndDestroy() {
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        
+        Tween.Add(gameObject, x => {
+            Color color = spriteRenderer.color;
+            color.a = x;
+            spriteRenderer.color = color;
+        }, 1f, 0f, 1f, () => Destroy(gameObject));
     }
 }
