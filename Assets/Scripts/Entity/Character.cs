@@ -5,9 +5,7 @@ using UnityEngine;
 public class Character : Movable
 {
     public virtual CharacterType type {
-        get {
-            return CharacterType.UNKNOWN;
-        }
+        get => CharacterType.UNKNOWN;
     }
 
     public float height = 2f;
