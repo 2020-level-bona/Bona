@@ -11,8 +11,6 @@ public class Player : Character
 
     public Vector2 velocityScale = new Vector2(5f, 5f);
 
-    AnimatorController animatorController;
-
     static readonly AnimatorState PUT = new AnimatorState("가방에 넣기");
     static readonly AnimatorState WALK_D = new AnimatorState("걷기(아래)");
     static readonly AnimatorState WALK_U = new AnimatorState("걷기(위)");
@@ -41,8 +39,6 @@ public class Player : Character
     protected override void Awake() {
         base.Awake();
 
-        animatorController = GetComponentInChildren<AnimatorController>();
-
         game = FindObjectOfType<Game>();
 
         inventory = new Inventory();
@@ -70,18 +66,18 @@ public class Player : Character
         float y = Input.GetAxis("Vertical");
 
         if (Mathf.Abs(x) <= 0.1f && Mathf.Abs(y) <= 0.1f) {
-            animatorController.Play(IDLE);
+            PlayAnimation(IDLE);
         } else if (Mathf.Abs(x) >= Mathf.Abs(y)) {
             if (x > 0) {
-                animatorController.Play(WALK_R);
+                PlayAnimation(WALK_R);
             } else {
-                animatorController.Play(WALK_L);
+                PlayAnimation(WALK_L);
             }
         } else {
             if (y > 0) {
-                animatorController.Play(WALK_U);
+                PlayAnimation(WALK_U);
             } else {
-                animatorController.Play(WALK_D);
+                PlayAnimation(WALK_D);
             }
         }
     }

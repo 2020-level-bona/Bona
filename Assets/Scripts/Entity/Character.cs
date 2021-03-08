@@ -15,6 +15,8 @@ public class Character : Movable
 
     public int currentFloor {get; private set;} = 1;
 
+    AnimatorController animatorController;
+
     SpriteRenderer spriteRenderer;
 
     Trigger trigger;
@@ -22,6 +24,8 @@ public class Character : Movable
     protected virtual void Awake() {
         level = FindObjectOfType<Level>();
         level.RegisterSpawnedCharacter(type, this);
+
+        animatorController = GetComponentInChildren<AnimatorController>();
 
         trigger = GetComponent<Trigger>();
     }
@@ -83,5 +87,9 @@ public class Character : Movable
             color.a = x;
             spriteRenderer.color = color;
         }, 1f, 0f, duration, destroy ? (Action) (() => Destroy(gameObject)) : null);
+    }
+
+    public void PlayAnimation(AnimatorState state) {
+        animatorController.Play(state);
     }
 }
