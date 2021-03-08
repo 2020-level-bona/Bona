@@ -16,9 +16,6 @@ public class Character : Movable
 
     protected virtual void Awake() {
         level = FindObjectOfType<Level>();
-    }
-
-    protected virtual void Start() {
         level.RegisterSpawnedCharacter(type, this);
     }
 
