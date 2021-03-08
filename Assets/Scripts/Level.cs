@@ -66,13 +66,15 @@ public class Level : MonoBehaviour
         spawnedCharacters.Remove(type);
     }
 
-    public Character SpawnCharacter(CharacterType type) {
+    public Character SpawnCharacter(CharacterType type, Vector2 position) {
         if (GetSpawnedCharacter(type) != null)
             throw new System.Exception($"CharacterType={type} 에 대해 이미 스폰된 캐릭터가 존재합니다.");
 
         GameObject gameObject = characterPrefabs.GetPrefab(type);
         if (gameObject != null) {
             gameObject = Instantiate(gameObject);
+            gameObject.transform.position = position;
+            
             Character character = gameObject.GetComponent<Character>();
             if (character != null)
                 return character;
