@@ -15,7 +15,7 @@ public class Game : MonoBehaviour
 
     void Start() {
         Level level = FindObjectOfType<Level>();
-        cameraController.AddCameraOperator(new FollowTransform(level.GetSpawnedCharacter(CharacterType.BONA).transform, cameraController));
+        cameraController.AddCameraOperator(new FollowCharacters(cameraController, level.GetSpawnedCharacter(CharacterType.BONA)));
     }
 
     void Update() {
