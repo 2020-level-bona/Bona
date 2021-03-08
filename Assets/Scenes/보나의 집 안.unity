@@ -230,6 +230,7 @@ GameObject:
   m_Component:
   - component: {fileID: 236805749}
   - component: {fileID: 236805748}
+  - component: {fileID: 236805751}
   m_Layer: 0
   m_Name: SceneScript
   m_TagString: Untagged
@@ -263,6 +264,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236805751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236805747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 328dbd3e0dc664d3ba0767c18fec8e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &268276407
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,8 +435,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -120.05601}
---- !u!60 &438317777
-PolygonCollider2D:
+--- !u!61 &438317777
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -435,7 +448,7 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.08500236, y: -0.19651532}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -445,34 +458,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.32999998, y: 0.21}
-      - {x: 0.32999998, y: 0.53999996}
-      - {x: 0.26, y: 0.66999996}
-      - {x: 0.099999994, y: 0.66999996}
-      - {x: 0.03, y: 0.57}
-      - {x: 0.04, y: 0.52}
-      - {x: 0.06, y: 0.47}
-      - {x: 0.089999996, y: 0.41}
-      - {x: 0.07, y: 0.39}
-      - {x: 0.07, y: 0.45}
-      - {x: 0.049999997, y: 0.47}
-      - {x: 0.049999997, y: 0.48999998}
-      - {x: -0.02, y: 0.57}
-      - {x: -0.13, y: 0.59999996}
-      - {x: -0.38, y: 0.64}
-      - {x: -0.44, y: 0.53999996}
-      - {x: -0.44, y: 0.17}
-      - {x: -0.34, y: -0.02}
-      - {x: -0.22999999, y: -0.099999994}
-      - {x: -0.08, y: -0.16}
-      - {x: -0.08, y: -0.59999996}
-      - {x: 0.049999997, y: -0.65999997}
-      - {x: 0.22999999, y: -0.65999997}
-      - {x: 0.26, y: -0.65}
-      - {x: 0.21, y: -0.07}
-      - {x: 0.29999998, y: 0.099999994}
+  serializedVersion: 2
+  m_Size: {x: 1.4720927, y: 1.9206963}
+  m_EdgeRadius: 0
 --- !u!1 &441256563
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,6 +747,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 674761947, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2076240938, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8007945322466567000, guid: 8880ce796a85f264686f11e6c1e75ac8,
