@@ -77,6 +77,7 @@ public class CameraController : MonoBehaviour
 
     public void AddCameraOperator(ICameraOperator cameraOperator) {
         cameraOperators.Add(cameraOperator);
+        cameraOperator.ResetState();
     }
 
     public void RemoveCameraOperator(ICameraOperator cameraOperator) {
