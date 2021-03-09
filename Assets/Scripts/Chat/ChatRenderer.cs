@@ -21,14 +21,16 @@ public class ChatRenderer : MonoBehaviour
         this.chatboxCoordinator = chatboxCoordinator;
     }
 
-    void Start()
-    {
+    void Awake() {
         rectTransform = GetComponent<RectTransform>();
 
         uiText = GetComponent<Text>();
         if (uiText == null)
             uiText = GetComponentInChildren<Text>();
-        
+    }
+
+    void Start()
+    {
         uiText.text = chat.Message;
         chatboxSize = new Vector2(200, uiText.preferredHeight);
 
@@ -42,7 +44,7 @@ public class ChatRenderer : MonoBehaviour
     }
 
     void UpdatePosition() {
-        rectTransform.position = chatboxCoordinator.CalculateRectPosition(chat.Anchor.position, chatboxSize);
+        rectTransform.position = chatboxCoordinator.CalculateRectPosition(chat.GetAnchorPosition(), chatboxSize);
     }
 
     IEnumerator Animate() {
@@ -58,11 +60,11 @@ public class ChatRenderer : MonoBehaviour
         if (animationCoroutine != null) {
             StopCoroutine(animationCoroutine);
             animationCoroutine = null;
+
+            uiText.text = $"<b>{chat.Message}</b>";
+
+            AnimationFinished = true;
         }
-
-        uiText.text = $"<b>{chat.Message}</b>";
-
-        AnimationFinished = true;
     }
 
     public void Finish() {

@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Player : MonoBehaviour
+public class Player : Character
 {
+    public override CharacterType type {
+        get => CharacterType.BONA;
+    }
+
     public Vector2 velocityScale = new Vector2(5f, 5f);
-
-    public List<PolygonCollider2D> floorPolygons {get; private set;}
-    public int currentFloor = 1;
-
-    AnimatorController animatorController;
 
     static readonly AnimatorState PUT = new AnimatorState("가방에 넣기");
     static readonly AnimatorState WALK_D = new AnimatorState("걷기(아래)");
@@ -33,103 +32,52 @@ public class Player : MonoBehaviour
     static readonly AnimatorState ANGRY = new AnimatorState("화난 표정");
     static readonly AnimatorState ANGRY_TALK = new AnimatorState("화난 표정+말");
 
-    public SceneContext sceneContext;
-
     public Inventory inventory;
 
-    void Awake() {
-        // DontDestroyOnLoad(this.gameObject);
-        animatorController = GetComponentInChildren<AnimatorController>();
+    Game game;
+
+    protected override void Awake() {
+        base.Awake();
+
+        game = FindObjectOfType<Game>();
 
         inventory = new Inventory();
 
-        MoveToSpawnPoint();
+        transform.position = game.GetPlayerSpawnPoint(transform.position);
     }
 
-    void Start() {
-        
-        floorPolygons = new List<PolygonCollider2D>();
+    protected override void Update() {
+        base.Update();
 
-        int floorIndex = 1;
-        while(true) {
-            GameObject gameObject = GameObject.Find("Floor" + floorIndex);
-            if (gameObject == null)
-                break;
-            
-            PolygonCollider2D polygon = gameObject.GetComponent<PolygonCollider2D>();
-            if (polygon == null)
-                break;
-            
-            floorPolygons.Add(polygon);
-
-            // Add Holes
-            for (int i = 0; i < gameObject.transform.childCount; i++) {
-                PolygonCollider2D hole = gameObject.transform.GetChild(i).GetComponent<PolygonCollider2D>();
-                if (hole != null) {
-                    polygon.pathCount++;
-                    polygon.SetPath(polygon.pathCount - 1, hole.GetPath(0));
-                }
-            }
-
-            floorIndex++;
-        }
-    }
-
-    void Update() {
         Vector3 current = transform.position;
 
         Vector3 velocity = new Vector3(Input.GetAxis("Horizontal") * velocityScale.x, Input.GetAxis("Vertical") * velocityScale.y, 0);
-        if (velocity.magnitude == 0)
-            return;
-        
+        if (game.IsPlayingCutscene)
+            velocity = Vector2.zero;
         Vector3 delta = velocity * Time.deltaTime;
-        Vector3 next = current + delta;
-        
-        if (!floorPolygons[currentFloor - 1].OverlapPoint(next)) {
-             next = floorPolygons[currentFloor - 1].ClosestPoint(next) ;
-        }
-        transform.position = next;
+        MoveDelta(delta);
 
         UpdateAnimation();
     }
 
-    PolygonCollider2D GetCurrentFloor() {
-        return floorPolygons[currentFloor - 1];
-    }
-
     void UpdateAnimation() {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = velocity.x;
+        float y = velocity.y;
 
         if (Mathf.Abs(x) <= 0.1f && Mathf.Abs(y) <= 0.1f) {
-            animatorController.Play(IDLE);
+            PlayAnimation(IDLE);
         } else if (Mathf.Abs(x) >= Mathf.Abs(y)) {
             if (x > 0) {
-                animatorController.Play(WALK_R);
+                PlayAnimation(WALK_R);
             } else {
-                animatorController.Play(WALK_L);
+                PlayAnimation(WALK_L);
             }
         } else {
             if (y > 0) {
-                animatorController.Play(WALK_U);
+                PlayAnimation(WALK_U);
             } else {
-                animatorController.Play(WALK_D);
+                PlayAnimation(WALK_D);
             }
         }
-    }
-
-    public void TransferScene(SceneReference sceneReference) {
-        sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
-        SceneManager.LoadScene(sceneReference);
-    }
-
-    void MoveToSpawnPoint() {
-        foreach (TransferMap transferMap in FindObjectsOfType<TransferMap>()) {
-            if (transferMap.targetScene != null && transferMap.targetScene.ScenePath == sceneContext.LastScenePath) {
-                transform.position = transferMap.transform.position;
-                break;
-            }
-        }
-        // 이전 맵과 일치하는 TransferMap을 찾지 못했다면 위치를 변경하지 않는다.
     }
 }
