@@ -11,18 +11,15 @@ public class Character : Movable
 
     public Vector2 size = new Vector2(1f, 2f);
 
-    Level level;
-
-    public int currentFloor {get; private set;} = 1;
-
     AnimatorController animatorController;
 
     SpriteRenderer spriteRenderer;
 
     Trigger trigger;
 
-    protected virtual void Awake() {
-        level = FindObjectOfType<Level>();
+    protected override void Awake() {
+        base.Awake();
+
         level.RegisterSpawnedCharacter(type, this);
 
         animatorController = GetComponentInChildren<AnimatorController>();
@@ -47,16 +44,6 @@ public class Character : Movable
         Debug.DrawRay(transform.position + new Vector3(-size.x / 2f, size.y, 0), Vector2.right * size.x, Color.blue);
     }
 #endif
-
-    public override void MoveTo(Vector2 position) {
-        int floor = level.GetFloor(position);
-        if (floor > 0)
-            currentFloor = floor;
-
-        if (currentFloor > 0) {
-            base.MoveTo(level.floorPolygons[currentFloor - 1].ClosestPoint(position));
-        }
-    }
 
     // 캐릭터의 원점은 중심에서 아래 지점이다.
     public Vector2 GetCenter() {

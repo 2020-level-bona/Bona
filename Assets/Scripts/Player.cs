@@ -52,9 +52,6 @@ public class Player : Character
         Vector3 current = transform.position;
 
         Vector3 velocity = new Vector3(Input.GetAxis("Horizontal") * velocityScale.x, Input.GetAxis("Vertical") * velocityScale.y, 0);
-        if (velocity.magnitude == 0)
-            return;
-        
         Vector3 delta = velocity * Time.deltaTime;
         MoveDelta(delta);
 
@@ -62,8 +59,8 @@ public class Player : Character
     }
 
     void UpdateAnimation() {
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
+        float x = velocity.x;
+        float y = velocity.y;
 
         if (Mathf.Abs(x) <= 0.1f && Mathf.Abs(y) <= 0.1f) {
             PlayAnimation(IDLE);
