@@ -52,6 +52,8 @@ public class Player : Character
         Vector3 current = transform.position;
 
         Vector3 velocity = new Vector3(Input.GetAxis("Horizontal") * velocityScale.x, Input.GetAxis("Vertical") * velocityScale.y, 0);
+        if (game.IsPlayingCutscene)
+            velocity = Vector2.zero;
         Vector3 delta = velocity * Time.deltaTime;
         MoveDelta(delta);
 
