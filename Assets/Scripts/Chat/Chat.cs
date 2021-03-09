@@ -11,13 +11,20 @@ public class Chat
 
     public Character Character;
 
+    Vector2 lastKnownPosition;
+
     public Chat(string Message, Character Character) {
         this.Message = $"\"{Message}\"";
         this.Character = Character;
+
+        lastKnownPosition = GetAnchorPosition();
     }
 
     public Vector2 GetAnchorPosition() {
-        Bounds bounds = Character.GetBounds();
-        return new Vector2((bounds.min.x + bounds.max.x) / 2f, bounds.max.y + CHATBOX_ADDITIONAL_HEIGHT);
+        if (Character) {
+            Bounds bounds = Character.GetBounds();
+            return new Vector2((bounds.min.x + bounds.max.x) / 2f, bounds.max.y + CHATBOX_ADDITIONAL_HEIGHT);
+        }
+        return lastKnownPosition;
     }
 }

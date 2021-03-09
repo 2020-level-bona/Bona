@@ -24,8 +24,6 @@ public class Movable : MonoBehaviour
     protected virtual void LateUpdate() {
         velocity = ((Vector2) transform.position - lastPosition) / Time.deltaTime;
         lastPosition = (Vector2) transform.position;
-
-        Debug.Log(velocity);
     }
 
     public void MoveTo(Vector2 position) {
