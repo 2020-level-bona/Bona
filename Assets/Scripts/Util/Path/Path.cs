@@ -12,6 +12,9 @@ public class Path
         Type = type;
         Points = points;
         Solver = GetSolver(Type, Points);
+
+        if (!Solver.HasEnoughPoints())
+            throw new System.Exception("경로의 제어점의 개수가 충분하지 않습니다.");
     }
 
     static IPathSolver GetSolver(PathType Type, Vector2[] Points) {

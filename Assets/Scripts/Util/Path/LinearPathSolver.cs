@@ -43,4 +43,8 @@ public class LinearPathSolver : IPathSolver
 
         return Vector2.Lerp(A, B, t - index);
     }
+
+    public bool HasEnoughPoints() {
+        return points.Length > 1;
+    }
 }

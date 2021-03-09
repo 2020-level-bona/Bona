@@ -51,4 +51,8 @@ public class BezierPathSolver : IPathSolver
         Vector2 S = Vector2.Lerp(B, C, t - index);
         return Vector2.Lerp(T, S, t - index);
     }
+    
+    public bool HasEnoughPoints() {
+        return points.Length > 2;
+    }
 }
