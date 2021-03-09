@@ -9,14 +9,10 @@ public class 보나의집안2 : MonoBehaviour
 
     void Start()
     {
-        
         chatQueue = FindObjectOfType<ChatQueue>();
         player = FindObjectOfType<Player>();
 
-        chatQueue.AddChat(new Chat("저게 뭐지?", player.transform));
-         chatQueue.AddChat(new Chat("믿을 수 없어!", player.transform));
-
+        chatQueue.AddChat(new Chat("저게 뭐지?", player));
+        chatQueue.AddChat(new Chat("믿을 수 없어!", player));
     }
-
-
 }
