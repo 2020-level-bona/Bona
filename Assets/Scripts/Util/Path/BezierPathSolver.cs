@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class BezierPathSolver : IPathSolver
 {
-    public float GetNextT(Vector2[] points, float prevT, float moveLength) {
+    Vector2[] points;
+
+    public BezierPathSolver(Vector2[] points) {
+        this.points = points;
+    }
+
+    public float GetNextT(float prevT, float moveLength) {
         prevT = Mathf.Clamp(prevT, 0f, points.Length - 2);
         moveLength = Mathf.Max(moveLength, 0f);
 
@@ -26,11 +32,11 @@ public class BezierPathSolver : IPathSolver
         return t;
     }
 
-    public float GetMaxT(Vector2[] points) {
-        return (points.Length - 2);
+    public float GetMaxT() {
+        return Mathf.Max((points.Length - 2), 0);
     }
 
-    public Vector2 GetPosition(Vector2[] points, float t) {
+    public Vector2 CalcPosition(float t) {
         t = Mathf.Clamp(t, 0f, (points.Length - 2));
 
         int index = Mathf.FloorToInt(t);
