@@ -113,6 +113,8 @@ public class CutsceneTest : MonoBehaviour
         ITweenEntry tweenEntry2 = Tween.Add(waterFairy, waterFairyPath.GetPath(), 7f);
         yield return new WaitForTween(tweenEntry2);
 
+        waterFairy.Hide();
+
         chatQueue.AddChat(new Chat("방금 요정이 날아가는걸 봤니?", priest));
         chatQueue.AddChat(new Chat("네, 봤어요.", bona));
         chatQueue.AddChat(new Chat("흠... 잘됐군. 그럼 시간이 된 것 같으니...", priest));
