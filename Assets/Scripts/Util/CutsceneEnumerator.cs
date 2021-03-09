@@ -12,6 +12,8 @@ public class CutsceneEnumerator : IEnumerator
         get {
             if (coroutine.Current is WaitForSkippingChat) {
                 return new WaitWhile(() => chatQueue.IsDisplaying);
+            } else if (coroutine.Current is WaitForTween) {
+                return new WaitUntil(() => (coroutine.Current as WaitForTween).tweenEntry.HasDone());
             }
             return coroutine.Current;
         }
