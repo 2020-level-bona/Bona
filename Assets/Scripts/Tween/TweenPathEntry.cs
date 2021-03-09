@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class TweenPathEntry : ITweenEntry
 {
-    public Transform transform;
+    public Movable movable;
     public Path path;
     public float t;
     public float speed;
     public Action finishCallback;
 
-    public TweenPathEntry(Transform transform, Path path, float speed, Action finishCallback) {
-        this.transform = transform;
+    public TweenPathEntry(Movable movable, Path path, float speed, Action finishCallback) {
+        this.movable = movable;
         this.path = path;
         this.speed = speed;
         this.finishCallback = finishCallback;
@@ -21,7 +21,7 @@ public class TweenPathEntry : ITweenEntry
     }
 
     public bool HasDone() {
-        if (!transform)
+        if (!movable)
             return true;
         
         if (t >= path.Solver.GetMaxT()) {
@@ -36,10 +36,6 @@ public class TweenPathEntry : ITweenEntry
 
     public void Update() {
         t = path.Solver.GetNextT(t, speed * Time.deltaTime);
-        ApplyPosition(path.Solver.CalcPosition(t));
-    }
-
-    void ApplyPosition(Vector2 position) {
-        transform.position = new Vector3(position.x, position.y, transform.position.z);
+        movable.MoveTo(path.Solver.CalcPosition(t));
     }
 }

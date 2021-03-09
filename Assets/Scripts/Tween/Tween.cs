@@ -37,14 +37,14 @@ public class Tween
         return entry;
     }
 
-    public static ITweenEntry Add(Transform transform, Vector2 to, float speed, Action finishCallback = null) {
-        ITweenEntry entry = new TweenPathEntry(transform, new Path(PathType.LINEAR, new Vector2[] {transform.position, to}), speed, finishCallback);
+    public static ITweenEntry Add(Movable movable, Vector2 to, float speed, Action finishCallback = null) {
+        ITweenEntry entry = new TweenPathEntry(movable, new Path(PathType.LINEAR, new Vector2[] {movable.position, to}), speed, finishCallback);
         Instance.entries.Add(entry);
         return entry;
     }
 
-    public static ITweenEntry Add(Transform transform, Path path, float speed, Action finishCallback = null) {
-        ITweenEntry entry = new TweenPathEntry(transform, path, speed, finishCallback);
+    public static ITweenEntry Add(Movable movable, Path path, float speed, Action finishCallback = null) {
+        ITweenEntry entry = new TweenPathEntry(movable, path, speed, finishCallback);
         Instance.entries.Add(entry);
         return entry;
     }
