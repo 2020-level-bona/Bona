@@ -25,7 +25,7 @@ public class PrintMessages : MonoBehaviour
     void Chat() {
         if (!chatQueue.IsDisplaying) {
             foreach (string message in messages) {
-                chatQueue.AddChat(new Chat(message, player.transform));
+                chatQueue.AddChat(new Chat(message, player));
             }
         }
     }

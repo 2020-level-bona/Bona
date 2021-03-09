@@ -19,13 +19,15 @@ public class ChatQueue : MonoBehaviour
         }
     }
 
+    public bool Skipable = true;
+
     void Awake() {
         chatboxCoordinator = new ChatboxCoordinator(canvasObject.GetComponent<RectTransform>(), Camera.main);
     }
 
     void Update()
     {
-        if (currentRenderer != null && Input.GetMouseButtonDown(0)) {
+        if (currentRenderer != null && Input.GetMouseButtonDown(0) && Skipable) {
             if (currentRenderer.AnimationFinished)
                 Next();
             else
@@ -33,7 +35,7 @@ public class ChatQueue : MonoBehaviour
         }
     }
 
-    void Next() {
+    public void Next() {
         if (currentRenderer != null) {
             currentRenderer.Finish();
             currentRenderer = null;
