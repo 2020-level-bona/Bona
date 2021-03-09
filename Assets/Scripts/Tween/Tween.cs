@@ -25,11 +25,27 @@ public class Tween
         }
     }
 
-    public static void Add(UnityEngine.Object owner, Action<float> action, float from, float to, float duration, Action finishCallback = null) {
-        Instance.entries.Add(new TweenEntry<float>(owner, action, new FloatLerp(from, to), duration, finishCallback));
+    public static ITweenEntry Add(UnityEngine.Object owner, Action<float> action, float from, float to, float duration, Action finishCallback = null) {
+        ITweenEntry entry = new TweenValueEntry<float>(owner, action, new FloatLerp(from, to), duration, finishCallback);
+        Instance.entries.Add(entry);
+        return entry;
     }
 
-    public static void Add(UnityEngine.Object owner, Action<Vector2> action, Vector2 from, Vector2 to, float duration, Action finishCallback = null) {
-        Instance.entries.Add(new TweenEntry<Vector2>(owner, action, new Vector2Lerp(from, to), duration, finishCallback));
+    public static ITweenEntry Add(UnityEngine.Object owner, Action<Vector2> action, Vector2 from, Vector2 to, float duration, Action finishCallback = null) {
+        ITweenEntry entry = new TweenValueEntry<Vector2>(owner, action, new Vector2Lerp(from, to), duration, finishCallback);
+        Instance.entries.Add(entry);
+        return entry;
+    }
+
+    public static ITweenEntry Add(Transform transform, Vector2 to, float speed, Action finishCallback = null) {
+        ITweenEntry entry = new TweenPathEntry(transform, new Path(PathType.LINEAR, new Vector2[] {transform.position, to}), speed, finishCallback);
+        Instance.entries.Add(entry);
+        return entry;
+    }
+
+    public static ITweenEntry Add(Transform transform, Path path, float speed, Action finishCallback = null) {
+        ITweenEntry entry = new TweenPathEntry(transform, path, speed, finishCallback);
+        Instance.entries.Add(entry);
+        return entry;
     }
 }

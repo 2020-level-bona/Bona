@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TweenEntry<T> : ITweenEntry
+public class TweenValueEntry<T> : ITweenEntry
 {
     public UnityEngine.Object owner;
     public Action<T> action;
@@ -12,7 +12,7 @@ public class TweenEntry<T> : ITweenEntry
     public float duration;
     public Action finishCallback;
 
-    public TweenEntry(UnityEngine.Object owner, Action<T> action, ILerpable<T> range, float duration, Action finishCallback) {
+    public TweenValueEntry(UnityEngine.Object owner, Action<T> action, ILerpable<T> range, float duration, Action finishCallback) {
         this.owner = owner;
         this.action = action;
         this.range = range;
