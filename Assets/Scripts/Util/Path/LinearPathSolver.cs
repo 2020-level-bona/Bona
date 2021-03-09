@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class LinearPathSolver : IPathSolver
 {
-    public float GetNextT(Vector2[] points, float prevT, float moveLength) {
+    Vector2[] points;
+
+    public LinearPathSolver(Vector2[] points) {
+        this.points = points;
+    }
+
+    public float GetNextT(float prevT, float moveLength) {
         prevT = Mathf.Clamp(prevT, 0f, points.Length - 1);
         moveLength = Mathf.Max(moveLength, 0f);
 
@@ -21,11 +27,11 @@ public class LinearPathSolver : IPathSolver
         return t;
     }
 
-    public float GetMaxT(Vector2[] points) {
-        return points.Length - 1;
+    public float GetMaxT() {
+        return Mathf.Max(points.Length - 1, 0);
     }
 
-    public Vector2 GetPosition(Vector2[] points, float t) {
+    public Vector2 CalcPosition(float t) {
         t = Mathf.Clamp(t, 0f, points.Length - 1);
 
         int index = Mathf.FloorToInt(t);
