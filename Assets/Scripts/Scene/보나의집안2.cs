@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 보나의집안2 : MonoBehaviour
+ublic class 보나의집안2 : MonoBehaviour
 {
     ChatQueue chatQueue;
     Player player;
@@ -16,3 +16,4 @@ public class 보나의집안2 : MonoBehaviour
         chatQueue.AddChat(new Chat("믿을 수 없어!", player));
     }
 }
+*/
