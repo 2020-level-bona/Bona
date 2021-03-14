@@ -1,8 +1,8 @@
-﻿using System.Collections;
+﻿/* using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 보나의집안2 : MonoBehaviour
+ublic class 보나의집안2 : MonoBehaviour
 {
     ChatQueue chatQueue;
     Player player;
@@ -10,7 +10,7 @@ public class 보나의집안2 : MonoBehaviour
     void Start()
     {
         
-        chatQueue = FindObjectOfType<ChatQueue>();
+       chatQueue = FindObjectOfType<ChatQueue>();
         player = FindObjectOfType<Player>();
 
         chatQueue.AddChat(new Chat("저게 뭐지?", player.transform));
@@ -19,4 +19,4 @@ public class 보나의집안2 : MonoBehaviour
     }
 
 
-}
+} */

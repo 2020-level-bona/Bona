@@ -22,6 +22,8 @@ public class Debugger : MonoBehaviour
     Text debugText;
     string defaultDebugInfoString;
 
+    public string currentSceneName;
+
     void Start()
     {
         level = FindObjectOfType<Level>();
@@ -37,6 +39,18 @@ public class Debugger : MonoBehaviour
 
     void Update()
     {
+  
+       /* if (Input.GetKeyDown(KeyCode.F5)){
+            Debug.Log("저장");
+            //저장
+        }
+
+        if (Input.GetKeyDown(KeyCode.F9)){
+            Debug.Log("로딩");
+            //불러오기
+        }*/
+    
+
         if (Input.GetKeyDown(KeyCode.Q)) {
             SceneManager.LoadScene("AllScenes");
         }

@@ -16,12 +16,12 @@ public class 보나의집안 : MonoBehaviour
         chatQueue.AddChat(new Chat("배고파...", player));
     }
 
-    void Update()
+    /*void Update()
     {
-        if (Input.GetMouseButtonDown(0) && GetComponent<보나의집안>())
+       if (Input.GetMouseButtonDown(0) && GetComponent<보나의집안>())
         {
             Destroy(GetComponent<보나의집안>());
             보나의집안2 sc = gameObject.AddComponent<보나의집안2>() as 보나의집안2;
         }
-    }
+    }*/
 }
