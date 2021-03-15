@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    public DataManager datamanager;
 
     void Start()
     {
@@ -16,8 +19,17 @@ public class MainMenu : MonoBehaviour
     }
 
     public void OnClickNewGame(){
-        Debug.Log("시작하기");
+        SceneManager.LoadScene("보나의 집 안");
     }
+
+
+
+    public void OnClickContinue(){
+        Debug.Log("계속하기");
+        //dataManager.GameLoad();
+    }
+
+
 
     public void OnClickQuit(){
 #if UNITY_EDITOR
