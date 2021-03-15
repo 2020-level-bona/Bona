@@ -1,22 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Trigger))]
 public class TransferMap : MonoBehaviour
 {
-    public string transferMapName; // 이동할 맵의 이름
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    [FormerlySerializedAs("transferMap")]
+    public SceneReference targetScene; // 이동할 맵
+
+    Trigger trigger;
+
+    void Awake() {
+        trigger = GetComponent<Trigger>();
     }
 
-    private void OnTriggerEnter2D(Collider2D other) 
+    void Start()
     {
-        if(other.gameObject.name == "Sprite")
-        {
-            SceneManager.LoadScene(transferMapName);
-        }
+        trigger.AddListener(Transfer);
+    }
+
+    void Transfer() {
+        FindObjectOfType<Game>()?.TransferScene(targetScene);
     }
 }

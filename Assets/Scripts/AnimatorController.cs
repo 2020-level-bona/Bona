@@ -7,13 +7,10 @@ public class AnimatorController : MonoBehaviour
     Animator animator;
     SpriteRenderer spriteRenderer;
 
-    
-
     void Start()
     {
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
     }
 
     public void Play(AnimatorState state)
@@ -23,6 +20,4 @@ public class AnimatorController : MonoBehaviour
         
         animator.Play(state.Hash);
     }
-
-    
 }
