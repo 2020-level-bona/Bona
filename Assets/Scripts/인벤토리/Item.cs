@@ -14,7 +14,16 @@ public class Item : ScriptableObject
    public bool stackable;
 
    public enum ItemType{
-       WATERFAIRY,
+       채소,
+       경비요정,
+       고기,
+       돌멩이,
+       두더지발톱,
+       빵,
+       요정,
+       요정왕의날개가루,
+       인어의목걸이
+
    }
 
    public ItemType itemType;

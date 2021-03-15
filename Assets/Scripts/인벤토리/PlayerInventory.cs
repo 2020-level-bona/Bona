@@ -27,12 +27,14 @@ public class PlayerInventory : MonoBehaviour
 
                 switch(hitObject.itemType)
                 {
-                    case Item.ItemType.WATERFAIRY:
+                    case Item.ItemType.경비요정:
 
                     shouldDisappear = inventory.AddItem(hitObject);
 
                     shouldDisappear = true;
                     break;
+
+                    
 
                     default:
                         break;
