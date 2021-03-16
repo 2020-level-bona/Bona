@@ -1,10 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Session : MonoBehaviour, ISession
 {
     public static Session Instance;
+
+    public static Namespace CurrentScene => Instance.GetNamespace("scene").GetNamespace(SceneManager.GetActiveScene().name);
+    public static Namespace Inventory => Instance.GetNamespace("inventory");
 
     public SessionHolder sessionHolder;
 
