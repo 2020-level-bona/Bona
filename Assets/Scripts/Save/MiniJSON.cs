@@ -539,7 +539,8 @@ namespace MiniJSON {
                     || value is decimal) {
                     builder.Append(Convert.ToDouble(value).ToString("R"));
                 } else {
-                    SerializeString(value.ToString());
+                    // SerializeString(value.ToString());
+                    throw new Exception($"지원되지 않는 타입: {value.GetType()}");
                 }
             }
         }

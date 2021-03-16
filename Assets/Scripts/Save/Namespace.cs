@@ -93,7 +93,7 @@ public class Namespace
         table[key] = value;
     }
 
-    public void Set(string key, Dictionary<string, object> value) {
+    private void Set(string key, Dictionary<string, object> value) {
         table[key] = value;
     }
 
