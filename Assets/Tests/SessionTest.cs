@@ -77,6 +77,18 @@ namespace Tests
         }
 
         [Test]
+        public void Item저장테스트() {
+            Session session = ReadySession();
+            Namespace ns = session.GetNamespace("Test");
+
+            Assert.AreEqual(ns.GetItem("myItem", null), null);
+            
+            ns.Set("myItem", new Item(ItemType.DUMMY, 3));
+
+            Assert.AreEqual(ns.GetItem("myItem", null), new Item(ItemType.DUMMY, 3));
+        }
+
+        [Test]
         public void List저장테스트() {
             Session session = ReadySession();
             Namespace ns = session.GetNamespace("Test");
@@ -165,6 +177,19 @@ namespace Tests
             
             session.Deserialize(second);
             Assert.AreEqual(session.GetNamespace("Test").GetString("myStr", null), "second");
+        }
+
+        [Test]
+        public void 한글_테스트() {
+            Session session = ReadySession();
+
+            session.GetNamespace("Test").Set("myStr", "한글텍스트");
+
+            string data = session.Serialize();
+            session.Clear();
+            session.Deserialize(data);
+
+            Assert.AreEqual(session.GetNamespace("Test").GetString("myStr", null), "한글텍스트");
         }
 
         Session ReadySession() {
