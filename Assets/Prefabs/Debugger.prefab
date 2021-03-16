@@ -166,7 +166,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 241.6, y: 170.9}
+  m_SizeDelta: {x: 390.70914, y: 269.91776}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &1679095022676341029
 CanvasRenderer:
@@ -197,7 +197,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 16
+    m_FontSize: 20
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -208,8 +208,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB514\uBC84\uADF8 \uBAA8\uB4DC\n[Esc] : \uC52C \uC120\uD0DD\n[3] : Z
-    Index \uACBD\uACC4\uC120 \uD45C\uC2DC\n[4] : \uCDA9\uB3CC\uCCB4 \uD45C\uC2DC"
+  m_Text: "\uB514\uBC84\uADF8 \uBAA8\uB4DC\n[F1] : \uC52C \uC120\uD0DD\n[ I ] : \uC778\uBCA4\uD1A0\uB9AC
+    UI \uC0DD\uC131\n[F5] : Z Index \uACBD\uACC4\uC120 \uD45C\uC2DC\n[F6] : \uCDA9\uB3CC\uCCB4
+    \uD45C\uC2DC\n[F9] : \uC138\uC158 \uC800\uC7A5\n[F10] : \uC138\uC158 \uB85C\uB4DC\n[F11]
+    : \uC138\uC158 \uCD08\uAE30\uD654"
 --- !u!114 &7606675703826572321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,3 +225,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colliderDebugMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  currentSceneName: 

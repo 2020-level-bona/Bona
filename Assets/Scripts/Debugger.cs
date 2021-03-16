@@ -9,6 +9,7 @@ public class Debugger : MonoBehaviour
     Level level;
     Player player;
     CameraController cameraController;
+    Session session;
 
     bool showZIndexThreshold = false;
     bool showColliders = false;
@@ -24,13 +25,17 @@ public class Debugger : MonoBehaviour
 
     public string currentSceneName;
 
-    void Start()
-    {
+    void Awake() {
         level = FindObjectOfType<Level>();
         player = FindObjectOfType<Player>();
         cameraController = FindObjectOfType<CameraController>();
+        session = FindObjectOfType<Session>();
 
         debugText = GetComponent<Text>();
+    }
+
+    void Start()
+    {
         if (cameraController != null)
             debugText.text += $"\n배경: {cameraController.backgroundSize.x}x{cameraController.backgroundSize.y}\n카메라: {cameraController.cameraSize.x}x{cameraController.cameraSize.y}";
 
@@ -39,22 +44,10 @@ public class Debugger : MonoBehaviour
 
     void Update()
     {
-  
-       /* if (Input.GetKeyDown(KeyCode.F5)){
-            Debug.Log("저장");
-            //저장
-        }
-
-        if (Input.GetKeyDown(KeyCode.F9)){
-            Debug.Log("로딩");
-            //불러오기
-        }*/
-    
-
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.F1)) {
             SceneManager.LoadScene("AllScenes");
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3)) {
+        if (Input.GetKeyDown(KeyCode.F5)) {
             if (showZIndexThreshold) {
                 foreach (GameObject gameObject in zIndexThresholdObjects) {
                     Destroy(gameObject);
@@ -80,7 +73,7 @@ public class Debugger : MonoBehaviour
                 showZIndexThreshold = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha4)) {
+        if (Input.GetKeyDown(KeyCode.F6)) {
             if (showColliders) {
                 foreach (GameObject gameObject in colliderDebugObjects) {
                     Destroy(gameObject);
@@ -106,6 +99,15 @@ public class Debugger : MonoBehaviour
                     showColliders = true;
                 }
             }
+        }
+        if (Input.GetKeyDown(KeyCode.F9)) {
+            Session.Instance.Save();
+        }
+        if (Input.GetKeyDown(KeyCode.F10)) {
+            Session.Instance.Load();
+        }
+        if (Input.GetKeyDown(KeyCode.F11)) {
+            Session.Instance.Clear();
         }
 
         if (showColliders) {

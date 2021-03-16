@@ -12,8 +12,12 @@ public class Session : MonoBehaviour, ISession
 
     public SessionHolder sessionHolder;
 
+    FileIO fileIO;
+
     void Awake() {
         Instance = this;
+
+        fileIO = new FileIO();
     }
 
     public Namespace GetNamespace(string name) {
@@ -35,5 +39,15 @@ public class Session : MonoBehaviour, ISession
 
     public void Clear() {
         sessionHolder.table = null;
+    }
+
+    public void Save() {
+        fileIO.Write(Serialize());
+    }
+
+    public void Load() {
+        string content = fileIO.Read();
+        if (content != null)
+            Deserialize(content);
     }
 }
