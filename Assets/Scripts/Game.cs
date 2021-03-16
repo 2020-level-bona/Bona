@@ -9,10 +9,14 @@ public class Game : MonoBehaviour
 
     CameraController cameraController;
 
+    Session session;
+
     public bool IsPlayingCutscene {get; private set;} = false;
 
     void Awake() {
         cameraController = FindObjectOfType<CameraController>();
+        session = FindObjectOfType<Session>();
+        session.Load();
     }
 
     void Start() {
@@ -25,6 +29,8 @@ public class Game : MonoBehaviour
     }
 
     public void TransferScene(SceneReference sceneReference) {
+        session.Save();
+
         sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
         SceneManager.LoadScene(sceneReference);
     }
