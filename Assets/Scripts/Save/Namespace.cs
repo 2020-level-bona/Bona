@@ -12,25 +12,25 @@ public class Namespace
         this.table = table;
     }
 
-    public bool GetBool(string key, bool def) {
+    public bool GetBool(string key, bool def = false) {
         if (table.ContainsKey(key))
             return (bool) table[key];
         return def;
     }
 
-    public int GetInt(string key, int def) {
+    public int GetInt(string key, int def = 0) {
         if (table.ContainsKey(key))
             return System.Convert.ToInt32(table[key]);
         return def;
     }
 
-    public float GetFloat(string key, float def) {
+    public float GetFloat(string key, float def = 0f) {
         if (table.ContainsKey(key))
             return System.Convert.ToSingle(table[key]);
         return def;
     }
 
-    public string GetString(string key, string def) {
+    public string GetString(string key, string def = null) {
         if (table.ContainsKey(key))
             return table[key] as string;
         return def;
@@ -44,7 +44,7 @@ public class Namespace
         return def;
     }
 
-    public Item GetItem(string key, Item def) {
+    public Item GetItem(string key, Item def = null) {
         if (table.ContainsKey(key)) {
             Dictionary<string, object> item = table[key] as Dictionary<string, object>;
             return new Item((ItemType) System.Enum.Parse(typeof(ItemType), item["type"] as string), System.Convert.ToInt32(item["quantity"]));
@@ -52,7 +52,7 @@ public class Namespace
         return def;
     }
 
-    public List<T> GetList<T>(string key, List<T> def) {
+    public List<T> GetList<T>(string key, List<T> def = null) {
         if (table.ContainsKey(key)) {
             List<T> result = new List<T>();
             foreach (object obj in table[key] as IList) {
