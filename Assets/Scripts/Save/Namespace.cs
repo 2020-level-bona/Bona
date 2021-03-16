@@ -44,6 +44,14 @@ public class Namespace
         return def;
     }
 
+    public Item GetItem(string key, Item def) {
+        if (table.ContainsKey(key)) {
+            Dictionary<string, object> item = table[key] as Dictionary<string, object>;
+            return new Item((ItemType) System.Enum.Parse(typeof(ItemType), item["type"] as string), System.Convert.ToInt32(item["quantity"]));
+        }
+        return def;
+    }
+
     public List<T> GetList<T>(string key, List<T> def) {
         if (table.ContainsKey(key)) {
             List<T> result = new List<T>();
@@ -87,6 +95,13 @@ public class Namespace
         vector["x"] = value.x;
         vector["y"] = value.y;
         Set(key, vector);
+    }
+
+    public void Set(string key, Item value) {
+        Dictionary<string, object> item = new Dictionary<string, object>();
+        item["type"] = value.type.ToString();
+        item["quantity"] = value.quantity;
+        Set(key, item);
     }
 
     public void Set(string key, IList value) {
