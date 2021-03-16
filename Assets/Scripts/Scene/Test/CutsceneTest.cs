@@ -24,7 +24,12 @@ public class CutsceneTest : MonoBehaviour
 
     void OnCharacterClicked(CharacterType type) {
         if (type == CharacterType.PRIEST) {
-            game.StartCutscene(Cutscene1());
+            if (Session.CurrentScene.GetBool("talkedToPriest")) {
+                Priest priest = level.GetSpawnedCharacter(CharacterType.PRIEST) as Priest;
+                chatQueue.AddChat(new Chat("음? 이미 내가 다 이야기하지 않았니?", priest));
+            }
+            else
+                game.StartCutscene(Cutscene1());
         }
     }
 
@@ -121,8 +126,9 @@ public class CutsceneTest : MonoBehaviour
         chatQueue.AddChat(new Chat("난 가보도록 할게.", priest));
         yield return new WaitForSkippingChat();
 
-        priest.Hide();
+        // priest.Hide();
 
-        yield return new WaitForSeconds(1f);
+        // yield return new WaitForSeconds(1f);
+        Session.CurrentScene.Set("talkedToPriest", true);
     }
 }
