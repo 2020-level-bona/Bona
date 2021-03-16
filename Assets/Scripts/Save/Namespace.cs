@@ -34,6 +34,12 @@ public class Namespace
         return def;
     }
 
+    public string GetString(string key, string def) {
+        if (table.ContainsKey(key))
+            return table[key] as string;
+        return def;
+    }
+
     public Vector2 GetVector2(string key, Vector2 def) {
         if (table.ContainsKey(key)) {
             Dictionary<string, object> vector = table[key] as Dictionary<string, object>;
@@ -74,6 +80,10 @@ public class Namespace
     }
 
     public void Set(string key, float value) {
+        table[key] = value;
+    }
+
+    public void Set(string key, string value) {
         table[key] = value;
     }
 

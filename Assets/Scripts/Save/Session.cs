@@ -13,8 +13,11 @@ public class Session : MonoBehaviour, ISession
     }
 
     public Namespace GetNamespace(string name) {
-        if (sessionHolder.table == null || !sessionHolder.table.ContainsKey(name))
-            return new Namespace(name);
+        if (sessionHolder.table == null)
+            sessionHolder.table = new Dictionary<string, object>();
+        if (!sessionHolder.table.ContainsKey(name))
+            sessionHolder.table[name] = new Dictionary<string, object>();
+        
         return new Namespace(name, sessionHolder.table[name] as Dictionary<string, object>);
     }
 
@@ -24,5 +27,9 @@ public class Session : MonoBehaviour, ISession
 
     public void Deserialize(string data) {
         sessionHolder.table = MiniJSON.Json.Deserialize(data) as Dictionary<string, object>;
+    }
+
+    public void Clear() {
+        sessionHolder.table = null;
     }
 }
