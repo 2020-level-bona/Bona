@@ -7,10 +7,6 @@ public class Namespace
     string name;
     Dictionary<string, object> table;
 
-    public Namespace(string name) : this(name, new Dictionary<string, object>()) {
-
-    }
-
     public Namespace(string name, Dictionary<string, object> table) {
         this.name = name;
         this.table = table;
@@ -24,13 +20,13 @@ public class Namespace
 
     public int GetInt(string key, int def) {
         if (table.ContainsKey(key))
-            return (int) table[key];
+            return System.Convert.ToInt32(table[key]);
         return def;
     }
 
     public float GetFloat(string key, float def) {
         if (table.ContainsKey(key))
-            return (float) table[key];
+            return System.Convert.ToSingle(table[key]);
         return def;
     }
 
@@ -59,15 +55,14 @@ public class Namespace
         return def;
     }
 
-    public Dictionary<string, object> GetDictionary(string key, Dictionary<string, object> def) {
-        if (table.ContainsKey(key)) {
-            return table[key] as Dictionary<string, object>;
-        }
-        return def;
+    private Dictionary<string, object> GetDictionary(string key) {
+        return table[key] as Dictionary<string, object>;
     }
 
     public Namespace GetNamespace(string key) {
-        Namespace ns = new Namespace(key, GetDictionary(key, new Dictionary<string, object>()));
+        if (!table.ContainsKey(key))
+            table[key] = new Dictionary<string, object>();
+        Namespace ns = new Namespace(key, GetDictionary(key));
         return ns;
     }
 
