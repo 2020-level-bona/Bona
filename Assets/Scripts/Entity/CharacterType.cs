@@ -9,4 +9,5 @@ public enum CharacterType
     PRIEST, // 사제
     MOLE, // 두더지
     WATERFAIRY, // 물의 요정
+    MOREU, // 모르
 }
