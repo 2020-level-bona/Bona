@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ItemType{
-       채소,
-       경비요정,
-       고기,
-       돌멩이,
-       두더지발톱,
-       빵,
-       요정,
-       요정왕의날개가루,
-       인어의목걸이,
-       WATERFAIRY,
-       DUMMY,
-       DUMMY2
+       VEGETABLES, // 채소
+       GUARDFAIRY, // 경비 요정
+       MEAT, // 고기
+       STONE, // 돌멩이
+       MOLE_TOENAIL, // 두더지 발톱
+       BREAD, // 빵
+       FAIRY, // 요정
+       WINGDUST_OF_KINGFAIRY, // 요정왕의 날개 가루
+       NECKLACE_OF_MERMAIL, // 인어의 목걸이
+       WATERFAIRY, // 물의 요정
+       FORK, // 포크
+       DUMMY, // 테스트
+       DUMMY2 // 테스트
 }
