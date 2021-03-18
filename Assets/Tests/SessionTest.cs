@@ -193,9 +193,7 @@ namespace Tests
         }
 
         Session ReadySession() {
-            Session session = GameObject.FindObjectOfType<Session>();
-            if (session == null)
-                return null;
+            Session session = Session.Instance;
             session.Clear();
             return session;
         }
