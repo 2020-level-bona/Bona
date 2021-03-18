@@ -11,6 +11,15 @@ public class Inventory {
 
     IInventoryRenderer inventoryRenderer;
 
+    public Inventory() {
+        for (int i = 0; i < NUM_SLOTS; i++) {
+            if (Session.Inventory.Contains(i.ToString()))
+                items[i] = Session.Inventory.GetItem(i.ToString());
+        }
+
+        EventManager.Instance.OnPreSave += Save;
+    }
+
     public void AddItem(Item item) {
         for (int i = 0; i < NUM_SLOTS; i++) {
             if (items[i] != null && items[i].type == item.type && item.IsStackable()) {
@@ -23,8 +32,7 @@ public class Inventory {
             }
         }
 
-        if (inventoryRenderer != null)
-            inventoryRenderer.Invalidate();
+        inventoryRenderer?.Invalidate();
     }
 
     public bool ContainsItem(Item item) {
@@ -56,8 +64,7 @@ public class Inventory {
             }
         }
 
-        if (inventoryRenderer != null)
-            inventoryRenderer.Invalidate();
+        inventoryRenderer?.Invalidate();
     }
 
     public Item[] GetContents() {
@@ -67,12 +74,17 @@ public class Inventory {
     public void Clear() {
         items = new Item[NUM_SLOTS];
 
-        if (inventoryRenderer != null)
-            inventoryRenderer.Invalidate();
+        inventoryRenderer?.Invalidate();
     }
 
     public void SetInventoryRenderer(IInventoryRenderer inventoryRenderer) {
         this.inventoryRenderer = inventoryRenderer;
     }
 
+    void Save() {
+        for (int i = 0; i < NUM_SLOTS; i++) {
+            if (items[i] != null)
+                Session.Inventory.Set(i.ToString(), items[i]);
+        }
+    }
 }

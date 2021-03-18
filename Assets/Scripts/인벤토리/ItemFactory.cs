@@ -19,6 +19,8 @@ public class ItemFactory
 
     private ItemFactory() {
         itemTable = new Dictionary<ItemType, ItemDefinition>();
+
+        Resources.LoadAll<ItemDefinition>("ItemDefs");
         
         foreach (ItemDefinition itemDefinition in Resources.FindObjectsOfTypeAll<ItemDefinition>()) {
             itemTable.Add(itemDefinition.itemType, itemDefinition);

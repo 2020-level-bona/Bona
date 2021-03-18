@@ -78,7 +78,6 @@ GameObject:
   - component: {fileID: 4798774121467095456}
   - component: {fileID: 7165631593891689510}
   - component: {fileID: 5902144911853465011}
-  - component: {fileID: 2790242154572236952}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -143,19 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4222fb8a19af22946b0796e41615cb78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2790242154572236952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8007945322466567000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efe3fef24f0d83e488a97dbe7703f16d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sessionHolder: {fileID: 11400000, guid: e8e6e9ce4ebb2af498c6cb0a2ff146b0, type: 2}
 --- !u!1001 &304785585896171347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -691,7 +677,7 @@ PrefabInstance:
     - target: {fileID: 8506470029664749160, guid: 38767a0803a374cf49b2773d495571e8,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -120
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38767a0803a374cf49b2773d495571e8, type: 3}
