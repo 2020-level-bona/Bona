@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(PolygonCollider2D))]
+[RequireComponent(typeof(Collider2D))]
 public class MouseClickTrigger : Trigger
 {
     Game game;
     Camera cam;
-    PolygonCollider2D coll;
+    Collider2D coll;
 
     void Awake() {
         game = FindObjectOfType<Game>();
-        coll = GetComponent<PolygonCollider2D>();
+        coll = GetComponent<Collider2D>();
         cam = Camera.main;
     }
 
