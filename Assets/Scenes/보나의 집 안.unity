@@ -805,10 +805,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2076240938, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8007945322466567000, guid: 8880ce796a85f264686f11e6c1e75ac8,
         type: 3}
       propertyPath: m_Name
@@ -869,7 +865,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2790242154572236952, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
 --- !u!1 &1619726458
 GameObject:

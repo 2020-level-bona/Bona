@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Session : MonoBehaviour, ISession
+public class Session : ISession
 {
     static Session instance;
     public static Session Instance {
         get {
-            if (!instance)
-                instance = FindObjectOfType<Session>();
+            if (instance == null) {
+                instance = new Session();
+            }
             return instance;
         }
     }
@@ -20,33 +21,36 @@ public class Session : MonoBehaviour, ISession
     public static Namespace Setting => Instance.GetNamespace("setting");
     public static Namespace Statistic => Instance.GetNamespace("statistic");
 
-    public SessionHolder sessionHolder;
+    // public SessionHolder sessionHolder;
+    Dictionary<string, object> table; // @Temporary
 
     FileIO fileIO;
 
-    void Awake() {
+    private Session() {
         fileIO = new FileIO();
+
+        Load();
     }
 
     public Namespace GetNamespace(string name) {
-        if (sessionHolder.table == null)
-            sessionHolder.table = new Dictionary<string, object>();
-        if (!sessionHolder.table.ContainsKey(name))
-            sessionHolder.table[name] = new Dictionary<string, object>();
+        if (table == null)
+            table = new Dictionary<string, object>();
+        if (!table.ContainsKey(name))
+            table[name] = new Dictionary<string, object>();
         
-        return new Namespace(name, sessionHolder.table[name] as Dictionary<string, object>);
+        return new Namespace(name, table[name] as Dictionary<string, object>);
     }
 
     public string Serialize() {
-        return MiniJSON.Json.Serialize(sessionHolder.table ?? new Dictionary<string, object>());
+        return MiniJSON.Json.Serialize(table ?? new Dictionary<string, object>());
     }
 
     public void Deserialize(string data) {
-        sessionHolder.table = MiniJSON.Json.Deserialize(data) as Dictionary<string, object>;
+        table = MiniJSON.Json.Deserialize(data) as Dictionary<string, object>;
     }
 
     public void Clear() {
-        sessionHolder.table = null;
+        table = null;
     }
 
     public void Save() {
