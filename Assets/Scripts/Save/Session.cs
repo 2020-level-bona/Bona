@@ -5,7 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Session : MonoBehaviour, ISession
 {
-    public static Session Instance;
+    static Session instance;
+    public static Session Instance {
+        get {
+            if (!instance)
+                instance = FindObjectOfType<Session>();
+            return instance;
+        }
+    }
 
     public static Namespace CurrentScene => Instance.GetNamespace("scene").GetNamespace(SceneManager.GetActiveScene().name);
     public static Namespace Inventory => Instance.GetNamespace("inventory");
@@ -18,8 +25,6 @@ public class Session : MonoBehaviour, ISession
     FileIO fileIO;
 
     void Awake() {
-        Instance = this;
-
         fileIO = new FileIO();
     }
 
@@ -45,6 +50,8 @@ public class Session : MonoBehaviour, ISession
     }
 
     public void Save() {
+        EventManager.Instance.OnPreSave?.Invoke();
+
         fileIO.Write(Serialize());
     }
 
