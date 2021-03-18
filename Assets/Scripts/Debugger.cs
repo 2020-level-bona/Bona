@@ -9,7 +9,6 @@ public class Debugger : MonoBehaviour
     Level level;
     Player player;
     CameraController cameraController;
-    Session session;
 
     bool showZIndexThreshold = false;
     bool showColliders = false;
@@ -29,7 +28,6 @@ public class Debugger : MonoBehaviour
         level = FindObjectOfType<Level>();
         player = FindObjectOfType<Player>();
         cameraController = FindObjectOfType<CameraController>();
-        session = FindObjectOfType<Session>();
 
         debugText = GetComponent<Text>();
     }
