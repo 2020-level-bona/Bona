@@ -8,6 +8,8 @@ public class Consumable : MonoBehaviour
     public int quantity = 1;
     public string uniqueName = "No Name";
 
+    public string saveIdentifier => $"i_{uniqueName}";
+
     Item item;
 
     Player player;
@@ -21,6 +23,11 @@ public class Consumable : MonoBehaviour
     void Start() {
         CheckUniqueName();
 
+        if (HasConsumed()) {
+            Destroy(gameObject);
+            return;
+        }
+
         item = new Item(itemType, quantity);
 
         if (trigger)
@@ -31,6 +38,7 @@ public class Consumable : MonoBehaviour
 
     void Consume() {
         player.inventory.AddItem(item);
+        SetAsConsumed();
         Destroy(gameObject);
     }
 
@@ -44,5 +52,13 @@ public class Consumable : MonoBehaviour
             if (consumable.uniqueName == uniqueName)
                 throw new System.Exception($"동일한 이름({uniqueName})을 가진 두 Consumable이 존재합니다.");
         }
+    }
+
+    public bool HasConsumed() {
+        return Session.CurrentScene.GetBool(saveIdentifier);
+    }
+
+    void SetAsConsumed() {
+        Session.CurrentScene.Set(saveIdentifier, true);
     }
 }
