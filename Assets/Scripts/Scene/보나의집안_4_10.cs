@@ -61,6 +61,7 @@ public class 보나의집안_4_10 : MonoBehaviour
 
         // 모르를 보나 앞으로 움직임
         ITweenEntry tweenEntry3 = Tween.Add(moreu, moreuStandingPoint.position, 5f);
+        bona.PlayAnimation(Player.WALK_R);
         yield return new WaitForTween(tweenEntry3);
         yield return new WaitForSeconds(2f);
 
