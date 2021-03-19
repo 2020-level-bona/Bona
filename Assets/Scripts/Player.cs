@@ -17,7 +17,7 @@ public class Player : Character
     static readonly AnimatorState WALK_L = new AnimatorState("걷기(좌)", false);
     static readonly AnimatorState WALK_R = new AnimatorState("걷기(좌)", true); // FLIP
     static readonly AnimatorState IDLE = new AnimatorState("기본(좌)");
-    static readonly AnimatorState SURPRISE = new AnimatorState("놀란 표정");
+    public static readonly AnimatorState SURPRISE = new AnimatorState("놀란 표정");
     static readonly AnimatorState SURPRISE_TALK = new AnimatorState("놀란 표정+말");
     static readonly AnimatorState THROW = new AnimatorState("던지기");
     static readonly AnimatorState TALK = new AnimatorState("말");
