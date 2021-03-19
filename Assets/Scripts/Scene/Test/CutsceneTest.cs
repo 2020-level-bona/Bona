@@ -43,7 +43,7 @@ public class CutsceneTest : MonoBehaviour
         cameraOperator.AddTarget(priest);
 
         // 보나가 서있어야 할 장소로 옮긴다.
-        ITweenEntry tweenEntry = Tween.Add(bona, bonaStandingPoint.position, 5f);
+        ITweenEntry tweenEntry = Tween.Add(bona, bonaStandingPoint.position, 4f);
 
         // 보나가 bonaStandingPoint에 도달할 때까지 대기한다.
         yield return new WaitForTween(tweenEntry);
