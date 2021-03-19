@@ -1,0 +1,4 @@
+키,타입,#n,설명
+killedMole,bool,2,저주받은 숲에서 포크를 사용하여 두더지를 잡았을 때 true로 설정됨.
+visitedFairyVillage1,bool,2,두더지를 잡고 요정마을에 처음 방문하여 요정들과 노는 컷씬을 완료하면 true로 설정됨.
+visitedFairyVillage2,bool,3,요정들과 놀고 난 뒤 요정이 주는 베리 바구니를 들고 요정마을에서 나오는 컷씬을 완료하면 true로 설정됨.
