@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class 보나의집안_4_10 : MonoBehaviour
+public class 보나의집안_4_10 : MonoBehaviour
 {
 
     //Scene 4-10.
