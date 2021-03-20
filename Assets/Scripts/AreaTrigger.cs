@@ -8,6 +8,7 @@ public class AreaTrigger : Trigger
     Game game;
     Player player;
     Collider2D coll;
+    bool triggered = false;
 
     void Awake() {
         game = FindObjectOfType<Game>();
@@ -16,8 +17,16 @@ public class AreaTrigger : Trigger
     }
 
     void Update() {
-        if (coll.OverlapPoint(player.transform.position) && !game.IsPlayingCutscene) {
+        bool activated = coll.OverlapPoint(player.transform.position) && !game.IsPlayingCutscene;
+        if (!triggered && activated) {
             Event.Invoke();
+            triggered = true;
+        } else if (triggered && !activated) {
+            triggered = false;
         }
+    }
+
+    void OnDisable() {
+        triggered = false;
     }
 }
