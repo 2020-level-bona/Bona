@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    /*ublic Inventory inventoryPrefab;
-
     Inventory inventory;
+
     // Start is called before the first frame update
     void Start()
     {
-        inventory = Instantiate(inventoryPrefab);
     }
 
+    void Update() 
+    {
+        
+    }
+
+/*
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.CompareTag("CanBePickedUp"))
         {
@@ -43,5 +47,6 @@ public class PlayerInventory : MonoBehaviour
             }
            
         }
-    }*/
+    }
+    */
 }

@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5730225a5189ac4680d519cd5fe92e1, type: 3}
   m_Name: "\uBE75"
   m_EditorClassIdentifier: 
-  objectName: "\uBE75"
+  itemType: 5
   sprite: {fileID: 21300000, guid: c19fec5af5175f34693f0a082abf3972, type: 3}
-  quantity: 0
   stackable: 1
-  itemType: 6

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5730225a5189ac4680d519cd5fe92e1, type: 3}
   m_Name: Dummy
   m_EditorClassIdentifier: 
-  itemType: 1
-  sprite: {fileID: 0}
+  itemType: 10
+  sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   stackable: 0
