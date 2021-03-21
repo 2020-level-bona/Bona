@@ -52,7 +52,9 @@ public class Game : MonoBehaviour
 
         ChatQueue chatQueue = FindObjectOfType<ChatQueue>();
 
+        yield return new WaitForEndOfFrame();
         yield return StartCoroutine(new CutsceneEnumerator(coroutine, chatQueue));
+        yield return new WaitForEndOfFrame();
 
         cameraLetterbox.HideLetterbox();
 
