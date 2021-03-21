@@ -53,24 +53,28 @@ public class 숲 : MonoBehaviour
 
         CameraController cameraController = FindObjectOfType<CameraController>();
         FollowCharacters cameraOperator = cameraController.FindCameraOperator<FollowCharacters>();
-        cameraOperator.AddTarget(waterFairy);
         cameraOperator.AddTarget(mole);
-        
+
+        ITweenEntry tween = Tween.Add(bona, bonaStandingPoint.position, 5f);
+        yield return new WaitForTween(tween);
+
+        bona.PlayAnimation(Player.STAB_WITH_FORK); // FIXME: Player측에서 IDLE 모션을 계속 재생하려고 하기 때문에 동작하지 않음!
+
+        yield return new WaitForSeconds(0.5f);
+
         mole.PlayAnimation(Mole.DIE);
         yield return new WaitForSeconds(1f);
         mole.Hide();
         yield return new WaitForSeconds(1f);
         cameraOperator.RemoveTarget(mole);
 
-        Tween.Add(bona, bonaStandingPoint.position, 5f);
+        bona.PlayAnimation(Player.IDLE);
 
-        ITweenEntry tween = Tween.Add(waterFairy, fairyPath.GetPath(), 8f);
+        tween = Tween.Add(waterFairy, fairyPath.GetPath(), 8f);
         yield return new WaitForTween(tween);
 
         waterFairy.Hide();
 
         yield return new WaitForSeconds(1f);
-
-        cameraOperator.RemoveTarget(waterFairy);
     }
 }
