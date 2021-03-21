@@ -17,6 +17,11 @@ public class Player : Character
     public static readonly AnimatorState WALK_L = new AnimatorState("걷기(좌)", false);
     public static readonly AnimatorState WALK_R = new AnimatorState("걷기(좌)", true); // FLIP
     public static readonly AnimatorState IDLE = new AnimatorState("기본(좌)");
+    public static readonly AnimatorState WALK_BERRIES_D = new AnimatorState("걷기(아래) + 베리 바구니");
+    public static readonly AnimatorState WALK_BERRIES_U = new AnimatorState("걷기(위) + 베리 바구니");
+    public static readonly AnimatorState WALK_BERRIES_L = new AnimatorState("걷기(좌) + 베리 바구니", false);
+    public static readonly AnimatorState WALK_BERRIES_R = new AnimatorState("걷기(좌) + 베리 바구니", true); // FLIP
+    public static readonly AnimatorState BERRIES_IDLE = new AnimatorState("스탠드 + 베리 바구니");
     public static readonly AnimatorState SURPRISE = new AnimatorState("놀란 표정");
     public static readonly AnimatorState SURPRISE_TALK = new AnimatorState("놀란 표정+말");
     public static readonly AnimatorState THROW = new AnimatorState("던지기");
@@ -35,6 +40,8 @@ public class Player : Character
     public static readonly AnimatorState PLAY_HAPPY = new AnimatorState("즐겁게 논다");
 
     public Inventory inventory;
+
+    public bool hasBerries = false;
 
     Game game;
 
@@ -67,18 +74,18 @@ public class Player : Character
         float y = velocity.y;
 
         if (Mathf.Abs(x) <= 0.1f && Mathf.Abs(y) <= 0.1f) {
-            PlayAnimation(IDLE);
+            PlayAnimation(hasBerries ? BERRIES_IDLE : IDLE);
         } else if (Mathf.Abs(x) >= Mathf.Abs(y)) {
             if (x > 0) {
-                PlayAnimation(WALK_R);
+                PlayAnimation(hasBerries ? WALK_BERRIES_R : WALK_R); // @Temporary 더 나은 구현
             } else {
-                PlayAnimation(WALK_L);
+                PlayAnimation(hasBerries ? WALK_BERRIES_L : WALK_L);
             }
         } else {
             if (y > 0) {
-                PlayAnimation(WALK_U);
+                PlayAnimation(hasBerries ? WALK_BERRIES_U : WALK_U);
             } else {
-                PlayAnimation(WALK_D);
+                PlayAnimation(hasBerries ? WALK_BERRIES_D : WALK_D);
             }
         }
     }
