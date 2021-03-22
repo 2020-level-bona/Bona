@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1806879414177528790}
-  - component: {fileID: 1806879414177528791}
+  - component: {fileID: 4936306995496036837}
   m_Layer: 0
   m_Name: ChatQueue
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1806879414177528791
+--- !u!114 &4936306995496036837
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1806879414177528788}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c28fa592ffbfdc45af5fcef2ded6db0, type: 3}
+  m_Script: {fileID: 11500000, guid: 922710def8ad0154aae428c0bd43e1e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   chatRendererPrefab: {fileID: 1753024265266046332, guid: b5125ee88a0bd8a4fbe1188eceded5aa,

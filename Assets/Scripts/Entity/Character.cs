@@ -17,6 +17,8 @@ public class Character : Movable
 
     Trigger trigger;
 
+    ChatRenderer chatRenderer;
+
     protected override void Awake() {
         base.Awake();
 
@@ -78,5 +80,12 @@ public class Character : Movable
 
     public void PlayAnimation(AnimatorState state) {
         animatorController.Play(state);
+    }
+
+    public void ShowMessage(Chat chat, bool global = true) {
+        if (chatRenderer)
+            chatRenderer.Finish();
+        
+        chatRenderer = FindObjectOfType<ChatManager>().Render(chat, this, global);
     }
 }

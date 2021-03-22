@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class ChatRenderer : MonoBehaviour
 {
+    // 캐릭터의 머리 위에서 얼마만큼의 높이를 더한 지점에 대화를 띄울지 결정한다. 0인 경우 머리 바로 위에 대화를 띄운다.
+    public const float CHATBOX_ADDITIONAL_HEIGHT = 0.3f;
+
     public Chat chat {get; private set;}
+    public Character character {get; private set;}
 
     RectTransform rectTransform;
     Text uiText;
@@ -16,8 +20,9 @@ public class ChatRenderer : MonoBehaviour
 
     Coroutine animationCoroutine;
 
-    public void Initialize(Chat chat, ChatboxCoordinator chatboxCoordinator) {
+    public void Initialize(Chat chat, Character character, ChatboxCoordinator chatboxCoordinator) {
         this.chat = chat;
+        this.character = character;
         this.chatboxCoordinator = chatboxCoordinator;
     }
 
@@ -34,17 +39,33 @@ public class ChatRenderer : MonoBehaviour
         uiText.text = chat.Message;
         chatboxSize = new Vector2(200, uiText.preferredHeight);
 
+        if (!chat.Global)
+            EventManager.Instance.OnCharacterClicked += OnCharacterClicked;
+
         animationCoroutine = StartCoroutine(Animate());
 
         UpdatePosition();
     }
 
     void Update() {
-        UpdatePosition();
+        if ((chat.Global && Input.GetMouseButtonDown(0)) || !character)
+            Finish();
+        else
+            UpdatePosition();
+    }
+
+    void OnCharacterClicked(CharacterType type) {
+        if (type == character.type)
+            Finish();
     }
 
     void UpdatePosition() {
-        rectTransform.position = chatboxCoordinator.CalculateRectPosition(chat.GetAnchorPosition(), chatboxSize);
+        rectTransform.position = chatboxCoordinator.CalculateRectPosition(GetAnchorPosition(), chatboxSize);
+    }
+
+    Vector2 GetAnchorPosition() {
+        Bounds bounds = character.GetBounds();
+        return new Vector2((bounds.min.x + bounds.max.x) / 2f, bounds.max.y + CHATBOX_ADDITIONAL_HEIGHT);
     }
 
     IEnumerator Animate() {
@@ -69,5 +90,10 @@ public class ChatRenderer : MonoBehaviour
 
     public void Finish() {
         Destroy(gameObject);
+        chat.Displaying = false;
+    }
+
+    void OnDestroy() {
+
     }
 }
