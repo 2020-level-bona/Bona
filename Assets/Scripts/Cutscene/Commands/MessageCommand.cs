@@ -9,7 +9,7 @@ public class MessageCommand : IScriptCommand
     CharacterType characterType;
     string message;
 
-    public string Keyword => "MSG";
+    public const string Keyword = "MSG";
     public bool Blocking => true;
 
     public MessageCommand(ChatManager chatManager, Level level, CharacterType characterType, string message) {

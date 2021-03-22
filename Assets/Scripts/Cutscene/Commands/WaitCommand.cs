@@ -6,7 +6,7 @@ public class WaitCommand : IScriptCommand
 {
     float seconds;
 
-    public string Keyword => "WAIT";
+    public const string Keyword = "WAIT";
     public bool Blocking => true;
 
     public WaitCommand(float seconds) {
