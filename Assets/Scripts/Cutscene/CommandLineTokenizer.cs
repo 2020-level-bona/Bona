@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class CommandLineTokenizer
 {
-    public static List<string> Tokenize(string line) {
+    public static List<string> Tokenize(int lineNumber, string line) {
         List<string> args = new List<string>();
 
         int shit = 0;
@@ -16,7 +16,7 @@ public static class CommandLineTokenizer
             if (line.Length == 0)
                 break;
             if (line[0] == '"')
-                args.Add(EatString(ref line));
+                args.Add(EatString(lineNumber, ref line));
             else
                 args.Add(EatToken(ref line));
         }
@@ -42,14 +42,14 @@ public static class CommandLineTokenizer
         return token;
     }
 
-    static string EatString(ref string lineLeft) {
+    static string EatString(int lineNumber, ref string lineLeft) {
         int index = 1;
         while(index < lineLeft.Length && lineLeft[index] != '"') {
             index++;
         }
         
         if (index >= lineLeft.Length)
-            throw new BSSyntaxException("문자열이 닫히지 않았습니다.");
+            throw new BSSyntaxException(lineNumber, "문자열이 닫히지 않았습니다.");
         
         string token = lineLeft.Substring(1, index - 1);
         lineLeft = lineLeft.Substring(index + 1);

@@ -9,6 +9,7 @@ public class HideCommand : IScriptCommand
 
     public const string Keyword = "HIDE";
     public bool Blocking => false;
+    public int LineNumber {get;}
 
     public HideCommand(Level level, CharacterType characterType) {
         this.level = level;
@@ -16,6 +17,7 @@ public class HideCommand : IScriptCommand
     }
 
     public HideCommand(Level level, CommandLineParser lineParser) {
+        LineNumber = lineParser.lineNumber;
         this.level = level;
         this.characterType = lineParser.GetCharacterType(1);
     }

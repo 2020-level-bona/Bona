@@ -11,6 +11,7 @@ public class MessageCommand : IScriptCommand
 
     public const string Keyword = "MSG";
     public bool Blocking => true;
+    public int LineNumber {get;}
 
     public MessageCommand(ChatManager chatManager, Level level, CharacterType characterType, string message) {
         this.chatManager = chatManager;
@@ -20,6 +21,7 @@ public class MessageCommand : IScriptCommand
     }
 
     public MessageCommand(ChatManager chatManager, Level level, CommandLineParser lineParser) {
+        LineNumber = lineParser.lineNumber;
         this.chatManager = chatManager;
         this.level = level;
         this.characterType = lineParser.GetCharacterType(1);
@@ -29,7 +31,7 @@ public class MessageCommand : IScriptCommand
     public IEnumerator GetCoroutine() {
         Character character = level.GetSpawnedCharacter(characterType);
         if (character == null)
-            throw new BSCharacterNotSpawnedException($"캐릭터[type={characterType}]가 존재하지 않습니다.");
+            throw new BSCharacterNotSpawnedException(LineNumber, $"캐릭터[type={characterType}]가 존재하지 않습니다.");
         Chat chat = new Chat(message);
         character.ShowMessage(chat);
         

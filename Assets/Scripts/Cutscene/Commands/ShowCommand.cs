@@ -10,6 +10,7 @@ public class ShowCommand : IScriptCommand
     
     public const string Keyword = "SHOW";
     public bool Blocking => false;
+    public int LineNumber {get;}
 
     public ShowCommand(Level level, CharacterType characterType, Vector2Face target) {
         this.level = level;
@@ -18,6 +19,7 @@ public class ShowCommand : IScriptCommand
     }
 
     public ShowCommand(Level level, CommandLineParser lineParser) {
+        LineNumber = lineParser.lineNumber;
         this.level = level;
         this.characterType = lineParser.GetCharacterType(1);
         this.target = lineParser.GetVector2Face(level, 2);

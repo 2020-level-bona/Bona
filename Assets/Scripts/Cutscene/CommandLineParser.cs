@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class CommandLineParser : ICommandLineParser
 {
+    public int lineNumber {get;}
     List<string> args;
 
-    public CommandLineParser(string line) {
-        args = CommandLineTokenizer.Tokenize(line);
+    public CommandLineParser(int lineNumber, string line) {
+        this.lineNumber = lineNumber;
+        args = CommandLineTokenizer.Tokenize(lineNumber, line);
     }
 
     void CheckIndex(int index) {
         if (index >= args.Count)
-            throw new BSSyntaxException($"{index}번째 파라미터가 필요하지만 전달되지 않았습니다.");
+            throw new BSSyntaxException(lineNumber, $"{index}번째 파라미터가 필요하지만 전달되지 않았습니다.");
     }
 
     public string GetKeyword() {
@@ -33,7 +35,7 @@ public class CommandLineParser : ICommandLineParser
         try {
             return int.Parse(args[index]);
         } catch (System.Exception) {
-            throw new BSSyntaxException($"{args[index]}를 정수 타입으로 변환할 수 없습니다.");
+            throw new BSSyntaxException(lineNumber, $"{args[index]}를 정수 타입으로 변환할 수 없습니다.");
         }
     }
 
@@ -42,7 +44,7 @@ public class CommandLineParser : ICommandLineParser
         try {
             return float.Parse(args[index]);
         } catch (System.Exception) {
-            throw new BSSyntaxException($"{args[index]}를 실수 타입으로 변환할 수 없습니다.");
+            throw new BSSyntaxException(lineNumber, $"{args[index]}를 실수 타입으로 변환할 수 없습니다.");
         }
     }
 
@@ -51,7 +53,7 @@ public class CommandLineParser : ICommandLineParser
         try {
             return (CharacterType) System.Enum.Parse(typeof(CharacterType), type);
         } catch (System.Exception) {
-            throw new BSSyntaxException($"{args[index]}은(는) 올바른 캐릭터 타입명이 아닙니다.");
+            throw new BSSyntaxException(lineNumber, $"{args[index]}은(는) 올바른 캐릭터 타입명이 아닙니다.");
         }
     }
 
@@ -64,12 +66,12 @@ public class CommandLineParser : ICommandLineParser
                 float y = float.Parse(spl[1]);
                 return new Vector2Face(new Vector2(x, y));
             } catch (System.Exception) {
-                throw new BSSyntaxException($"{str}을(를) Vector2 타입으로 변환할 수 없습니다.");
+                throw new BSSyntaxException(lineNumber, $"{str}을(를) Vector2 타입으로 변환할 수 없습니다.");
             }
         } else {
             Marker marker = level.GetMarker(str);
             if (marker == null)
-                throw new BSMarkerNotFoundException($"마커[name={str}]를 찾을 수 없습니다.");
+                throw new BSMarkerNotFoundException(lineNumber, $"마커[name={str}]를 찾을 수 없습니다.");
             return marker;
         }
     }
