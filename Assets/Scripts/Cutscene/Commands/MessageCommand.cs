@@ -25,6 +25,6 @@ public class MessageCommand : IScriptCommand
         Chat chat = new Chat(message);
         character.ShowMessage(chat);
         
-        yield return new WaitUntil(() => chat.Displaying);
+        yield return new WaitWhile(() => chat.Displaying);
     }
 }

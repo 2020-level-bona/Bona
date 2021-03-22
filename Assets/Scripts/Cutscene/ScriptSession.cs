@@ -12,6 +12,8 @@ public class ScriptSession : IScriptSession
     public ScriptSession(Level level, ChatManager chatManager) {
         this.level = level;
         this.chatManager = chatManager;
+
+        commands = new Queue<IScriptCommand>();
     }
 
     public Queue<IScriptCommand> GetCommands() {
