@@ -5,13 +5,13 @@ using UnityEngine;
 public class ScriptSession : IScriptSession
 {
     Level level;
-    ChatQueue chatQueue;
+    ChatManager chatManager;
 
     Queue<IScriptCommand> commands;
 
-    public ScriptSession(Level level, ChatQueue chatQueue) {
+    public ScriptSession(Level level, ChatManager chatManager) {
         this.level = level;
-        this.chatQueue = chatQueue;
+        this.chatManager = chatManager;
     }
 
     public Queue<IScriptCommand> GetCommands() {
@@ -23,7 +23,7 @@ public class ScriptSession : IScriptSession
     }
 
     public void Msg(CharacterType characterType, string message) {
-        commands.Enqueue(new MessageCommand(chatQueue, level, characterType, message));
+        commands.Enqueue(new MessageCommand(chatManager, level, characterType, message));
     }
 
     public void Move(string movableName, Vector2 target, bool block = false) {
