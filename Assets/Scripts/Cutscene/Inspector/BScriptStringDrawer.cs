@@ -42,7 +42,7 @@ public class BScriptStringDrawer : PropertyDrawer
             position.x += textStyle.CalcSize(new GUIContent(c.ToString())).x;
         }
 
-        DrawExceptions(new Rect(original.x, position.y, position.width, position.height), exceptions);
+        DrawExceptions(new Rect(original.x, position.y + lineHeight, position.width, position.height), exceptions);
         // EditorGUI.EndProperty();
     }
 
