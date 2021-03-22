@@ -30,6 +30,13 @@ public class ScriptSession : IScriptSession
         commands.Enqueue(new MoveCommand(level, movableName, target, block));
     }
 
+    public void Move(string movableName, string markerName, bool block = false) {
+        Marker marker = level.GetMarker(markerName);
+        if (!marker)
+            throw new System.Exception($"Marker[name={markerName}]가 존재하지 않습니다.");
+        commands.Enqueue(new MoveCommand(level, movableName, marker.position, block));
+    }
+
     public void Show(CharacterType characterType, Vector2 target) {
         commands.Enqueue(new ShowCommand(level, characterType, target));
     }
