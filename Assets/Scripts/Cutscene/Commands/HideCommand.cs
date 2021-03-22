@@ -7,7 +7,7 @@ public class HideCommand : IScriptCommand
     Level level;
     CharacterType characterType;
 
-    public string Keyword => "HIDE";
+    public const string Keyword = "HIDE";
     public bool Blocking => false;
 
     public HideCommand(Level level, CharacterType characterType) {

@@ -8,7 +8,7 @@ public class ShowCommand : IScriptCommand
     CharacterType characterType;
     Vector2Face target;
     
-    public string Keyword => "SHOW";
+    public const string Keyword = "SHOW";
     public bool Blocking => false;
 
     public ShowCommand(Level level, CharacterType characterType, Vector2Face target) {

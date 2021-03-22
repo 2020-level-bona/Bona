@@ -9,7 +9,7 @@ public class MoveCommand : IScriptCommand
     Vector2Face target;
     bool block;
 
-    public string Keyword => "MOVE";
+    public const string Keyword = "MOVE";
     public bool Blocking => block;
 
     public MoveCommand(Level level, string movableName, Vector2Face target, bool block) {
