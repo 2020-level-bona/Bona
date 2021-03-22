@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IScriptSession
 {
     Queue<IScriptCommand> GetCommands();
+    void MakeExpire();
+    bool HasExpired();
 }
