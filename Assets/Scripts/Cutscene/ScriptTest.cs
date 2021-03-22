@@ -24,6 +24,6 @@ public class ScriptTest : MonoBehaviour
     void Start() {
         Level level = FindObjectOfType<Level>();
         ChatManager chatManager = FindObjectOfType<ChatManager>();
-        FindObjectOfType<ScriptExecutor>().Run(new BSInterpreter(level, chatManager, script.code));
+        FindObjectOfType<ScriptExecutor>().Run(new BSInterpreter(level, chatManager, script.code), script);
     }
 }

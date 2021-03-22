@@ -20,6 +20,7 @@ public class BScriptStringDrawer : PropertyDrawer
         List<BSException> exceptions = GetExceptions(property);
 
         DrawBackground(position, prevString, exceptions);
+        DrawLinePointer(original, property.FindPropertyRelative("linePointer").intValue);
 
         codeProperty.stringValue = EditorGUI.TextArea(position, prevString, GetTextAreaStyle());
 
@@ -70,6 +71,13 @@ public class BScriptStringDrawer : PropertyDrawer
         for (int i = 0; i < exceptions.Count; i++) {
             EditorGUI.LabelField(new Rect(position.x, position.y + i * style.lineHeight, position.width, position.height), $"라인 {exceptions[i].line}: {exceptions[i].Message}", style);
         }
+    }
+
+    void DrawLinePointer(Rect position, int line) {
+        if (line < 0)
+            return;
+        float lineHeight = GetTextAreaStyle().lineHeight;
+        EditorGUI.DrawRect(new Rect(position.x, position.y + lineHeight * line, position.width, lineHeight), new Color(0.168f, 0.7f, 0.94f, 0.7f));
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
