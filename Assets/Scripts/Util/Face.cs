@@ -4,6 +4,6 @@ using UnityEngine;
 
 public enum Face
 {
-    NORTH, SOUTH, WEST, EAST
+    NORTH, SOUTH, WEST, EAST, UNKNOWN
 }
 

@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class Marker : MonoBehaviour
 {
-    public Face face;
+    public Face face = Face.UNKNOWN;
     public Vector2 position => transform.position;
 
     public void OnDrawGizmos() {
@@ -20,4 +20,6 @@ public class Marker : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawSphere(transform.position, 0.2f);
     }
+
+    public static implicit operator Vector2Face(Marker marker) => new Vector2Face(marker.position, marker.face);
 }
