@@ -9,6 +9,7 @@ public class MessageCommand : IScriptCommand
     CharacterType characterType;
     string message;
 
+    public string Keyword => "MSG";
     public bool Blocking => true;
 
     public MessageCommand(ChatManager chatQueue, Level level, CharacterType characterType, string message) {
