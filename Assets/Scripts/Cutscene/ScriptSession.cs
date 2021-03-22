@@ -8,6 +8,7 @@ public class ScriptSession : IScriptSession
     ChatManager chatManager;
 
     Queue<IScriptCommand> commands;
+    bool expired = false;
 
     public ScriptSession(Level level, ChatManager chatManager) {
         this.level = level;
@@ -18,6 +19,14 @@ public class ScriptSession : IScriptSession
 
     public Queue<IScriptCommand> GetCommands() {
         return commands;
+    }
+
+    public void MakeExpire() {
+        expired = true;
+    }
+
+    public bool HasExpired() {
+        return expired;
     }
 
     public void Wait(float seconds) {
