@@ -6,12 +6,15 @@ public class BSInterpreter : IScriptSession
 {
     Level level;
     ChatManager chatManager;
+    List<BSException> syntaxErrors;
     Queue<IScriptCommand> commands;
     bool expired = false;
 
     public BSInterpreter(Level level, ChatManager chatManager, string code) {
         this.level = level;
         this.chatManager = chatManager;
+
+        syntaxErrors = new List<BSException>();
         commands = ParseCode(code);
     }
 
@@ -27,19 +30,25 @@ public class BSInterpreter : IScriptSession
         return commands;
     }
 
-    Queue<IScriptCommand> ParseCode(string code) {
-        List<string> lines = new List<string>();
+    public List<BSException> GetSyntaxErrors() {
+        return syntaxErrors;
+    }
 
-        foreach (string str in code.Split('\n')) {
-            string line = str.Trim();
-            if (line.Length == 0 || line.StartsWith("//"))
-                continue;
-            lines.Add(line);    
-        }
+    Queue<IScriptCommand> ParseCode(string code) {
+        string[] lines = code.Split('\n');
 
         Queue<IScriptCommand> commands = new Queue<IScriptCommand>();
-        for (int i = 0; i < lines.Count; i++)
-            commands.Enqueue(ParseLine(i, lines[i]));
+        for (int i = 0; i < lines.Length; i++) {
+            string line = lines[i].Trim();
+            if (line.Length == 0 || line.StartsWith("//"))
+                continue;
+            
+            try {
+                commands.Enqueue(ParseLine(i, lines[i]));
+            } catch (BSException e) {
+                syntaxErrors.Add(e);
+            }
+        }            
 
         return commands;
     }
