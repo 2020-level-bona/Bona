@@ -9,6 +9,7 @@ public class MoveCommand : IScriptCommand
     Vector2 target;
     bool block;
 
+    public string Keyword => "MOVE";
     public bool Blocking => block;
 
     public MoveCommand(Level level, string movableName, Vector2 target, bool block) {

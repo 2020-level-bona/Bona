@@ -4,6 +4,7 @@ using UnityEngine;
 
 public interface IScriptCommand
 {
+    string Keyword {get;}
     bool Blocking {get;}
 
     IEnumerator GetCoroutine();
