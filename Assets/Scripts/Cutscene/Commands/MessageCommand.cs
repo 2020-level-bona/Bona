@@ -12,17 +12,24 @@ public class MessageCommand : IScriptCommand
     public string Keyword => "MSG";
     public bool Blocking => true;
 
-    public MessageCommand(ChatManager chatQueue, Level level, CharacterType characterType, string message) {
-        this.chatManager = chatQueue;
+    public MessageCommand(ChatManager chatManager, Level level, CharacterType characterType, string message) {
+        this.chatManager = chatManager;
         this.level = level;
         this.characterType = characterType;
         this.message = message;
     }
 
+    public MessageCommand(ChatManager chatManager, Level level, CommandLineParser lineParser) {
+        this.chatManager = chatManager;
+        this.level = level;
+        this.characterType = lineParser.GetCharacterType(1);
+        this.message = lineParser.GetString(2);
+    }
+
     public IEnumerator GetCoroutine() {
         Character character = level.GetSpawnedCharacter(characterType);
         if (character == null)
-            throw new System.Exception($"캐릭터[{characterType}]가 존재하지 않습니다.");
+            throw new BSCharacterNotSpawnedException($"캐릭터[type={characterType}]가 존재하지 않습니다.");
         Chat chat = new Chat(message);
         character.ShowMessage(chat);
         

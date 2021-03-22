@@ -15,6 +15,11 @@ public class HideCommand : IScriptCommand
         this.characterType = characterType;
     }
 
+    public HideCommand(Level level, CommandLineParser lineParser) {
+        this.level = level;
+        this.characterType = lineParser.GetCharacterType(1);
+    }
+
     public IEnumerator GetCoroutine() {
         Character character = level.GetSpawnedCharacter(characterType);
         if (character)

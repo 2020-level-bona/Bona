@@ -13,6 +13,10 @@ public class WaitCommand : IScriptCommand
         this.seconds = seconds;
     }
 
+    public WaitCommand(CommandLineParser lineParser) {
+        this.seconds = lineParser.GetFloat(1);
+    }
+
     public IEnumerator GetCoroutine() {
         yield return new WaitForSeconds(seconds);
     }

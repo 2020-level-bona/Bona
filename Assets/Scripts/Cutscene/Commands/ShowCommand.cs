@@ -6,15 +6,21 @@ public class ShowCommand : IScriptCommand
 {
     Level level;
     CharacterType characterType;
-    Vector2 target;
+    Vector2Face target;
     
     public string Keyword => "SHOW";
     public bool Blocking => false;
 
-    public ShowCommand(Level level, CharacterType characterType, Vector2 target) {
+    public ShowCommand(Level level, CharacterType characterType, Vector2Face target) {
         this.level = level;
         this.characterType = characterType;
         this.target = target;
+    }
+
+    public ShowCommand(Level level, CommandLineParser lineParser) {
+        this.level = level;
+        this.characterType = lineParser.GetCharacterType(1);
+        this.target = lineParser.GetVector2Face(level, 2);
     }
 
     public IEnumerator GetCoroutine() {
