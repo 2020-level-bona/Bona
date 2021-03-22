@@ -38,26 +38,4 @@ public class Game : MonoBehaviour
         }
         return defaultSpawnPoint;
     }
-
-    public void StartCutscene(IEnumerator coroutine) {
-        StartCoroutine(WrapCoroutine(coroutine));
-    }
-
-    // 컷씬 시작, 종료 코드를 코루틴에 추가
-    IEnumerator WrapCoroutine(IEnumerator coroutine) {
-        IsPlayingCutscene = true;
-
-        CameraLetterbox cameraLetterbox = FindObjectOfType<CameraLetterbox>();
-        cameraLetterbox.ShowLetterbox();
-
-        ChatQueue chatQueue = FindObjectOfType<ChatQueue>();
-
-        yield return new WaitForEndOfFrame();
-        yield return StartCoroutine(new CutsceneEnumerator(coroutine, chatQueue));
-        yield return new WaitForEndOfFrame();
-
-        cameraLetterbox.HideLetterbox();
-
-        IsPlayingCutscene = false;
-    }
 }
