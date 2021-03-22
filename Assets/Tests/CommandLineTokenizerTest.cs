@@ -11,7 +11,7 @@ namespace Tests
         [Test]
         public void 토큰테스트()
         {
-            List<string> args = CommandLineTokenizer.Tokenize("HELLO WORLD !!");
+            List<string> args = CommandLineTokenizer.Tokenize(-1, "HELLO WORLD !!");
             Assert.AreEqual(args.Count, 3);
             Assert.AreEqual(args[0], "HELLO");
             Assert.AreEqual(args[1], "WORLD");
@@ -21,7 +21,7 @@ namespace Tests
         [Test]
         public void 두개이상_공백을가진_토큰테스트()
         {
-            List<string> args = CommandLineTokenizer.Tokenize("  HELLO      WORLD   !!    ");
+            List<string> args = CommandLineTokenizer.Tokenize(-1, "  HELLO      WORLD   !!    ");
             Assert.AreEqual(args.Count, 3);
             Assert.AreEqual(args[0], "HELLO");
             Assert.AreEqual(args[1], "WORLD");
@@ -31,7 +31,7 @@ namespace Tests
         [Test]
         public void 문자열테스트()
         {
-            List<string> args = CommandLineTokenizer.Tokenize("\"HELLO\" WORLD \"MY NAME IS\"");
+            List<string> args = CommandLineTokenizer.Tokenize(-1, "\"HELLO\" WORLD \"MY NAME IS\"");
             Assert.AreEqual(args.Count, 3);
             Assert.AreEqual(args[0], "HELLO");
             Assert.AreEqual(args[1], "WORLD");
@@ -40,7 +40,7 @@ namespace Tests
 
         [Test]
         public void 문자열_두개이상_공백테스트() {
-            List<string> args = CommandLineTokenizer.Tokenize("\"HELLO  \"    WORLD   \"  MY   NAME IS \"  ");
+            List<string> args = CommandLineTokenizer.Tokenize(-1, "\"HELLO  \"    WORLD   \"  MY   NAME IS \"  ");
             Assert.AreEqual(args.Count, 3);
             Assert.AreEqual(args[0], "HELLO  ");
             Assert.AreEqual(args[1], "WORLD");
@@ -49,14 +49,14 @@ namespace Tests
 
         [Test]
         public void 전체_공백테스트() {
-            List<string> args = CommandLineTokenizer.Tokenize("       ");
+            List<string> args = CommandLineTokenizer.Tokenize(-1, "       ");
             Assert.AreEqual(args.Count, 0);
         }
 
         [Test]
         public void 예외_테스트() {
             try {
-                List<string> args = CommandLineTokenizer.Tokenize("\"HELLO\" WORLD \"MY NAME IS");
+                List<string> args = CommandLineTokenizer.Tokenize(-1, "\"HELLO\" WORLD \"MY NAME IS");
             } catch (BSException) {
 
             }
