@@ -492,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 1806879414177528788, guid: ebb7bcf5aeab6694da1412cf94013657,
         type: 3}
       propertyPath: m_Name
-      value: ChatQueue
+      value: ChatManager
       objectReference: {fileID: 0}
     - target: {fileID: 1806879414177528790, guid: ebb7bcf5aeab6694da1412cf94013657,
         type: 3}
