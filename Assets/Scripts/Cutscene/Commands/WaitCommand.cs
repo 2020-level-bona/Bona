@@ -8,12 +8,14 @@ public class WaitCommand : IScriptCommand
 
     public const string Keyword = "WAIT";
     public bool Blocking => true;
+    public int LineNumber {get;}
 
     public WaitCommand(float seconds) {
         this.seconds = seconds;
     }
 
     public WaitCommand(CommandLineParser lineParser) {
+        LineNumber = lineParser.lineNumber;
         this.seconds = lineParser.GetFloat(1);
     }
 

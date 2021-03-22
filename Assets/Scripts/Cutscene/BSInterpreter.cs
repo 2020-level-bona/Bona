@@ -38,15 +38,14 @@ public class BSInterpreter : IScriptSession
         }
 
         Queue<IScriptCommand> commands = new Queue<IScriptCommand>();
-        foreach (string line in lines) {
-            commands.Enqueue(ParseLine(line));
-        }
+        for (int i = 0; i < lines.Count; i++)
+            commands.Enqueue(ParseLine(i, lines[i]));
 
         return commands;
     }
 
-    IScriptCommand ParseLine(string line) {
-        CommandLineParser lineParser = new CommandLineParser(line);
+    IScriptCommand ParseLine(int lineNumber, string line) {
+        CommandLineParser lineParser = new CommandLineParser(lineNumber, line);
         switch (lineParser.GetKeyword()) {
             case HideCommand.Keyword:
                 return new HideCommand(level, lineParser);
@@ -59,6 +58,6 @@ public class BSInterpreter : IScriptSession
             case WaitCommand.Keyword:
                 return new WaitCommand(lineParser);
         }
-        throw new BSSyntaxException($"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
+        throw new BSSyntaxException(lineNumber, $"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
     }
 }
