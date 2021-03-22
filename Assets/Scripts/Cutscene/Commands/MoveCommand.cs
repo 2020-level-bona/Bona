@@ -24,6 +24,7 @@ public class MoveCommand : IScriptCommand
         this.level = level;
         this.movableName = lineParser.GetString(1);
         this.target = lineParser.GetVector2Face(level, 2);
+        Blocking = lineParser.ContainsFlag("WAIT");
     }
 
     public IEnumerator GetCoroutine() {
