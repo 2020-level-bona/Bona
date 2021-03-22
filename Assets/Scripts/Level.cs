@@ -100,4 +100,12 @@ public class Level : MonoBehaviour
         }
         return null;
     }
+
+    public Marker GetMarker(string name) {
+        foreach (Marker marker in FindObjectsOfType<Marker>()) {
+            if (marker.gameObject.name == name)
+                return marker;
+        }
+        return null;
+    }
 }
