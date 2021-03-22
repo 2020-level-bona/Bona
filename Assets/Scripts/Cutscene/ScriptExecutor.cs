@@ -17,5 +17,6 @@ public class ScriptExecutor : MonoBehaviour
             else
                 StartCoroutine(command.GetCoroutine());
         }
+        session.MakeExpire();
     }
 }

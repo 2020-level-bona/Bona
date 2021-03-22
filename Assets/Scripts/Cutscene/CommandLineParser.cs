@@ -11,7 +11,8 @@ public class CommandLineParser : ICommandLineParser
     }
 
     void CheckIndex(int index) {
-        throw new BSSyntaxException($"{index}번째 파라미터가 필요하지만 전달되지 않았습니다.");
+        if (index >= args.Count)
+            throw new BSSyntaxException($"{index}번째 파라미터가 필요하지만 전달되지 않았습니다.");
     }
 
     public string GetKeyword() {
