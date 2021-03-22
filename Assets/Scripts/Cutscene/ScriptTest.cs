@@ -9,7 +9,16 @@ public class ScriptTest : MonoBehaviour
     void OnValidate() {
         Level level = FindObjectOfType<Level>();
         ChatManager chatManager = FindObjectOfType<ChatManager>();
-        new BSInterpreter(level, chatManager, script.code); // Check Syntax
+
+        BSInterpreter interpreter = new BSInterpreter(level, chatManager, script.code);
+
+        List<BSExceptionAsSerializedProperty> exceptions = new List<BSExceptionAsSerializedProperty>();
+        foreach (BSException exception in interpreter.GetSyntaxErrors()) {
+            exceptions.Add(exception);
+        }
+
+        script.exceptions = exceptions;
+        script.exceptionCount = exceptions.Count;
     }
 
     void Start() {
