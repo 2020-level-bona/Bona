@@ -92,4 +92,12 @@ public class Level : MonoBehaviour
             throw new System.Exception($"CharacterType={type} 에 대한 스폰된 캐릭터가 존재하지 않습니다.");
         }
     }
+
+    public Movable GetMovable(string name) {
+        foreach (Movable movable in FindObjectsOfType<Movable>()) {
+            if (movable.gameObject.name == name)
+                return movable;
+        }
+        return null;
+    }
 }
