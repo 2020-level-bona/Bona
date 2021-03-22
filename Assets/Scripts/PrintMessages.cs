@@ -7,13 +7,11 @@ public class PrintMessages : MonoBehaviour
 {
     public string[] messages;
 
-    Player player;
-    ChatQueue chatQueue;
+    ScriptExecutor scriptExecutor;
     Trigger trigger;
 
     void Awake() {
-        player = FindObjectOfType<Player>();
-        chatQueue = FindObjectOfType<ChatQueue>();
+        scriptExecutor = FindObjectOfType<ScriptExecutor>();
 
         trigger = GetComponent<Trigger>();
     }
@@ -23,10 +21,9 @@ public class PrintMessages : MonoBehaviour
     }
 
     void Chat() {
-        if (!chatQueue.IsDisplaying) {
-            foreach (string message in messages) {
-                chatQueue.AddChat(new Chat(message, player));
-            }
-        }
+        ScriptSession session = new ScriptSession(FindObjectOfType<Level>(), FindObjectOfType<ChatManager>());
+        foreach (string message in messages)
+            session.Msg(CharacterType.BONA, message);
+        scriptExecutor.Run(session);
     }
 }
