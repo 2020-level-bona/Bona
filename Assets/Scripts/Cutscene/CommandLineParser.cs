@@ -51,6 +51,11 @@ public class CommandLineParser : ICommandLineParser
     public string GetString(int index) {
         CheckIndex(index);
         args[index].type = TokenType.STR;
+        if (args[index].str.StartsWith("\"")) {
+            if (!args[index].str.EndsWith("\""))
+                throw new BSSyntaxException(lineNumber, "문자열이 닫히지 않았습니다.");
+            return args[index].str.Substring(1, Mathf.Max(args[index].str.Length - 2, 0));
+        }
         return args[index];
     }
 
