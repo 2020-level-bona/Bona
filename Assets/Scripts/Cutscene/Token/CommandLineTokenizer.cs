@@ -35,18 +35,19 @@ public static class CommandLineTokenizer
         return new Token(lineNumber, line.Substring(start, index - start), start);
     }
 
+    // 따옴표를 포함하여 가져옴
     static Token EatString(int lineNumber, string line, ref int index) {
-        index += 1;
         int start = index;
+        index++; // 첫번째 따옴표를 넘겨야 함
         while(index < line.Length && line[index] != '"') {
             index++;
         }
         
-        if (index >= line.Length)
-            throw new BSSyntaxException(lineNumber, "문자열이 닫히지 않았습니다.");
-        
+        // 따옴표가 정상적으로 닫혔다면 그 따옴표까지 포함
+        if (index < line.Length)
+            index++;
+
         Token token = new Token(lineNumber, line.Substring(start, index - start), start);
-        index++; // 마지막 따옴표 스킵
         return token;
     }
 }
