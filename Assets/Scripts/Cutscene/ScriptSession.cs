@@ -2,58 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScriptSession : IScriptSession
+public class ScriptSession
 {
     Level level;
     ChatManager chatManager;
+    ICommandProvider commandProvider;
+    MonoBehaviour coroutineRunner;
+    public bool expired {get; private set;} = false;
+    public List<LinePointer> linePointers {get; private set;} = new List<LinePointer>();
 
-    Queue<IScriptCommand> commands;
-    bool expired = false;
-    public List<LinePointer> linePointers {get; set;} = new List<LinePointer>();
-
-    public ScriptSession(Level level, ChatManager chatManager) {
+    public ScriptSession(Level level, ChatManager chatManager, ICommandProvider commandProvider, MonoBehaviour coroutineRunner) {
         this.level = level;
         this.chatManager = chatManager;
-
-        commands = new Queue<IScriptCommand>();
+        this.commandProvider = commandProvider;
+        this.coroutineRunner = coroutineRunner;
     }
 
-    public Queue<IScriptCommand> GetCommands() {
-        return commands;
+    public void Start() {
+        coroutineRunner.StartCoroutine(MainCoroutine());
     }
 
-    public void MakeExpire() {
+    IEnumerator MainCoroutine() {
+        linePointers = new List<LinePointer>();
+
+        LinePointer linePointer = new LinePointer(0);
+        linePointers.Add(linePointer);
+
+        IScriptCommand command = commandProvider.Next();
+        while (command != null) {
+            linePointer.Move(command.LineNumber);
+            if (command.Blocking)
+                yield return command.GetCoroutine();
+            else
+                coroutineRunner.StartCoroutine(command.GetCoroutine());
+            command = commandProvider.Next();
+        }
+        linePointers.Remove(linePointer);
         expired = true;
     }
+}
 
-    public bool HasExpired() {
-        return expired;
+[System.Serializable]
+public class LinePointer {
+    public int line;
+
+    public LinePointer(int line) {
+        this.line = line;
     }
 
-    public void Wait(float seconds) {
-        commands.Enqueue(new WaitCommand(seconds));
-    }
-
-    public void Msg(CharacterType characterType, string message) {
-        commands.Enqueue(new MessageCommand(chatManager, level, characterType, message));
-    }
-
-    public void Move(string movableName, Vector2 target, bool block = false) {
-        commands.Enqueue(new MoveCommand(level, movableName, target, block));
-    }
-
-    public void Move(string movableName, string markerName, bool block = false) {
-        Marker marker = level.GetMarker(markerName);
-        if (!marker)
-            throw new System.Exception($"Marker[name={markerName}]가 존재하지 않습니다.");
-        commands.Enqueue(new MoveCommand(level, movableName, marker.position, block));
-    }
-
-    public void Show(CharacterType characterType, Vector2 target) {
-        commands.Enqueue(new ShowCommand(level, characterType, target));
-    }
-
-    public void Hide(CharacterType characterType) {
-        commands.Enqueue(new HideCommand(level, characterType));
+    public void Move(int line) {
+        this.line = line;
     }
 }
