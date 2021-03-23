@@ -7,16 +7,19 @@ public class Game : MonoBehaviour
 {
     public SceneContext sceneContext;
 
+    Level level;
+    ChatManager chatManager;
     CameraController cameraController;
 
     public bool IsPlayingCutscene {get; private set;} = false;
 
     void Awake() {
+        level = FindObjectOfType<Level>();
+        chatManager = FindObjectOfType<ChatManager>();
         cameraController = FindObjectOfType<CameraController>();
     }
 
     void Start() {
-        Level level = FindObjectOfType<Level>();
         cameraController.AddCameraOperator(new FollowCharacters(cameraController, level.GetSpawnedCharacter(CharacterType.BONA)));
     }
 
@@ -37,5 +40,9 @@ public class Game : MonoBehaviour
                 return transferMap.transform.position;
         }
         return defaultSpawnPoint;
+    }
+
+    public ScriptSession CreateScriptSession(ICommandProvider commandProvider) {
+        return new ScriptSession(level, chatManager, commandProvider, this);
     }
 }
