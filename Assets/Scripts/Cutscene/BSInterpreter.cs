@@ -8,11 +8,14 @@ public class BSInterpreter : IScriptSession
     ChatManager chatManager;
     List<BSException> syntaxErrors;
     Queue<IScriptCommand> commands;
+    public List<Token> tokens {get;}
     bool expired = false;
 
     public BSInterpreter(Level level, ChatManager chatManager, string code) {
         this.level = level;
         this.chatManager = chatManager;
+
+        tokens = new List<Token>();
 
         syntaxErrors = new List<BSException>();
         commands = ParseCode(code);
@@ -40,8 +43,12 @@ public class BSInterpreter : IScriptSession
         Queue<IScriptCommand> commands = new Queue<IScriptCommand>();
         for (int i = 0; i < lines.Length; i++) {
             string line = lines[i].Trim();
-            if (line.Length == 0 || line.StartsWith("//"))
+            if (line.Length == 0)
                 continue;
+            if (line.StartsWith("//")) {
+                tokens.Add(new Token(i, line, 0, Color.green));
+                continue;
+            }
             
             try {
                 commands.Enqueue(ParseLine(i, lines[i]));
@@ -55,6 +62,7 @@ public class BSInterpreter : IScriptSession
 
     IScriptCommand ParseLine(int lineNumber, string line) {
         CommandLineParser lineParser = new CommandLineParser(lineNumber, line);
+        tokens.AddRange(lineParser.args);
         switch (lineParser.GetKeyword()) {
             case HideCommand.Keyword:
                 return new HideCommand(level, lineParser);

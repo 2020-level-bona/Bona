@@ -15,7 +15,7 @@ public static class CommandLineTokenizer
             if (line[index] == '"')
                 args.Add(EatString(lineNumber, line, ref index));
             else
-                args.Add(EatToken(line, ref index));
+                args.Add(EatToken(lineNumber, line, ref index));
         }
 
         return args;
@@ -27,12 +27,12 @@ public static class CommandLineTokenizer
         }
     }
 
-    static Token EatToken(string line, ref int index) {
+    static Token EatToken(int lineNumber, string line, ref int index) {
         int start = index;
         while(index < line.Length && line[index] != ' ') {
             index++;
         }
-        return new Token(line.Substring(start, index - start), start);
+        return new Token(lineNumber, line.Substring(start, index - start), start);
     }
 
     static Token EatString(int lineNumber, string line, ref int index) {
@@ -45,7 +45,7 @@ public static class CommandLineTokenizer
         if (index >= line.Length)
             throw new BSSyntaxException(lineNumber, "문자열이 닫히지 않았습니다.");
         
-        Token token = new Token(line.Substring(start, index - start), start);
+        Token token = new Token(lineNumber, line.Substring(start, index - start), start);
         index++; // 마지막 따옴표 스킵
         return token;
     }

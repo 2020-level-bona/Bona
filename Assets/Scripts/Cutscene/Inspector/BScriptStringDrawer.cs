@@ -17,6 +17,14 @@ public class BScriptStringDrawer : PropertyDrawer
         SerializedProperty codeProperty = property.FindPropertyRelative("code");
         string prevString = codeProperty.stringValue;
 
+        List<Token> tokens = GetTokens(property);
+        // 토큰을 등장 순서에 따라 정렬
+        tokens.Sort((a, b) => {
+            if (a.lineNumber == b.lineNumber)
+                return a.startIndex.CompareTo(b.startIndex);
+            return a.lineNumber.CompareTo(b.lineNumber);
+        });
+
         List<BSException> exceptions = GetExceptions(property);
 
         DrawBackground(position, prevString, exceptions);
@@ -26,22 +34,26 @@ public class BScriptStringDrawer : PropertyDrawer
 
         float lineHeight = GetTextAreaStyle().lineHeight;
         float exceptionLineHeight = GetExceptionTextStyle().lineHeight;
+        float spaceWidth = GetTextAreaStyle().CalcSize(new GUIContent(" ")).x;
+
         int line = 0;
-
-        foreach (char c in prevString) {
-            if (c == '\n') {
+        int column = 0;
+        for (int i = 0; i < tokens.Count; i++) {
+            if (line != tokens[i].lineNumber) {
                 position.x = original.x;
-                position.y += lineHeight;
-                line++;
-                continue;
+                position.y += lineHeight * (tokens[i].lineNumber - line);
+
+                line = tokens[i].lineNumber;
+                column = 0;
             }
-            GUIStyle textStyle = GetTextStyle();
 
-            EditorGUI.LabelField(position, c.ToString(), textStyle);
+            // 토큰 간 공백 채움
+            position.x += spaceWidth * (tokens[i].startIndex - column);
 
-            position.x += textStyle.CalcSize(new GUIContent(c.ToString())).x;
+            DrawText(ref position, tokens[i].str, tokens[i].color);
+            
+            column = tokens[i].startIndex + tokens[i].str.Length;
         }
-
         DrawExceptions(new Rect(original.x, position.y + lineHeight, position.width, position.height), exceptions);
         // EditorGUI.EndProperty();
     }
@@ -64,6 +76,12 @@ public class BScriptStringDrawer : PropertyDrawer
             
             totalHeight += currentHeight;
         }
+    }
+
+    void DrawText(ref Rect position, string text, Color color) {
+        GUIStyle style = GetTextStyle(color);
+        EditorGUI.LabelField(position, text, style);
+        position.x += style.CalcSize(new GUIContent(text)).x;
     }
 
     void DrawExceptions(Rect position, List<BSException> exceptions) {
@@ -94,9 +112,9 @@ public class BScriptStringDrawer : PropertyDrawer
         return style;
     }
 
-    GUIStyle GetTextStyle() {
+    GUIStyle GetTextStyle(Color color) {
         GUIStyle style = new GUIStyle();
-        style.normal.textColor = Color.white;
+        style.normal.textColor = color;
         style.fontSize = 18;
         style.stretchWidth = false;
         style.stretchHeight = false;
@@ -110,6 +128,17 @@ public class BScriptStringDrawer : PropertyDrawer
         style.fontSize = 12;
         style.fontStyle = UnityEngine.FontStyle.Bold;
         return style;
+    }
+
+    List<Token> GetTokens(SerializedProperty property) {
+        SerializedProperty list = property.FindPropertyRelative("tokens");
+        int count = property.FindPropertyRelative("tokenCount").intValue;
+
+        List<Token> tokens = new List<Token>();
+        for (int i = 0; i < count; i++) {
+            tokens.Add(list.GetArrayElementAtIndex(i));
+        }
+        return tokens;
     }
 
     List<BSException> GetExceptions(SerializedProperty property) {

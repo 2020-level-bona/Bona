@@ -12,6 +12,9 @@ public class ScriptTest : MonoBehaviour
 
         BSInterpreter interpreter = new BSInterpreter(level, chatManager, script.code);
 
+        script.tokens = interpreter.tokens;
+        script.tokenCount = interpreter.tokens.Count;
+
         List<BSExceptionAsSerializedProperty> exceptions = new List<BSExceptionAsSerializedProperty>();
         foreach (BSException exception in interpreter.GetSyntaxErrors()) {
             exceptions.Add(exception);

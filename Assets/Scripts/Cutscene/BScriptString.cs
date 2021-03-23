@@ -8,6 +8,8 @@ using UnityEngine;
 public class BScriptString 
 {
     public string code = "";
+    public List<Token> tokens;
+    public int tokenCount;
     public List<BSExceptionAsSerializedProperty> exceptions;
     public int exceptionCount; // SerializedProperty에서 리스트를 복구할 때 필요함
     public int linePointer = -1;
