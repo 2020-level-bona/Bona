@@ -5,7 +5,7 @@ using UnityEngine;
 public class CommandLineParser : ICommandLineParser
 {
     public int lineNumber {get;}
-    List<Token> args;
+    public List<Token> args {get;}
 
     public CommandLineParser(int lineNumber, string line) {
         this.lineNumber = lineNumber;
@@ -18,6 +18,7 @@ public class CommandLineParser : ICommandLineParser
     }
 
     public string GetKeyword() {
+        args[0].color = Color.red;
         return args[0];
     }
 
