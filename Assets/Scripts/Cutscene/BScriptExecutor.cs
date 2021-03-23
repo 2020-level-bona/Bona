@@ -4,31 +4,25 @@ using UnityEngine;
 
 public class BScriptExecutor : MonoBehaviour
 {
-    public BScriptString script;
+    public string script;
 
     Game game;
     Level level;
     ChatManager chatManager;
     BSInterpreter interpreter;
-    ScriptSession session;
+    public ScriptSession session {get; private set;}
+    
+    public ScriptExecutorState state {get; private set;}
 
     void OnValidate() {
-        Game game = FindObjectOfType<Game>();
-        Level level = FindObjectOfType<Level>();
-        ChatManager chatManager = FindObjectOfType<ChatManager>();
+        game = FindObjectOfType<Game>();
+        level = FindObjectOfType<Level>();
+        chatManager = FindObjectOfType<ChatManager>();
 
-        BSInterpreter interpreter = new BSInterpreter(level, chatManager, script.code);
-
-        script.tokens = interpreter.tokens;
-        script.tokenCount = interpreter.tokens.Count;
-
-        List<BSExceptionAsSerializedProperty> exceptions = new List<BSExceptionAsSerializedProperty>();
-        foreach (BSException exception in interpreter.GetSyntaxErrors()) {
-            exceptions.Add(exception);
-        }
-
-        script.exceptions = exceptions;
-        script.exceptionCount = exceptions.Count;
+        interpreter = new BSInterpreter(level, chatManager, script);
+        if (interpreter.GetSyntaxErrors().Count > 0)
+            state = ScriptExecutorState.SYNTAX_ERROR;
+        state = ScriptExecutorState.READY;
     }
 
     void Awake() {
@@ -38,20 +32,49 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     void Start() {
-        interpreter = new BSInterpreter(level, chatManager, script.code);
-        session = game.CreateScriptSession(interpreter);
+        interpreter = new BSInterpreter(level, chatManager, script);
+        if (interpreter.GetSyntaxErrors().Count > 0)
+            state = ScriptExecutorState.SYNTAX_ERROR;
+        else
+            state = ScriptExecutorState.READY;
+        
+        // Run();
+    }
+
+    public void Run() {
+        if (state == ScriptExecutorState.SYNTAX_ERROR)
+            throw new System.Exception("스크립트에 구문 오류가 있어 실행할 수 없습니다.");
+        if (state == ScriptExecutorState.RUNNING)
+            throw new System.Exception("스크립트가 이미 실행 중입니다.");
+        
+        session = game.CreateScriptSession(new BSInterpreter(level, chatManager, script));
         session.Start();
+
+        state = ScriptExecutorState.RUNNING;
     }
 
     void Update() {
-        List<int> linePointers = new List<int>();
-        foreach (LinePointer linePointer in session.linePointers)
-            linePointers.Add(linePointer.line);
-        script.linePointers = linePointers;
-        script.linePointerCount = linePointers.Count;
+        if (session != null) {
+            if (session.expired) {
+                state = ScriptExecutorState.READY;
+                session = null;
+            }
+        }
+    }
+
+    public List<Token> GetTokens() {
+        return interpreter.tokens;
+    }
+
+    public List<BSException> GetExceptions() {
+        return interpreter.GetSyntaxErrors();
+    }
+
+    public List<LinePointer> GetLinePointers() {
+        return new List<LinePointer>();
     }
 }
 
 public enum ScriptExecutorState {
-    READY, RUNNING, FAILED
+    SYNTAX_ERROR, READY, RUNNING, FAILED
 }
