@@ -9,6 +9,7 @@ public class ScriptSession : IScriptSession
 
     Queue<IScriptCommand> commands;
     bool expired = false;
+    public List<LinePointer> linePointers {get; set;} = new List<LinePointer>();
 
     public ScriptSession(Level level, ChatManager chatManager) {
         this.level = level;
