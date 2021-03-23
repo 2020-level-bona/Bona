@@ -19,6 +19,10 @@ public class Token
 
     public static implicit operator string(Token token) => token.str;
 
+    public override string ToString()
+    {
+        return str;
+    }
     public static implicit operator Token(UnityEditor.SerializedProperty property) {
         return new Token(property.FindPropertyRelative("lineNumber").intValue,
             property.FindPropertyRelative("str").stringValue,

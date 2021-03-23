@@ -10,7 +10,7 @@ public class BScriptColorTheme : ScriptableObject
     public static BScriptColorTheme Instance {
         get {
             if (!instance)
-                instance = Resources.Load("BScript/Default Color Theme") as BScriptColorTheme;
+                instance = Resources.Load<BScriptColorTheme>("BScript/Default Color Theme");
             return instance;
         }
     }
