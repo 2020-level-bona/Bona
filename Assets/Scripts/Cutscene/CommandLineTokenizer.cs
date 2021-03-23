@@ -4,55 +4,49 @@ using UnityEngine;
 
 public static class CommandLineTokenizer
 {
-    public static List<string> Tokenize(int lineNumber, string line) {
-        List<string> args = new List<string>();
+    public static List<Token> Tokenize(int lineNumber, string line) {
+        List<Token> args = new List<Token>();
 
-        int shit = 0;
-        while(line.Length > 0) {
-            shit++;
-            if (shit > 10)
+        int index = 0;
+        while(index < line.Length) {
+            EatSpaces(line, ref index);
+            if (index >= line.Length)
                 break;
-            EatSpaces(ref line);
-            if (line.Length == 0)
-                break;
-            if (line[0] == '"')
-                args.Add(EatString(lineNumber, ref line));
+            if (line[index] == '"')
+                args.Add(EatString(lineNumber, line, ref index));
             else
-                args.Add(EatToken(ref line));
+                args.Add(EatToken(line, ref index));
         }
 
         return args;
     }
 
-    static void EatSpaces(ref string lineLeft) {
-        int index = 0;
-        while(index < lineLeft.Length && lineLeft[index] == ' ') {
+    static void EatSpaces(string line, ref int index) {
+        while(index < line.Length && line[index] == ' ') {
             index++;
         }
-        lineLeft = lineLeft.Substring(index);
     }
 
-    static string EatToken(ref string lineLeft) {
-        int index = 0;
-        while(index < lineLeft.Length && lineLeft[index] != ' ') {
+    static Token EatToken(string line, ref int index) {
+        int start = index;
+        while(index < line.Length && line[index] != ' ') {
             index++;
         }
-        string token = lineLeft.Substring(0, index);
-        lineLeft = lineLeft.Substring(index);
-        return token;
+        return new Token(line.Substring(start, index - start), start);
     }
 
-    static string EatString(int lineNumber, ref string lineLeft) {
-        int index = 1;
-        while(index < lineLeft.Length && lineLeft[index] != '"') {
+    static Token EatString(int lineNumber, string line, ref int index) {
+        index += 1;
+        int start = index;
+        while(index < line.Length && line[index] != '"') {
             index++;
         }
         
-        if (index >= lineLeft.Length)
+        if (index >= line.Length)
             throw new BSSyntaxException(lineNumber, "문자열이 닫히지 않았습니다.");
         
-        string token = lineLeft.Substring(1, index - 1);
-        lineLeft = lineLeft.Substring(index + 1);
+        Token token = new Token(line.Substring(start, index - start), start);
+        index++; // 마지막 따옴표 스킵
         return token;
     }
 }

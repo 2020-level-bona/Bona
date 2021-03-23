@@ -5,7 +5,7 @@ using UnityEngine;
 public class CommandLineParser : ICommandLineParser
 {
     public int lineNumber {get;}
-    List<string> args;
+    List<Token> args;
 
     public CommandLineParser(int lineNumber, string line) {
         this.lineNumber = lineNumber;
@@ -22,7 +22,12 @@ public class CommandLineParser : ICommandLineParser
     }
 
     public bool ContainsFlag(string flag) {
-        return args.Contains(flag);
+        foreach (Token token in args) {
+            if (token.str == flag) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public string GetString(int index) {
