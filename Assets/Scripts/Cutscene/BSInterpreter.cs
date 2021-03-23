@@ -10,6 +10,7 @@ public class BSInterpreter : IScriptSession
     Queue<IScriptCommand> commands;
     public List<Token> tokens {get;}
     bool expired = false;
+    public List<LinePointer> linePointers {get; set;} = new List<LinePointer>();
 
     public BSInterpreter(Level level, ChatManager chatManager, string code) {
         this.level = level;

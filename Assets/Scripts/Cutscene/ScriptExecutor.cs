@@ -4,23 +4,37 @@ using UnityEngine;
 
 public class ScriptExecutor : MonoBehaviour
 {
-    public void Run(IScriptSession session, BScriptString scriptString = null) {
-        StartCoroutine(RunSession(session, scriptString));
+    public void Run(IScriptSession session) {
+        StartCoroutine(RunSession(session));
     }
 
-    IEnumerator RunSession(IScriptSession session, BScriptString scriptString) {
+    IEnumerator RunSession(IScriptSession session) {
         Queue<IScriptCommand> commands = session.GetCommands();
+        session.linePointers = new List<LinePointer>();
+
+        LinePointer linePointer = new LinePointer(0);
         while (commands.Count > 0) {
             IScriptCommand command = commands.Dequeue();
-            if (scriptString != null)
-                scriptString.linePointer = command.LineNumber;
+            linePointer.Set(command.LineNumber);
             if (command.Blocking)
                 yield return command.GetCoroutine();
             else
                 StartCoroutine(command.GetCoroutine());
         }
-        if (scriptString != null)
-            scriptString.linePointer = -1;
+        session.linePointers.Remove(linePointer);
         session.MakeExpire();
+    }
+}
+
+[System.Serializable]
+public class LinePointer {
+    public int line;
+
+    public LinePointer(int line) {
+        this.line = line;
+    }
+
+    public void Set(int line) {
+        this.line = line;
     }
 }

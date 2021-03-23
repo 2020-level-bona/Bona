@@ -27,8 +27,9 @@ public class BScriptStringDrawer : PropertyDrawer
 
         List<BSException> exceptions = GetExceptions(property);
 
-        DrawBackground(position, tokens[tokens.Count - 1].lineNumber, exceptions);
-        DrawLinePointer(original, property.FindPropertyRelative("linePointer").intValue);
+        if (tokens.Count > 0)
+            DrawBackground(position, tokens[tokens.Count - 1].lineNumber, exceptions);
+        DrawLinePointer(original, GetLinePointers(property));
 
         codeProperty.stringValue = EditorGUI.TextArea(position, prevString, GetTextAreaStyle());
 
@@ -87,11 +88,11 @@ public class BScriptStringDrawer : PropertyDrawer
         }
     }
 
-    void DrawLinePointer(Rect position, int line) {
-        if (line < 0)
-            return;
+    void DrawLinePointer(Rect position, List<int> linePointers) {
         float lineHeight = GetTextAreaStyle().lineHeight;
-        EditorGUI.DrawRect(new Rect(position.x, position.y + lineHeight * line, position.width, lineHeight), new Color(0.168f, 0.7f, 0.94f, 0.7f));
+        foreach (int line in linePointers) {
+            EditorGUI.DrawRect(new Rect(position.x, position.y + lineHeight * line, position.width, lineHeight), new Color(0.168f, 0.7f, 0.94f, 0.7f));
+        }
     }
 
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label) {
@@ -148,5 +149,17 @@ public class BScriptStringDrawer : PropertyDrawer
 
     List<BSException> GetExceptionsOnLine(List<BSException> exceptions, int line) {
         return exceptions.FindAll(x => x.line == line);
+    }
+
+    List<int> GetLinePointers(SerializedProperty property) {
+        SerializedProperty list = property.FindPropertyRelative("linePointers");
+        int count = property.FindPropertyRelative("linePointerCount").intValue;
+
+        List<int> linePointers = new List<int>();
+        for (int i = 0; i < count; i++) {
+            linePointers.Add(list.GetArrayElementAtIndex(i).intValue);
+        }
+
+        return linePointers;
     }
 }
