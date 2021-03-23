@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class BScriptExecutor : MonoBehaviour
 {
@@ -22,7 +23,8 @@ public class BScriptExecutor : MonoBehaviour
         interpreter = new BSInterpreter(level, chatManager, script);
         if (interpreter.GetSyntaxErrors().Count > 0)
             state = ScriptExecutorState.SYNTAX_ERROR;
-        state = ScriptExecutorState.READY;
+        else
+            state = ScriptExecutorState.READY;
     }
 
     void Awake() {
@@ -38,7 +40,7 @@ public class BScriptExecutor : MonoBehaviour
         else
             state = ScriptExecutorState.READY;
         
-        // Run();
+        Run();
     }
 
     public void Run() {
@@ -60,6 +62,7 @@ public class BScriptExecutor : MonoBehaviour
                 session = null;
             }
         }
+        EditorUtility.SetDirty(this); // 인스펙터 Refresh
     }
 
     public List<Token> GetTokens() {
@@ -71,7 +74,9 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     public List<LinePointer> GetLinePointers() {
-        return new List<LinePointer>();
+        if (session == null)
+            return new List<LinePointer>();
+        return session.linePointers;
     }
 }
 
