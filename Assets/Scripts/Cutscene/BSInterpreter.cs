@@ -45,13 +45,11 @@ public class BSInterpreter : IScriptSession
             string line = lines[i].Trim();
             if (line.Length == 0)
                 continue;
-            if (line.StartsWith("//")) {
-                tokens.Add(new Token(i, line, 0, Color.green));
-                continue;
-            }
             
             try {
-                commands.Enqueue(ParseLine(i, lines[i]));
+                IScriptCommand command = ParseLine(i, lines[i]);
+                if (command != null)
+                    commands.Enqueue(command);
             } catch (BSException e) {
                 syntaxErrors.Add(e);
             }
@@ -63,18 +61,21 @@ public class BSInterpreter : IScriptSession
     IScriptCommand ParseLine(int lineNumber, string line) {
         CommandLineParser lineParser = new CommandLineParser(lineNumber, line);
         tokens.AddRange(lineParser.args);
-        switch (lineParser.GetKeyword()) {
-            case HideCommand.Keyword:
-                return new HideCommand(level, lineParser);
-            case MessageCommand.Keyword:
-                return new MessageCommand(chatManager, level, lineParser);
-            case MoveCommand.Keyword:
-                return new MoveCommand(level, lineParser);
-            case ShowCommand.Keyword:
-                return new ShowCommand(level, lineParser);
-            case WaitCommand.Keyword:
-                return new WaitCommand(lineParser);
+        if (lineParser.HasKeyword()) {
+            switch (lineParser.GetKeyword()) {
+                case HideCommand.Keyword:
+                    return new HideCommand(level, lineParser);
+                case MessageCommand.Keyword:
+                    return new MessageCommand(chatManager, level, lineParser);
+                case MoveCommand.Keyword:
+                    return new MoveCommand(level, lineParser);
+                case ShowCommand.Keyword:
+                    return new ShowCommand(level, lineParser);
+                case WaitCommand.Keyword:
+                    return new WaitCommand(lineParser);
+            }
+            throw new BSSyntaxException(lineNumber, $"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
         }
-        throw new BSSyntaxException(lineNumber, $"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
+        return null;
     }
 }

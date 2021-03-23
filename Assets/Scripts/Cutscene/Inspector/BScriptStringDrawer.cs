@@ -27,7 +27,7 @@ public class BScriptStringDrawer : PropertyDrawer
 
         List<BSException> exceptions = GetExceptions(property);
 
-        DrawBackground(position, prevString, exceptions);
+        DrawBackground(position, tokens[tokens.Count - 1].lineNumber, exceptions);
         DrawLinePointer(original, property.FindPropertyRelative("linePointer").intValue);
 
         codeProperty.stringValue = EditorGUI.TextArea(position, prevString, GetTextAreaStyle());
@@ -50,7 +50,7 @@ public class BScriptStringDrawer : PropertyDrawer
             // 토큰 간 공백 채움
             position.x += spaceWidth * (tokens[i].startIndex - column);
 
-            DrawText(position, tokens[i].str, tokens[i].color);
+            DrawText(position, tokens[i].str, BScriptColorTheme.GetColor(tokens[i].type));
             position.x += GetTextAreaStyle().CalcSize(new GUIContent(tokens[i].str)).x;
 
             column = tokens[i].startIndex + tokens[i].str.Length;
@@ -59,21 +59,16 @@ public class BScriptStringDrawer : PropertyDrawer
         // EditorGUI.EndProperty();
     }
 
-    void DrawBackground(Rect position, string code, List<BSException> exceptions) {
-        int lines = 0;
-        foreach (char c in code) {
-            if (c == '\n')
-                lines++;
-        }
-
+    void DrawBackground(Rect position, int lines, List<BSException> exceptions) {
         float lineHeight = GetTextAreaStyle().lineHeight;
         float exceptionLineHeight = GetExceptionTextStyle().lineHeight;
         float totalHeight = 0;
 
-        for (int i = 0; i < lines; i++) {
+        for (int i = 0; i <= lines; i++) {
             float currentHeight = lineHeight;
             EditorGUI.DrawRect(new Rect(position.x, position.y + totalHeight, position.width, currentHeight),
-                (i % 2 == 0) ? new Color(0.23f, 0.23f, 0.23f) : new Color(0.2f, 0.2f, 0.2f));
+                // (i % 2 == 0) ? new Color(0.23f, 0.23f, 0.23f) : new Color(0.2f, 0.2f, 0.2f));
+                (i % 2 == 0) ? new Color32(44, 43, 45, 255) : new Color32(35, 34, 36, 255));
             
             totalHeight += currentHeight;
         }
