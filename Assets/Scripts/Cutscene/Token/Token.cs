@@ -8,15 +8,13 @@ public class Token
     public int lineNumber;
     public string str;
     public int startIndex;
-    public Color color;
+    public TokenType type = TokenType.NORMAL;
 
-    public Token(int lineNumber, string str, int startIndex) : this(lineNumber, str, startIndex, Color.white) { }
-
-    public Token(int lineNumber, string str, int startIndex, Color color) {
+    public Token(int lineNumber, string str, int startIndex, TokenType type = TokenType.NORMAL) {
         this.lineNumber = lineNumber;
         this.str = str;
         this.startIndex = startIndex;
-        this.color = color;
+        this.type = type;
     }
 
     public static implicit operator string(Token token) => token.str;
@@ -25,6 +23,6 @@ public class Token
         return new Token(property.FindPropertyRelative("lineNumber").intValue,
             property.FindPropertyRelative("str").stringValue,
             property.FindPropertyRelative("startIndex").intValue,
-            property.FindPropertyRelative("color").colorValue);
+            (TokenType) property.FindPropertyRelative("type").enumValueIndex);
     }
 }
