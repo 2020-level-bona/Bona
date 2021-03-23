@@ -50,8 +50,9 @@ public class BScriptStringDrawer : PropertyDrawer
             // 토큰 간 공백 채움
             position.x += spaceWidth * (tokens[i].startIndex - column);
 
-            DrawText(ref position, tokens[i].str, tokens[i].color);
-            
+            DrawText(position, tokens[i].str, tokens[i].color);
+            position.x += GetTextAreaStyle().CalcSize(new GUIContent(tokens[i].str)).x;
+
             column = tokens[i].startIndex + tokens[i].str.Length;
         }
         DrawExceptions(new Rect(original.x, position.y + lineHeight, position.width, position.height), exceptions);
@@ -78,7 +79,7 @@ public class BScriptStringDrawer : PropertyDrawer
         }
     }
 
-    void DrawText(ref Rect position, string text, Color color) {
+    void DrawText(Rect position, string text, Color color) {
         GUIStyle style = GetTextStyle(color);
         EditorGUI.LabelField(position, text, style);
         position.x += style.CalcSize(new GUIContent(text)).x;
@@ -106,10 +107,7 @@ public class BScriptStringDrawer : PropertyDrawer
     }
 
     GUIStyle GetTextAreaStyle() {
-        GUIStyle style = new GUIStyle();
-        style.normal.textColor = new Color(0, 0, 0, 0);
-        style.fontSize = 18;
-        return style;
+        return GetTextStyle(new Color(0, 0, 0, 0));
     }
 
     GUIStyle GetTextStyle(Color color) {
