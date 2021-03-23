@@ -69,7 +69,7 @@ public class BScriptStringDrawer : PropertyDrawer
     void DrawExceptions(Rect position, List<BSException> exceptions) {
         GUIStyle style = GetExceptionTextStyle();
         for (int i = 0; i < exceptions.Count; i++) {
-            EditorGUI.LabelField(new Rect(position.x, position.y + i * style.lineHeight, position.width, position.height), $"라인 {exceptions[i].line}: {exceptions[i].Message}", style);
+            EditorGUI.LabelField(new Rect(position.x, position.y + i * style.lineHeight, position.width, position.height), $"라인 {exceptions[i].line + 1}: {exceptions[i].Message}", style);
         }
     }
 
