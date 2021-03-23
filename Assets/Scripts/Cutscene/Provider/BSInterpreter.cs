@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BSInterpreter : IScriptSession
+public class BSInterpreter : ICommandProvider
 {
     Level level;
     ChatManager chatManager;
     List<BSException> syntaxErrors;
     Queue<IScriptCommand> commands;
     public List<Token> tokens {get;}
-    bool expired = false;
-    public List<LinePointer> linePointers {get; set;} = new List<LinePointer>();
 
     public BSInterpreter(Level level, ChatManager chatManager, string code) {
         this.level = level;
@@ -22,16 +20,10 @@ public class BSInterpreter : IScriptSession
         commands = ParseCode(code);
     }
 
-    public void MakeExpire() {
-        expired = true;
-    }
-
-    public bool HasExpired() {
-        return expired;
-    }
-
-    public Queue<IScriptCommand> GetCommands() {
-        return commands;
+    public IScriptCommand Next() {
+        if (commands.Count == 0)
+            return null;
+        return commands.Dequeue();
     }
 
     public List<BSException> GetSyntaxErrors() {

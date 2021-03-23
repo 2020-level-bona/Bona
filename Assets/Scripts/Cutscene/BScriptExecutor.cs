@@ -6,11 +6,14 @@ public class BScriptExecutor : MonoBehaviour
 {
     public BScriptString script;
 
+    Game game;
     Level level;
     ChatManager chatManager;
     BSInterpreter interpreter;
+    ScriptSession session;
 
     void OnValidate() {
+        Game game = FindObjectOfType<Game>();
         Level level = FindObjectOfType<Level>();
         ChatManager chatManager = FindObjectOfType<ChatManager>();
 
@@ -29,43 +32,23 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     void Awake() {
+        game = FindObjectOfType<Game>();
         level = FindObjectOfType<Level>();
         chatManager = FindObjectOfType<ChatManager>();
     }
 
     void Start() {
-        Run();
+        interpreter = new BSInterpreter(level, chatManager, script.code);
+        session = game.CreateScriptSession(interpreter);
+        session.Start();
     }
 
     void Update() {
         List<int> linePointers = new List<int>();
-        foreach (LinePointer linePointer in interpreter.linePointers)
+        foreach (LinePointer linePointer in session.linePointers)
             linePointers.Add(linePointer.line);
         script.linePointers = linePointers;
         script.linePointerCount = linePointers.Count;
-    }
-
-    public void Run() {
-        interpreter = new BSInterpreter(level, chatManager, script.code);
-        StartCoroutine(RunSession(interpreter));
-    }
-
-    IEnumerator RunSession(IScriptSession session) {
-        Queue<IScriptCommand> commands = session.GetCommands();
-        session.linePointers = new List<LinePointer>();
-
-        LinePointer linePointer = new LinePointer(0);
-        session.linePointers.Add(linePointer);
-        while (commands.Count > 0) {
-            IScriptCommand command = commands.Dequeue();
-            linePointer.Set(command.LineNumber);
-            if (command.Blocking)
-                yield return command.GetCoroutine();
-            else
-                StartCoroutine(command.GetCoroutine());
-        }
-        session.linePointers.Remove(linePointer);
-        session.MakeExpire();
     }
 }
 
