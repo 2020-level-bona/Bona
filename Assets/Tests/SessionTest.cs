@@ -206,7 +206,7 @@ namespace Tests
 
             session.Set("test.test2.hello2", 1.2);
             Assert.AreEqual(session.Get("test.test2.hello2"), 1.2);
-            Assert.AreEqual(session.GetNamespace("test").GetNamespace("test2").GetFloat("hello2"), 1.2);
+            Assert.AreEqual(session.GetNamespace("test").GetNamespace("test2").GetDouble("hello2"), 1.2);
 
             string data = session.Serialize();
             session.Clear();

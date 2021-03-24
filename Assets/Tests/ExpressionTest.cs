@@ -216,5 +216,27 @@ namespace Tests
             Assert.AreEqual(Expression.Eval("!(1 < 5) || 5 < 1"), false);
             Assert.AreEqual(Expression.Eval("!(1 == 2 || 1 == 1)"), false);
         }
+
+        [Test]
+        public void 변수테스트() {
+            Session.Instance.Clear();
+            Session.CurrentScene.Set("test", 1234);
+            Assert.AreEqual(Expression.Eval("test == 1234"), true);
+
+            Session.CurrentScene.Set("test2", 0.5);
+            Assert.AreEqual(Expression.Eval("test2 == 0.5"), true);
+
+            Assert.AreEqual(Expression.Eval("!wtf"), true);
+            Assert.AreEqual(Expression.Eval("wtf == 0"), true);
+            Assert.AreEqual(Expression.Eval("wtf == 1"), false);
+
+            Session.Instance.GetNamespace("dir").Set("test", true);
+            Assert.AreEqual(Expression.Eval("!dir.test"), false);
+
+            Session.Instance.GetNamespace("dir1").GetNamespace("dir2").Set("test", 8);
+            Assert.AreEqual(Expression.Eval("2 * 2 * 2 == dir1.dir2.test"), true);
+
+            Session.Instance.Clear();
+        }
     }
 }
