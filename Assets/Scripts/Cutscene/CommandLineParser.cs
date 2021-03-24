@@ -84,7 +84,7 @@ public class CommandLineParser : ICommandLineParser
     public CharacterType GetCharacterType(int index) {
         string type = GetString(index);
         try {
-            CharacterType characterType = (CharacterType) System.Enum.Parse(typeof(CharacterType), type);
+            CharacterType characterType = (CharacterType) System.Enum.Parse(typeof(CharacterType), type, true);
             args[index].type = TokenType.NAME;
             return characterType;
         } catch (System.Exception) {
