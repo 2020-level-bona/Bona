@@ -5,7 +5,7 @@ using UnityEditor;
 
 public class BScriptExecutor : MonoBehaviour
 {
-    public string script;
+    public string script = "";
 
     Game game;
     Level level;
@@ -39,8 +39,6 @@ public class BScriptExecutor : MonoBehaviour
             state = ScriptExecutorState.SYNTAX_ERROR;
         else
             state = ScriptExecutorState.READY;
-        
-        Run();
     }
 
     public void Run() {
@@ -55,6 +53,10 @@ public class BScriptExecutor : MonoBehaviour
         state = ScriptExecutorState.RUNNING;
     }
 
+    public bool CanRun() {
+        return state != ScriptExecutorState.SYNTAX_ERROR && state != ScriptExecutorState.RUNNING;
+    }
+
     void Update() {
         if (session != null) {
             if (session.expired) {
@@ -66,10 +68,14 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     public List<Token> GetTokens() {
+        if (interpreter == null)
+            return new List<Token>();
         return interpreter.tokens;
     }
 
     public List<BSException> GetExceptions() {
+        if (interpreter == null)
+            return new List<BSException>();
         return interpreter.GetSyntaxErrors();
     }
 
