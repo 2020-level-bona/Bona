@@ -2,42 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="BS Color Theme")]
-public class BScriptColorTheme : ScriptableObject
+// 리소스 로드 문제를 해결하지 못하여 그냥 하드코딩하도록 하겠습니다.
+public class BScriptColorTheme
 {
-    static BScriptColorTheme instance;
-
-    public static BScriptColorTheme Instance {
-        get {
-            if (!instance)
-                instance = Resources.Load<BScriptColorTheme>("BScript/Default Color Theme");
-            return instance;
-        }
-    }
-
-    public Color keywordColor;
-    public Color normalColor;
-    public Color nameColor;
-    public Color strColor;
-    public Color numColor;
-    public Color commentColor;
-    public Color flagColor;
-
     public static Color GetColor(TokenType type) {
         switch (type) {
             case TokenType.KEYWORD:
-                return Instance.keywordColor;
+                return new Color(1f, 0.38039216f, 0.53333336f);
             case TokenType.NAME:
-                return Instance.nameColor;
+                return new Color(0.47058824f, 0.8627451f, 0.9098039f);
             case TokenType.STR:
-                return Instance.strColor;
+                return new Color(1f, 0.84705883f, 0.4f);
             case TokenType.NUM:
-                return Instance.numColor;
+                return new Color(0.67058825f, 0.6156863f, 0.9490196f);
             case TokenType.COMMENT:
-                return Instance.commentColor;
+                return new Color(0.6627451f, 0.8627451f, 0.4627451f);
             case TokenType.FLAG:
-                return Instance.flagColor;
+                return new Color(0.9882353f, 0.59607846f, 0.40392157f);
         }
-        return Instance.normalColor;
+        return new Color(0.965f, 0.965f, 0.965f);
     }
 }
