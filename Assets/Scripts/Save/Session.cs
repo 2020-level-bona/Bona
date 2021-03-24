@@ -41,6 +41,33 @@ public class Session : ISession
         return new Namespace(name, table[name] as Dictionary<string, object>);
     }
 
+    public object Get(string path) {
+        // Current Scene
+        if (!path.Contains("."))
+            return CurrentScene.GetRaw(path);
+        
+        string[] spl = path.Split('.');
+        Namespace ns = GetNamespace(spl[0]);
+        for (int i = 1; i < spl.Length - 1; i++) {
+            ns = ns.GetNamespace(spl[i]);
+        }
+        return ns.GetRaw(spl[spl.Length - 1]);
+    }
+
+    public void Set(string path, object value) {
+        // Current Scene
+        if (!path.Contains("."))
+            CurrentScene.SetRaw(path, value);
+        else {
+            string[] spl = path.Split('.');
+            Namespace ns = GetNamespace(spl[0]);
+            for (int i = 1; i < spl.Length - 1; i++) {
+                ns = ns.GetNamespace(spl[i]);
+            }
+            ns.SetRaw(spl[spl.Length - 1], value);
+        }
+    }
+
     public string Serialize() {
         return MiniJSON.Json.Serialize(table ?? new Dictionary<string, object>());
     }

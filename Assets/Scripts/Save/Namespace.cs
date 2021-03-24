@@ -74,6 +74,12 @@ public class Namespace
         return ns;
     }
 
+    public object GetRaw(string key) {
+        if (!table.ContainsKey(key))
+            return null;
+        return table[key];
+    }
+
     public void Set(string key, bool value) {
         table[key] = value;
     }
@@ -114,6 +120,10 @@ public class Namespace
 
     public void Set(string key, Namespace value) {
         Set(key, value.table);
+    }
+
+    public void SetRaw(string key, object value) {
+        table[key] = value;
     }
 
     public void Remove(string key) {
