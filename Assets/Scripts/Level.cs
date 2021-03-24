@@ -94,16 +94,18 @@ public class Level : MonoBehaviour
     }
 
     public Movable GetMovable(string name) {
+        name = name.ToLower();
         foreach (Movable movable in FindObjectsOfType<Movable>()) {
-            if (movable.gameObject.name == name)
+            if (movable.gameObject.name.ToLower() == name)
                 return movable;
         }
         return null;
     }
 
     public Marker GetMarker(string name) {
+        name = name.ToLower();
         foreach (Marker marker in FindObjectsOfType<Marker>()) {
-            if (marker.gameObject.name == name)
+            if (marker.gameObject.name.ToLower() == name)
                 return marker;
         }
         return null;
