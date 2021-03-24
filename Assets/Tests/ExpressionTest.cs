@@ -171,5 +171,50 @@ namespace Tests
             Assert.AreEqual(Expression.Eval("!false == !(true == false)"), true);
             Assert.AreEqual(Expression.Eval("!(!(!false)) == (1 == 2)"), false);
         }
+
+        [Test]
+        public void 비교테스트() {
+            Assert.AreEqual(Expression.Eval("1 < 2"), true);
+            Assert.AreEqual(Expression.Eval("1 < 1"), false);
+            Assert.AreEqual(Expression.Eval("1 > 2"), false);
+            Assert.AreEqual(Expression.Eval("2 * 3 < 2 * 4"), true);
+            Assert.AreEqual(Expression.Eval("2 + 6 > 5"), true);
+            Assert.AreEqual(Expression.Eval("2 - 4 < 1 - 4"), false);
+            Assert.AreEqual(Expression.Eval("2 < 3 - 0.9"), true);
+            Assert.AreEqual(Expression.Eval("2 + 0.1 < 3 - 0.9"), false);
+        }
+
+        [Test]
+        public void 비교테스트2() {
+            Assert.AreEqual(Expression.Eval("1 <= 2"), true);
+            Assert.AreEqual(Expression.Eval("1 <= 1"), true);
+            Assert.AreEqual(Expression.Eval("1 >= 2"), false);
+            Assert.AreEqual(Expression.Eval("2 * 3 <= 2 * 4"), true);
+            Assert.AreEqual(Expression.Eval("2 * 6 <= 4 * 3"), true);
+            Assert.AreEqual(Expression.Eval("2 + 6 >= 5"), true);
+            Assert.AreEqual(Expression.Eval("2 - 4 <= 1 - 4"), false);
+            Assert.AreEqual(Expression.Eval("2 <= 3 - 0.9"), true);
+            Assert.AreEqual(Expression.Eval("2 + 0.1 <= 3 - 0.9"), true);
+        }
+
+        [Test]
+        public void ANDOR테스트() {
+            Assert.AreEqual(Expression.Eval("true && true"), true);
+            Assert.AreEqual(Expression.Eval("true and true"), true);
+            Assert.AreEqual(Expression.Eval("true && false"), false);
+            Assert.AreEqual(Expression.Eval("true and false"), false);
+            Assert.AreEqual(Expression.Eval("false && false"), false);
+            Assert.AreEqual(Expression.Eval("false || true"), true);
+            Assert.AreEqual(Expression.Eval("false or true"), true);
+            Assert.AreEqual(Expression.Eval("false || false"), false);
+            Assert.AreEqual(Expression.Eval("false or false"), false);
+            Assert.AreEqual(Expression.Eval("false || true || false"), true);
+            Assert.AreEqual(Expression.Eval("true && true && false"), false);
+            Assert.AreEqual(Expression.Eval("3 > 2 && 2 > 1"), true);
+            Assert.AreEqual(Expression.Eval("2 < 4 && 4 < 4"), false);
+            Assert.AreEqual(Expression.Eval("1 < 5 || 5 < 1"), true);
+            Assert.AreEqual(Expression.Eval("!(1 < 5) || 5 < 1"), false);
+            Assert.AreEqual(Expression.Eval("!(1 == 2 || 1 == 1)"), false);
+        }
     }
 }

@@ -67,6 +67,34 @@ public class ExpressionTokenizer
             expression.Add(new NotEqualOp());
             index += 2;
             return true;
+        } else if (line.Substring(index).StartsWith("||") || line.Substring(index).ToLower().StartsWith("or")) {
+            expression.Add(new OrOp());
+            index += 2;
+            return true;
+        } else if (line.Substring(index).StartsWith("&&")) {
+            expression.Add(new AndOp());
+            index += 2;
+            return true;
+        } else if (line.Substring(index).ToLower().StartsWith("and")) {
+            expression.Add(new AndOp());
+            index += 3;
+            return true;
+        } else if (line.Substring(index).StartsWith("<=")) {
+            expression.Add(new GreaterEqualOp(false));
+            index += 2;
+            return true;
+        } else if (line.Substring(index).StartsWith(">=")) {
+            expression.Add(new GreaterEqualOp(true));
+            index += 2;
+            return true;
+        } else if (line[index] == '<') {
+            expression.Add(new GreaterOp(false));
+            index++;
+            return true;
+        } else if (line[index] == '>') {
+            expression.Add(new GreaterOp(true));
+            index++;
+            return true;
         } else if (line[index] == '(') {
             expression.Add(new Parenthesis(true));
             index++;
