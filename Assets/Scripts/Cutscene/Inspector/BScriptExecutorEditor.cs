@@ -16,7 +16,8 @@ public class BScriptExecutorEditor : Editor
 
         DrawStatus(script.state);
 
-        Rect position = GUILayoutUtility.GetRect(new GUIContent(script.script), GetTextAreaStyle());
+        Vector2 textAreaSize = GetTextAreaStyle().CalcSize(new GUIContent(script.script));
+        Rect position = GUILayoutUtility.GetRect(MAX_WIDTH, textAreaSize.y);
         Rect original = position;
 
         List<Token> tokens = script.GetTokens();
