@@ -25,8 +25,13 @@ public class ExpressionTokenizer
                 expression.Add(true);
             else if (token.ToLower() == "false")
                 expression.Add(false);
-            else
-                expression.Add(null); // TODO : 저장 세션에서 불러오기
+            else {
+                object value = Session.Instance.Get(token);
+                if (value is null || value is bool || value is long || value is double)
+                    expression.Add(value);
+                else
+                    throw new BSUnsupportedTypeException(-1, $"변수 {token}에 대한 타입 {value.GetType()}은(는) 지원되지 않습니다.");
+            }
         }
 
         return expression;

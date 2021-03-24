@@ -24,9 +24,21 @@ public class Namespace
         return def;
     }
 
+    public long GetLong(string key, long def = 0) {
+        if (table.ContainsKey(key))
+            return System.Convert.ToInt64(table[key]);
+        return def;
+    }
+
     public float GetFloat(string key, float def = 0f) {
         if (table.ContainsKey(key))
             return System.Convert.ToSingle(table[key]);
+        return def;
+    }
+
+    public double GetDouble(string key, double def = 0d) {
+        if (table.ContainsKey(key))
+            return System.Convert.ToDouble(table[key]);
         return def;
     }
 
@@ -84,11 +96,11 @@ public class Namespace
         table[key] = value;
     }
 
-    public void Set(string key, int value) {
+    public void Set(string key, long value) {
         table[key] = value;
     }
 
-    public void Set(string key, float value) {
+    public void Set(string key, double value) {
         table[key] = value;
     }
 
@@ -123,7 +135,14 @@ public class Namespace
     }
 
     public void SetRaw(string key, object value) {
-        table[key] = value;
+        if (value is null || value is bool || value is long || value is double)
+            table[key] = value;
+        else if (value is int)
+            table[key] = System.Convert.ToInt64(value);
+        else if (value is float)
+            table[key] = System.Convert.ToDouble(value);
+        else
+            throw new BSUnsupportedTypeException(-1, $"타입 {value.GetType()}은(는) SetRaw로 설정할 수 없습니다.");
     }
 
     public void Remove(string key) {
