@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class BSInterpreter : ICommandProvider
 {
+    Game game;
     Level level;
     ChatManager chatManager;
     List<BSException> syntaxErrors;
     Queue<IScriptCommand> commands;
     public List<Token> tokens {get;}
 
-    public BSInterpreter(Level level, ChatManager chatManager, string code) {
+    public BSInterpreter(Game game, Level level, ChatManager chatManager, string code) {
+        this.game = game;
         this.level = level;
         this.chatManager = chatManager;
 
@@ -66,6 +68,8 @@ public class BSInterpreter : ICommandProvider
                     return new ShowCommand(level, lineParser);
                 case WaitCommand.Keyword:
                     return new WaitCommand(lineParser);
+                case TransferCommand.Keyword:
+                    return new TransferCommand(game, lineParser);
             }
             throw new BSSyntaxException(lineNumber, $"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
         }

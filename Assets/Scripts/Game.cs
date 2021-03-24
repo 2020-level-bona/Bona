@@ -27,11 +27,11 @@ public class Game : MonoBehaviour
         Tween.Instance.Update();
     }
 
-    public void TransferScene(SceneReference sceneReference) {
+    public void TransferScene(string sceneName) {
         Session.Instance.Save();
 
         sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
-        SceneManager.LoadScene(sceneReference);
+        SceneManager.LoadScene(sceneName);
     }
 
     public Vector2 GetPlayerSpawnPoint(Vector2 defaultSpawnPoint) {
