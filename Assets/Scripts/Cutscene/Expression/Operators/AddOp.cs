@@ -19,9 +19,9 @@ public class AddOp : BinaryOp
             b = 0;
         }
 
-        if (a is int && b is int) {
-            return (int) a + (int) b;
+        if (a is long && b is long) {
+            return (long) a + (long) b;
         }
-        return System.Convert.ToSingle(a) + System.Convert.ToSingle(b);
+        return System.Convert.ToDouble(a) + System.Convert.ToDouble(b);
     }
 }

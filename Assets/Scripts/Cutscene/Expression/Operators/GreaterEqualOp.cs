@@ -23,10 +23,10 @@ public class GreaterEqualOp : BinaryOp
         if (b is bool)
             throw new BSUnsupportedTypeException(-1, "오른쪽 피연산자의 타입 bool은 지원되지 않습니다.");
         
-        if (a is int && b is int)
-            return leftIsGreater ? ((int) a >= (int) b) : ((int) a <= (int) b);
+        if (a is long && b is long)
+            return leftIsGreater ? ((long) a >= (long) b) : ((long) a <= (long) b);
         
-        return leftIsGreater ? (System.Convert.ToSingle(a) >= System.Convert.ToSingle(b))
-            : (System.Convert.ToSingle(a) <= System.Convert.ToSingle(b));
+        return leftIsGreater ? (System.Convert.ToDouble(a) >= System.Convert.ToDouble(b))
+            : (System.Convert.ToDouble(a) <= System.Convert.ToDouble(b));
     }
 }

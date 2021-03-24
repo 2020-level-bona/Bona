@@ -15,8 +15,8 @@ public class EqualOp : BinaryOp
                 return a.Equals(b);
             
             // int를 float으로 바꿔 테스트
-            if (a is float || b is float)
-                return System.Convert.ToSingle(a) == System.Convert.ToSingle(b); // TODO: 실수 오차 처리
+            if (a is double || b is double)
+                return System.Convert.ToDouble(a) == System.Convert.ToDouble(b); // TODO: 실수 오차 처리
             
             return false;
         }
@@ -26,10 +26,10 @@ public class EqualOp : BinaryOp
         // Default Value로 테스트
         if (nonNull is bool)
             return (bool) nonNull == false;
-        if (nonNull is int)
-            return (int) nonNull == 0;
-        if (nonNull is float)
-            return (float) nonNull == 0f;
+        if (nonNull is long)
+            return (long) nonNull == 0;
+        if (nonNull is double)
+            return (double) nonNull == 0d;
         
         throw new BSSyntaxException(-1, $"지원하지 않는 타입[{nonNull.GetType()}]입니다.");
     }

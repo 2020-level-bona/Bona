@@ -40,17 +40,17 @@ public class ExpressionTokenizer
 
     static bool EatNumber(string line, List<object> expression, ref int index) {
         if (char.IsDigit(line[index])) {
-            Regex floatRegex = new Regex(@"^\d+\.\d+");
-            Match match = floatRegex.Match(line.Substring(index));
+            Regex doubleRegex = new Regex(@"^\d+\.\d+");
+            Match match = doubleRegex.Match(line.Substring(index));
             if (match.Success) {
-                expression.Add(float.Parse(match.Value));
+                expression.Add(double.Parse(match.Value));
                 index += match.Value.Length;
                 return true;
             }
-            Regex intRegex = new Regex(@"^\d+");
-            match = intRegex.Match(line.Substring(index));
+            Regex longRegex = new Regex(@"^\d+");
+            match = longRegex.Match(line.Substring(index));
             if (match.Success) {
-                expression.Add(int.Parse(match.Value));
+                expression.Add(long.Parse(match.Value));
                 index += match.Value.Length;
                 return true;
             }
