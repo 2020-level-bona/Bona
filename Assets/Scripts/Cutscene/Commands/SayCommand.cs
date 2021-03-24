@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MessageCommand : IScriptCommand
+public class SayCommand : IScriptCommand
 {
     ChatManager chatManager;
     Level level;
     CharacterType characterType;
     string message;
 
-    public const string Keyword = "MSG";
+    public const string Keyword = "SAY";
     public bool Blocking => true;
     public int LineNumber {get;}
 
-    public MessageCommand(ChatManager chatManager, Level level, CharacterType characterType, string message) {
+    public SayCommand(ChatManager chatManager, Level level, CharacterType characterType, string message) {
         this.chatManager = chatManager;
         this.level = level;
         this.characterType = characterType;
         this.message = message;
     }
 
-    public MessageCommand(ChatManager chatManager, Level level, CommandLineParser lineParser) {
+    public SayCommand(ChatManager chatManager, Level level, CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
         this.chatManager = chatManager;
         this.level = level;

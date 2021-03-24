@@ -58,8 +58,8 @@ public class BSInterpreter : ICommandProvider
             switch (lineParser.GetKeyword()) {
                 case HideCommand.Keyword:
                     return new HideCommand(level, lineParser);
-                case MessageCommand.Keyword:
-                    return new MessageCommand(chatManager, level, lineParser);
+                case SayCommand.Keyword:
+                    return new SayCommand(chatManager, level, lineParser);
                 case MoveCommand.Keyword:
                     return new MoveCommand(level, lineParser);
                 case ShowCommand.Keyword:
