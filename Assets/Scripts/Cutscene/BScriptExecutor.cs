@@ -20,7 +20,7 @@ public class BScriptExecutor : MonoBehaviour
         level = FindObjectOfType<Level>();
         chatManager = FindObjectOfType<ChatManager>();
 
-        interpreter = new BSInterpreter(level, chatManager, script);
+        interpreter = new BSInterpreter(game, level, chatManager, script);
         if (interpreter.GetSyntaxErrors().Count > 0)
             state = ScriptExecutorState.SYNTAX_ERROR;
         else
@@ -34,7 +34,7 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     void Start() {
-        interpreter = new BSInterpreter(level, chatManager, script);
+        interpreter = new BSInterpreter(game, level, chatManager, script);
         if (interpreter.GetSyntaxErrors().Count > 0)
             state = ScriptExecutorState.SYNTAX_ERROR;
         else
@@ -47,7 +47,7 @@ public class BScriptExecutor : MonoBehaviour
         if (state == ScriptExecutorState.RUNNING)
             throw new System.Exception("스크립트가 이미 실행 중입니다.");
         
-        session = game.CreateScriptSession(new BSInterpreter(level, chatManager, script));
+        session = game.CreateScriptSession(new BSInterpreter(game, level, chatManager, script));
         session.Start();
 
         state = ScriptExecutorState.RUNNING;
