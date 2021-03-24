@@ -48,14 +48,22 @@ public class ChatRenderer : MonoBehaviour
     }
 
     void Update() {
-        if ((chat.Global && Input.GetMouseButtonDown(0)) || !character)
+        if (!character)
             Finish();
-        else
-            UpdatePosition();
+        else if (chat.Global && Input.GetMouseButtonDown(0)) {
+            if (!AnimationFinished)
+                SkipAnimation();
+            else
+                Finish();
+        }
+
+        UpdatePosition();
     }
 
     void OnCharacterClicked(CharacterType type) {
-        if (type == character.type)
+        if (!AnimationFinished)
+            SkipAnimation();
+        else
             Finish();
     }
 
