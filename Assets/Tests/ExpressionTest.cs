@@ -41,9 +41,9 @@ namespace Tests
         [Test]
         public void 실수덧셈테스트()
         {
-            Assert.AreEqual(Expression.Eval("1.1+2"), 3.1f);
-            Assert.AreEqual(Expression.Eval("5+ 0.5"), 5.5f);
-            Assert.AreEqual(Expression.Eval("0.2 + 0.3"), 0.5f);
+            Assert.AreEqual(Expression.Eval("1.1+2"), 3.1d);
+            Assert.AreEqual(Expression.Eval("5+ 0.5"), 5.5d);
+            Assert.AreEqual(Expression.Eval("0.2 + 0.3"), 0.5d);
         }
 
         [Test]
@@ -51,7 +51,7 @@ namespace Tests
         {
             Assert.AreEqual(Expression.Eval("3-1"), 2);
             Assert.AreEqual(Expression.Eval("4-6"), -2);
-            Assert.AreEqual(Expression.Eval("  1.2 - 0.2 "), 1.0f);
+            Assert.AreEqual(Expression.Eval("  1.2 - 0.2 "), 1.0d);
         }
 
         [Test]
@@ -59,7 +59,7 @@ namespace Tests
         {
             Assert.AreEqual(Expression.Eval("1+2+3+4+5"), 15);
             Assert.AreEqual(Expression.Eval("1+2-3"), 0);
-            Assert.AreEqual(Expression.Eval("4+8-3.0"), 9f);
+            Assert.AreEqual(Expression.Eval("4+8-3.0"), 9d);
         }
 
         [Test]
@@ -67,7 +67,7 @@ namespace Tests
         {
             Assert.AreEqual(Expression.Eval("2*4"), 8);
             Assert.AreEqual(Expression.Eval("3*1*2"), 6);
-            Assert.AreEqual(Expression.Eval("0.2*0.25"), 0.2f * 0.25f);
+            Assert.AreEqual(Expression.Eval("0.2*0.25"), 0.2d * 0.25d);
         }
 
         [Test]
@@ -77,7 +77,7 @@ namespace Tests
             Assert.AreEqual(Expression.Eval("2+4*3"), 14);
             Assert.AreEqual(Expression.Eval("2*4+6*3"), 8+18);
             Assert.AreEqual(Expression.Eval("0.5 * 4 + 0.25 * 4"), 3);
-            Assert.AreEqual(Expression.Eval("0.5 - 4 * 0.25 - 4"), -4.5f);
+            Assert.AreEqual(Expression.Eval("0.5 - 4 * 0.25 - 4"), -4.5d);
         }
 
         [Test]
