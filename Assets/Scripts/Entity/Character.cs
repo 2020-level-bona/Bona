@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     Level level;
     public Movable movable {get; private set;}
     Animator animator;
-    IAnimationController animationController;
+    List<IAnimationController> animationControllers;
     Trigger trigger;
     ChatRenderer chatRenderer;
 
@@ -19,8 +19,9 @@ public class Character : MonoBehaviour
         level.RegisterSpawnedCharacter(type, this);
 
         movable = FindObjectOfType<Movable>();
-
         animator = GetComponentInChildren<Animator>();
+        animationControllers = new List<IAnimationController>();
+        animationControllers.Add(new WalkAnimationController(movable));
 
         trigger = GetComponent<Trigger>();
     }
@@ -31,8 +32,9 @@ public class Character : MonoBehaviour
     }
 
     void Update() {
-        if (animationController != null)
-            animator.Play(animationController.GetClip());
+        animationControllers.RemoveAll(x => x.HasDone());
+        if (animationControllers.Count > 0)
+            animator.Play(animationControllers[animationControllers.Count - 1].GetClip());
     }
 
     void OnDestroy() {
@@ -64,5 +66,13 @@ public class Character : MonoBehaviour
             chatRenderer.Finish();
         
         chatRenderer = FindObjectOfType<ChatManager>().Render(chat, movable, global);
+    }
+
+    public void AddAnimationController(IAnimationController animationController) {
+        animationControllers.Add(animationController);
+    }
+
+    public void RemoveAnimationController(IAnimationController animationController) {
+        animationControllers.Remove(animationController);
     }
 }
