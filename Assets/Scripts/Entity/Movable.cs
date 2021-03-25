@@ -50,7 +50,7 @@ public class Movable : MonoBehaviour
 
         // FIXME : 이게 무슨 짓거리야
         if (GetComponent<Character>() != null && GetComponent<Character>().type == CharacterType.BONA)
-            EventManager.Instance.OnPlayerMove(transform.position);
+            EventManager.Instance.OnPlayerMove?.Invoke(transform.position);
     }
 
     public void MoveDelta(Vector2 positionDelta) {
