@@ -70,6 +70,8 @@ public class BSInterpreter : ICommandProvider
                     return new WaitCommand(lineParser);
                 case TransferCommand.Keyword:
                     return new TransferCommand(game, lineParser);
+                case SetCommand.Keyword:
+                    return new SetCommand(lineParser);
             }
             throw new BSSyntaxException(lineNumber, $"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
         }
