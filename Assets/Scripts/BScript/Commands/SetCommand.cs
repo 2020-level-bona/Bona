@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SetCommand : IScriptCommand
+public class SetCommand : IActionCommand
 {
     string path;
     string value;

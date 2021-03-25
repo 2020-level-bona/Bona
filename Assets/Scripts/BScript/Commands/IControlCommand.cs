@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ICommandProvider
+public interface IControlCommand : ICommand
 {
-    ICommand Next();
+    ICommandProvider GetCommandProvider();
 }

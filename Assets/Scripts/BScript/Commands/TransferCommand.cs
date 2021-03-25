@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TransferCommand : IScriptCommand
+public class TransferCommand : IActionCommand
 {
     Game game;
     string sceneName;

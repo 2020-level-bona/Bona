@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HideCommand : IScriptCommand
+public class HideCommand : IActionCommand
 {
     Level level;
     CharacterType characterType;

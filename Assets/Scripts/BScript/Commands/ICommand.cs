@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ICommandProvider
+public interface ICommand
 {
-    ICommand Next();
+    bool Blocking {get;}
+    int LineNumber {get;}
 }

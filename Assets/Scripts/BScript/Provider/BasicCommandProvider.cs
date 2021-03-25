@@ -6,16 +6,16 @@ public class BasicCommandProvider : ICommandProvider
 {
     Level level;
     ChatManager chatManager;
-    Queue<IScriptCommand> commands;
+    Queue<ICommand> commands;
 
     public BasicCommandProvider(Level level, ChatManager chatManager) {
         this.level = level;
         this.chatManager = chatManager;
 
-        commands = new Queue<IScriptCommand>();
+        commands = new Queue<ICommand>();
     }
 
-    public IScriptCommand Next() {
+    public ICommand Next() {
         if (commands.Count == 0)
             return null;
         return commands.Dequeue();

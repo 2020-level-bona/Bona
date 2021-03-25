@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SayCommand : IScriptCommand
+public class SayCommand : IActionCommand
 {
     ChatManager chatManager;
     Level level;
