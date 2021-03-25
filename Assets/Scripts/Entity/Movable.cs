@@ -47,6 +47,10 @@ public class Movable : MonoBehaviour
             Vector2 nextPosition = level.floorPolygons[currentFloor - 1].ClosestPoint(position);
             transform.position = new Vector3(nextPosition.x, nextPosition.y, transform.position.z);
         }
+
+        // FIXME : 이게 무슨 짓거리야
+        if (GetComponent<Character>() != null && GetComponent<Character>().type == CharacterType.BONA)
+            EventManager.Instance.OnPlayerMove(transform.position);
     }
 
     public void MoveDelta(Vector2 positionDelta) {
