@@ -25,7 +25,7 @@ public class HideCommand : IScriptCommand
     public IEnumerator GetCoroutine() {
         Character character = level.GetSpawnedCharacter(characterType);
         if (character)
-            character.Hide();
+            character.gameObject.AddComponent<SpriteEffector>().Hide();
 
         yield return null;
     }
