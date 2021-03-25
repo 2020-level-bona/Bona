@@ -6,21 +6,17 @@ using UnityEngine;
 public class AreaTrigger : Trigger
 {
     Game game;
-    Movable playerMovable;
     Collider2D coll;
     bool triggered = false;
 
     void Awake() {
         game = FindObjectOfType<Game>();
         coll = GetComponent<Collider2D>();
+        EventManager.Instance.OnPlayerMove += UpdateMovement;
     }
 
-    void Start() {
-        playerMovable = FindObjectOfType<Level>().GetSpawnedCharacter(CharacterType.BONA).GetComponent<Movable>();
-    }
-
-    void Update() {
-        bool activated = coll.OverlapPoint(playerMovable.transform.position) && !game.IsPlayingCutscene;
+    void UpdateMovement(Vector2 position) {
+        bool activated = coll.OverlapPoint(position) && !game.IsPlayingCutscene;
         if (!triggered && activated) {
             Event.Invoke();
             triggered = true;
