@@ -31,7 +31,7 @@ public class ShowCommand : IScriptCommand
             character = level.SpawnCharacter(characterType, target);
             character.Show();
         }
-        character.MoveTo(target);
+        character.GetComponent<Movable>().MoveTo(target);
 
         yield return null;
     }

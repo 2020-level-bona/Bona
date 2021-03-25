@@ -7,16 +7,19 @@ public class AreaScriptTrigger : ScriptTrigger
 {
     Camera cam;
     Collider2D coll;
-    Player player;
+    Movable playerMovable;
 
     void Awake() {
         cam = Camera.main;
         coll = GetComponent<Collider2D>();
-        player = FindObjectOfType<Player>();
+    }
+
+    void Start() {
+        playerMovable = FindObjectOfType<Level>().GetSpawnedCharacter(CharacterType.BONA).GetComponent<Movable>();
     }
 
     void Update() {
-        if (coll.OverlapPoint(player.transform.position))
+        if (coll.OverlapPoint(playerMovable.transform.position))
             Run();
     }
 }
