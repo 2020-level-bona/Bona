@@ -8,7 +8,7 @@ public class BSInterpreter : ICommandProvider
     Level level;
     ChatManager chatManager;
     List<BSException> syntaxErrors;
-    Queue<IScriptCommand> commands;
+    Queue<ICommand> commands;
     public List<Token> tokens {get;}
 
     public BSInterpreter(Game game, Level level, ChatManager chatManager, string code) {
@@ -22,7 +22,7 @@ public class BSInterpreter : ICommandProvider
         commands = ParseCode(code);
     }
 
-    public IScriptCommand Next() {
+    public ICommand Next() {
         if (commands.Count == 0)
             return null;
         return commands.Dequeue();
@@ -32,28 +32,51 @@ public class BSInterpreter : ICommandProvider
         return syntaxErrors;
     }
 
-    Queue<IScriptCommand> ParseCode(string code) {
+    Queue<ICommand> ParseCode(string code) {
         string[] lines = code.Split('\n');
 
-        Queue<IScriptCommand> commands = new Queue<IScriptCommand>();
-        for (int i = 0; i < lines.Length; i++) {
-            string line = lines[i].Trim();
-            if (line.Length == 0)
+        for (int i = 0; i < lines.Length; i++)
+            lines[i] = lines[i].Trim();
+        
+        int line = 0;
+        return ParseCode(lines, ref line, 0);
+    }
+
+    Queue<ICommand> ParseCode(string[] lines, ref int line, int depth) {
+        Queue<ICommand> commands = new Queue<ICommand>();
+
+        while(line < lines.Length) {
+            if (lines[line].Length == 0) {
+                line++;
                 continue;
+            }
             
             try {
-                IScriptCommand command = ParseLine(i, lines[i]);
-                if (command != null)
+                ICommand command = ParseLine(line, lines[line]);
+                if (command is IActionCommand) {
                     commands.Enqueue(command);
+                } else if (command is DoCommand) {
+                    line++;
+                    (command as DoCommand).SetCommandQueue(ParseCode(lines, ref line, depth + 1));
+                    commands.Enqueue(command);
+                } else if (command is EndCommand) {
+                    if (depth == 0)
+                        throw new BSSyntaxException(line, "제어문이 불필요하게 닫혔습니다.");
+                    return commands;
+                }
             } catch (BSException e) {
                 syntaxErrors.Add(e);
             }
-        }            
 
+            line++;
+        }
+
+        if (depth > 0)
+            throw new BSSyntaxException(line, "제어문이 닫히지 않았습니다. END를 추가해주세요.");
         return commands;
     }
 
-    IScriptCommand ParseLine(int lineNumber, string line) {
+    ICommand ParseLine(int lineNumber, string line) {
         CommandLineParser lineParser = new CommandLineParser(lineNumber, line);
         tokens.AddRange(lineParser.args);
         if (lineParser.HasKeyword()) {
@@ -72,6 +95,12 @@ public class BSInterpreter : ICommandProvider
                     return new TransferCommand(game, lineParser);
                 case SetCommand.Keyword:
                     return new SetCommand(lineParser);
+                
+                // 제어문
+                case DoCommand.Keyword:
+                    return new DoCommand(lineParser);
+                case EndCommand.Keyword:
+                    return new EndCommand(lineParser);
             }
             throw new BSSyntaxException(lineNumber, $"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
         }

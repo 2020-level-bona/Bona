@@ -11,6 +11,9 @@ public class ScriptSession
     public bool expired {get; private set;} = false;
     public List<LinePointer> linePointers {get; private set;} = new List<LinePointer>();
 
+    int subroutineCount;
+    int subroutineFinishedCount;
+
     public ScriptSession(Level level, ChatManager chatManager, ICommandProvider commandProvider, MonoBehaviour coroutineRunner) {
         this.level = level;
         this.chatManager = chatManager;
@@ -19,26 +22,51 @@ public class ScriptSession
     }
 
     public void Start() {
-        coroutineRunner.StartCoroutine(MainCoroutine());
+        coroutineRunner.StartCoroutine(MainRoutine());
     }
 
-    IEnumerator MainCoroutine() {
+    IEnumerator MainRoutine() {
         linePointers = new List<LinePointer>();
 
-        LinePointer linePointer = new LinePointer(0);
+        subroutineCount = subroutineFinishedCount = 0;
+
+        yield return SubRoutine(new LinePointer(0), commandProvider);
+        yield return new WaitWhile(() => subroutineCount > subroutineFinishedCount);
+
+        expired = true;
+    }
+
+    IEnumerator SubRoutine(LinePointer linePointer, ICommandProvider commandProvider) {
+        subroutineCount++;
+
         linePointers.Add(linePointer);
 
-        IScriptCommand command = commandProvider.Next();
+        ICommand command = commandProvider.Next();
         while (command != null) {
             linePointer.Move(command.LineNumber);
-            if (command.Blocking)
-                yield return command.GetCoroutine();
-            else
-                coroutineRunner.StartCoroutine(command.GetCoroutine());
+
+            if (command is IActionCommand) {
+                IEnumerator routine = (command as IActionCommand).GetCoroutine();
+
+                if (command.Blocking)
+                    yield return routine;
+                else
+                    coroutineRunner.StartCoroutine(routine);
+            } else if (command is IControlCommand) {
+                ICommandProvider sub = (command as IControlCommand).GetCommandProvider();
+
+                if (command.Blocking)
+                    yield return SubRoutine(new LinePointer(command.LineNumber), sub);
+                else
+                    coroutineRunner.StartCoroutine(SubRoutine(new LinePointer(command.LineNumber), sub));
+            }
+            
             command = commandProvider.Next();
         }
+
         linePointers.Remove(linePointer);
-        expired = true;
+
+        subroutineFinishedCount++;
     }
 }
 

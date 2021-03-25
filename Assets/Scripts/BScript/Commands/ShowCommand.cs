@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShowCommand : IScriptCommand
+public class ShowCommand : IActionCommand
 {
     Level level;
     CharacterType characterType;

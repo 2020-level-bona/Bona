@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCommand : IScriptCommand
+public class MoveCommand : IActionCommand
 {
     string movableName;
     Level level;
