@@ -29,7 +29,7 @@ public class ShowCommand : IScriptCommand
         Character character = level.GetSpawnedCharacter(characterType);
         if (!character) {
             character = level.SpawnCharacter(characterType, target);
-            character.Show();
+            character.gameObject.AddComponent<SpriteEffector>().Show();
         }
         character.GetComponent<Movable>().MoveTo(target);
 

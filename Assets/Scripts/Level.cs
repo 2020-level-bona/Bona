@@ -59,13 +59,6 @@ public class Level : MonoBehaviour
         return character;
     }
 
-    public void UnregisterSpawnedCharacter(CharacterType type) {
-        if (!spawnedCharacters.ContainsKey(type))
-            throw new System.Exception($"CharacterType={type} 에 대한 스폰된 캐릭터가 존재하지 않습니다.");
-        
-        spawnedCharacters.Remove(type);
-    }
-
     public Character SpawnCharacter(CharacterType type, Vector2 position) {
         if (GetSpawnedCharacter(type) != null)
             throw new System.Exception($"CharacterType={type} 에 대해 이미 스폰된 캐릭터가 존재합니다.");
@@ -82,15 +75,6 @@ public class Level : MonoBehaviour
                 Destroy(gameObject);
         }
         return null;
-    }
-
-    public void DespawnCharacter(CharacterType type) {
-        Character character = GetSpawnedCharacter(type);
-        if (character != null) {
-            Destroy(character.gameObject);
-        } else {
-            throw new System.Exception($"CharacterType={type} 에 대한 스폰된 캐릭터가 존재하지 않습니다.");
-        }
     }
 
     public Movable GetMovable(string name) {

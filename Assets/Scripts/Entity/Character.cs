@@ -37,30 +37,6 @@ public class Character : MonoBehaviour
             animator.Play(animationControllers[animationControllers.Count - 1].GetClip());
     }
 
-    void OnDestroy() {
-        level.UnregisterSpawnedCharacter(type);
-    }
-
-    public void Show(float duration = 1f) {
-        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        
-        Tween.Add(gameObject, x => {
-            Color color = spriteRenderer.color;
-            color.a = x;
-            spriteRenderer.color = color;
-        }, 0f, 1f, duration);
-    }
-
-    public void Hide(float duration = 1f, bool destroy = true) {
-        SpriteRenderer spriteRenderer = GetComponentInChildren<SpriteRenderer>();
-        
-        Tween.Add(gameObject, x => {
-            Color color = spriteRenderer.color;
-            color.a = x;
-            spriteRenderer.color = color;
-        }, 1f, 0f, duration, destroy ? (Action) (() => Destroy(gameObject)) : null);
-    }
-
     public void ShowMessage(Chat chat, bool global = true) {
         if (chatRenderer)
             chatRenderer.Finish();
