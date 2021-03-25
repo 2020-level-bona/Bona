@@ -153,7 +153,7 @@ public class BScriptExecutorEditor : Editor
     GUIStyle GetTextStyle(Color color) {
         GUIStyle style = new GUIStyle();
         style.normal.textColor = color;
-        style.fontSize = 18;
+        style.fontSize = 15;
         style.stretchWidth = false;
         style.stretchHeight = false;
         style.fontStyle = UnityEngine.FontStyle.Bold;
