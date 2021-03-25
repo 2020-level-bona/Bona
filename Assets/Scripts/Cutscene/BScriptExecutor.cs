@@ -7,6 +7,10 @@ public class BScriptExecutor : MonoBehaviour
 {
     public string script = "";
 
+    public string uniqueId;
+    public ScriptExecutionType executionType;
+    public string executionCondition;
+
     Game game;
     Level level;
     ChatManager chatManager;
@@ -25,6 +29,10 @@ public class BScriptExecutor : MonoBehaviour
             state = ScriptExecutorState.SYNTAX_ERROR;
         else
             state = ScriptExecutorState.READY;
+        
+        // uniqueId 생성
+        if (uniqueId == null || uniqueId == "")
+            uniqueId = Random.Range(0, 1 << 16).ToString("X4");
     }
 
     void Awake() {
@@ -42,10 +50,16 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     public void Run() {
+        if (executionType == ScriptExecutionType.ONCE && Session.CurrentScene.GetBool(uniqueId))
+            return;
         if (state == ScriptExecutorState.SYNTAX_ERROR)
             throw new System.Exception("스크립트에 구문 오류가 있어 실행할 수 없습니다.");
         if (state == ScriptExecutorState.RUNNING)
-            throw new System.Exception("스크립트가 이미 실행 중입니다.");
+            return;
+        if (!CheckExecutionCondition())
+            return;
+        
+        Session.CurrentScene.Set(uniqueId, true);
         
         session = game.CreateScriptSession(new BSInterpreter(game, level, chatManager, script));
         session.Start();
@@ -53,8 +67,19 @@ public class BScriptExecutor : MonoBehaviour
         state = ScriptExecutorState.RUNNING;
     }
 
-    public bool CanRun() {
-        return state != ScriptExecutorState.SYNTAX_ERROR && state != ScriptExecutorState.RUNNING;
+    bool CheckExecutionCondition() {
+        if (executionCondition == null || executionCondition == "")
+            return true;
+        object result = Expression.Eval(executionCondition);
+        if (result is null)
+            return false;
+        if (result is bool)
+            return (bool) result;
+        if (result is int || result is long)
+            return System.Convert.ToInt64(result) != 0;
+        if (result is float || result is double)
+            return System.Convert.ToDouble(result) != 0;
+        return false;
     }
 
     void Update() {

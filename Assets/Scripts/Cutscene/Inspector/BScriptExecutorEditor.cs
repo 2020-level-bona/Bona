@@ -12,15 +12,17 @@ public class BScriptExecutorEditor : Editor
         serializedObject.Update();
         // EditorGUILayout.BeginVertical();
 
-        BScriptExecutor script = (BScriptExecutor) target;
+        BScriptExecutor executor = (BScriptExecutor) target;
 
-        DrawStatus(script.state);
+        DrawProperties(executor);
 
-        Vector2 textAreaSize = GetTextAreaStyle().CalcSize(new GUIContent(script.script));
+        DrawStatus(executor.state);
+
+        Vector2 textAreaSize = GetTextAreaStyle().CalcSize(new GUIContent(executor.script));
         Rect position = GUILayoutUtility.GetRect(MAX_WIDTH, textAreaSize.y);
         Rect original = position;
 
-        List<Token> tokens = script.GetTokens();
+        List<Token> tokens = executor.GetTokens();
         // 토큰을 등장 순서에 따라 정렬
         tokens.Sort((a, b) => {
             if (a.lineNumber == b.lineNumber)
@@ -28,11 +30,11 @@ public class BScriptExecutorEditor : Editor
             return a.lineNumber.CompareTo(b.lineNumber);
         });
 
-        List<BSException> exceptions = script.GetExceptions();
+        List<BSException> exceptions = executor.GetExceptions();
 
         if (tokens.Count > 0)
             DrawBackground(position, tokens[tokens.Count - 1].lineNumber, exceptions);
-        DrawLinePointer(position, script.GetLinePointers());
+        DrawLinePointer(position, executor.GetLinePointers());
 
         serializedObject.FindProperty("script").stringValue = EditorGUI.TextArea(position, serializedObject.FindProperty("script").stringValue, GetTextAreaStyle());
 
@@ -64,6 +66,23 @@ public class BScriptExecutorEditor : Editor
 
         // EditorGUILayout.EndVertical();
         serializedObject.ApplyModifiedProperties();
+    }
+
+    void DrawProperties(BScriptExecutor executor) {
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("고유 ID");
+        executor.uniqueId = EditorGUILayout.TextField(executor.uniqueId);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("스크립트 실행 타입");
+        executor.executionType = (ScriptExecutionType) EditorGUILayout.EnumPopup(executor.executionType);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("스크립트 실행 조건식");
+        executor.executionCondition = EditorGUILayout.TextField(executor.executionCondition);
+        EditorGUILayout.EndHorizontal();
     }
 
     void DrawStatus(ScriptExecutorState state) {

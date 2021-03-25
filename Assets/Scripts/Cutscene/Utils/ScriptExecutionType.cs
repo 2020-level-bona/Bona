@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TriggerExecutionType
+public enum ScriptExecutionType
 {
     [InspectorName("오직 한번만 실행")]
     ONCE,
