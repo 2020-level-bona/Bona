@@ -13,12 +13,12 @@ public class ChatManager : MonoBehaviour
         chatboxCoordinator = new ChatboxCoordinator(canvasObject.GetComponent<RectTransform>(), Camera.main);
     }
 
-    public ChatRenderer Render(Chat chat, Character character, bool global = true) {
+    public ChatRenderer Render(Chat chat, Movable movable, bool global = true) {
         GameObject gameObject = Instantiate(chatRendererPrefab);
         gameObject.transform.SetParent(canvasObject.transform);
 
         ChatRenderer chatRenderer = gameObject.GetComponent<ChatRenderer>();
-        chatRenderer.Initialize(chat, character, chatboxCoordinator);
+        chatRenderer.Initialize(chat, movable, chatboxCoordinator);
 
         return chatRenderer;
     }

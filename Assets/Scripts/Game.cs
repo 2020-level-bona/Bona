@@ -11,12 +11,16 @@ public class Game : MonoBehaviour
     ChatManager chatManager;
     CameraController cameraController;
 
+    public Inventory inventory;
+
     public bool IsPlayingCutscene {get; private set;} = false;
 
     void Awake() {
         level = FindObjectOfType<Level>();
         chatManager = FindObjectOfType<ChatManager>();
         cameraController = FindObjectOfType<CameraController>();
+
+        inventory = new Inventory();
     }
 
     void Start() {

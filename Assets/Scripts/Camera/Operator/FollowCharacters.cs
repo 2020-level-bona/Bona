@@ -17,11 +17,11 @@ public class FollowCharacters : Follower
         if (targets.Count == 0)
             return GetCameraPosition();
         
-        Bounds bounds = targets[0].GetBounds();
+        Bounds bounds = targets[0].movable.GetBounds();
         Vector2 min = bounds.min;
         Vector2 max = bounds.max;
         for (int i = 1; i < targets.Count; i++) {
-            bounds = targets[i].GetBounds();
+            bounds = targets[i].movable.GetBounds();
             min = Vector2.Min(min, bounds.min);
             max = Vector2.Max(max, bounds.max);
         }

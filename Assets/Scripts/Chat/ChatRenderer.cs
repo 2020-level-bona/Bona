@@ -9,7 +9,7 @@ public class ChatRenderer : MonoBehaviour
     public const float CHATBOX_ADDITIONAL_HEIGHT = 0.3f;
 
     public Chat chat {get; private set;}
-    public Character character {get; private set;}
+    public Movable movable {get; private set;}
 
     RectTransform rectTransform;
     Text uiText;
@@ -20,9 +20,9 @@ public class ChatRenderer : MonoBehaviour
 
     Coroutine animationCoroutine;
 
-    public void Initialize(Chat chat, Character character, ChatboxCoordinator chatboxCoordinator) {
+    public void Initialize(Chat chat, Movable movable, ChatboxCoordinator chatboxCoordinator) {
         this.chat = chat;
-        this.character = character;
+        this.movable = movable;
         this.chatboxCoordinator = chatboxCoordinator;
     }
 
@@ -48,7 +48,7 @@ public class ChatRenderer : MonoBehaviour
     }
 
     void Update() {
-        if (!character)
+        if (!movable)
             Finish();
         else if (chat.Global && Input.GetMouseButtonDown(0)) {
             if (!AnimationFinished)
@@ -72,7 +72,7 @@ public class ChatRenderer : MonoBehaviour
     }
 
     Vector2 GetAnchorPosition() {
-        Bounds bounds = character.GetBounds();
+        Bounds bounds = movable.GetBounds();
         return new Vector2((bounds.min.x + bounds.max.x) / 2f, bounds.max.y + CHATBOX_ADDITIONAL_HEIGHT);
     }
 
