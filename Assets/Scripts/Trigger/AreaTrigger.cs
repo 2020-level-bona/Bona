@@ -16,9 +16,9 @@ public class AreaTrigger : Trigger
     }
 
     void UpdateMovement(Vector2 position) {
-        bool activated = coll.OverlapPoint(position) && !game.IsPlayingCutscene;
+        bool activated = coll.OverlapPoint(position);
         if (!triggered && activated) {
-            Event.Invoke();
+            Invoke();
             triggered = true;
         } else if (triggered && !activated) {
             triggered = false;

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AutoScriptTrigger : ScriptTrigger
+public class AutoTrigger : Trigger
 {
     void Update() {
-        Run();
+        Invoke();
     }
 }

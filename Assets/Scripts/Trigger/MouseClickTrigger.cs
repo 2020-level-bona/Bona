@@ -17,10 +17,10 @@ public class MouseClickTrigger : Trigger
     }
 
     void Update() {
-        if (Input.GetMouseButtonDown(0) && !game.IsPlayingCutscene) {
+        if (Input.GetMouseButtonDown(0)) {
             Vector2 worldPos = cam.ScreenToWorldPoint(Input.mousePosition);
             if (coll.OverlapPoint(worldPos)) {
-                Event.Invoke();
+                Invoke();
             }
         }
     }
