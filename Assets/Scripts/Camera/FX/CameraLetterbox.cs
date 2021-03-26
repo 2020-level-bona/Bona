@@ -17,11 +17,16 @@ public class CameraLetterbox : MonoBehaviour
         }
     }
 
+    void Awake() {
+        EventManager.Instance.OnCutsceneStart += ShowLetterbox;
+        EventManager.Instance.OnCutsceneFinish += HideLetterbox;
+    }
+
     public void ShowLetterbox() {
-        Tween.Add(gameObject, x => letterboxIntensity = x, 0f, 1f, 1f);
+        Tween.Add(gameObject, x => letterboxIntensity = x, 0f, 1f, 0.7f);
     }
 
     public void HideLetterbox() {
-        Tween.Add(gameObject, x => letterboxIntensity = x, 1f, 0f, 1f);
+        Tween.Add(gameObject, x => letterboxIntensity = x, 1f, 0f, 0.7f);
     }
 }
