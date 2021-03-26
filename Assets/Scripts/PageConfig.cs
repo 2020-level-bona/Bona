@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class PageConfig {
     [SerializeField]
+    public bool selected;
+
+    [SerializeField]
     public string condition;
     
     [SerializeField]
