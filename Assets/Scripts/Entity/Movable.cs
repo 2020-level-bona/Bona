@@ -8,7 +8,9 @@ public class Movable : MonoBehaviour
     Vector2 lastPosition; // 속도 계산에 사용
 
     public Vector2 size = new Vector2(1f, 2f);
-    public float speed = 5f;
+    public float baseSpeed = 5f;
+    public float speedMultiplier = 1f;
+    public float speed => baseSpeed * speedMultiplier;
 
     public int currentFloor {get; private set;} = 1;
     public Vector2 position {

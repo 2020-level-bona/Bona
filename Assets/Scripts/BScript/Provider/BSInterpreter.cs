@@ -121,7 +121,9 @@ public class BSInterpreter : ICommandProvider
                     return new PlayAnimCommand(level, lineParser);
                 case StopAnimCommand.Keyword:
                     return new StopAnimCommand(level, lineParser);
-                
+                case SpeedCommand.Keyword:
+                    return new SpeedCommand(level, lineParser);
+
                 // 제어문
                 case DoCommand.Keyword:
                     return new DoCommand(lineParser);
