@@ -54,6 +54,11 @@ public class Character : MonoBehaviour
         animationControllers.Remove(animationController);
     }
 
+    // WalkAnimationController를 제외한 모든 IAnimationController를 삭제한다.
+    public void ClearAnimationControllers() {
+        animationControllers.RemoveAll(x => !(x is WalkAnimationController));
+    }
+
     void PlayClip(string clipNameOrAlias) {
         string clipName = clipNameOrAlias;
         if (animationPalette && animationPalette.GetClipName(clipNameOrAlias) != null)

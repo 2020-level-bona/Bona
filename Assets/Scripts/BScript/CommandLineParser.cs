@@ -25,8 +25,12 @@ public class CommandLineParser : ICommandLineParser
     }
 
     void CheckIndex(int index) {
-        if (index >= args.Count || args[index].type == TokenType.COMMENT)
+        if (!HasArgument(index))
             throw new BSSyntaxException(lineNumber, $"{index}번째 파라미터가 필요하지만 전달되지 않았습니다.");
+    }
+
+    public bool HasArgument(int index) {
+        return index < args.Count && args[index].type != TokenType.COMMENT;
     }
 
     public bool HasKeyword() {

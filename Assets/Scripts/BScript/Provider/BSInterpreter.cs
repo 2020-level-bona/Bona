@@ -117,6 +117,10 @@ public class BSInterpreter : ICommandProvider
                     return new TransferCommand(game, lineParser);
                 case SetCommand.Keyword:
                     return new SetCommand(lineParser);
+                case PlayAnimCommand.Keyword:
+                    return new PlayAnimCommand(level, lineParser);
+                case StopAnimCommand.Keyword:
+                    return new StopAnimCommand(level, lineParser);
                 
                 // 제어문
                 case DoCommand.Keyword:
