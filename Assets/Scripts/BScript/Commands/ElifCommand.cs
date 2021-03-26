@@ -17,7 +17,7 @@ public class ElifCommand : IControlCommand
 
     public ElifCommand(CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
-        this.currentExpression = lineParser.GetAllStrings();
+        this.currentExpression = lineParser.GetAllStrings(1);
     }
 
     public ICommandProvider GetCommandProvider() {
