@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoCommand : IControlCommand, ICommandProvider
+public class DoCommand : IControlCommand
 {
     Queue<ICommand> commands = new Queue<ICommand>();
 
@@ -21,7 +21,7 @@ public class DoCommand : IControlCommand, ICommandProvider
     }
 
     public ICommandProvider GetCommandProvider() {
-        return this;
+        return new QueueCommandProvider(commands);
     }
 
     public ICommand Next() {
