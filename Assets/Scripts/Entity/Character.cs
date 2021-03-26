@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     Level level;
     public Movable movable {get; private set;}
     Animator animator;
+    AnimationPalette animationPalette;
     List<IAnimationController> animationControllers;
     Trigger trigger;
     ChatRenderer chatRenderer;
@@ -20,6 +21,7 @@ public class Character : MonoBehaviour
 
         movable = FindObjectOfType<Movable>();
         animator = GetComponentInChildren<Animator>();
+        animationPalette = GetComponentInChildren<AnimationPalette>();
         animationControllers = new List<IAnimationController>();
         animationControllers.Add(new WalkAnimationController(movable));
 
@@ -34,7 +36,7 @@ public class Character : MonoBehaviour
     void Update() {
         animationControllers.RemoveAll(x => x.HasDone());
         if (animationControllers.Count > 0)
-            animator.Play(animationControllers[animationControllers.Count - 1].GetClip());
+            PlayClip(animationControllers[animationControllers.Count - 1].GetClip());
     }
 
     public void ShowMessage(Chat chat, bool global = true) {
@@ -50,5 +52,13 @@ public class Character : MonoBehaviour
 
     public void RemoveAnimationController(IAnimationController animationController) {
         animationControllers.Remove(animationController);
+    }
+
+    void PlayClip(string clipNameOrAlias) {
+        string clipName = clipNameOrAlias;
+        if (animationPalette && animationPalette.GetClipName(clipNameOrAlias) != null)
+            clipName = animationPalette.GetClipName(clipNameOrAlias);
+        
+        animator.Play(clipName);
     }
 }

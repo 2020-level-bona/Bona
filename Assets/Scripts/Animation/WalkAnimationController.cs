@@ -5,11 +5,10 @@ using UnityEngine;
 public class WalkAnimationController : IAnimationController
 
 {
-    // FIXME : 하드코딩
-    const string IDLE = "기본(좌)";
-    const string LEFT = "걷기(좌)";
-    const string UP = "걷기(위)";
-    const string DOWN = "걷기(아래)";
+    public const string IDLE = "IDLE";
+    public const string LEFT = "WALK_L";
+    public const string UP = "WALK_U";
+    public const string DOWN = "WALK_D";
 
     Movable movable;
 
