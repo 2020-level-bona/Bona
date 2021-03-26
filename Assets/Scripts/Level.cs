@@ -77,6 +77,16 @@ public class Level : MonoBehaviour
         return null;
     }
 
+    public Movable GetCharacterMovableOrMovable(string characterTypeOrName) {
+        CharacterType characterType;
+        if (System.Enum.TryParse<CharacterType>(characterTypeOrName, true, out characterType)) {
+            Character character = GetSpawnedCharacter(characterType);
+            if (character)
+                return character.movable;
+        }
+        return GetMovable(characterTypeOrName);
+    }
+
     public Movable GetMovable(string name) {
         name = name.ToLower();
         foreach (Movable movable in FindObjectsOfType<Movable>()) {
