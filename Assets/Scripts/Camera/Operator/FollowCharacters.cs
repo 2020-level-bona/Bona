@@ -7,7 +7,7 @@ public class FollowCharacters : Follower
 {
     List<Character> targets;
 
-    public FollowCharacters(CameraController cameraController, params Character[] characters) : base(cameraController) {
+    public FollowCharacters(CameraController cameraController, float maxSpeed, params Character[] characters) : base(cameraController, maxSpeed) {
         targets = new List<Character>(characters);
     }
 

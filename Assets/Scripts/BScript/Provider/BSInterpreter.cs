@@ -127,6 +127,14 @@ public class BSInterpreter : ICommandProvider
                     return new FadeInCommand(lineParser);
                 case FadeOutCommand.Keyword:
                     return new FadeOutCommand(lineParser);
+                case CameraMoveCommand.Keyword:
+                    return new CameraMoveCommand(level, lineParser);
+                case CameraAddTargetCommand.Keyword:
+                    return new CameraAddTargetCommand(level, lineParser);
+                case CameraDeleteTargetCommand.Keyword:
+                    return new CameraDeleteTargetCommand(level, lineParser);
+                case CameraClearTargetsCommand.Keyword:
+                    return new CameraClearTargetsCommand(lineParser);
 
                 // 제어문
                 case DoCommand.Keyword:
