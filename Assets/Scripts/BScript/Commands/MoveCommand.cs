@@ -28,7 +28,7 @@ public class MoveCommand : IActionCommand
     }
 
     public IEnumerator GetCoroutine() {
-        Movable movable = level.GetMovable(movableName);
+        Movable movable = level.GetCharacterMovableOrMovable(movableName);
         if (!movable)
             throw new BSMovableNotFoundException(LineNumber, $"Movable[name={movableName}]이 존재하지 않습니다.");
         ITweenEntry tween = Tween.Add(movable, target.position, movable.speed);
