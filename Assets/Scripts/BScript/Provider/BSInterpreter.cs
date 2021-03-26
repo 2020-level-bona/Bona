@@ -123,6 +123,10 @@ public class BSInterpreter : ICommandProvider
                     return new StopAnimCommand(level, lineParser);
                 case SpeedCommand.Keyword:
                     return new SpeedCommand(level, lineParser);
+                case FadeInCommand.Keyword:
+                    return new FadeInCommand(lineParser);
+                case FadeOutCommand.Keyword:
+                    return new FadeOutCommand(lineParser);
 
                 // 제어문
                 case DoCommand.Keyword:
