@@ -34,15 +34,18 @@ public class BSInterpreter : ICommandProvider
 
     Queue<ICommand> ParseCode(string code) {
         string[] lines = code.Split('\n');
-
-        for (int i = 0; i < lines.Length; i++)
-            lines[i] = lines[i].Trim();
         
         int line = 0;
-        return ParseCode(lines, ref line, 0);
+        Queue<ICommand> commands = ParseCode(lines, ref line, 0, null);
+
+        // 모든 줄을 다 읽었는지 확인
+        if (line < lines.Length)
+            throw new BSSyntaxException(line, "구문이 잘못되었습니다.");
+        
+        return commands;
     }
 
-    Queue<ICommand> ParseCode(string[] lines, ref int line, int depth) {
+    Queue<ICommand> ParseCode(string[] lines, ref int line, int depth, IfCommand branch) {
         Queue<ICommand> commands = new Queue<ICommand>();
 
         while(line < lines.Length) {
@@ -57,9 +60,28 @@ public class BSInterpreter : ICommandProvider
                     commands.Enqueue(command);
                 } else if (command is DoCommand) {
                     line++;
-                    (command as DoCommand).SetCommandQueue(ParseCode(lines, ref line, depth + 1));
+                    (command as DoCommand).SetCommandQueue(ParseCode(lines, ref line, depth + 1, null));
                     commands.Enqueue(command);
-                } else if (command is EndCommand) {
+                } else if(command is IfCommand) {
+                    line++;
+                    IfCommand newBranch = command as IfCommand;
+                    newBranch.AddBranch(newBranch.currentExpression, ParseCode(lines, ref line, depth + 1, newBranch));
+                    commands.Enqueue(command);
+                } else if (command is ElifCommand) {
+                    if (branch == null)
+                        throw new BSSyntaxException(line, "ELIF 이전의 IF가 없습니다.");
+                    
+                    line++;
+                    branch.AddBranch((command as ElifCommand).currentExpression, ParseCode(lines, ref line, depth + 1, branch));
+                    return commands;
+                } else if (command is ElseCommand) {
+                    if (branch == null)
+                        throw new BSSyntaxException(line, "ELSE 이전의 IF가 없습니다.");
+                    
+                    line++;
+                    branch.AddBranch("true", ParseCode(lines, ref line, depth + 1, branch));
+                    return commands;
+                }  else if (command is EndCommand) {
                     if (depth == 0)
                         throw new BSSyntaxException(line, "제어문이 불필요하게 닫혔습니다.");
                     return commands;
@@ -99,6 +121,12 @@ public class BSInterpreter : ICommandProvider
                 // 제어문
                 case DoCommand.Keyword:
                     return new DoCommand(lineParser);
+                case IfCommand.Keyword:
+                    return new IfCommand(lineParser);
+                case ElifCommand.Keyword:
+                    return new ElifCommand(lineParser);
+                case ElseCommand.Keyword:
+                    return new ElseCommand(lineParser);
                 case EndCommand.Keyword:
                     return new EndCommand(lineParser);
             }
