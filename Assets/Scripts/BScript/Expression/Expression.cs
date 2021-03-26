@@ -9,6 +9,18 @@ public class Expression
         return EvalSub(expression, 0, expression.Count);
     }
 
+    public static bool CastAsBool(object value) {
+        if (value is null)
+            return false;
+        if (value is bool)
+            return (bool) value;
+        if (value is int || value is long)
+            return System.Convert.ToInt64(value) != 0;
+        if (value is float || value is double)
+            return System.Convert.ToDouble(value) != 0;
+        return false;
+    }
+
     static object EvalSub(List<object> expression, int begin, int end) {
         if (begin == end)
             return null;
