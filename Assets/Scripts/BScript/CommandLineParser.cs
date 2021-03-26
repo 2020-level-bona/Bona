@@ -65,10 +65,10 @@ public class CommandLineParser : ICommandLineParser
     }
 
     // 키워드, 주석을 제외한 모든 것들을 읽어온다.
-    public string GetAllStrings() {
-        CheckIndex(1);
+    public string GetAllStrings(int from) {
+        CheckIndex(from);
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
-        for (int i = 1; (i < args.Count && args[i].type != TokenType.COMMENT); i++) {
+        for (int i = from; (i < args.Count && args[i].type != TokenType.COMMENT); i++) {
             sb.Append(args[i].str);
             sb.Append(' ');
         }

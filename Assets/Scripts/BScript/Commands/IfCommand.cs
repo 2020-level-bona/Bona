@@ -20,7 +20,7 @@ public class IfCommand : IControlCommand
 
     public IfCommand(CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
-        currentExpression = lineParser.GetAllStrings();
+        currentExpression = lineParser.GetAllStrings(1);
     }
 
     public void AddBranch(string expression, Queue<ICommand> commands) {

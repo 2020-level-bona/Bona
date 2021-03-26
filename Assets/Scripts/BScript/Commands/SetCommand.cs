@@ -19,7 +19,7 @@ public class SetCommand : IActionCommand
     public SetCommand(CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
         this.path = lineParser.GetString(1);
-        this.valueExpression = lineParser.GetString(2);
+        this.valueExpression = lineParser.GetAllStrings(2);
     }
 
     public IEnumerator GetCoroutine() {
