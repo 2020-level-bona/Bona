@@ -54,11 +54,12 @@ public class ScriptSession
                     coroutineRunner.StartCoroutine(routine);
             } else if (command is IControlCommand) {
                 ICommandProvider sub = (command as IControlCommand).GetCommandProvider();
-
-                if (command.Blocking)
-                    yield return SubRoutine(new LinePointer(command.LineNumber), sub);
-                else
-                    coroutineRunner.StartCoroutine(SubRoutine(new LinePointer(command.LineNumber), sub));
+                if (sub != null) {
+                    if (command.Blocking)
+                        yield return SubRoutine(new LinePointer(command.LineNumber), sub);
+                    else
+                        coroutineRunner.StartCoroutine(SubRoutine(new LinePointer(command.LineNumber), sub));
+                }
             }
             
             command = commandProvider.Next();

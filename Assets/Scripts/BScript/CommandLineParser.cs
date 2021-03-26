@@ -61,12 +61,24 @@ public class CommandLineParser : ICommandLineParser
 
     // 키워드, 주석을 제외한 모든 것들을 읽어온다.
     public string GetAllStrings() {
+        CheckIndex(1);
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
         for (int i = 1; (i < args.Count && args[i].type != TokenType.COMMENT); i++) {
             sb.Append(args[i].str);
             sb.Append(' ');
         }
         return sb.ToString();
+    }
+
+    public bool GetBool(int index) {
+        CheckIndex(index);
+        try {
+            bool val = bool.Parse(args[index]);
+            args[index].type = TokenType.NUM;
+            return val;
+        } catch (System.Exception) {
+            throw new BSSyntaxException(lineNumber, $"{args[index]}를 bool 타입으로 변환할 수 없습니다.");
+        }
     }
 
     public int GetInt(int index) {

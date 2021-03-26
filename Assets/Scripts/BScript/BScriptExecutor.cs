@@ -60,8 +60,9 @@ public class BScriptExecutor : MonoBehaviour
             return;
         
         Session.CurrentScene.Set(uniqueId, true);
-        
-        session = game.CreateScriptSession(new BSInterpreter(game, level, chatManager, script));
+
+        interpreter = new BSInterpreter(game, level, chatManager, script);
+        session = game.CreateScriptSession(interpreter);
         session.Start();
 
         state = ScriptExecutorState.RUNNING;
@@ -70,16 +71,7 @@ public class BScriptExecutor : MonoBehaviour
     bool CheckExecutionCondition() {
         if (executionCondition == null || executionCondition == "")
             return true;
-        object result = Expression.Eval(executionCondition);
-        if (result is null)
-            return false;
-        if (result is bool)
-            return (bool) result;
-        if (result is int || result is long)
-            return System.Convert.ToInt64(result) != 0;
-        if (result is float || result is double)
-            return System.Convert.ToDouble(result) != 0;
-        return false;
+        return Expression.CastAsBool(Expression.Eval(executionCondition));
     }
 
     void Update() {

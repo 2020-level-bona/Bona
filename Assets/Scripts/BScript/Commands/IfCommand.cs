@@ -4,22 +4,35 @@ using UnityEngine;
 
 public class IfCommand : IControlCommand
 {
-    string expression;
+    List<string> expressions = new List<string>();
+    List<Queue<ICommand>> branchCommands = new List<Queue<ICommand>>();
 
     public const string Keyword = "IF";
-    public bool Blocking => false;
+    public bool Blocking => true;
     public int LineNumber {get;}
 
-    public IfCommand(string expression) {
-        this.expression = expression;
+    // 현재 라인에서의 조건식
+    public string currentExpression;
+
+    public IfCommand(string currentExpression) {
+        this.currentExpression = currentExpression;
     }
 
     public IfCommand(CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
-        this.expression = lineParser.GetAllStrings();
+        currentExpression = lineParser.GetAllStrings();
+    }
+
+    public void AddBranch(string expression, Queue<ICommand> commands) {
+        expressions.Add(expression);
+        branchCommands.Add(commands);
     }
 
     public ICommandProvider GetCommandProvider() {
-        return null; // TODO
+        for (int i = expressions.Count - 1; i >= 0; i--) {
+            if (Expression.CastAsBool(Expression.Eval(expressions[i])))
+                return new QueueCommandProvider(branchCommands[i]);
+        }
+        return null;
     }
 }
