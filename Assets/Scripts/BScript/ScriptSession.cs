@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ScriptSession
 {
+    Game game;
     Level level;
     ChatManager chatManager;
     ICommandProvider commandProvider;
@@ -14,18 +15,28 @@ public class ScriptSession
     int subroutineCount;
     int subroutineFinishedCount;
 
-    public ScriptSession(Level level, ChatManager chatManager, ICommandProvider commandProvider, MonoBehaviour coroutineRunner) {
+    static int cutsceneSessionSemaphore = 0;
+    public static bool IsPlayingCutscene => cutsceneSessionSemaphore == 0;
+
+    public ScriptSession(Game game, Level level, ChatManager chatManager, ICommandProvider commandProvider, MonoBehaviour coroutineRunner) {
+        this.game = game;
         this.level = level;
         this.chatManager = chatManager;
         this.commandProvider = commandProvider;
         this.coroutineRunner = coroutineRunner;
     }
 
-    public void Start() {
-        coroutineRunner.StartCoroutine(MainRoutine());
+    public void Start(bool isCutscene) {
+        if (isCutscene) {
+            if (cutsceneSessionSemaphore == 0)
+                EventManager.Instance.OnCutsceneStart?.Invoke();
+            cutsceneSessionSemaphore++;
+        }
+
+        coroutineRunner.StartCoroutine(MainRoutine(isCutscene));
     }
 
-    IEnumerator MainRoutine() {
+    IEnumerator MainRoutine(bool isCutscene) {
         linePointers = new List<LinePointer>();
 
         subroutineCount = subroutineFinishedCount = 0;
@@ -34,6 +45,12 @@ public class ScriptSession
         yield return new WaitWhile(() => subroutineCount > subroutineFinishedCount);
 
         expired = true;
+
+        if (isCutscene) {
+            cutsceneSessionSemaphore--;
+            if (cutsceneSessionSemaphore == 0)
+                EventManager.Instance.OnCutsceneFinish?.Invoke();
+        }
     }
 
     IEnumerator SubRoutine(LinePointer linePointer, ICommandProvider commandProvider) {

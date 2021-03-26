@@ -47,6 +47,6 @@ public class Game : MonoBehaviour
     }
 
     public ScriptSession CreateScriptSession(ICommandProvider commandProvider) {
-        return new ScriptSession(level, chatManager, commandProvider, this);
+        return new ScriptSession(this, level, chatManager, commandProvider, this);
     }
 }

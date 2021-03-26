@@ -8,8 +8,10 @@ public class BScriptExecutor : MonoBehaviour
     public string script = "";
 
     public string uniqueId;
-    public ScriptExecutionType executionType;
+    public ScriptExecutionRepeat executionRepeat = ScriptExecutionRepeat.ANWAYS;
     public string executionCondition;
+    public bool isCutscene = false;
+    public ScriptExecutionWhen executionWhen = ScriptExecutionWhen.NOT_IN_CUTSCENE;
 
     Game game;
     Level level;
@@ -50,7 +52,9 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     public void Run() {
-        if (executionType == ScriptExecutionType.ONCE && Session.CurrentScene.GetBool(uniqueId))
+        if (executionRepeat == ScriptExecutionRepeat.ONCE && Session.CurrentScene.GetBool(uniqueId))
+            return;
+        if (executionWhen == ScriptExecutionWhen.NOT_IN_CUTSCENE && game.IsPlayingCutscene)
             return;
         if (state == ScriptExecutorState.SYNTAX_ERROR)
             throw new System.Exception("스크립트에 구문 오류가 있어 실행할 수 없습니다.");
@@ -63,7 +67,7 @@ public class BScriptExecutor : MonoBehaviour
 
         interpreter = new BSInterpreter(game, level, chatManager, script);
         session = game.CreateScriptSession(interpreter);
-        session.Start();
+        session.Start(isCutscene);
 
         state = ScriptExecutorState.RUNNING;
     }

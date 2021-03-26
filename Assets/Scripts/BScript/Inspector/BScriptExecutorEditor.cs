@@ -75,13 +75,23 @@ public class BScriptExecutorEditor : Editor
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("스크립트 실행 타입");
-        executor.executionType = (ScriptExecutionType) EditorGUILayout.EnumPopup(executor.executionType);
+        EditorGUILayout.LabelField("스크립트 실행 반복");
+        executor.executionRepeat = (ScriptExecutionRepeat) EditorGUILayout.EnumPopup(executor.executionRepeat);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("스크립트 실행 조건식");
         executor.executionCondition = EditorGUILayout.TextField(executor.executionCondition);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("컷씬");
+        executor.isCutscene = EditorGUILayout.Toggle(executor.isCutscene);
+        EditorGUILayout.EndHorizontal();
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("스크립트 실행 환경");
+        executor.executionWhen = (ScriptExecutionWhen) EditorGUILayout.EnumPopup(executor.executionWhen);
         EditorGUILayout.EndHorizontal();
     }
 
