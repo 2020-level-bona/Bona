@@ -10,13 +10,15 @@ public abstract class Follower : ICameraOperator
 
     protected CameraController cameraController;
 
+    float maxSpeed;
     Vector2 cameraVelocity = Vector2.zero;
     const float cameraSmoothTime = 0.2f;
 
     Vector2 position;
 
-    public Follower(CameraController cameraController) {
+    public Follower(CameraController cameraController, float maxSpeed) {
         this.cameraController = cameraController;
+        this.maxSpeed = maxSpeed;
     }
 
     protected abstract Vector2 GetCurrentTarget();
@@ -26,15 +28,16 @@ public abstract class Follower : ICameraOperator
     }
 
     public void Update() {
-        position = Vector2.SmoothDamp(position, GetCurrentTarget(), ref cameraVelocity, cameraSmoothTime);
+        position = Vector2.SmoothDamp(position, GetCurrentTarget(), ref cameraVelocity, cameraSmoothTime, maxSpeed);
     }
 
+    // 오퍼레이터의 위치를 카메라로 가져간다.
     public void ResetState() {
-        position = GetCurrentTarget();
+        position = cameraController.position;
         cameraVelocity = Vector2.zero;
     }
 
-    public bool HasDone() {
+    public virtual bool HasDone() {
         return false;
     }
 }

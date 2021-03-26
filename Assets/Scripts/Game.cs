@@ -24,7 +24,9 @@ public class Game : MonoBehaviour
     }
 
     void Start() {
-        cameraController.AddCameraOperator(new FollowCharacters(cameraController, level.GetSpawnedCharacter(CharacterType.BONA)));
+        Character bona = level.GetSpawnedCharacter(CharacterType.BONA);
+        cameraController.MoveInstantly(bona.movable.GetCenter());
+        cameraController.AddCameraOperator(new FollowCharacters(cameraController, CameraController.DEFAULT_SPEED, bona));
     }
 
     void Update() {

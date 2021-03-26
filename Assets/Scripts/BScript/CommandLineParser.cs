@@ -119,6 +119,17 @@ public class CommandLineParser : ICommandLineParser
         }
     }
 
+    public Speed GetSpeed(int index) {
+        string type = GetString(index);
+        try {
+            Speed speed = (Speed) System.Enum.Parse(typeof(Speed), type, true);
+            args[index].type = TokenType.FLAG;
+            return speed;
+        } catch {
+            throw new BSSyntaxException(lineNumber, $"{args[index]}은(는) 올바른 속도 열거형이 아닙니다.");
+        }
+    }
+
     public Vector2Face GetVector2Face(Level level, int index) {
         string str = GetString(index);
         if (str.Contains(",")) {
