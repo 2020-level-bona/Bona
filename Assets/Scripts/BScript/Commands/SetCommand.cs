@@ -5,26 +5,25 @@ using UnityEngine;
 public class SetCommand : IActionCommand
 {
     string path;
-    string value;
+    string valueExpression;
 
     public const string Keyword = "SET";
     public bool Blocking => true;
     public int LineNumber {get;}
 
-    public SetCommand(string path, string value) {
+    public SetCommand(string path, string valueExpression) {
         this.path = path;
-        this.value = value;
+        this.valueExpression = valueExpression;
     }
 
     public SetCommand(CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
         this.path = lineParser.GetString(1);
-        this.value = lineParser.GetString(2);
+        this.valueExpression = lineParser.GetString(2);
     }
 
     public IEnumerator GetCoroutine() {
-        object evaluatedValue = Session.Instance.Get(path);
-        Session.Instance.Set(path, evaluatedValue);
+        Session.Instance.Set(path, Expression.Eval(valueExpression));
         yield return null; 
     }
 }
