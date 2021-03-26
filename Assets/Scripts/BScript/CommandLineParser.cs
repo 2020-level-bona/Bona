@@ -39,8 +39,9 @@ public class CommandLineParser : ICommandLineParser
     }
 
     public bool ContainsFlag(string flag) {
+        flag = flag.ToUpper();
         foreach (Token token in args) {
-            if (token.str == flag) {
+            if (token.str.ToUpper() == flag) {
                 token.type = TokenType.FLAG;
                 return true;
             }

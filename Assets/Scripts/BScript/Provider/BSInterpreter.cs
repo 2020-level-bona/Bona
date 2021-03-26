@@ -102,7 +102,7 @@ public class BSInterpreter : ICommandProvider
         CommandLineParser lineParser = new CommandLineParser(lineNumber, line);
         tokens.AddRange(lineParser.args);
         if (lineParser.HasKeyword()) {
-            switch (lineParser.GetKeyword()) {
+            switch (lineParser.GetKeyword().ToUpper()) {
                 case HideCommand.Keyword:
                     return new HideCommand(level, lineParser);
                 case SayCommand.Keyword:
