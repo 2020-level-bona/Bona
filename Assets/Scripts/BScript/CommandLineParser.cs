@@ -69,7 +69,7 @@ public class CommandLineParser : ICommandLineParser
         CheckIndex(from);
         System.Text.StringBuilder sb = new System.Text.StringBuilder();
         for (int i = from; (i < args.Count && args[i].type != TokenType.COMMENT); i++) {
-            sb.Append(args[i].str);
+            sb.Append(GetString(i));
             sb.Append(' ');
         }
         return sb.ToString();
