@@ -52,6 +52,8 @@ public class BScriptExecutor : MonoBehaviour
     }
 
     public void Run() {
+        if (!enabled)
+            return;
         if (executionRepeat == ScriptExecutionRepeat.ONCE && Session.CurrentScene.GetBool(uniqueId))
             return;
         if (executionWhen == ScriptExecutionWhen.NOT_IN_CUTSCENE && game.IsPlayingCutscene)
