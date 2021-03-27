@@ -13,7 +13,9 @@ public class SayCommand : IActionCommand
     public bool Blocking => true;
     public int LineNumber {get;}
 
-    public SayCommand(ChatManager chatManager, Level level, CharacterType characterType, string message) {
+    // @Temporary, FIXME: lineNumber 더 나은 방법으로 처리 
+    public SayCommand(int lineNumber, ChatManager chatManager, Level level, CharacterType characterType, string message) {
+        LineNumber = lineNumber;
         this.chatManager = chatManager;
         this.level = level;
         this.characterType = characterType;

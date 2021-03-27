@@ -26,7 +26,7 @@ public class BasicCommandProvider : ICommandProvider
     }
 
     public void Msg(CharacterType characterType, string message) {
-        commands.Enqueue(new SayCommand(chatManager, level, characterType, message));
+        commands.Enqueue(new SayCommand(-1, chatManager, level, characterType, message));
     }
 
     public void Move(string movableName, Vector2 target, bool block = false) {
