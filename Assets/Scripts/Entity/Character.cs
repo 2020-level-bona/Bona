@@ -30,7 +30,7 @@ public class Character : MonoBehaviour
 
     void Start() {
         if (trigger)
-            trigger.AddListener(() => EventManager.Instance.OnCharacterClicked.Invoke(type));
+            trigger.AddListener(() => EventManager.Instance.OnCharacterClicked?.Invoke(type));
     }
 
     void Update() {
