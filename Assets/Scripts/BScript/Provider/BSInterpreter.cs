@@ -100,6 +100,7 @@ public class BSInterpreter : ICommandProvider
 
     ICommand ParseLine(int lineNumber, string line) {
         CommandLineParser lineParser = new CommandLineParser(lineNumber, line);
+
         tokens.AddRange(lineParser.args);
         if (lineParser.HasKeyword()) {
             switch (lineParser.GetKeyword().ToUpper()) {
@@ -147,6 +148,10 @@ public class BSInterpreter : ICommandProvider
                     return new ElseCommand(lineParser);
                 case EndCommand.Keyword:
                     return new EndCommand(lineParser);
+                
+                // FIXME: 매크로 더 스마트하게 처리
+                case "#":
+                    return new SayCommand(lineNumber, chatManager, level, CharacterType.BONA, lineParser.GetAllStrings(1));
             }
             throw new BSSyntaxException(lineNumber, $"키워드 {lineParser.GetKeyword()}에 해당하는 명령어가 존재하지 않습니다.");
         }
