@@ -20,6 +20,12 @@ public class Movable : MonoBehaviour
     }
     public Vector2 velocity {get; private set;}
 
+    void OnDrawGizmos() {
+        Gizmos.color = Color.blue;
+        Bounds bounds = GetBounds();
+        Gizmos.DrawWireCube((bounds.min + bounds.max) / 2f, bounds.max - bounds.min);
+    }
+
     void Awake() {
         level = FindObjectOfType<Level>();
 
