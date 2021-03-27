@@ -65,7 +65,7 @@ public class CameraController : MonoBehaviour
 
     // 씬의 바운더리 안에 존재하도록 좌표를 클리핑한 결과를 반환한다.
     public Vector2 ClampCameraPosition(Vector2 cameraCenter) {
-        /*float cameraWidth = cam.orthographicSize * ((float) TARGET_WIDTH / TARGET_HEIGHT) * 2f;
+        float cameraWidth = cam.orthographicSize * ((float) TARGET_WIDTH / TARGET_HEIGHT) * 2f;
         float cameraHeight = cam.orthographicSize * 2f;
 
         float worldWidth = (float) backgroundSize.x / PIXELS_PER_UNIT;
@@ -74,7 +74,6 @@ public class CameraController : MonoBehaviour
         cameraCenter.x = Mathf.Clamp(cameraCenter.x, (-worldWidth + cameraWidth) / 2f, (worldWidth - cameraWidth) / 2f);
         cameraCenter.y = Mathf.Clamp(cameraCenter.y, (-worldHeight + cameraHeight) / 2f, (worldHeight - cameraHeight) / 2f);
 
-        return cameraCenter;*/
         return cameraCenter;
     }
 
