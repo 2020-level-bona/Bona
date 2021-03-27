@@ -8,7 +8,7 @@ public class WASDControl : MonoBehaviour
     Movable movable;
 
     void Awake() {
-        movable = FindObjectOfType<Movable>();
+        movable = GetComponent<Movable>();
     }
 
     void Update() {

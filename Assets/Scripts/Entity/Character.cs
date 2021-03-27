@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
         level = FindObjectOfType<Level>();
         level.RegisterSpawnedCharacter(type, this);
 
-        movable = FindObjectOfType<Movable>();
+        movable = GetComponent<Movable>();
         animator = GetComponentInChildren<Animator>();
         animationPalette = GetComponentInChildren<AnimationPalette>();
         animationControllers = new List<IAnimationController>();
