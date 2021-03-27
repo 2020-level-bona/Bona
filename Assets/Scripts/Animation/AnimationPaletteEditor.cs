@@ -10,10 +10,9 @@ public class AnimationPaletteEditor : Editor
     {
         AnimationPalette palette = (AnimationPalette) target;
 
-        Animator animator = palette.GetComponent<Animator>();
-        var clips = animator.runtimeAnimatorController.animationClips;
+        var states = palette.GetAllStates();
 
-        EditorGUILayout.LabelField($"총 {clips.Length}개의 애니메이션 클립이 로드되었습니다.");
+        EditorGUILayout.LabelField($"총 {states.Count}개의 State가 로드되었습니다.");
         
         List<string> conflicts = palette.CheckConflicts();
         if (conflicts.Count > 0) {
@@ -22,21 +21,21 @@ public class AnimationPaletteEditor : Editor
             EditorGUILayout.LabelField("부여된 별칭이 모두 고유하도록 재설정해주세요.", GetErrorTextStyle());
         }
 
-        foreach (AnimationClip clip in clips) {
+        foreach (string state in states) {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField(clip.name);
+            EditorGUILayout.LabelField(state);
 
-            string prev = palette.GetAlias(clip.name);
+            string prev = palette.GetAlias(state);
 
-            string alias = EditorGUILayout.TextField(palette.GetAlias(clip.name));
+            string alias = EditorGUILayout.TextField(palette.GetAlias(state));
             if (alias == null || alias.Length == 0) {
-                if (palette.GetAlias(clip.name) != null)
-                    palette.RemoveAlias(clip.name);
+                if (palette.GetAlias(state) != null)
+                    palette.RemoveAlias(state);
             } else {
-                palette.SetAlias(clip.name, alias);
+                palette.SetAlias(state, alias);
             }
 
-            if (prev != palette.GetAlias(clip.name))
+            if (prev != palette.GetAlias(state))
                 EditorUtility.SetDirty(target);
 
             EditorGUILayout.EndHorizontal();

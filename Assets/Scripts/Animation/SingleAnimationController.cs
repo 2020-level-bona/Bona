@@ -5,18 +5,18 @@ using UnityEngine;
 public class SingleAnimationController : IAnimationController
 {
     float playUntil;
-    string clipName;
+    string stateName;
 
-    public SingleAnimationController(string clipName, float duration = -1) {
-        this.clipName = clipName;
+    public SingleAnimationController(string stateName, float duration = -1) {
+        this.stateName = stateName;
         if (duration < 0)
             playUntil = float.PositiveInfinity;
         else
             playUntil = Time.time + duration;
     }
 
-    public string GetClip() {
-        return clipName;
+    public string GetState() {
+        return stateName;
     }
 
     public bool HasDone() {
