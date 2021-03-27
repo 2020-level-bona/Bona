@@ -26,6 +26,8 @@ public class AnimationPaletteEditor : Editor
             EditorGUILayout.BeginHorizontal();
             EditorGUILayout.LabelField(clip.name);
 
+            string prev = palette.GetAlias(clip.name);
+
             string alias = EditorGUILayout.TextField(palette.GetAlias(clip.name));
             if (alias == null || alias.Length == 0) {
                 if (palette.GetAlias(clip.name) != null)
@@ -33,6 +35,9 @@ public class AnimationPaletteEditor : Editor
             } else {
                 palette.SetAlias(clip.name, alias);
             }
+
+            if (prev != palette.GetAlias(clip.name))
+                EditorUtility.SetDirty(target);
 
             EditorGUILayout.EndHorizontal();
         }
