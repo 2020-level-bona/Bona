@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayAnimCommand : IActionCommand
 {
-    string clipName;
+    string stateName;
     float duration;
     CharacterType characterType;
     Level level;
@@ -13,10 +13,10 @@ public class PlayAnimCommand : IActionCommand
     public bool Blocking => false;
     public int LineNumber {get;}
 
-    public PlayAnimCommand(Level level, CharacterType characterType, string clipName, float duration = -1) {
+    public PlayAnimCommand(Level level, CharacterType characterType, string stateName, float duration = -1) {
         this.level = level;
         this.characterType = characterType;
-        this.clipName = clipName;
+        this.stateName = stateName;
         this.duration = duration;
     }
 
@@ -24,7 +24,7 @@ public class PlayAnimCommand : IActionCommand
         LineNumber = lineParser.lineNumber;
         this.level = level;
         this.characterType = lineParser.GetCharacterType(1);
-        clipName = lineParser.GetString(2);
+        stateName = lineParser.GetString(2);
         if (lineParser.HasArgument(3))
             duration = lineParser.GetFloat(3);
         else
@@ -34,7 +34,7 @@ public class PlayAnimCommand : IActionCommand
     public IEnumerator GetCoroutine() {
         Character character = level.GetSpawnedCharacter(characterType);
         if (character)
-            character.AddAnimationController(new SingleAnimationController(clipName, duration));
+            character.AddAnimationController(new SingleAnimationController(stateName, duration));
         yield return null;
     }
 }

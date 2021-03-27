@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IAnimationController
 {
-    string GetClip();
+    string GetState();
     bool HasDone();
 }

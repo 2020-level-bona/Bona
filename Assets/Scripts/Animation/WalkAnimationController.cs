@@ -16,7 +16,7 @@ public class WalkAnimationController : IAnimationController
         this.movable = movable;
     }
 
-    public string GetClip() {
+    public string GetState() {
         float x = movable.velocity.x;
         float y = movable.velocity.y;
 

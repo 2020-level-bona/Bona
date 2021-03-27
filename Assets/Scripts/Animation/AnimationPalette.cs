@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 
 [RequireComponent(typeof(Animator))]
 public class AnimationPalette : MonoBehaviour
 {
-    public List<AnimationClipNamePair> pairs = new List<AnimationClipNamePair>();
+    public List<AnimationStateNamePair> pairs = new List<AnimationStateNamePair>();
 
     void OnValidate() {
-        List<string> clipNames = new List<string>();
-        foreach (AnimationClip clip in GetComponent<Animator>().runtimeAnimatorController.animationClips)
-            clipNames.Add(clip.name);
+        List<string> stateNames = GetAllStates();
         
-        pairs.RemoveAll(x => !clipNames.Contains(x.clipName));
+        pairs.RemoveAll(x => !stateNames.Contains(x.stateName));
     }
 
     public List<string> CheckConflicts() {
@@ -26,44 +25,52 @@ public class AnimationPalette : MonoBehaviour
         return conflictedNames;
     }
 
-    public string GetClipName(string alias) {
-        foreach (AnimationClipNamePair pair in pairs) {
+    public List<string> GetAllStates() {
+        List<string> states = new List<string>();
+        AnimatorController animatorController = GetComponent<Animator>().runtimeAnimatorController as AnimatorController;
+        foreach (ChildAnimatorState childAnimatorState in animatorController.layers[0].stateMachine.states)
+            states.Add(childAnimatorState.state.name);
+        return states;
+    }
+
+    public string GetStateName(string alias) {
+        foreach (AnimationStateNamePair pair in pairs) {
             if (pair.alias == alias)
-                return pair.clipName;
+                return pair.stateName;
         }
         return null;
     }
 
-    public string GetAlias(string clipName) {
-        foreach (AnimationClipNamePair pair in pairs) {
-            if (pair.clipName == clipName)
+    public string GetAlias(string stateName) {
+        foreach (AnimationStateNamePair pair in pairs) {
+            if (pair.stateName == stateName)
                 return pair.alias;
         }
         return null;
     }
 
-    public void RemoveAlias(string clipName) {
-        pairs.RemoveAll(x => x.clipName == clipName);
+    public void RemoveAlias(string stateName) {
+        pairs.RemoveAll(x => x.stateName == stateName);
     }
 
-    public void SetAlias(string clipName, string alias) {
-        foreach (AnimationClipNamePair pair in pairs) {
-            if (pair.clipName == clipName) {
+    public void SetAlias(string stateName, string alias) {
+        foreach (AnimationStateNamePair pair in pairs) {
+            if (pair.stateName == stateName) {
                 pair.alias = alias;
                 return;
             }
         }
-        pairs.Add(new AnimationClipNamePair(clipName, alias));
+        pairs.Add(new AnimationStateNamePair(stateName, alias));
     }
 }
 
 [System.Serializable]
-public class AnimationClipNamePair {
-    public string clipName;
+public class AnimationStateNamePair {
+    public string stateName;
     public string alias;
 
-    public AnimationClipNamePair(string clipName, string alias) {
-        this.clipName = clipName;
+    public AnimationStateNamePair(string stateName, string alias) {
+        this.stateName = stateName;
         this.alias = alias;
     }
 }

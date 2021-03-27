@@ -36,7 +36,7 @@ public class Character : MonoBehaviour
     void Update() {
         animationControllers.RemoveAll(x => x.HasDone());
         if (animationControllers.Count > 0)
-            PlayClip(animationControllers[animationControllers.Count - 1].GetClip());
+            PlayClip(animationControllers[animationControllers.Count - 1].GetState());
     }
 
     public void ShowMessage(Chat chat, bool global = true) {
@@ -59,11 +59,11 @@ public class Character : MonoBehaviour
         animationControllers.RemoveAll(x => !(x is WalkAnimationController));
     }
 
-    void PlayClip(string clipNameOrAlias) {
-        string clipName = clipNameOrAlias;
-        if (animationPalette && animationPalette.GetClipName(clipNameOrAlias) != null)
-            clipName = animationPalette.GetClipName(clipNameOrAlias);
+    void PlayClip(string stateNameOrAlias) {
+        string stateName = stateNameOrAlias;
+        if (animationPalette && animationPalette.GetStateName(stateNameOrAlias) != null)
+            stateName = animationPalette.GetStateName(stateNameOrAlias);
         
-        animator.Play(clipName);
+        animator.Play(stateName);
     }
 }
