@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class ZIndexer : MonoBehaviour
 {
     // ZIndex를 가진 오브젝트는 [+Z_INDEX_RANGE, -Z_INDEX_RANGE]범위에서 Z 좌표가 변경됨
@@ -68,3 +68,4 @@ public class ZIndexer : MonoBehaviour
         }
     }
 }
+*/
