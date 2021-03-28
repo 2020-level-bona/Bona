@@ -150,4 +150,15 @@ public class CommandLineParser : ICommandLineParser
             return marker;
         }
     }
+
+    public Face GetFace(int index) {
+        string type = GetString(index);
+        try {
+            Face face = (Face) System.Enum.Parse(typeof(Face), type, true);
+            args[index].type = TokenType.FLAG;
+            return face;
+        } catch {
+            throw new BSSyntaxException(lineNumber, $"{args[index]}은(는) 올바른 방향 열거형이 아닙니다.");
+        }
+    }
 }
