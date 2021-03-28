@@ -128,8 +128,11 @@ public class Switcher : MonoBehaviour
     }
 
     void SetSprite(Sprite sprite) {
+        if (sprite == null)
+            return;
+
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        if (spriteRenderer)
+        if (!spriteRenderer)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         
         if (!spriteRenderer) {
