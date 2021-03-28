@@ -12,6 +12,8 @@ public class Movable : MonoBehaviour
     public float speedMultiplier = 1f;
     public float speed => baseSpeed * speedMultiplier;
     public bool ignoreRoad = false;
+    public bool useFlip = true;
+    SpriteRenderer spriteRenderer;
 
     public int currentFloor {get; private set;} = 1;
     public Vector2 position {
@@ -29,6 +31,7 @@ public class Movable : MonoBehaviour
 
     void Awake() {
         level = FindObjectOfType<Level>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
         lastPosition = transform.position;
     }
@@ -51,6 +54,11 @@ public class Movable : MonoBehaviour
         int floor = level.GetFloor(position);
         if (floor > 0)
             currentFloor = floor;
+        
+        if (transform.position.x < position.x)
+            SetFace(Face.EAST);
+        else if (transform.position.x > position.x)
+            SetFace(Face.WEST);
         
         if (ignoreRoad) {
             transform.position = new Vector3(position.x, position.y, transform.position.z);
@@ -82,5 +90,14 @@ public class Movable : MonoBehaviour
 
     public Bounds GetBounds() {
         return new Bounds(GetCenter(), size);
+    }
+
+    public void SetFace(Face face) {
+        if (!useFlip || !spriteRenderer)
+            return;
+        if (face == Face.WEST)
+            spriteRenderer.flipX = false;
+        else if (face == Face.EAST)
+            spriteRenderer.flipX = true;
     }
 }
