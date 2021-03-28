@@ -33,7 +33,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\uAC77\uB294 \uBAA8\uC2B5"
+  m_Name: "\uAC78\uC74C+\uD683\uBD88"
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -59,7 +59,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\uC2A4\uD0E0\uB4DC2"
+  m_Name: "\uC2A4\uD0E0\uB4DC+\uD683\uBD88"
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -133,7 +133,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "\uC2A4\uD0E0\uB4DC+\uB9D0"
+  m_Name: "\uC2A4\uD0E0\uB4DC+\uD683\uBD88+\uB9D0"
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []

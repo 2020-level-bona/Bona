@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6700857866773168242}
   - component: {fileID: 6700857866773168252}
   - component: {fileID: 6700857866773168253}
-  - component: {fileID: 2638251251628459306}
+  - component: {fileID: 1313162129418818043}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -102,7 +102,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2638251251628459306
+--- !u!114 &1313162129418818043
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,9 +111,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6700857866773168243}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a401e5c27e686439ed4ff10877ebb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pairs:
+  - stateName: "\uC0AC\uC545\uD55C\uD45C\uC815"
+    alias: IDLE
 --- !u!1 &6881908702926838121
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,11 +126,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7697186886486654947}
-  - component: {fileID: 6881908702926838120}
   - component: {fileID: 5441624657217251230}
   - component: {fileID: 2416078237521623649}
+  - component: {fileID: 5400422885050051841}
+  - component: {fileID: 8184406645519179046}
   m_Layer: 0
-  m_Name: "\uB450\uB354\uC9C0"
+  m_Name: Mole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -148,19 +152,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6881908702926838120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6881908702926838121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 730b42628e1c8da4cba7176c76899637, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: {x: 2, y: 2}
 --- !u!60 &5441624657217251230
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -203,3 +194,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
+--- !u!114 &5400422885050051841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881908702926838121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e3499ecad648d4fa7619059a73bc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+--- !u!114 &8184406645519179046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6881908702926838121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5094902252ef7c84aa5d0ec62314a4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1.82, y: 1.58}
+  baseSpeed: 5
+  speedMultiplier: 1
