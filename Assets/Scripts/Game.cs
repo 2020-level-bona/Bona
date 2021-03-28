@@ -13,8 +13,6 @@ public class Game : MonoBehaviour
 
     public Inventory inventory;
 
-    public bool IsPlayingCutscene {get; private set;} = false;
-
     void Awake() {
         level = FindObjectOfType<Level>();
         chatManager = FindObjectOfType<ChatManager>();

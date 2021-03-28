@@ -16,7 +16,7 @@ public class ScriptSession
     int subroutineFinishedCount;
 
     static int cutsceneSessionSemaphore = 0;
-    public static bool IsPlayingCutscene => cutsceneSessionSemaphore == 0;
+    public static bool IsPlayingCutscene => cutsceneSessionSemaphore > 0;
 
     public ScriptSession(Game game, Level level, ChatManager chatManager, ICommandProvider commandProvider, MonoBehaviour coroutineRunner) {
         this.game = game;
