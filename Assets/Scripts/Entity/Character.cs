@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     Level level;
     public Movable movable {get; private set;}
     Animator animator;
-    AnimationPalette animationPalette;
+    AnimationPalette[] animationPalettes;
     List<IAnimationController> animationControllers;
     Trigger trigger;
     ChatRenderer chatRenderer;
@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
 
         movable = GetComponent<Movable>();
         animator = GetComponentInChildren<Animator>();
-        animationPalette = GetComponentInChildren<AnimationPalette>();
+        animationPalettes = animator.GetComponents<AnimationPalette>();
         animationControllers = new List<IAnimationController>();
         animationControllers.Add(new WalkAnimationController(movable));
 
@@ -36,7 +36,7 @@ public class Character : MonoBehaviour
     void Update() {
         animationControllers.RemoveAll(x => x.HasDone());
         if (animationControllers.Count > 0)
-            PlayClip(animationControllers[animationControllers.Count - 1].GetState());
+            PlayState(animationControllers[animationControllers.Count - 1].GetState());
     }
 
     public void ShowMessage(Chat chat, bool global = true) {
@@ -59,11 +59,12 @@ public class Character : MonoBehaviour
         animationControllers.RemoveAll(x => !(x is WalkAnimationController));
     }
 
-    void PlayClip(string stateNameOrAlias) {
+    void PlayState(string stateNameOrAlias) {
         string stateName = stateNameOrAlias;
-        if (animationPalette && animationPalette.GetStateName(stateNameOrAlias) != null)
-            stateName = animationPalette.GetStateName(stateNameOrAlias);
-        
+        foreach (AnimationPalette animationPalette in animationPalettes) {
+            if (animationPalette.IsAvailable() && animationPalette.GetStateName(stateNameOrAlias) != null)
+                stateName = animationPalette.GetStateName(stateNameOrAlias);
+        }
         animator.Play(stateName);
     }
 }

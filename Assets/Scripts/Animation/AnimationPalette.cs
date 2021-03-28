@@ -6,6 +6,7 @@ using UnityEditor.Animations;
 [RequireComponent(typeof(Animator))]
 public class AnimationPalette : MonoBehaviour
 {
+    public string condition;
     public List<AnimationStateNamePair> pairs = new List<AnimationStateNamePair>();
 
     void OnValidate() {
@@ -61,6 +62,10 @@ public class AnimationPalette : MonoBehaviour
             }
         }
         pairs.Add(new AnimationStateNamePair(stateName, alias));
+    }
+
+    public bool IsAvailable() {
+        return condition == null || condition.Length == 0 || Expression.CastAsBool(Expression.Eval(condition));
     }
 }
 
