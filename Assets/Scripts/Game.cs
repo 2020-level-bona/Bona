@@ -34,7 +34,7 @@ public class Game : MonoBehaviour
     }
 
     public void TransferScene(string sceneName) {
-        Session.Instance.Save();
+        // Session.Instance.Save();
 
         sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
         SceneManager.LoadScene(sceneName);
