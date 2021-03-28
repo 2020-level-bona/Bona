@@ -56,7 +56,7 @@ public class BScriptExecutor : MonoBehaviour
             return;
         if (executionRepeat == ScriptExecutionRepeat.ONCE && Session.CurrentScene.GetBool(uniqueId))
             return;
-        if (executionWhen == ScriptExecutionWhen.NOT_IN_CUTSCENE && game.IsPlayingCutscene)
+        if (executionWhen == ScriptExecutionWhen.NOT_IN_CUTSCENE && ScriptSession.IsPlayingCutscene)
             return;
         if (state == ScriptExecutorState.SYNTAX_ERROR)
             throw new System.Exception("스크립트에 구문 오류가 있어 실행할 수 없습니다.");
