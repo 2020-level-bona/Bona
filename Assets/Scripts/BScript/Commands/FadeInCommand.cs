@@ -23,8 +23,9 @@ public class FadeInCommand : IActionCommand
 
     public IEnumerator GetCoroutine() {
         CameraFader cameraFader = GameObject.FindObjectOfType<CameraFader>();
-        if (cameraFader)
-            cameraFader.FadeIn();
-        yield return null;
+        if (cameraFader) {
+            ITweenEntry tween = cameraFader.FadeIn();
+            yield return new WaitUntil(() => tween.HasDone());
+        }
     }
 }
