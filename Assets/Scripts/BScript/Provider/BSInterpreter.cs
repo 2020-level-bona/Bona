@@ -136,6 +136,8 @@ public class BSInterpreter : ICommandProvider
                     return new CameraDeleteTargetCommand(level, lineParser);
                 case CameraClearTargetsCommand.Keyword:
                     return new CameraClearTargetsCommand(lineParser);
+                case FaceCommand.Keyword:
+                    return new FaceCommand(level, lineParser);
 
                 // 제어문
                 case DoCommand.Keyword:
