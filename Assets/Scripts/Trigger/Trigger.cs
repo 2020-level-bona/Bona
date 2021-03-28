@@ -15,7 +15,7 @@ public class Trigger : MonoBehaviour
     }
 
     protected void Invoke() {
-        if (!runInCutscene && FindObjectOfType<Game>().IsPlayingCutscene)
+        if (!runInCutscene && ScriptSession.IsPlayingCutscene)
             return;
 
         if (runAllScripts) {
