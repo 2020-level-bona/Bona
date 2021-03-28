@@ -14,7 +14,7 @@ public class BScriptExecutorEditor : Editor
 
         BScriptExecutor executor = (BScriptExecutor) target;
 
-        DrawProperties(executor);
+        DrawProperties(serializedObject);
 
         DrawStatus(executor.state);
 
@@ -68,30 +68,30 @@ public class BScriptExecutorEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 
-    void DrawProperties(BScriptExecutor executor) {
+    void DrawProperties(SerializedObject serializedObject) {
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("고유 ID");
-        executor.uniqueId = EditorGUILayout.TextField(executor.uniqueId);
+        serializedObject.FindProperty("uniqueId").stringValue = EditorGUILayout.TextField(serializedObject.FindProperty("uniqueId").stringValue);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("스크립트 실행 반복");
-        executor.executionRepeat = (ScriptExecutionRepeat) EditorGUILayout.EnumPopup(executor.executionRepeat);
+        serializedObject.FindProperty("executionRepeat").enumValueIndex = (int) (ScriptExecutionRepeat) EditorGUILayout.EnumPopup((ScriptExecutionRepeat) serializedObject.FindProperty("executionRepeat").enumValueIndex);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("스크립트 실행 조건식");
-        executor.executionCondition = EditorGUILayout.TextField(executor.executionCondition);
+        serializedObject.FindProperty("executionCondition").stringValue = EditorGUILayout.TextField(serializedObject.FindProperty("executionCondition").stringValue);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("컷씬");
-        executor.isCutscene = EditorGUILayout.Toggle(executor.isCutscene);
+        serializedObject.FindProperty("isCutscene").boolValue = EditorGUILayout.Toggle(serializedObject.FindProperty("isCutscene").boolValue);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         EditorGUILayout.LabelField("스크립트 실행 환경");
-        executor.executionWhen = (ScriptExecutionWhen) EditorGUILayout.EnumPopup(executor.executionWhen);
+        serializedObject.FindProperty("executionWhen").enumValueIndex = (int) (ScriptExecutionWhen) EditorGUILayout.EnumPopup((ScriptExecutionWhen) serializedObject.FindProperty("executionWhen").enumValueIndex);
         EditorGUILayout.EndHorizontal();
     }
 
