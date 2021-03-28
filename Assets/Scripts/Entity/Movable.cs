@@ -11,6 +11,7 @@ public class Movable : MonoBehaviour
     public float baseSpeed = 5f;
     public float speedMultiplier = 1f;
     public float speed => baseSpeed * speedMultiplier;
+    public bool ignoreRoad = false;
 
     public int currentFloor {get; private set;} = 1;
     public Vector2 position {
@@ -50,6 +51,11 @@ public class Movable : MonoBehaviour
         int floor = level.GetFloor(position);
         if (floor > 0)
             currentFloor = floor;
+        
+        if (ignoreRoad) {
+            transform.position = new Vector3(position.x, position.y, transform.position.z);
+            return;
+        }
 
         if (currentFloor > 0) {
             Vector2 nextPosition = level.floorPolygons[currentFloor - 1].ClosestPoint(position);
