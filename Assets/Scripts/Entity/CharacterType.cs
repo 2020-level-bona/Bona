@@ -10,4 +10,11 @@ public enum CharacterType
     MOLE, // 두더지
     WATERFAIRY, // 물의 요정
     MOREU, // 모르
+    VILLAGER1, // 마을 사람 1
+    VILLAGER2, // 마을 사람 2
+    VILLAGER3, // 마을 사람 3
+    VILLAGER4, // 마을 사람 4
+    VILLAGER5, // 마을 사람 5 + 마을 아이 1
+    VILLAGER_CHILD2, // 마을 아이 2
+    DOG, // 떠돌이 개
 }
