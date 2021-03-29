@@ -1331,6 +1331,7 @@ GameObject:
   - component: {fileID: 1918882259}
   - component: {fileID: 1918882258}
   - component: {fileID: 1918882257}
+  - component: {fileID: 1918882260}
   m_Layer: 0
   m_Name: "\uC232\uC73C\uB85C"
   m_TagString: Untagged
@@ -1364,14 +1365,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "if story.line < 10\n# \"\uC0AC\uB78C\uB4E4\uC774 \uC2E4\uC885\uB418\uC5B4
-    \uCD9C\uC785\uC774 \uAE08\uC9C0 \uB41C \uC232\uC774\uC57C. \uC800\uC8FC\uBC1B\uC740
-    \uC232\uC774\uB77C \uBD80\uB974\uC9C0.\"\n# \"\uC0AC\uC2E4 \uB09C \uB9E8\uB0A0
-    \uB4E4\uC5B4\uAC00. \uC5EC\uAE30 \uB418\uAC8C \uC88B\uAC70\uB4E0.\"\nelse\ntransfer
-    \uC232\nend"
+  script: "# \"\uC0AC\uB78C\uB4E4\uC774 \uC2E4\uC885\uB418\uC5B4 \uCD9C\uC785\uC774
+    \uAE08\uC9C0 \uB41C \uC232\uC774\uC57C. \uC800\uC8FC\uBC1B\uC740 \uC232\uC774\uB77C
+    \uBD80\uB974\uC9C0.\"\n# \"\uC0AC\uC2E4 \uB09C \uB9E8\uB0A0 \uB4E4\uC5B4\uAC00.
+    \uC5EC\uAE30 \uB418\uAC8C \uC88B\uAC70\uB4E0.\"\n"
   uniqueId: 1629
   executionRepeat: 1
-  executionCondition: 
+  executionCondition: story.line < 10
   isCutscene: 0
   executionWhen: 0
 --- !u!114 &1918882258
@@ -1404,3 +1404,19 @@ CircleCollider2D:
   m_Offset: {x: -2, y: 2}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &1918882260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918882255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d5c3e0a25cd54ea0aa5193f09cba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene:
+    sceneAsset: {fileID: 102900000, guid: 7639416ea41b9894986fdb70540df8f9, type: 3}
+    scenePath: "Assets/Scenes/\uC232.unity"
+  condition: story.line >= 10
