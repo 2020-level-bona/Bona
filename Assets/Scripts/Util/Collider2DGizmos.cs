@@ -7,7 +7,7 @@ public class Collider2DGizmos
     public static void Draw(Collider2D coll) {
         if (coll is BoxCollider2D) {
             BoxCollider2D box = coll as BoxCollider2D;
-            Gizmos.DrawCube((Vector2) box.transform.position + box.offset, box.size);
+            Gizmos.DrawWireCube((Vector2) box.transform.position + box.offset, box.size);
         } else if (coll is CircleCollider2D) {
             CircleCollider2D circle = coll as CircleCollider2D;
             
