@@ -10,7 +10,20 @@ public class Level : MonoBehaviour
 
     Dictionary<CharacterType, Character> spawnedCharacters = new Dictionary<CharacterType, Character>();
 
+    void OnDrawGizmos() {
+        if (floorPolygons == null || floorPolygons.Count == 0)
+            InitFloorColliders();
+        
+        Gizmos.color = Color.blue;
+        foreach (PolygonCollider2D polygonCollider2D in floorPolygons)
+            Collider2DGizmos.Draw(polygonCollider2D);
+    }
+
     void Awake() {
+        InitFloorColliders();
+    }
+
+    void InitFloorColliders() {
         floorPolygons = new List<PolygonCollider2D>();
 
         int floorIndex = 1;

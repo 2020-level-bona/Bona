@@ -9,6 +9,14 @@ public class AreaTrigger : Trigger
     Collider2D coll;
     bool triggered = false;
 
+    void OnDrawGizmos() {
+        if (!coll)
+            coll = GetComponent<Collider2D>();
+
+        Gizmos.color = Color.green;
+        Collider2DGizmos.Draw(coll);
+    }
+
     void Awake() {
         game = FindObjectOfType<Game>();
         coll = GetComponent<Collider2D>();

@@ -10,6 +10,14 @@ public class MouseClickTrigger : Trigger
     Camera cam;
     Collider2D coll;
 
+    void OnDrawGizmos() {
+        if (!coll)
+            coll = GetComponent<Collider2D>();
+
+        Gizmos.color = Color.green;
+        Collider2DGizmos.Draw(coll);
+    }
+
     void Awake() {
         game = FindObjectOfType<Game>();
         coll = GetComponent<Collider2D>();
