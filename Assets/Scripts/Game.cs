@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public SceneContext sceneContext;
-
     Level level;
     ChatManager chatManager;
     CameraController cameraController;
@@ -23,6 +21,8 @@ public class Game : MonoBehaviour
 
     void Start() {
         Character bona = level.GetSpawnedCharacter(CharacterType.BONA);
+        bona.movable.MoveTo(GetPlayerSpawnPoint(bona.movable.position));
+
         cameraController.MoveInstantly(bona.movable.GetCenter());
         cameraController.AddCameraOperator(new FollowCharacters(cameraController, CameraController.DEFAULT_SPEED, bona));
     }
@@ -34,13 +34,13 @@ public class Game : MonoBehaviour
     public void TransferScene(string sceneName) {
         // Session.Instance.Save();
 
-        sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
+        Session.General.Set("lastScenePath", SceneManager.GetActiveScene().path);
         SceneManager.LoadScene(sceneName);
     }
 
     public Vector2 GetPlayerSpawnPoint(Vector2 defaultSpawnPoint) {
         foreach (TransferMap transferMap in FindObjectsOfType<TransferMap>()) {
-            if (transferMap.targetScene != null && transferMap.targetScene.ScenePath == sceneContext.LastScenePath)
+            if (transferMap.targetScene != null && transferMap.targetScene.ScenePath == Session.General.GetString("lastScenePath"))
                 return transferMap.transform.position;
         }
         return defaultSpawnPoint;

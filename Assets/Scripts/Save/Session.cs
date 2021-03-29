@@ -18,6 +18,7 @@ public class Session : ISession
     public static Namespace CurrentScene => Instance.GetNamespace("scene").GetNamespace(SceneManager.GetActiveScene().name);
     public static Namespace Inventory => Instance.GetNamespace("inventory");
     public static Namespace Story => Instance.GetNamespace("story");
+    public static Namespace General => Instance.GetNamespace("general");
     public static Namespace Setting => Instance.GetNamespace("setting");
     public static Namespace Statistic => Instance.GetNamespace("statistic");
 
