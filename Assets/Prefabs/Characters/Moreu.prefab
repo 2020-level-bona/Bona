@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7453512252590781612}
   - component: {fileID: 6645613466326998921}
   - component: {fileID: 3486054085327283596}
-  - component: {fileID: 2917264916142124884}
   - component: {fileID: 6904840274325480920}
   m_Layer: 0
   m_Name: Sprite
@@ -103,22 +102,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2917264916142124884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936792585687951370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  condition: '!moreu.torch'
-  pairs:
-  - stateName: "\uC2A4\uD0E0\uB4DC"
-    alias: IDLE
 --- !u!114 &6904840274325480920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,12 +114,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  condition: moreu.torch
-  pairs:
-  - stateName: "\uC2A4\uD0E0\uB4DC+\uD683\uBD88"
-    alias: IDLE
-  - stateName: "\uAC78\uC74C+\uD683\uBD88"
-    alias: WALK_L
+  palettePages:
+  - condition: moreu.torch
+    pairs:
+    - stateName: "\uC2A4\uD0E0\uB4DC"
+      alias: 
+    - stateName: "\uBE44\uC6C3\uAE30_\uB9D0"
+      alias: 
+    - stateName: "\uAC78\uC74C+\uD683\uBD88"
+      alias: WALK_L
+    - stateName: "\uBD95\uBD95 \uD718\uB450\uB974\uAE30"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC+\uD683\uBD88+\uB9D0"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC+\uD683\uBD88"
+      alias: IDLE
+    - stateName: "\uB3CC\uB9DE\uC74C"
+      alias: 
+    - stateName: "\uD718\uCCAD\uAC70\uB9BC"
+      alias: 
+    - stateName: "\uC9D0\uC5D0\uAE54\uB9BC"
+      alias: 
+  - condition: 
+    pairs:
+    - stateName: "\uC2A4\uD0E0\uB4DC"
+      alias: IDLE
+    - stateName: "\uBE44\uC6C3\uAE30_\uB9D0"
+      alias: 
+    - stateName: "\uAC78\uC74C+\uD683\uBD88"
+      alias: 
+    - stateName: "\uBD95\uBD95 \uD718\uB450\uB974\uAE30"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC+\uD683\uBD88+\uB9D0"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC+\uD683\uBD88"
+      alias: 
+    - stateName: "\uB3CC\uB9DE\uC74C"
+      alias: 
+    - stateName: "\uD718\uCCAD\uAC70\uB9BC"
+      alias: 
+    - stateName: "\uC9D0\uC5D0\uAE54\uB9BC"
+      alias: 
 --- !u!1 &2384330026491775078
 GameObject:
   m_ObjectHideFlags: 0
