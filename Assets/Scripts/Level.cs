@@ -11,12 +11,30 @@ public class Level : MonoBehaviour
     Dictionary<CharacterType, Character> spawnedCharacters = new Dictionary<CharacterType, Character>();
 
     void OnDrawGizmos() {
-        if (floorPolygons == null || floorPolygons.Count == 0)
-            InitFloorColliders();
-        
         Gizmos.color = Color.blue;
-        foreach (PolygonCollider2D polygonCollider2D in floorPolygons)
-            Collider2DGizmos.Draw(polygonCollider2D);
+
+        int floorIndex = 1;
+        while(true) {
+            GameObject gameObject = GameObject.Find("Floor" + floorIndex);
+            if (gameObject == null)
+                break;
+            
+            PolygonCollider2D polygon = gameObject.GetComponent<PolygonCollider2D>();
+            if (polygon == null)
+                break;
+            
+            Collider2DGizmos.Draw(polygon);
+
+            // Add Holes
+            for (int i = 0; i < gameObject.transform.childCount; i++) {
+                PolygonCollider2D hole = gameObject.transform.GetChild(i).GetComponent<PolygonCollider2D>();
+                if (hole != null) {
+                    Collider2DGizmos.Draw(hole);
+                }
+            }
+
+            floorIndex++;
+        }
     }
 
     void Awake() {
