@@ -6,27 +6,38 @@ using UnityEditor.Animations;
 [RequireComponent(typeof(Animator))]
 public class AnimationPalette : MonoBehaviour
 {
-    public string condition;
-    public List<AnimationStateNamePair> pairs = new List<AnimationStateNamePair>();
+    [SerializeField]
+    AnimationPalettePage[] palettePages;
 
     void OnValidate() {
-        List<string> stateNames = GetAllStates();
+        if (palettePages == null)
+            return;
         
-        pairs.RemoveAll(x => !stateNames.Contains(x.stateName));
-    }
+        // 존재하지 않는 stateName을 가진 Pair를 모두 제거
+        List<string> stateNames = GetAllStates();
+        foreach (AnimationPalettePage page in palettePages) {
+            page.pairs.RemoveAll(x => !stateNames.Contains(x.stateName));
+        }
 
-    public List<string> CheckConflicts() {
-        List<string> conflictedNames = new List<string>();
-        for (int i = 0; i < pairs.Count; i++) {
-            for (int j = i + 1; j < pairs.Count; j++) {
-                if (pairs[i].alias == pairs[j].alias && !conflictedNames.Contains(pairs[i].alias))
-                    conflictedNames.Add(pairs[i].alias);
+        // 존재하는 stateName들 중 Pair에는 포함되어 있지 않은 stateName들을 새롭게 추가
+        foreach (string stateName in stateNames) {
+            foreach (AnimationPalettePage page in palettePages) {
+                bool found = false;
+                foreach (AnimationStateNamePair pair in page.pairs) {
+                    if (pair.stateName == stateName) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    page.pairs.Add(new AnimationStateNamePair(stateName, ""));
+                }
             }
         }
-        return conflictedNames;
     }
 
-    public List<string> GetAllStates() {
+    List<string> GetAllStates() {
         List<string> states = new List<string>();
         AnimatorController animatorController = GetComponent<Animator>().runtimeAnimatorController as AnimatorController;
         foreach (ChildAnimatorState childAnimatorState in animatorController.layers[0].stateMachine.states)
@@ -34,48 +45,15 @@ public class AnimationPalette : MonoBehaviour
         return states;
     }
 
-    public string GetStateName(string alias) {
-        foreach (AnimationStateNamePair pair in pairs) {
-            if (pair.alias == alias)
-                return pair.stateName;
-        }
-        return null;
-    }
-
-    public string GetAlias(string stateName) {
-        foreach (AnimationStateNamePair pair in pairs) {
-            if (pair.stateName == stateName)
-                return pair.alias;
-        }
-        return null;
-    }
-
-    public void RemoveAlias(string stateName) {
-        pairs.RemoveAll(x => x.stateName == stateName);
-    }
-
-    public void SetAlias(string stateName, string alias) {
-        foreach (AnimationStateNamePair pair in pairs) {
-            if (pair.stateName == stateName) {
-                pair.alias = alias;
-                return;
+    public string GetState(string stateNameOrAlias) {
+        foreach (AnimationPalettePage palettePage in palettePages) {
+            if (palettePage.IsAvailable()) {
+                string stateName = stateNameOrAlias;
+                if (palettePage.GetStateName(stateNameOrAlias) != null)
+                    stateName = palettePage.GetStateName(stateNameOrAlias);
+                return stateName;
             }
         }
-        pairs.Add(new AnimationStateNamePair(stateName, alias));
-    }
-
-    public bool IsAvailable() {
-        return condition == null || condition.Length == 0 || Expression.CastAsBool(Expression.Eval(condition));
-    }
-}
-
-[System.Serializable]
-public class AnimationStateNamePair {
-    public string stateName;
-    public string alias;
-
-    public AnimationStateNamePair(string stateName, string alias) {
-        this.stateName = stateName;
-        this.alias = alias;
+        return stateNameOrAlias;
     }
 }

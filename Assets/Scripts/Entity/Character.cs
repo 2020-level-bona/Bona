@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     Level level;
     public Movable movable {get; private set;}
     Animator animator;
-    AnimationPalette[] animationPalettes;
+    AnimationPalette animationPalette;
     List<IAnimationController> animationControllers;
     Trigger trigger;
     ChatRenderer chatRenderer;
@@ -21,7 +21,7 @@ public class Character : MonoBehaviour
 
         movable = GetComponent<Movable>();
         animator = GetComponentInChildren<Animator>();
-        animationPalettes = animator.GetComponents<AnimationPalette>();
+        animationPalette = animator.GetComponent<AnimationPalette>();
         animationControllers = new List<IAnimationController>();
         animationControllers.Add(new WalkAnimationController(movable));
 
@@ -60,11 +60,7 @@ public class Character : MonoBehaviour
     }
 
     void PlayState(string stateNameOrAlias) {
-        string stateName = stateNameOrAlias;
-        foreach (AnimationPalette animationPalette in animationPalettes) {
-            if (animationPalette.IsAvailable() && animationPalette.GetStateName(stateNameOrAlias) != null)
-                stateName = animationPalette.GetStateName(stateNameOrAlias);
-        }
+        string stateName = animationPalette.GetState(stateNameOrAlias);
         animator.Play(stateName);
     }
 }
