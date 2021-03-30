@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Debugger : MonoBehaviour
 {
     Level level;
-    Player player;
+    Movable playerMovable;
     CameraController cameraController;
 
     bool showZIndexThreshold = false;
@@ -26,7 +26,6 @@ public class Debugger : MonoBehaviour
 
     void Awake() {
         level = FindObjectOfType<Level>();
-        player = FindObjectOfType<Player>();
         cameraController = FindObjectOfType<CameraController>();
 
         debugText = GetComponent<Text>();
@@ -34,6 +33,8 @@ public class Debugger : MonoBehaviour
 
     void Start()
     {
+        playerMovable = level.GetSpawnedCharacter(CharacterType.BONA).GetComponent<Movable>();
+
         if (cameraController != null)
             debugText.text += $"\n배경: {cameraController.backgroundSize.x}x{cameraController.backgroundSize.y}\n카메라: {cameraController.cameraSize.x}x{cameraController.cameraSize.y}";
 
@@ -79,7 +80,7 @@ public class Debugger : MonoBehaviour
 
                 showColliders = false;
             } else {
-                if (player != null) {
+                if (playerMovable) {
                     colliderDebugObjects = new List<GameObject>();
                     foreach (PolygonCollider2D floor in level.floorPolygons) {
                         GameObject gameObject = new GameObject("Floor Collider Mesh");
@@ -121,7 +122,7 @@ public class Debugger : MonoBehaviour
         
         for(int i = 0; i < colliderDebugObjects.Count; i++) {
             MeshRenderer renderer = colliderDebugObjects[i].GetComponent<MeshRenderer>();
-            Color color = player.currentFloor == (i + 1) ? Color.red : Color.green;
+            Color color = playerMovable.currentFloor == (i + 1) ? Color.red : Color.green;
             color.a = 0.5f;
             renderer.sharedMaterial.color = color;
         }

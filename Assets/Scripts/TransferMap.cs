@@ -10,6 +10,8 @@ public class TransferMap : MonoBehaviour
     [FormerlySerializedAs("transferMap")]
     public SceneReference targetScene; // 이동할 맵
 
+    public string condition;
+
     Trigger trigger;
 
     void Awake() {
@@ -22,6 +24,7 @@ public class TransferMap : MonoBehaviour
     }
 
     void Transfer() {
-        FindObjectOfType<Game>()?.TransferScene(targetScene);
+        if (condition == null || condition.Length == 0 || Expression.CastAsBool(Expression.Eval(condition)))
+            FindObjectOfType<Game>()?.TransferScene(targetScene);
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9118545650948354448}
   - component: {fileID: 9118545650948354451}
   - component: {fileID: 484737002}
-  - component: {fileID: 484737003}
+  - component: {fileID: 7149946382423474199}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -102,7 +102,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &484737003
+--- !u!114 &7149946382423474199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,9 +111,130 @@ MonoBehaviour:
   m_GameObject: {fileID: 9118545650948354449}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a401e5c27e686439ed4ff10877ebb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  palettePages:
+  - condition: bona.berry
+    pairs:
+    - stateName: "\uAC77\uAE30(\uC544\uB798)"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC704)"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC88C)"
+      alias: 
+    - stateName: "\uAE30\uBCF8(\uC88C)"
+      alias: 
+    - stateName: "\uAC00\uBC29\uC5D0 \uB123\uAE30"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uB358\uC9C0\uAE30"
+      alias: 
+    - stateName: "\uB9D0"
+      alias: 
+    - stateName: "\uBC30\uACE0\uD514"
+      alias: 
+    - stateName: "\uBE75 \uBC1B\uAE30"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC808\uB808\uC808\uB808"
+      alias: 
+    - stateName: "\uCC44\uC9D1"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC544\uB798) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: WALK_D
+    - stateName: "\uAC77\uAE30(\uC704) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: WALK_U
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: IDLE
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8 + \uB9D0"
+      alias: 
+    - stateName: "\uBB3C\uC758 \uC694\uC815 \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC88C) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: WALK_L
+    - stateName: "\uD3EC\uD06C \uB4E4\uACE0 \uCC0C\uB974\uAE30"
+      alias: 
+    - stateName: "\uC990\uAC81\uAC8C \uB17C\uB2E4"
+      alias: 
+    - stateName: "\uC6B8\uAE30"
+      alias: 
+    - stateName: "\uC6B8\uAE30+\uAC77\uAE30"
+      alias: 
+  - condition: 
+    pairs:
+    - stateName: "\uAC77\uAE30(\uC544\uB798)"
+      alias: WALK_D
+    - stateName: "\uAC77\uAE30(\uC704)"
+      alias: WALK_U
+    - stateName: "\uAC77\uAE30(\uC88C)"
+      alias: WALK_L
+    - stateName: "\uAE30\uBCF8(\uC88C)"
+      alias: IDLE
+    - stateName: "\uAC00\uBC29\uC5D0 \uB123\uAE30"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uB358\uC9C0\uAE30"
+      alias: 
+    - stateName: "\uB9D0"
+      alias: 
+    - stateName: "\uBC30\uACE0\uD514"
+      alias: 
+    - stateName: "\uBE75 \uBC1B\uAE30"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC808\uB808\uC808\uB808"
+      alias: 
+    - stateName: "\uCC44\uC9D1"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC544\uB798) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC704) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8 + \uB9D0"
+      alias: 
+    - stateName: "\uBB3C\uC758 \uC694\uC815 \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC88C) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uD3EC\uD06C \uB4E4\uACE0 \uCC0C\uB974\uAE30"
+      alias: 
+    - stateName: "\uC990\uAC81\uAC8C \uB17C\uB2E4"
+      alias: 
+    - stateName: "\uC6B8\uAE30"
+      alias: 
+    - stateName: "\uC6B8\uAE30+\uAC77\uAE30"
+      alias: 
 --- !u!1 &9118545652613492342
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +244,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9118545652613492336}
-  - component: {fileID: 9118545652613492339}
+  - component: {fileID: 544739457}
+  - component: {fileID: 544739458}
+  - component: {fileID: 544739459}
   m_Layer: 0
   m_Name: Bona
   m_TagString: Untagged
@@ -146,7 +269,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9118545652613492339
+--- !u!114 &544739457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,8 +278,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 9118545652613492342}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f60782400417cc4086a157490dd9236, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fae448cf7c1a834298619ff453cd64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: {x: 2, y: 2.5}
-  velocityScale: {x: 5, y: 5}
+--- !u!114 &544739458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118545652613492342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5094902252ef7c84aa5d0ec62314a4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1.54, y: 2.57}
+  baseSpeed: 5
+  speedMultiplier: 1
+  ignoreRoad: 0
+  useFlip: 1
+--- !u!114 &544739459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118545652613492342}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e3499ecad648d4fa7619059a73bc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1

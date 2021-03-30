@@ -20,12 +20,12 @@ public class CameraFader : MonoBehaviour
     }
 
     // 어두워진 화면이 다시 돌아옴
-    public void FadeIn() {
-        Tween.Add(gameObject, x => fadeIntensity = x, 1f, 0f, 1.5f);
+    public ITweenEntry FadeIn() {
+        return Tween.Add(gameObject, x => fadeIntensity = x, 1f, 0f, 1.5f);
     }
 
     // 화면이 어두워짐
-    public void FadeOut() {
-        Tween.Add(gameObject, x => fadeIntensity = x, 0f, 1f, 1.5f);
+    public ITweenEntry FadeOut() {
+        return Tween.Add(gameObject, x => fadeIntensity = x, 0f, 1f, 1.5f);
     }
 }
