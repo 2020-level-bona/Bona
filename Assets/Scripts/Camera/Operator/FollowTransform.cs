@@ -6,7 +6,7 @@ public class FollowTransform : Follower
 {
     Transform transform;
 
-    public FollowTransform(Transform transform, CameraController cameraController) : base(cameraController) {
+    public FollowTransform(Transform transform, CameraController cameraController, float maxSpeed) : base(cameraController, maxSpeed) {
         this.transform = transform;
     }
 

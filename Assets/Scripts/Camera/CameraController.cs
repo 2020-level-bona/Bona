@@ -7,11 +7,13 @@ public class CameraController : MonoBehaviour
     public const int TARGET_WIDTH = 1920;
     public const int TARGET_HEIGHT = 1080;
     const int PIXELS_PER_UNIT = 100;
+    public const float DEFAULT_SPEED = 12f;
 
     Camera cam;
 
     public Vector2Int backgroundSize {get; private set;} = new Vector2Int(TARGET_WIDTH, TARGET_HEIGHT);
     public Vector2Int cameraSize {get; private set;}
+    public Vector2 position => transform.position;
 
     List<ICameraOperator> cameraOperators;
 
@@ -90,5 +92,22 @@ public class CameraController : MonoBehaviour
                 return cameraOperator as T;
         }
         return null;
+    }
+
+    // FIXME: 카메라 오퍼레이터 관련 메소드 리팩토링
+    public bool ContainsCameraOperator(ICameraOperator cameraOperator) {
+        return cameraOperators.Contains(cameraOperator);
+    }
+
+    public void ClearCameraOperators() {
+        cameraOperators.Clear();
+    }
+
+    public void MoveInstantly(Vector2 position) {
+        Vector2 clamped = ClampCameraPosition(position);
+        transform.position = new Vector3(clamped.x, clamped.y, transform.position.z);
+        
+        foreach (ICameraOperator cameraOperator in cameraOperators)
+            cameraOperator.ResetState();
     }
 }

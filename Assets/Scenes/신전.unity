@@ -409,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 9118545652613492342, guid: 36da66586c3337b4589339d1b3d7a015,
         type: 3}
       propertyPath: m_Name
-      value: Character
+      value: Bona
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36da66586c3337b4589339d1b3d7a015, type: 3}
@@ -918,6 +918,9 @@ GameObject:
   - component: {fileID: 1107896522}
   - component: {fileID: 1107896521}
   - component: {fileID: 1107896520}
+  - component: {fileID: 1107896524}
+  - component: {fileID: 1107896525}
+  - component: {fileID: 1107896523}
   m_Layer: 0
   m_Name: "\uC2E0\uB3C4\uB4E4"
   m_TagString: Untagged
@@ -1008,6 +1011,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1107896523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107896519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "# \"\uB2E4\uB4E4 \uC5F4\uC2EC\uD788 \uAE30\uB3C4 \uC911\uC774\uC57C.\"\n#
+    \"\uB098\uB3C4 \uAC00\uB054 \uAE30\uB3C4\uB97C \uC62C\uB824.\""
+  uniqueId: 3DEB
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!61 &1107896524
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107896519}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.15321946, y: -0.18804216}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 4.3, y: 3.74}
+    newSize: {x: 4.3, y: 3.74}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.436401, y: 3.0296187}
+  m_EdgeRadius: 0
+--- !u!114 &1107896525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107896519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
 --- !u!1 &1108825041
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1232,99 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1279582334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279582336}
+  - component: {fileID: 1279582335}
+  - component: {fileID: 1279582338}
+  - component: {fileID: 1279582337}
+  m_Layer: 0
+  m_Name: "\uC0AC\uC81C\uC758 \uBE44\uBC00 \uBC29\uC73C\uB85C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &1279582335
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279582334}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.16}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &1279582336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279582334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.01, y: -3.68, z: -16.089844}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1279582337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279582334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "if true\n# \"\uC0AC\uC81C\uB2D8\uC774 \uBCF4\uACE0\uACC4\uC154\uC11C \uB4E4\uC5B4\uAC08
+    \uC218 \uC5C6\uC5B4.\"\n# \"\uB4E4\uC5B4\uAC00\uC9C0 \uB9D0\uB7AC\uAC70\uB4E0.
+    \uBE44\uBC00\uC774\uB798. \uD504\uB77C\uC774\uBC84\uC2DC!\"\nelse\n// transfer\nend\n"
+  uniqueId: 461F
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &1279582338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279582334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f045f9d3da2a0943ab633562b91df85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
 --- !u!1001 &1285465862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1177,6 +1332,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 674761947, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8007945322466567000, guid: 8880ce796a85f264686f11e6c1e75ac8,
         type: 3}
       propertyPath: m_Name
@@ -1541,7 +1700,7 @@ PrefabInstance:
     - target: {fileID: 1694206605923325985, guid: 39347265d09f350408ec70396bebd422,
         type: 3}
       propertyPath: m_Name
-      value: "\uC0AC\uC81C"
+      value: Priest
       objectReference: {fileID: 0}
     - target: {fileID: 1694206605923325998, guid: 39347265d09f350408ec70396bebd422,
         type: 3}
@@ -1551,12 +1710,12 @@ PrefabInstance:
     - target: {fileID: 1694206605923325998, guid: 39347265d09f350408ec70396bebd422,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.25
+      value: -3.19
       objectReference: {fileID: 0}
     - target: {fileID: 1694206605923325998, guid: 39347265d09f350408ec70396bebd422,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3200002
+      value: -4.24
       objectReference: {fileID: 0}
     - target: {fileID: 1694206605923325998, guid: 39347265d09f350408ec70396bebd422,
         type: 3}
@@ -1600,3 +1759,40 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39347265d09f350408ec70396bebd422, type: 3}
+--- !u!1 &1694206605986504952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1694206605923325985, guid: 39347265d09f350408ec70396bebd422,
+    type: 3}
+  m_PrefabInstance: {fileID: 1694206605986504951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1694206605986504953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694206605986504952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "# \"\uC0AC\uC81C\uB2D8 \uC548\uB155\uD558\uC138\uC694. \uC800 \uC654\uC5B4\uC694.\"\nsay
+    priest \"\uADF8\uB798, \uBCF4\uB098 \uC654\uAD6C\uB098? \uC790, \uC5EC\uAE30
+    \uBE75\uC774\uB2E4. \uCC9C\uCC9C\uD788 \uBA39\uAC70\uB77C.\"\n# \"\uAC10\uC0AC\uD569\uB2C8\uB2E4.
+    \uC0AC\uC81C\uB2D8.\"\nsay priest \"\uBB34\uC2A8 \uC77C \uC788\uC5C8\uB2C8? \uD45C\uC815\uC774
+    \uC88B\uC9C0 \uC54A\uAD6C\uB098.\"\n# \"\u2026\uB2E4\uB4E4 \uC800\uB97C \uBBF8\uC6CC\uD574\uC694.
+    \uC804 \uBAA8\uB450\uAC00 \uC88B\uC740\uB370. \uC81C\uAC8C \uAC00\uC871\uC774
+    \uC5C6\uC5B4\uC11C \uADF8\uB7F0\uAC00 \uBD10\uC694.\"\nsay priest \"\uC774\uB7F0,
+    \uBCF4\uB098\uAC00 \uB9CE\uC774 \uC18D\uC0C1\uD588\uACA0\uAD6C\uB098.\"\n# \"\uC800\uB3C4
+    \uC5B4\uB978 \uAC00\uC871\uC774 \uC0DD\uAE30\uBA74 \uC88B\uACA0\uC5B4\uC694.
+    \uC815\uB9D0 \uC18C\uC911\uD788 \uC544\uAEF4\uC904 \uAC70\uC608\uC694. \uBAA8\uB974\uCC98\uB7FC
+    \uB54C\uB9AC\uC9C0\uB3C4 \uC54A\uAD6C\uC694.\"\nsay priest \"\uADF8\uB798 \uBCF4\uB098\uC57C.
+    \uB108\uC5D0\uAC8C \uC18C\uC911\uD55C \uAC00\uC871\uC774 \uC0DD\uAE30\uAE38 \uD568\uAED8
+    \uAE30\uB3C4\uD558\uB9C8. \uADF8\uB7FC \uCC9C\uCC9C\uD788 \uBA39\uB2E4 \uAC00\uB834.
+    \uB0B4\uC77C \uB610 \uC624\uAC70\uB77C!\"\n\nset story.line 10"
+  uniqueId: 4552
+  executionRepeat: 1
+  executionCondition: story.line < 10
+  isCutscene: 1
+  executionWhen: 0

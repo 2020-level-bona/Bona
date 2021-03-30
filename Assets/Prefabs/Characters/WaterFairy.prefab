@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7543921698787003756}
-  - component: {fileID: 7543921698787003757}
   - component: {fileID: 2977158026209440047}
   - component: {fileID: 9035358079168610805}
+  - component: {fileID: 3291207242462523081}
+  - component: {fileID: 2156142092730568124}
   m_Layer: 0
   m_Name: WaterFairy
   m_TagString: Untagged
@@ -34,19 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7543921698787003757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7543921698787003758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c08a7563f78132a4e8226e38f38d586c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  size: {x: 1, y: 1}
 --- !u!58 &2977158026209440047
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -60,7 +48,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!114 &9035358079168610805
@@ -75,6 +63,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
+--- !u!114 &3291207242462523081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543921698787003758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77e3499ecad648d4fa7619059a73bc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+--- !u!114 &2156142092730568124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7543921698787003758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5094902252ef7c84aa5d0ec62314a4c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  size: {x: 1, y: 1}
+  baseSpeed: 5
+  speedMultiplier: 1
+  ignoreRoad: 0
+  useFlip: 1
 --- !u!1 &7543921699312623486
 GameObject:
   m_ObjectHideFlags: 0
@@ -86,7 +106,7 @@ GameObject:
   - component: {fileID: 7543921699312623485}
   - component: {fileID: 7543921699312623427}
   - component: {fileID: 7543921699312623484}
-  - component: {fileID: 7503777185805224207}
+  - component: {fileID: 734415495546311664}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -102,7 +122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7543921699312623486}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7543921698787003756}
@@ -177,7 +197,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7503777185805224207
+--- !u!114 &734415495546311664
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,6 +206,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 7543921699312623486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12a401e5c27e686439ed4ff10877ebb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  palettePages:
+  - condition: 
+    pairs:
+    - stateName: "\uC2A4\uD0E0\uB529"
+      alias: IDLE
+    - stateName: "\uC704\uD5D8"
+      alias: 
+    - stateName: "\uBB3C\uBC29\uC6B8 \uB9CC\uB4E4\uBA70 \uC7A5\uB09C\uCE58\uAE30"
+      alias: 
+    - stateName: "\uB5A8\uC5B4\uC9C4\uBCA0\uB9AC \uB4E4\uACE0\uC788\uB294 \uC694\uC815"
+      alias: 
+    - stateName: "\uBB3C \uC3D8\uAE30"
+      alias: 

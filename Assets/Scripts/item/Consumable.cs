@@ -12,15 +12,16 @@ public class Consumable : MonoBehaviour
 
     Item item;
 
-    Player player;
+    Inventory inventory;
     Trigger trigger;
 
     void Awake() {
-        player = FindObjectOfType<Player>();
         trigger = GetComponent<Trigger>();
     }
 
     void Start() {
+        inventory = FindObjectOfType<Game>().inventory;
+
         CheckUniqueName();
 
         if (HasConsumed()) {
@@ -37,7 +38,7 @@ public class Consumable : MonoBehaviour
     }
 
     void Consume() {
-        player.inventory.AddItem(item);
+        inventory.AddItem(item);
         SetAsConsumed();
         Destroy(gameObject);
     }

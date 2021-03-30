@@ -17,8 +17,7 @@ public class InventoryUI : MonoBehaviour, ISlotListener, IInventoryRenderer
     Slot[] slots;
     
     private void Start() {
-        Player player = FindObjectOfType<Player>();
-        inventory = player.inventory;
+        inventory = FindObjectOfType<Game>().inventory;
         inventory.SetInventoryRenderer(this);
 
         slots = new Slot[Inventory.NUM_SLOTS];
