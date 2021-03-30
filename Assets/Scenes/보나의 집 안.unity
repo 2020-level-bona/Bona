@@ -1776,15 +1776,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2020329370, guid: 36da66586c3337b4589339d1b3d7a015, type: 3}
-      propertyPath: condition
-      value: '!bona.berry'
-      objectReference: {fileID: 0}
-    - target: {fileID: 7149946382423474199, guid: 36da66586c3337b4589339d1b3d7a015,
-        type: 3}
-      propertyPath: condition
-      value: bona.berry
-      objectReference: {fileID: 0}
     - target: {fileID: 9118545652613492336, guid: 36da66586c3337b4589339d1b3d7a015,
         type: 3}
       propertyPath: m_RootOrder
