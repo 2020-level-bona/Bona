@@ -93,6 +93,8 @@ MonoBehaviour:
   size: {x: 1, y: 1}
   baseSpeed: 5
   speedMultiplier: 1
+  ignoreRoad: 0
+  useFlip: 1
 --- !u!1 &7543921699312623486
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +209,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pairs:
-  - stateName: "\uC2A4\uD0E0\uB529"
-    alias: IDLE
+  palettePages:
+  - condition: 
+    pairs:
+    - stateName: "\uC2A4\uD0E0\uB529"
+      alias: IDLE
+    - stateName: "\uC704\uD5D8"
+      alias: 
+    - stateName: "\uBB3C\uBC29\uC6B8 \uB9CC\uB4E4\uBA70 \uC7A5\uB09C\uCE58\uAE30"
+      alias: 
+    - stateName: "\uB5A8\uC5B4\uC9C4\uBCA0\uB9AC \uB4E4\uACE0\uC788\uB294 \uC694\uC815"
+      alias: 
+    - stateName: "\uBB3C \uC3D8\uAE30"
+      alias: 

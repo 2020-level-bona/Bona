@@ -94,6 +94,8 @@ MonoBehaviour:
   size: {x: 1.81, y: 5.71}
   baseSpeed: 5
   speedMultiplier: 1
+  ignoreRoad: 0
+  useFlip: 1
 --- !u!114 &8283013833696834218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +223,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pairs:
-  - stateName: "\uC2A4\uD0E0\uB4DC"
-    alias: IDLE
+  palettePages:
+  - condition: 
+    pairs:
+    - stateName: "\uC2A4\uD0E0\uB4DC"
+      alias: IDLE
+    - stateName: "\uC2A4\uD0E0\uB4DC_\uB9D0"
+      alias: 
+    - stateName: "\uBE75\uC8FC\uAE30"
+      alias: 

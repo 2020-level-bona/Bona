@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 9118545650948354451}
   - component: {fileID: 484737002}
   - component: {fileID: 7149946382423474199}
-  - component: {fileID: 2020329370}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -115,38 +114,127 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  condition: bona.berry
-  pairs:
-  - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
-    alias: IDLE
-  - stateName: "\uAC77\uAE30(\uC544\uB798) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
-    alias: WALK_D
-  - stateName: "\uAC77\uAE30(\uC704) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
-    alias: WALK_U
-  - stateName: "\uAC77\uAE30(\uC88C) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
-    alias: WALK_L
---- !u!114 &2020329370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9118545650948354449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3938462fe7915744db5223d69b00b8bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  condition: '!bona.berry'
-  pairs:
-  - stateName: "\uAC77\uAE30(\uC544\uB798)"
-    alias: WALK_D
-  - stateName: "\uAC77\uAE30(\uC704)"
-    alias: WALK_U
-  - stateName: "\uAC77\uAE30(\uC88C)"
-    alias: WALK_L
-  - stateName: "\uAE30\uBCF8(\uC88C)"
-    alias: IDLE
+  palettePages:
+  - condition: bona.berry
+    pairs:
+    - stateName: "\uAC77\uAE30(\uC544\uB798)"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC704)"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC88C)"
+      alias: 
+    - stateName: "\uAE30\uBCF8(\uC88C)"
+      alias: 
+    - stateName: "\uAC00\uBC29\uC5D0 \uB123\uAE30"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uB358\uC9C0\uAE30"
+      alias: 
+    - stateName: "\uB9D0"
+      alias: 
+    - stateName: "\uBC30\uACE0\uD514"
+      alias: 
+    - stateName: "\uBE75 \uBC1B\uAE30"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC808\uB808\uC808\uB808"
+      alias: 
+    - stateName: "\uCC44\uC9D1"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC544\uB798) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: WALK_D
+    - stateName: "\uAC77\uAE30(\uC704) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: WALK_U
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: IDLE
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8 + \uB9D0"
+      alias: 
+    - stateName: "\uBB3C\uC758 \uC694\uC815 \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC88C) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: WALK_L
+    - stateName: "\uD3EC\uD06C \uB4E4\uACE0 \uCC0C\uB974\uAE30"
+      alias: 
+    - stateName: "\uC990\uAC81\uAC8C \uB17C\uB2E4"
+      alias: 
+    - stateName: "\uC6B8\uAE30"
+      alias: 
+    - stateName: "\uC6B8\uAE30+\uAC77\uAE30"
+      alias: 
+  - condition: 
+    pairs:
+    - stateName: "\uAC77\uAE30(\uC544\uB798)"
+      alias: WALK_D
+    - stateName: "\uAC77\uAE30(\uC704)"
+      alias: WALK_U
+    - stateName: "\uAC77\uAE30(\uC88C)"
+      alias: WALK_L
+    - stateName: "\uAE30\uBCF8(\uC88C)"
+      alias: IDLE
+    - stateName: "\uAC00\uBC29\uC5D0 \uB123\uAE30"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815"
+      alias: 
+    - stateName: "\uB180\uB780 \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uB358\uC9C0\uAE30"
+      alias: 
+    - stateName: "\uB9D0"
+      alias: 
+    - stateName: "\uBC30\uACE0\uD514"
+      alias: 
+    - stateName: "\uBE75 \uBC1B\uAE30"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815"
+      alias: 
+    - stateName: "\uC2DC\uBB34\uB8E9\uD55C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815"
+      alias: 
+    - stateName: "\uC6C3\uB294\uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC808\uB808\uC808\uB808"
+      alias: 
+    - stateName: "\uCC44\uC9D1"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815"
+      alias: 
+    - stateName: "\uD654\uB09C \uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC544\uB798) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC704) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8 + \uB9D0"
+      alias: 
+    - stateName: "\uBB3C\uC758 \uC694\uC815 \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC88C) + \uBCA0\uB9AC \uBC14\uAD6C\uB2C8"
+      alias: 
+    - stateName: "\uD3EC\uD06C \uB4E4\uACE0 \uCC0C\uB974\uAE30"
+      alias: 
+    - stateName: "\uC990\uAC81\uAC8C \uB17C\uB2E4"
+      alias: 
+    - stateName: "\uC6B8\uAE30"
+      alias: 
+    - stateName: "\uC6B8\uAE30+\uAC77\uAE30"
+      alias: 
 --- !u!1 &9118545652613492342
 GameObject:
   m_ObjectHideFlags: 0
