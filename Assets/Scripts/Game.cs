@@ -5,57 +5,48 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
-    public SceneContext sceneContext;
-
+    Level level;
+    ChatManager chatManager;
     CameraController cameraController;
 
-    public bool IsPlayingCutscene {get; private set;} = false;
+    public Inventory inventory;
 
     void Awake() {
+        level = FindObjectOfType<Level>();
+        chatManager = FindObjectOfType<ChatManager>();
         cameraController = FindObjectOfType<CameraController>();
+
+        inventory = new Inventory();
     }
 
     void Start() {
-        Level level = FindObjectOfType<Level>();
-        cameraController.AddCameraOperator(new FollowCharacters(cameraController, level.GetSpawnedCharacter(CharacterType.BONA)));
+        Character bona = level.GetSpawnedCharacter(CharacterType.BONA);
+        bona.movable.MoveTo(GetPlayerSpawnPoint(bona.movable.position));
+
+        cameraController.MoveInstantly(bona.movable.GetCenter());
+        cameraController.AddCameraOperator(new FollowCharacters(cameraController, CameraController.DEFAULT_SPEED, bona));
     }
 
     void Update() {
         Tween.Instance.Update();
     }
 
-    public void TransferScene(SceneReference sceneReference) {
-        Session.Instance.Save();
+    public void TransferScene(string sceneName) {
+        // Session.Instance.Save();
 
-        sceneContext.LastScenePath = SceneManager.GetActiveScene().path;
-        SceneManager.LoadScene(sceneReference);
+        Session.General.Set("lastScenePath", SceneManager.GetActiveScene().path);
+        SceneManager.LoadScene(sceneName);
     }
 
     public Vector2 GetPlayerSpawnPoint(Vector2 defaultSpawnPoint) {
         foreach (TransferMap transferMap in FindObjectsOfType<TransferMap>()) {
-            if (transferMap.targetScene != null && transferMap.targetScene.ScenePath == sceneContext.LastScenePath)
+            if (transferMap.targetScene != null && transferMap.targetScene.ScenePath == Session.General.GetString("lastScenePath"))
                 return transferMap.transform.position;
         }
         return defaultSpawnPoint;
     }
 
-    public void StartCutscene(IEnumerator coroutine) {
-        StartCoroutine(WrapCoroutine(coroutine));
-    }
-
-    // 컷씬 시작, 종료 코드를 코루틴에 추가
-    IEnumerator WrapCoroutine(IEnumerator coroutine) {
-        IsPlayingCutscene = true;
-
-        CameraLetterbox cameraLetterbox = FindObjectOfType<CameraLetterbox>();
-        cameraLetterbox.ShowLetterbox();
-
-        ChatQueue chatQueue = FindObjectOfType<ChatQueue>();
-
-        yield return StartCoroutine(new CutsceneEnumerator(coroutine, chatQueue));
-
-        cameraLetterbox.HideLetterbox();
-
-        IsPlayingCutscene = false;
+    public ScriptSession CreateScriptSession(ICommandProvider commandProvider) {
+        return new ScriptSession(this, level, chatManager, commandProvider, this);
     }
 }

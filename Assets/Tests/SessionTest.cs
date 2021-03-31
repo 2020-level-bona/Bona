@@ -192,6 +192,35 @@ namespace Tests
             Assert.AreEqual(session.GetNamespace("Test").GetString("myStr", null), "한글텍스트");
         }
 
+        [Test]
+        public void 패스파싱_테스트() {
+            Session session = ReadySession();
+
+            session.Set("test.hello", 123);
+            Assert.AreEqual(session.Get("test.hello"), 123);
+            Assert.AreEqual(session.GetNamespace("test").GetInt("hello"), 123);
+
+            session.Set("test.test2.hello", true);
+            Assert.AreEqual(session.Get("test.test2.hello"), true);
+            Assert.AreEqual(session.GetNamespace("test").GetNamespace("test2").GetBool("hello"), true);
+
+            session.Set("test.test2.hello2", 1.2);
+            Assert.AreEqual(session.Get("test.test2.hello2"), 1.2);
+            Assert.AreEqual(session.GetNamespace("test").GetNamespace("test2").GetDouble("hello2"), 1.2);
+
+            string data = session.Serialize();
+            session.Clear();
+            session.Deserialize(data);
+
+            Assert.True(session.Get("test.hello") is long);
+            Assert.True(session.Get("test.test2.hello") is bool);
+            Assert.True(session.Get("test.test2.hello2") is double);
+
+            Assert.AreEqual(session.Get("test.hello"), 123);
+            Assert.AreEqual(session.Get("test.test2.hello"), true);
+            Assert.AreEqual(session.Get("test.test2.hello2"), 1.2);
+        }
+
         Session ReadySession() {
             Session session = Session.Instance;
             session.Clear();
