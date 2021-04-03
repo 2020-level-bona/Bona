@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 1619726462}
   - component: {fileID: 1619726461}
   - component: {fileID: 1619726460}
+  - component: {fileID: 1619726463}
   m_Layer: 0
   m_Name: "\uCE68\uB300"
   m_TagString: Untagged
@@ -1285,6 +1286,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+--- !u!114 &1619726463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619726458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "# \"\uD751\uD751, \uC694\uC815\uC544 \uBBF8\uC548\uD574\u2026\"\nfadeout
+    1 wait\nwait 1\nfadein 1 wait\n"
+  uniqueId: 2A6D
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
 --- !u!1 &1701278229
 GameObject:
   m_ObjectHideFlags: 0

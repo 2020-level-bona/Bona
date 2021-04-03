@@ -242,6 +242,53 @@ MonoBehaviour:
   executionCondition: 
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &166437075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166437073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim villager3 \"\uD314\uC9F1\uB07C\uAE30_\uB9D0\"\ncamadd villager3\nsay
+    villager3 \"\uC544\uC774\uAD6C \uC5B4\uCA4C\uB2E4 \uADF8\uB7F0 \uC77C\uC774\u2026\"\ncamdel
+    villager3\nstopanim villager3"
+  uniqueId: 193C
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &166437076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166437073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line >= 60
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 166437075}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 166437074}
+    autoExecutor: {fileID: 0}
 --- !u!1 &210511534
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +395,53 @@ MonoBehaviour:
   executionCondition: 
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &829536646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829536644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim villager5 \"\uC544\uC774\uB04C\uC5B4\uB2F9\uAE30\uAE30_\uB9D0\"\ncamadd
+    villager5\nsay villager5 \"\uC6B0\uB9AC \uC544\uAC00, \uB108\uB3C4 \uD56D\uC0C1
+    \uC870\uC2EC\uD574\uC57C\uD55C\uB2E4!\"\ncamdel villager5\nstopanim villager5"
+  uniqueId: B69C
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &829536647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829536644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line >= 60
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 829536646}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 829536645}
+    autoExecutor: {fileID: 0}
 --- !u!1 &847664931
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +592,52 @@ MonoBehaviour:
   executionCondition: 
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &986806628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986806626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim villager1 \"\uBCF4\uB098_\uD758\uACA8\uBCF4\uAE30\"\ncamadd villager1\nsay
+    villager1 \"\uBB34\uC2A8 \uC77C\uC774\uB798?\"\ncamdel villager1\nstopanim villager1"
+  uniqueId: E9F4
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &986806629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986806626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line >= 60
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 986806628}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 986806627}
+    autoExecutor: {fileID: 0}
 --- !u!1 &990057346 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9038870079601260489, guid: 84bac9c7f44189f48ae9862a4f1a353d,
@@ -524,6 +664,53 @@ MonoBehaviour:
   executionCondition: 
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &990057348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990057346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim villager2 \"\uC190\uB4E4\uC5B4\uB9C9\uAE30_\uB9D0\"\ncamadd villager2\nsay
+    villager2 \"\uD5DB\uAC04\uC5D0 \uBD88\uC774 \uB098\uC11C \uC560\uAC00 \uC8FD\uC5C8\uB300\"\ncamdel
+    villager2\nstopanim villager2"
+  uniqueId: 4BAE
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &990057349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990057346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line >= 60
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 990057348}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 990057347}
+    autoExecutor: {fileID: 0}
 --- !u!1 &1011749167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7851068622074254778, guid: f826fa657ef62994fb8ae70f9b955291,
@@ -551,6 +738,53 @@ MonoBehaviour:
   executionCondition: 
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &1011749169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011749167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim villager4 \"\uC778\uC0C1\uC4F0\uAE30_\uB9D0\"\ncamadd villager4\nsay
+    villager4 \"\uC73C\uC774\uAD6C, \uC5B4\uB9B0 \uC560\uAC00 \uCC38 \uC548 \uB410\uC5B4\u2026\"\ncamdel
+    villager4\nstopanim villager4"
+  uniqueId: FA9D
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &1011749170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1011749167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line >= 60
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 1011749169}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 1011749168}
+    autoExecutor: {fileID: 0}
 --- !u!1 &1180693343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1654,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Villager1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2262646307207044687, guid: b168a15ee54f8224f8c9725cd121e0be,
+        type: 3}
+      propertyPath: runAllScripts
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b168a15ee54f8224f8c9725cd121e0be, type: 3}
