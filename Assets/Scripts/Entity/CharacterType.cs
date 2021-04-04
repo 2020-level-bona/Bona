@@ -17,4 +17,8 @@ public enum CharacterType
     VILLAGER5, // 마을 사람 5 + 마을 아이 1
     VILLAGER_CHILD2, // 마을 아이 2
     DOG, // 떠돌이 개
+
+    MOREUPARENTS, //모르 부모님
+
+    TOMB, // 무덤가
 }
