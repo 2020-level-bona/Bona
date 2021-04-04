@@ -392,6 +392,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &323825455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 323825457}
+  - component: {fileID: 323825456}
+  m_Layer: 0
+  m_Name: "\uC694\uC815\uC774\uB2E4\uAC00\uC624\uB294\uC9C0\uC810"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &323825456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323825455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
+--- !u!4 &323825457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323825455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0758203, y: -0.9798324, z: -3.0201445}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &380552316
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,6 +917,7 @@ GameObject:
   - component: {fileID: 671307921}
   - component: {fileID: 671307920}
   - component: {fileID: 671307919}
+  - component: {fileID: 671307922}
   m_Layer: 0
   m_Name: "\uCEF7\uC52C"
   m_TagString: Untagged
@@ -935,6 +980,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &671307922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671307918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "move WaterFairy \uC694\uC815\uC774\uB2E4\uAC00\uC624\uB294\uC9C0\uC810\nplayanim
+    Bona \"\uC808\uB808\uC808\uB808\"\nsay Bona \"\uB098\uB3C4 \uAC19\uC774 \uCC3E\uC544\uBCFC\uAC8C\""
+  uniqueId: 3C5F
+  executionRepeat: 1
+  executionCondition: 60 <= story.line && story.line < 70
+  isCutscene: 0
+  executionWhen: 0
 --- !u!1 &682082938
 GameObject:
   m_ObjectHideFlags: 0
