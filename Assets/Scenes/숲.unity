@@ -910,7 +910,7 @@ MonoBehaviour:
   targetScene:
     sceneAsset: {fileID: 102900000, guid: 63a8cf4aae747a3418c62f5de331bb73, type: 3}
     scenePath: "Assets/Scenes/\uAC1C\uBBF8\uC655\uAD6D.unity"
-  condition: 
+  condition: story.line >= 70
 --- !u!1001 &1461329912
 PrefabInstance:
   m_ObjectHideFlags: 0

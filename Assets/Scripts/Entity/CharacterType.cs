@@ -21,4 +21,5 @@ public enum CharacterType
     MOREUPARENTS, //모르 부모님
 
     TOMB, // 무덤가
+    ANT_PRINCE, // 개미 왕자
 }
