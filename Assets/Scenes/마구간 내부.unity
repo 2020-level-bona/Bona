@@ -530,6 +530,7 @@ Transform:
   - {fileID: 241615212}
   - {fileID: 114250400}
   - {fileID: 692941809}
+  - {fileID: 1505818972}
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1153,6 +1154,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
+--- !u!1 &1505818971
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505818972}
+  - component: {fileID: 1505818973}
+  m_Layer: 0
+  m_Name: "\uBCF4\uB098\uC694\uC815\uB358\uC9C0\uAE30"
+  m_TagString: Untagged
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1505818972
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505818971}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.6, y: -1.22, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 514458474}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1505818973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505818971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
 --- !u!1 &1512663974 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7543921698787003758, guid: d076f52b3fa913845a61b3836e098bd1,
@@ -1175,9 +1220,10 @@ MonoBehaviour:
     1\nplayanim bona \"\uB180\uB780 \uD45C\uC815+\uB9D0\"\nsay bona \"\uC5B4\uB5BB\uAC8C
     \uC880 \uD574\uBD10!\"\n\nplayanim waterfairy \"\uBB3C \uC3D8\uAE30\"\nwait 2\nplayanim
     bona \uC6B8\uAE30\nwait 3\n\n//\uC694\uC815 \uC544\uC774\uD15C \uD68D\uB4DD\n//\uC694\uC815
-    \uC544\uC774\uD15C \uC0AC\uC6A9\n\nplayanim bona \uB358\uC9C0\uAE30\n//\uBB38\uCABD
-    \uBD88\uC774 \uAEBC\uC9C4\uB2E4.\nwait 3\n\nplayanim bona \uC6B8\uAE30+\uAC77\uAE30\nmove
-    bona \uBCF4\uB098\uD1F4\uC7A5\n\n\n\n\n\n\n\n \n"
+    \uC544\uC774\uD15C \uC0AC\uC6A9\nmove bona \uBCF4\uB098\uC694\uC815\uB358\uC9C0\uAE30\nplayanim
+    bona \uB358\uC9C0\uAE30\n//\uBB38\uCABD \uBD88\uC774 \uAEBC\uC9C4\uB2E4.\nwait
+    3\n\nplayanim bona \uC6B8\uAE30+\uAC77\uAE30\nmove bona \uBCF4\uB098\uD1F4\uC7A5\n\nfadeout
+    1 wait\n//set story.line \ntransfer \"\uB9C8\uAD6C\uAC04 \uC678\uBD80\"\n\n\n\n\n\n\n\n\n\n\n"
   uniqueId: 1A6C
   executionRepeat: 1
   executionCondition: 
@@ -1209,7 +1255,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603963921}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
@@ -1251,7 +1297,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603963921}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
@@ -1266,8 +1312,7 @@ MonoBehaviour:
     moreu \uB3CC\uB9DE\uC74C\nwait 1\nplayanim moreu \uD718\uCCAD\uAC70\uB9BC\nwait
     1\n//\uC9D1\uC774 \uBB34\uB108\uC9C4\uB2E4\nplayanim moreu \uC9D0\uC5D0\uAE54\uB9BC\n//\uD683\uBD88
     \uB5A8\uC5B4\uC9C4\uB2E4\n//\uAC74\uBB3C\uC5D0 \uBD88\uC774 \uBD99\uB294\uB2E4\nsay
-    moreu \"\uC73C\uC545! \uC0B4\uB824\uC918!\" \nwait 2\nplayanim bona \uC2A4\uD0E0\uB4DC+\uB180\uB780\uD45C\uC815
-    \n"
+    moreu \"\uC73C\uC545! \uC0B4\uB824\uC918!\" \nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\n"
   uniqueId: D48E
   executionRepeat: 0
   executionCondition: 
