@@ -1336,13 +1336,13 @@ MonoBehaviour:
     \uB098\uD0C0\uB098\uAE30 \uC804 \uAE4C\uC9C0\uB294\uC694.\"\nsay ant_prince \"\uC9C0\uAE08\uC740
     \uADF8\uC800 \uBA78\uB9DD\uD55C \uC655\uAD6D\uC77C \uBFD0\uC774\uC9C0\uC694.\"\r\nsay
     bona \"\uADF8\uB4E4? \uBA78\uB9DD?\"\nsay ant_prince \"\uC77C\uB2E8 \uC549\uC73C\uC138\uC694.
-    \uB2E4 \uB9D0\uC500\uB4DC\uB9B4\uAC8C\uC694.\"\r\nwait 1\nplayanim bona \uC549\uAE30\nmove
-    ant_prince \"\uAC1C\uBBF8\uC655\uC790 \uBC14\uC704\uC790\uB9AC\"\nplayanim ant_prince
-    \"\uC758\uC790\uC5D0 \uC62C\uB77C\uAC00 \uC11C\uAE30\"\nwait 1\nplayanim ant_prince
-    \uD5DB\uAE30\uCE68\nwait 1\nplayanim ant_prince \"\uD314 \uB4E4\uACE0 \uB9D0\uD558\uB294
-    \uC900\uBE44\"\n\nfadeout 1 wait\n//\uD68C\uC0C1 \uC774\uBBF8\uC9C0 \uBC0F BGM\nfadein
-    1 wait\n\nplayanim ant_prince \uC2A4\uD0E0\uB4DC\nplayanim bona \uC549\uAE30+\uBC15\uC218\nwait
-    2\nplayanim bona \uC549\uAE30\n\n"
+    \uB2E4 \uB9D0\uC500\uB4DC\uB9B4\uAC8C\uC694.\"\r\nwait 1\nplayanim bona \uC549\uAE30\nplayanim
+    ant_prince \uAC77\uAE30(\uC88C)\nmove ant_prince \"\uAC1C\uBBF8\uC655\uC790 \uBC14\uC704\uC790\uB9AC\"\nplayanim
+    ant_prince \"\uC758\uC790\uC5D0 \uC62C\uB77C\uAC00 \uC11C\uAE30\"\nwait 1\nplayanim
+    ant_prince \uD5DB\uAE30\uCE68\nwait 1\nplayanim ant_prince \"\uD314 \uB4E4\uACE0
+    \uB9D0\uD558\uB294 \uC900\uBE44\"\nwait 1\nfadeout 2 wait\n//\uD68C\uC0C1 \uC774\uBBF8\uC9C0
+    \uBC0F BGM\nfadein 2 wait\n\nplayanim ant_prince \uC2A4\uD0E0\uB4DC\nplayanim
+    bona \uC549\uAE30+\uBC15\uC218\nwait 2\nplayanim bona \uC549\uAE30\n\n"
   uniqueId: DE34
   executionRepeat: 0
   executionCondition: 
