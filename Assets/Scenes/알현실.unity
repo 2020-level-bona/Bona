@@ -1140,7 +1140,7 @@ MonoBehaviour:
   script: set story.line 120
   uniqueId: D7CD
   executionRepeat: 1
-  executionCondition: 
+  executionCondition: story.line >=110
   isCutscene: 0
   executionWhen: 0
 --- !u!1001 &1992733256
