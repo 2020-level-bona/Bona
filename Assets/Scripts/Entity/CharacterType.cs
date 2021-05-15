@@ -23,4 +23,5 @@ public enum CharacterType
     TOMB, // 무덤가
     ANT_PRINCE, // 개미 왕자
     BELIEVERS, // 신자들
+    ROYALGUARDFAIRY, //근위요정
 }
