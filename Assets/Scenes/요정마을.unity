@@ -835,6 +835,7 @@ GameObject:
   m_Component:
   - component: {fileID: 639421530}
   - component: {fileID: 639421531}
+  - component: {fileID: 639421532}
   m_Layer: 0
   m_Name: "\uBC30\uACBD"
   m_TagString: Untagged
@@ -906,6 +907,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &639421532
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639421529}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2db11882b6df14b3baee8e0348c70c62, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &671307918
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,7 +944,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &671307919
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1825,6 +1845,165 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1141214834
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3232302617805112583, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6084343505572581119, guid: 827d04ccf31744bb6aab0a609dbd8746,
+        type: 3}
+      propertyPath: m_Name
+      value: RoyalGuardFairy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 827d04ccf31744bb6aab0a609dbd8746, type: 3}
+--- !u!1 &1141214835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6084343505572581119, guid: 827d04ccf31744bb6aab0a609dbd8746,
+    type: 3}
+  m_PrefabInstance: {fileID: 1141214834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1141214836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141214835}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line <90
+    hide: 1
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+--- !u!114 &1141214837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141214835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "wait 1\nplayanim royalguardfairy \"\uC55E\uC73C\uB85C \uBABB\uAC00\uAC8C
+    \uB9C9\uC74C\"\nwait 1\nsay royalguardfairy \"X!!\" //X\uB9D0\uD48D\uC120\uD544\uC694\n\nset
+    story.line 93\n\n"
+  uniqueId: 6A33
+  executionRepeat: 0
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &1141214838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141214835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "wait 1\nplayanim royalguardfairy \"\uC55E\uC73C\uB85C \uBABB\uAC00\uAC8C
+    \uB9C9\uC74C\"\nwait 1\nsay royalguardfairy \"X!!\" //X\uB9D0\uD48D\uC120\uD544\uC694\nwait
+    1\nplayanim royalguardfairy \uB5A8\uB5A0\uB984\uD558\uAC8C\uBCF4\uAE30\nplayanim
+    bona \uB5A8\uB5A0\uB984\uD558\uAC8C\uBCF4\uAE30\nwait 1\nsay bona \"\uC7A0\uAE50
+    \uB530\uB3CC\uB9B4 \uC218 \uC5C6\uC744\uAE4C?\"\n\nset story.line 96"
+  uniqueId: 30EA
+  executionRepeat: 0
+  executionCondition: story.line >=93
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &1141214839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141214835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: '
+
+
+
+    set story.line 100'
+  uniqueId: D2D5
+  executionRepeat: 1
+  executionCondition: story.line >=96
+  isCutscene: 0
+  executionWhen: 0
 --- !u!1 &1200937102
 GameObject:
   m_ObjectHideFlags: 0
