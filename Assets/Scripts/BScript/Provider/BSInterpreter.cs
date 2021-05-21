@@ -138,6 +138,10 @@ public class BSInterpreter : ICommandProvider
                     return new CameraClearTargetsCommand(lineParser);
                 case FaceCommand.Keyword:
                     return new FaceCommand(level, lineParser);
+                case GiveCommand.Keyword:
+                    return new GiveCommand(lineParser);
+                case TakeCommand.Keyword:
+                    return new TakeCommand(lineParser);
 
                 // 제어문
                 case DoCommand.Keyword:

@@ -161,4 +161,15 @@ public class CommandLineParser : ICommandLineParser
             throw new BSSyntaxException(lineNumber, $"{args[index]}은(는) 올바른 방향 열거형이 아닙니다.");
         }
     }
+
+    public ItemType GetItemType(int index) {
+        string type = GetString(index);
+        try {
+            ItemType itemType = (ItemType) System.Enum.Parse(typeof(ItemType), type, true);
+            args[index].type = TokenType.NAME;
+            return itemType;
+        } catch (System.Exception) {
+            throw new BSSyntaxException(lineNumber, $"{args[index]}은(는) 올바른 아이템 타입명이 아닙니다.");
+        }
+    }
 }
