@@ -14,6 +14,10 @@ public enum ItemType{
        NECKLACE_OF_MERMAIL, // 인어의 목걸이
        WATERFAIRY, // 물의 요정
        FORK, // 포크
+       MOLE, // 두더지 (아이템)
+       FLOWER, // 꽃
+       HUNTERS_KEY, // 사냥꾼의 집 열쇠
+       TRAP, // 덫
        DUMMY, // 테스트
        DUMMY2 // 테스트
 }
