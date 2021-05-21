@@ -21,6 +21,9 @@ public class IfCommand : IControlCommand
     public IfCommand(CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
         currentExpression = lineParser.GetAllStrings(1);
+
+        // 구문 오류 확인용
+        Expression.Eval(currentExpression);
     }
 
     public void AddBranch(string expression, Queue<ICommand> commands) {

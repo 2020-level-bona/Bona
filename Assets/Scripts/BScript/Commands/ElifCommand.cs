@@ -18,6 +18,9 @@ public class ElifCommand : IControlCommand
     public ElifCommand(CommandLineParser lineParser) {
         LineNumber = lineParser.lineNumber;
         this.currentExpression = lineParser.GetAllStrings(1);
+
+        // 구문 오류 확인용
+        Expression.Eval(currentExpression);
     }
 
     public ICommandProvider GetCommandProvider() {
