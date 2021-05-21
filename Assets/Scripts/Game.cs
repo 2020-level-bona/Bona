@@ -5,6 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour
 {
+    static Game instance;
+    public static Game Instance {
+        get {
+            if (!instance) {
+                instance = FindObjectOfType<Game>();
+            }
+            return instance;
+        }
+    }
+
     Level level;
     ChatManager chatManager;
     CameraController cameraController;
