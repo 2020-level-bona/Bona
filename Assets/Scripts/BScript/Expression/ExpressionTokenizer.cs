@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
@@ -18,6 +19,9 @@ public class ExpressionTokenizer
                 continue;
             
             if (EatOperator(line, expression, ref index))
+                continue;
+            
+            if (EatItem(line, expression, ref index))
                 continue;
             
             string token = EatToken(line, ref index);
@@ -126,6 +130,36 @@ public class ExpressionTokenizer
             return true;
         }
 
+        return false;
+    }
+
+    static bool EatItem(string line, List<object> expression, ref int index) {
+        Regex itemContainsRegex = new Regex(@"contains\((.+),(.+)\)");
+        Match match = itemContainsRegex.Match(line.Substring(index));
+        if (match.Success) {
+            string itemTypeStr = match.Groups[1].Value;
+            string itemCountStr = match.Groups[2].Value;
+
+            ItemType itemType;
+            try {
+                itemType = (ItemType) System.Enum.Parse(typeof(ItemType), itemTypeStr, true);
+            } catch {
+                throw new BSSyntaxException(-1, $"{itemTypeStr}은(는) 올바른 아이템 타입 열거형이 아닙니다.");
+            }
+
+            int itemCount;
+            try {
+                itemCount = int.Parse(itemCountStr);
+            } catch {
+                throw new BSSyntaxException(-1, $"{itemCountStr}을(를) 정수 타입으로 변환할 수 없습니다.");
+            }
+
+            Inventory inventory = Game.Instance.inventory;
+
+            index += match.Length;
+            expression.Add(inventory?.ContainsItem(new Item(itemType, itemCount)) ?? false);
+            return true;
+        }
         return false;
     }
 
