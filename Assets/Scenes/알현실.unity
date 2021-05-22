@@ -1080,51 +1080,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1566834123}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1990819957
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990819956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb4fc459a87ea6c49a562f205ada7de9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemType: 4
-  quantity: 1
-  uniqueName: mole_toenail_1
---- !u!114 &1990819958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990819956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runAllScripts: 1
-  runInCutscene: 0
---- !u!58 &1990819959
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1990819956}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 9.45
 --- !u!114 &1990819960
 MonoBehaviour:
   m_ObjectHideFlags: 0

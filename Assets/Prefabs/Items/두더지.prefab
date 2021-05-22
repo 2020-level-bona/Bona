@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5781746323446803100
+--- !u!1 &8213417409049419606
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4144795431404154793}
-  - component: {fileID: 3213114613090953971}
-  - component: {fileID: 1074145874545300203}
-  - component: {fileID: 541350052762713845}
-  - component: {fileID: 5708036049771798871}
+  - component: {fileID: 1460766209450741647}
+  - component: {fileID: 7511216754859789673}
+  - component: {fileID: 1289379601160500910}
+  - component: {fileID: 8281082374104826298}
+  - component: {fileID: 7478345668251294354}
   m_Layer: 0
-  m_Name: "\uB450\uB354\uC9C0\uBC1C\uD1B1"
+  m_Name: "\uB450\uB354\uC9C0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4144795431404154793
+--- !u!4 &1460766209450741647
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5781746323446803100}
+  m_GameObject: {fileID: 8213417409049419606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.1, y: -1.73, z: 0}
+  m_LocalPosition: {x: -0.3181135, y: -0.0019048536, z: -0.053298783}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3213114613090953971
+--- !u!212 &7511216754859789673
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5781746323446803100}
+  m_GameObject: {fileID: 8213417409049419606}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -73,24 +73,24 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f795b12775e728f49bc2025324c42cb7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 42de997ca8c6bf342b10a638f70b1c2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 18.9, y: 14.17}
+  m_Size: {x: 2.7, y: 2.7}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &1074145874545300203
+--- !u!58 &1289379601160500910
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5781746323446803100}
+  m_GameObject: {fileID: 8213417409049419606}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -99,29 +99,14 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.62
---- !u!114 &541350052762713845
+  m_Radius: 0.8
+--- !u!114 &8281082374104826298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5781746323446803100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb4fc459a87ea6c49a562f205ada7de9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemType: 4
-  quantity: 1
-  uniqueName: mole_toenail_1
---- !u!114 &5708036049771798871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5781746323446803100}
+  m_GameObject: {fileID: 8213417409049419606}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
@@ -129,3 +114,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+--- !u!114 &7478345668251294354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213417409049419606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4fc459a87ea6c49a562f205ada7de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemType: 11
+  quantity: 1
+  uniqueName: mole
