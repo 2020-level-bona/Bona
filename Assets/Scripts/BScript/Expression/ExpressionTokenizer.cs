@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Linq.Expressions;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
@@ -22,6 +23,9 @@ public class ExpressionTokenizer
                 continue;
             
             if (EatItem(line, expression, ref index))
+                continue;
+            
+            if (EatDist(line, expression, ref index))
                 continue;
             
             string token = EatToken(line, ref index);
@@ -158,6 +162,47 @@ public class ExpressionTokenizer
 
             index += match.Length;
             expression.Add(inventory?.ContainsItem(new Item(itemType, itemCount)) ?? false);
+            return true;
+        }
+        return false;
+    }
+
+    static bool EatDist(string line, List<object> expression, ref int index) {
+        Regex eatDistRegex = new Regex(@"dist\(([^,]*),([^,]*)\)");
+        Match match = eatDistRegex.Match(line.Substring(index));
+        if (match.Success && match.Index == 0) {
+            string characterATypeStr = match.Groups[1].Value;
+            string characterBTypeStr = match.Groups[2].Value;
+
+            CharacterType characterAType;
+            try {
+                characterAType = (CharacterType) System.Enum.Parse(typeof(CharacterType), characterATypeStr, true);
+            } catch {
+                throw new BSSyntaxException(-1, $"{characterATypeStr}은(는) 올바른 캐릭터 타입명이 아닙니다.");
+            }
+
+            CharacterType characterBType;
+            try {
+                characterBType = (CharacterType) System.Enum.Parse(typeof(CharacterType), characterBTypeStr, true);
+            } catch {
+                throw new BSSyntaxException(-1, $"{characterBTypeStr}은(는) 올바른 캐릭터 타입명이 아닙니다.");
+            }
+
+            index += match.Length;
+
+            Level level = Game.Instance.level;
+            if (level == null) {
+                expression.Add(float.PositiveInfinity);
+            } else {
+                Character characterA = level.GetSpawnedCharacter(characterAType);
+                Character characterB = level.GetSpawnedCharacter(characterBType);
+                if (characterA == null || characterB == null) {
+                    expression.Add(float.PositiveInfinity);
+                } else {
+                    expression.Add(Vector2.Distance(characterA.transform.position, characterB.transform.position));
+                }
+            }
+
             return true;
         }
         return false;

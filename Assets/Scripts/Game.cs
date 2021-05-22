@@ -15,7 +15,7 @@ public class Game : MonoBehaviour
         }
     }
 
-    Level level;
+    public Level level;
     ChatManager chatManager;
     CameraController cameraController;
 
