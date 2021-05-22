@@ -25,4 +25,6 @@ public enum CharacterType
     BELIEVERS, // 신자들
     ROYALGUARDFAIRY, //근위요정
     LORD, // 영주
+
+    MERMAID, // 인어
 }
