@@ -821,9 +821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "if story.openedHuntersHouse or contains(hunters_key, 1)\nset story.openedHuntersHouse
-    true\ntake hunters_key 1\ntransfer \"\uC624\uB450\uB9C9 \uC548\"\nelse\n# \"\uC7A0\uACBC\uC5B4.
-    \uC5F4\uC1E0\uAC00 \uD544\uC694\uD574.\"\nend"
+  script: "if open or contains(hunters_key, 1)\nset open true\ntake hunters_key 1\ntransfer
+    \"\uC624\uB450\uB9C9 \uC548\"\nelse\n# \"\uC7A0\uACBC\uC5B4. \uC5F4\uC1E0\uAC00
+    \uD544\uC694\uD574.\"\nend"
   uniqueId: 6619
   executionRepeat: 1
   executionCondition: 
