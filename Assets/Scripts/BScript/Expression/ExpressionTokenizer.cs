@@ -136,7 +136,7 @@ public class ExpressionTokenizer
     static bool EatItem(string line, List<object> expression, ref int index) {
         Regex itemContainsRegex = new Regex(@"contains\(([^,]*),([^,]*)\)");
         Match match = itemContainsRegex.Match(line.Substring(index));
-        if (match.Success) {
+        if (match.Success && match.Index == 0) {
             string itemTypeStr = match.Groups[1].Value;
             string itemCountStr = match.Groups[2].Value;
 
