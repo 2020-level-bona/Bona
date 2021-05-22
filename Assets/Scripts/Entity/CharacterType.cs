@@ -24,4 +24,5 @@ public enum CharacterType
     ANT_PRINCE, // 개미 왕자
     BELIEVERS, // 신자들
     ROYALGUARDFAIRY, //근위요정
+    LORD, // 영주
 }
