@@ -221,7 +221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &239876631
 MonoBehaviour:
@@ -249,7 +249,7 @@ MonoBehaviour:
     \uAC10\uC625\"\n"
   uniqueId: 704C
   executionRepeat: 1
-  executionCondition: 
+  executionCondition: story.line == 150
   isCutscene: 0
   executionWhen: 0
 --- !u!114 &239876632
@@ -682,7 +682,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088751033
 GameObject:
@@ -1057,6 +1057,50 @@ MonoBehaviour:
   angle: 0
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
+--- !u!1 &1807723328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1807723330}
+  - component: {fileID: 1807723329}
+  m_Layer: 0
+  m_Name: "\uBCF4\uB098\uC561\uCCB4\uB9DE\uB294\uC9C0\uC810"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1807723329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807723328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 3
+--- !u!4 &1807723330
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807723328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.03, y: -4.31, z: -0.6758808}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1822641485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1368,7 +1412,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1984493042
 GameObject:
@@ -1400,12 +1444,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "show priest \uC0AC\uC81C\uB4F1\uC7A5\uC9C0\uC810\nwait 3\nplayanim priest
-    \uAD6D\uC790\uD37C\uC11C\uBCF4\uB098\uC5D0\uAC8C\uBFCC\uB9AC\uAE30\nwait 0.5\nplayanim
-    bona \uCD08\uB85D\uC561\uCCB4\uB9DE\uC74C\nwait 3\nfadeout 3 wait"
+  script: "move bona \uBCF4\uB098\uC561\uCCB4\uB9DE\uB294\uC9C0\uC810 wait\nshow
+    priest \uC0AC\uC81C\uB4F1\uC7A5\uC9C0\uC810\nwait 3\nplayanim priest \uAD6D\uC790\uD37C\uC11C\uBCF4\uB098\uC5D0\uAC8C\uBFCC\uB9AC\uAE30\nwait
+    0.5\nplayanim bona \uCD08\uB85D\uC561\uCCB4\uB9DE\uC74C\nwait 3\nfadeout 3 wait"
   uniqueId: 8347
   executionRepeat: 0
-  executionCondition: 'story.badEnding '
+  executionCondition: story.badEnding
   isCutscene: 1
   executionWhen: 0
 --- !u!114 &1984493044
@@ -1435,7 +1479,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1997172500
 PrefabInstance:
@@ -1745,5 +1789,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
