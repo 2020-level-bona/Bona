@@ -32,6 +32,7 @@ public class ShowCommand : IActionCommand
             character.gameObject.AddComponent<SpriteEffector>().Show();
         }
         character.GetComponent<Movable>().MoveTo(target);
+        character.GetComponent<Movable>().SetFace(target.face);
 
         yield return null;
     }

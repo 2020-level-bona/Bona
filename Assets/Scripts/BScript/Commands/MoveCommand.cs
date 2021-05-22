@@ -33,6 +33,7 @@ public class MoveCommand : IActionCommand
             throw new BSMovableNotFoundException(LineNumber, $"Movable[name={movableName}]이 존재하지 않습니다.");
         ITweenEntry tween = Tween.Add(movable, target.position, movable.speed);
         yield return new WaitUntil(() => tween.HasDone());
-        // TODO: movable이 방향을 향하도록
+
+        movable.SetFace(target.face);
     }
 }
