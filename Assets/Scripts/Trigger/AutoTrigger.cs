@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class AutoTrigger : Trigger
 {
+    public bool onlyOnce = false;
+
+    void Start() {
+        if (onlyOnce) Invoke();
+    }
+
     void Update() {
-        Invoke();
+        if (!onlyOnce) Invoke();
     }
 }
