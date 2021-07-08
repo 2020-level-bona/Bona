@@ -146,6 +146,24 @@ MonoBehaviour:
   executionCondition: 
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &11892902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11892900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "say dog \"\uC2EC\uC2EC...\""
+  uniqueId: BE83
+  executionRepeat: 1
+  executionCondition: 'story.line >= 130 '
+  isCutscene: 0
+  executionWhen: 0
 --- !u!1001 &26218411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -455,6 +473,7 @@ GameObject:
   - component: {fileID: 847664934}
   - component: {fileID: 847664933}
   - component: {fileID: 847664936}
+  - component: {fileID: 847664937}
   m_Layer: 0
   m_Name: "\uBAA8\uB974\uC758 \uC9D1\uC73C\uB85C"
   m_TagString: Untagged
@@ -550,10 +569,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script: "# \"\uC544\uBB34\uB3C4 \uC5C6\uC5B4\uC11C \uB4E4\uC5B4\uAC08 \uC218 \uC788\uC5B4.\""
   uniqueId: D931
-  executionRepeat: 1
-  executionCondition: 
+  executionRepeat: 0
+  executionCondition: story.line >= 130 && story.line < 140
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &847664937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847664931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d5c3e0a25cd54ea0aa5193f09cba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene:
+    sceneAsset: {fileID: 102900000, guid: dbe945a4cab8c444d9272d804e0f11f0, type: 3}
+    scenePath: "Assets/Scenes/\uBAA8\uB974\uC758 \uC9D1.unity"
+  condition: story.line >= 130
 --- !u!1 &951663581
 GameObject:
   m_ObjectHideFlags: 0
