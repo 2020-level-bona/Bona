@@ -1339,14 +1339,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "camdel bona\ncamadd ant_prince\nmove ant_prince \uC228\uB294\uC9C0\uC810\nwait
-    2\nshow priest \uC2E0\uC804\uC55E\nwait 1\nsay priest \"\uD760, \uC694\uC815\uB4E4\uC744
-    \uC5B4\uB5BB\uAC8C \uC54C\uC558\uB294\uC9C4 \uBAA8\uB974\uC9C0\uB9CC\"\nsay priest
-    \"\uADF8\uB798\uB3C4 \uC774 \uC2E0\uBE44\uD55C \uBAA9\uAC78\uC774\uB97C \uC5BB\uC5C8\uC73C\uB2C8
-    \uC774\uB4DD\uC774\uAD70!\"\nsay priest \"\uC815\uB9D0\uC774\uC9C0 \uC54C \uC218
-    \uC5C6\uB294 \uAF2C\uB9F9\uC774\uB77C\uB2C8\uAE4C.\"\nwait 1\nmove priest \uC0AC\uC81C\uC0AC\uB77C\uC9C0\uB294\uC9C0\uC810
-    wait\nhide priest\nwait 1\nplayanim ant_prince \uB180\uB78C 2\nwait 2\nmove ant_prince
-    \uC2E0\uC804\uC55E wait\nset story.controlAnt true\nset story.line 170"
+  script: "float ant_prince true\ncamdel bona\ncamadd ant_prince\nmove ant_prince
+    \uC228\uB294\uC9C0\uC810\nwait 2\nshow priest \uC2E0\uC804\uC55E\nwait 1\nsay
+    priest \"\uD760, \uC694\uC815\uB4E4\uC744 \uC5B4\uB5BB\uAC8C \uC54C\uC558\uB294\uC9C4
+    \uBAA8\uB974\uC9C0\uB9CC\"\nsay priest \"\uADF8\uB798\uB3C4 \uC774 \uC2E0\uBE44\uD55C
+    \uBAA9\uAC78\uC774\uB97C \uC5BB\uC5C8\uC73C\uB2C8 \uC774\uB4DD\uC774\uAD70!\"\nsay
+    priest \"\uC815\uB9D0\uC774\uC9C0 \uC54C \uC218 \uC5C6\uB294 \uAF2C\uB9F9\uC774\uB77C\uB2C8\uAE4C.\"\nwait
+    1\nmove priest \uC0AC\uC81C\uC0AC\uB77C\uC9C0\uB294\uC9C0\uC810 wait\nhide priest\nwait
+    1\nplayanim ant_prince \uB180\uB78C 2\nwait 2\nmove ant_prince \uC2E0\uC804\uC55E
+    wait\nfloat ant_prince false\nset story.controlAnt true\nset story.line 170"
   uniqueId: 8738
   executionRepeat: 0
   executionCondition: story.line >= 160

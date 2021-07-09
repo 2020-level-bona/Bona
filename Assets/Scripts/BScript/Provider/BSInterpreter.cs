@@ -142,6 +142,8 @@ public class BSInterpreter : ICommandProvider
                     return new GiveCommand(lineParser);
                 case TakeCommand.Keyword:
                     return new TakeCommand(lineParser);
+                case FloatCommand.Keyword:
+                    return new FloatCommand(level, lineParser);
 
                 // 제어문
                 case DoCommand.Keyword:

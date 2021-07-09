@@ -685,7 +685,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 353365698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.64, y: 4.53, z: -11.530626}
+  m_LocalPosition: {x: -8.64, y: 2.12, z: -11.530626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2447,9 +2447,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "playanim ant_prince \uCC9C\uC7A5\uD0C0\uAE30\nmove ant_prince \uCC9C\uC7A51
-    wait\nmove ant_prince \uCC9C\uC7A52 wait\ntransfer \"\uC0AC\uC81C\uC758 \uBE44\uBC00
-    \uBC29\""
+  script: "playanim ant_prince \uCC9C\uC7A5\uD0C0\uAE30\nfloat ant_prince true\nspeed
+    ant_prince 0.75\nmove ant_prince \uCC9C\uC7A51 wait\nmove ant_prince \uCC9C\uC7A52
+    wait\nwait 1\ntransfer \"\uC0AC\uC81C\uC758 \uBE44\uBC00 \uBC29\""
   uniqueId: 824D
   executionRepeat: 1
   executionCondition: story.line == 170
@@ -2547,7 +2547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691960942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.16, y: 4.53, z: -11.530626}
+  m_LocalPosition: {x: 8.16, y: 2.12, z: -11.530626}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2680,7 +2680,7 @@ PrefabInstance:
     - target: {fileID: 1694206605923325998, guid: 39347265d09f350408ec70396bebd422,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1694206605923325998, guid: 39347265d09f350408ec70396bebd422,
         type: 3}
