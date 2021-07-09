@@ -18,6 +18,7 @@ public enum ItemType{
        FLOWER, // 꽃
        HUNTERS_KEY, // 사냥꾼의 집 열쇠
        TRAP, // 덫
+       DROPPED_BAG, // 떨어진 가방
        DUMMY, // 테스트
        DUMMY2 // 테스트
 }

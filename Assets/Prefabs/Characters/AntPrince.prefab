@@ -115,6 +115,66 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   palettePages:
+  - condition: story.line == 180
+    pairs:
+    - stateName: "\uC2A4\uD0E0\uB4DC"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC+\uB9D0"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC88C)"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC704)"
+      alias: 
+    - stateName: "\uAC77\uAE30(\uC544\uB798)"
+      alias: 
+    - stateName: "\uB36B\uC5D0\uAC78\uB9BC"
+      alias: 
+    - stateName: "\uC774\uB3D9\uBD88\uAC00"
+      alias: 
+    - stateName: "\uD314 \uB4E4\uACE0 \uB9D0\uD558\uB294 \uC900\uBE44"
+      alias: 
+    - stateName: "\uC758\uC790\uC5D0 \uC62C\uB77C\uAC00 \uC11C\uAE30"
+      alias: 
+    - stateName: "\uD5DB\uAE30\uCE68"
+      alias: 
+    - stateName: "\uC228\uC5B4\uC788\uC74C"
+      alias: 
+    - stateName: "\uC27F\uC81C\uC2A4\uCCD0"
+      alias: 
+    - stateName: "\uAD81\uAE08\uD574\uD558\uB294\uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC6C3\uAE30"
+      alias: 
+    - stateName: "\uC6C3\uAE30+\uB9D0"
+      alias: 
+    - stateName: "\uB180\uB78C"
+      alias: 
+    - stateName: "\uB180\uB780\uCC44\uB85C\uB208\uAE5C\uBE61"
+      alias: 
+    - stateName: "\uCC9C\uC7A5\uD0C0\uAE30"
+      alias: 
+    - stateName: "\uC808\uB808\uC808\uB808"
+      alias: 
+    - stateName: "\uAC00\uBC29\uC90D\uB294\uBAA8\uC158"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uC2A4\uD0E0\uB4DC"
+      alias: IDLE
+    - stateName: "\uAC00\uBC29+\uAC77\uAE30(\uC88C)"
+      alias: WALK_L
+    - stateName: "\uAC00\uBC29+\uAC77\uAE30(\uC544\uB798)"
+      alias: WALK_D
+    - stateName: "\uAC00\uBC29+\uAC77\uAE30(\uC704)"
+      alias: WALK_U
+    - stateName: "\uAC00\uBC29+\uCC44\uC9D1(\uD30C\uBC0D)"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uAC00\uBC29\uC5D0\uB123\uAE30"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uBC18\uAC00\uC6CC\uD568"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uC6C3\uAE30+\uB9D0"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uAC00\uBC29\uAC74\uB124\uC8FC\uAE30"
+      alias: 
   - condition: 
     pairs:
     - stateName: "\uC2A4\uD0E0\uB4DC"
@@ -130,6 +190,50 @@ MonoBehaviour:
     - stateName: "\uB36B\uC5D0\uAC78\uB9BC"
       alias: 
     - stateName: "\uC774\uB3D9\uBD88\uAC00"
+      alias: 
+    - stateName: "\uD314 \uB4E4\uACE0 \uB9D0\uD558\uB294 \uC900\uBE44"
+      alias: 
+    - stateName: "\uC758\uC790\uC5D0 \uC62C\uB77C\uAC00 \uC11C\uAE30"
+      alias: 
+    - stateName: "\uD5DB\uAE30\uCE68"
+      alias: 
+    - stateName: "\uC228\uC5B4\uC788\uC74C"
+      alias: 
+    - stateName: "\uC27F\uC81C\uC2A4\uCCD0"
+      alias: 
+    - stateName: "\uAD81\uAE08\uD574\uD558\uB294\uD45C\uC815+\uB9D0"
+      alias: 
+    - stateName: "\uC6C3\uAE30"
+      alias: 
+    - stateName: "\uC6C3\uAE30+\uB9D0"
+      alias: 
+    - stateName: "\uB180\uB78C"
+      alias: 
+    - stateName: "\uB180\uB780\uCC44\uB85C\uB208\uAE5C\uBE61"
+      alias: 
+    - stateName: "\uCC9C\uC7A5\uD0C0\uAE30"
+      alias: 
+    - stateName: "\uC808\uB808\uC808\uB808"
+      alias: 
+    - stateName: "\uAC00\uBC29\uC90D\uB294\uBAA8\uC158"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uC2A4\uD0E0\uB4DC"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uAC77\uAE30(\uC88C)"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uAC77\uAE30(\uC544\uB798)"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uAC77\uAE30(\uC704)"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uCC44\uC9D1(\uD30C\uBC0D)"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uAC00\uBC29\uC5D0\uB123\uAE30"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uBC18\uAC00\uC6CC\uD568"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uC6C3\uAE30+\uB9D0"
+      alias: 
+    - stateName: "\uAC00\uBC29+\uAC00\uBC29\uAC74\uB124\uC8FC\uAE30"
       alias: 
 --- !u!1 &8621568353004135767
 GameObject:
