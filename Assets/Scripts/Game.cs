@@ -30,11 +30,11 @@ public class Game : MonoBehaviour
     }
 
     void Start() {
-        Character bona = level.GetSpawnedCharacter(CharacterType.BONA);
-        bona.movable.MoveTo(GetPlayerSpawnPoint(bona.movable.position));
+        Character controlledCharacter = level.GetControlledCharacter();
+        controlledCharacter.movable.MoveTo(GetPlayerSpawnPoint(controlledCharacter.movable.position));
 
-        cameraController.MoveInstantly(bona.movable.GetCenter());
-        cameraController.AddCameraOperator(new FollowCharacters(cameraController, CameraController.DEFAULT_SPEED, bona));
+        cameraController.MoveInstantly(controlledCharacter.movable.GetCenter());
+        cameraController.AddCameraOperator(new FollowCharacters(cameraController, CameraController.DEFAULT_SPEED, controlledCharacter));
     }
 
     void Update() {

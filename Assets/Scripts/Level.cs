@@ -90,6 +90,15 @@ public class Level : MonoBehaviour
         return character;
     }
 
+    public Character GetControlledCharacter() {
+        foreach (Character character in spawnedCharacters.Values) {
+            WASDControl controller = character.GetComponent<WASDControl>();
+            if (controller == null || !controller.IsAvailable()) continue;
+            return character;
+        }
+        return null;
+    }
+
     public Character SpawnCharacter(CharacterType type, Vector2 position) {
         if (GetSpawnedCharacter(type) != null)
             throw new System.Exception($"CharacterType={type} 에 대해 이미 스폰된 캐릭터가 존재합니다.");
