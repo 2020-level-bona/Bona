@@ -27,4 +27,5 @@ public enum CharacterType
     LORD, // 영주
 
     MERMAID, // 인어
+    FAIRYKING, //요정왕
 }

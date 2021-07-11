@@ -792,75 +792,6 @@ PolygonCollider2D:
       - {x: -9.527637, y: -3.0637584}
       - {x: -9.538774, y: -5.2393856}
       - {x: -1.0672172, y: -5.280281}
---- !u!1001 &572644944
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2799166479680212835, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808133831796726202, guid: bacfd2532c7ad4c03adbfa013f860f4c,
-        type: 3}
-      propertyPath: m_Name
-      value: FairyKing
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bacfd2532c7ad4c03adbfa013f860f4c, type: 3}
 --- !u!1 &624432234
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +822,144 @@ Transform:
   - {fileID: 1291059866}
   m_Father: {fileID: 0}
   m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &722126150
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.0700002
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113396249053, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 558080113707089021, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+        type: 3}
+      propertyPath: m_Name
+      value: FairyKing
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bacfd2532c7ad4c03adbfa013f860f4c, type: 3}
+--- !u!1 &728956288
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 728956291}
+  - component: {fileID: 728956290}
+  - component: {fileID: 728956289}
+  m_Layer: 0
+  m_Name: "\uC694\uC815\uC655\uACFC\uC758_\uB9CC\uB0A8"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &728956289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728956288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim bona \"\uB180\uB780 \uD45C\uC815\"\n# \u201C\uC694\uC815 \uC655\uC774\uB2E4!\u201D\nplayanim
+    bona \"\uB180\uB780 \uD45C\uC815+\uB9D0\"\n# \u201C\uD5C9, \uC5C4\uCCAD \uD06C\uB124.
+    \uB0B4 \uAC00\uBC29\uC5D0\uB294 \uC808\uB300 \uBABB \uB123\uC5B4!\u201D \n# \u201C\uC5ED\uC2DC
+    \uC655\uC740 \uC655\uC774\uAD6C\uB098.\u201D\nwait 1\nplayanim bona \"\uAE30\uBCF8(\uC88C)\"\nset
+    story.line 210\n"
+  uniqueId: 84BD
+  executionRepeat: 0
+  executionCondition: story.line == 200
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &728956290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728956288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2159b812e931aa469071a20513a34bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
+  onlyOnce: 0
+--- !u!4 &728956291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 728956288}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &881936809
 GameObject:
@@ -1189,6 +1258,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1245093245 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 558080113707089021, guid: bacfd2532c7ad4c03adbfa013f860f4c,
+    type: 3}
+  m_PrefabInstance: {fileID: 722126150}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1245093246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245093245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "wait 1\nplayanim fairyking \"\uB9D0\"\n//\uC774\uBBF8\uC9C0 \uB728\uAE30
+    \nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\nwait 1\n# \u201C\uB450\uB354\uC9C0\uB791
+    \uC0AC\uC81C\uB2D8 \uB108\uBB34 \uB098\uBE60! \uB0A0 \uC18D\uC600\uC5B4! \uC6A9\uC11C\uD560
+    \uC218 \uC5C6\uC5B4!\u201D\nplayanim bona \"\uAD73\uC13C \uB2E4\uC9D0 \uD45C\uC815+\uB9D0\"\n#
+    \u201C\uC655\uB2D8, \uC81C\uAC00 \uAD6C\uD574\uB4DC\uB9B4\uAC8C\uC694. \uD798\uB0B4\uC138\uC694!\u201D
+    \r\n\nplayanim fairyking \"\uD798 \uC5C6\uC774 \uC2F1\uAE0B \uC6C3\uB294\uB2E4\"\nwait
+    1\nplayanim fairyking \"\uB0A0\uAC1C \uB5BC\uC5B4\uC11C \uAC00\uB8E8\uB85C \uB9CC\uB4E4\uAE30\"\nwait
+    0.5\n//\uC544\uC774\uD15C \uD68D\uD2B9(\uC655\uC758 \uB0A0\uAC1C \uAC00\uB8E8)\n\nplayanim
+    fairyking \"\uD798 \uC5C6\uC774 \uAE30\uCE68\uD558\uAE30\"\nwait 1\nplayanim
+    bona \"\uAC71\uC815\uC2A4\uB7EC\uC6B4\uD45C\uC815+\uB9D0\"\n# \"\uC57D\uC774
+    \uD544\uC694\uD574.\"\n//\uC544\uC774\uD15C \uC8FC\uAE30(\uCD08\uB85D\uBB3C)_\uC18C\uBA78\uC544\uB2D8\nplayanim
+    bona \"\uAC00\uBC29\uC5D0 \uB123\uAE30\"\nplayanim bona \"\uBE75 \uBC1B\uAE30\"\nwait
+    1\n\nplayanim bona \"\uAC71\uC815\uC2A4\uB7EC\uC6B4\uD45C\uC815+\uB9D0\"\n# \u201C\uC774\uAC70\uB77C\uB3C4
+    \uB4DC\uC138\uC694. \uB179\uC999\uC778\uAC00?\u201D \nwait 1\nplayanim fairyking
+    \"\uCD08\uB85D \uBB3C \uB9C8\uC2DC\uAE30\"\nplayanim fairyking \"\uC8FD\uC74C\"\nwait
+    0.5\n\n# \"!!!!!\"\nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\nplayanim bona
+    \"\uC6B8\uAE30\""
+  uniqueId: 29BB
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
 --- !u!1 &1291059865
 GameObject:
   m_ObjectHideFlags: 0
