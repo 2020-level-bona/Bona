@@ -197,3 +197,4 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1

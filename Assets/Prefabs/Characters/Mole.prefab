@@ -121,6 +121,20 @@ MonoBehaviour:
       alias: IDLE
     - stateName: "\uCC14\uB9B0\uD45C\uC815"
       alias: 
+    - stateName: "\uB4F1\uC7A5"
+      alias: 
+    - stateName: "\uBCF4\uB098\uB04C\uACE0\uAC10"
+      alias: 
+    - stateName: "\uBC30\uACE0\uD30C\uD568"
+      alias: 
+    - stateName: "\uAC00\uAE4C\uC774\uAC00\uBA74\uC228\uC74C"
+      alias: 
+    - stateName: "\uB2E4\uC2DC\uB208\uCE58\uBCF4\uBA74\uC11C\uB098\uC634"
+      alias: 
+    - stateName: "\uBE75\uBA39\uC74C"
+      alias: 
+    - stateName: "\uB3CC\uB9DE\uACE0\uC8FD\uC74C"
+      alias: 
 --- !u!1 &6881908702926838121
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,3 +244,4 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1

@@ -213,6 +213,10 @@ MonoBehaviour:
       alias: 
     - stateName: "\uBE75\uD68D\uB4DD"
       alias: 
+    - stateName: "\uBC18\uAC00\uC6CC\uD568"
+      alias: 
+    - stateName: "\uAC00\uBC29\uBC1B\uC544\uB4E4\uAE30"
+      alias: 
   - condition: bona.berry
     pairs:
     - stateName: "\uAC77\uAE30(\uC544\uB798)"
@@ -310,6 +314,10 @@ MonoBehaviour:
     - stateName: "\uAC77\uAE30(\uC704)+\uAC00\uBC29X"
       alias: 
     - stateName: "\uBE75\uD68D\uB4DD"
+      alias: 
+    - stateName: "\uBC18\uAC00\uC6CC\uD568"
+      alias: 
+    - stateName: "\uAC00\uBC29\uBC1B\uC544\uB4E4\uAE30"
       alias: 
   - condition: 
     pairs:
@@ -409,6 +417,10 @@ MonoBehaviour:
       alias: 
     - stateName: "\uBE75\uD68D\uB4DD"
       alias: 
+    - stateName: "\uBC18\uAC00\uC6CC\uD568"
+      alias: 
+    - stateName: "\uAC00\uBC29\uBC1B\uC544\uB4E4\uAE30"
+      alias: 
 --- !u!1 &9118545652613492342
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,6 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fae448cf7c1a834298619ff453cd64f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  condition: 
 --- !u!114 &544739458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -472,6 +485,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1
 --- !u!114 &544739459
 MonoBehaviour:
   m_ObjectHideFlags: 0

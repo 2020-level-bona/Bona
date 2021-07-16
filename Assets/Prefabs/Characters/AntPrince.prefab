@@ -287,6 +287,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1
 --- !u!114 &-4141721659352580180
 MonoBehaviour:
   m_ObjectHideFlags: 0

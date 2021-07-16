@@ -47,30 +47,30 @@ public class Debugger : MonoBehaviour
             SceneManager.LoadScene("AllScenes");
         }
         if (Input.GetKeyDown(KeyCode.F5)) {
-            if (showZIndexThreshold) {
-                foreach (GameObject gameObject in zIndexThresholdObjects) {
-                    Destroy(gameObject);
-                }
+            // if (showZIndexThreshold) {
+            //     foreach (GameObject gameObject in zIndexThresholdObjects) {
+            //         Destroy(gameObject);
+            //     }
 
-                showZIndexThreshold = false;
-            } else {
-                zIndexThresholdObjects = new List<GameObject>();
-                foreach (ZIndex zIndex in FindObjectsOfType<ZIndex>()) {
-                    GameObject gameObject = new GameObject("Z Index Threshold");
-                    gameObject.transform.position = new Vector3(0, 0, 0);
+            //     showZIndexThreshold = false;
+            // } else {
+            //     zIndexThresholdObjects = new List<GameObject>();
+            //     foreach (ZIndex zIndex in FindObjectsOfType<ZIndex>()) {
+            //         GameObject gameObject = new GameObject("Z Index Threshold");
+            //         gameObject.transform.position = new Vector3(0, 0, 0);
 
-                    LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-                    lineRenderer.startWidth = lineRenderer.endWidth = 0.03f;
+            //         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+            //         lineRenderer.startWidth = lineRenderer.endWidth = 0.03f;
 
-                    lineRenderer.positionCount = 2;
-                    lineRenderer.SetPosition(0, new Vector3(-100, zIndex.y - 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
-                    lineRenderer.SetPosition(1, new Vector3(100, zIndex.y + 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
+            //         lineRenderer.positionCount = 2;
+            //         lineRenderer.SetPosition(0, new Vector3(-100, zIndex.y - 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
+            //         lineRenderer.SetPosition(1, new Vector3(100, zIndex.y + 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
 
-                    zIndexThresholdObjects.Add(gameObject);
-                }
+            //         zIndexThresholdObjects.Add(gameObject);
+            //     }
 
-                showZIndexThreshold = true;
-            }
+            //     showZIndexThreshold = true;
+            // }
         }
         if (Input.GetKeyDown(KeyCode.F6)) {
             if (showColliders) {

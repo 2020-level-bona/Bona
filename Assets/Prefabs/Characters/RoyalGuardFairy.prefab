@@ -146,6 +146,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1
 --- !u!95 &1677708767524507427
 Animator:
   serializedVersion: 3

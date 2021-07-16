@@ -186,6 +186,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1
 --- !u!61 &3898698595650511552
 BoxCollider2D:
   m_ObjectHideFlags: 0

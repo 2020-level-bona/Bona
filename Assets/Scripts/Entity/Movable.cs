@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movable : MonoBehaviour
+public class Movable : MonoBehaviour, ZIndexable
 {
     protected Level level;
     Vector2 lastPosition; // 속도 계산에 사용
@@ -22,6 +22,8 @@ public class Movable : MonoBehaviour
         }
     }
     public Vector2 velocity {get; private set;}
+
+    public bool zIndex = false;
 
     void OnDrawGizmos() {
         Gizmos.color = Color.blue;
@@ -95,5 +97,17 @@ public class Movable : MonoBehaviour
             spriteRenderer.flipX = false;
         else if (face == Face.EAST)
             spriteRenderer.flipX = true;
+    }
+
+    public bool ShouldZIndex() {
+        return zIndex;
+    }
+
+    public Vector2 GetCoordinate() {
+        return transform.position;
+    }
+
+    public Transform GetTransform() {
+        return transform;
     }
 }

@@ -65,6 +65,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1
 --- !u!61 &1404106352622963795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -225,4 +226,6 @@ MonoBehaviour:
     - stateName: "\uC2A4\uD0E0\uB4DC"
       alias: IDLE
     - stateName: "\uD314\uC9F1\uB07C\uAE30_\uB9D0"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB4DC+\uB9D0"
       alias: 

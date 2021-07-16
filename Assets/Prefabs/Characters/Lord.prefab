@@ -63,6 +63,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 1
 --- !u!1 &6591873500797853539
 GameObject:
   m_ObjectHideFlags: 0

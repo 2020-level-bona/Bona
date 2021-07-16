@@ -296,9 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: 0
-  angle: 0
+  offset: 4.16
   alwaysBehindFloor: 2
   alwaysFrontFloor: -1
 --- !u!1 &354829336
@@ -823,9 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: 0.26
-  angle: 0
+  offset: -2.59
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!1 &1558927143
@@ -1084,9 +1080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: 0.58
-  angle: 0
+  offset: -2.12
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!1 &1803336251
@@ -1204,6 +1198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71722026c9185f40b88e1b605aecf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
 --- !u!1 &1969052442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,9 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: -3.11
-  angle: 0
+  offset: -2.02
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!1001 &2072160853
@@ -1547,9 +1540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: -2.98
-  angle: 0
+  offset: -2.82
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!1001 &9118545652547492669
@@ -1559,6 +1550,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 544739458, guid: 36da66586c3337b4589339d1b3d7a015, type: 3}
+      propertyPath: zIndex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9118545652613492336, guid: 36da66586c3337b4589339d1b3d7a015,
         type: 3}
       propertyPath: m_RootOrder
