@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 331881017}
   - component: {fileID: 331881016}
   m_Layer: 0
-  m_Name: "\uC694\uC815 \uC655\uC758 \uAC10\uC625\uC73C\uB85C"
+  m_Name: "\uB450\uB354\uC9C0 \uC655\uC758 \uBC29\uC73C\uB85C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   script: "# \"\uC544\uC9C1\uC740 \uC5EC\uAE30\uC5D0 \uAC08 \uB54C\uAC00 \uC544\uB2C8\uC57C.\""
   uniqueId: C3EC
   executionRepeat: 1
-  executionCondition: story.line == 200
+  executionCondition: story.line <= 200
   isCutscene: 0
   executionWhen: 0
 --- !u!114 &331881017
@@ -1299,9 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: 5.77
-  angle: 0
+  offset: 0
   alwaysBehindFloor: -1
   alwaysFrontFloor: 2
 --- !u!1001 &1609700838
@@ -1506,6 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71722026c9185f40b88e1b605aecf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
 --- !u!1 &1837011554
 GameObject:
   m_ObjectHideFlags: 0
