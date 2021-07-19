@@ -115,6 +115,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   palettePages:
+  - condition: story.line > 200
+    pairs:
+    - stateName: "\uC0AC\uC545\uD55C\uD45C\uC815"
+      alias: 
+    - stateName: "\uCC14\uB9B0\uD45C\uC815"
+      alias: 
+    - stateName: "\uB4F1\uC7A5"
+      alias: 
+    - stateName: "\uBCF4\uB098\uB04C\uACE0\uAC10"
+      alias: 
+    - stateName: "\uBC30\uACE0\uD30C\uD568"
+      alias: 
+    - stateName: "\uAC00\uAE4C\uC774\uAC00\uBA74\uC228\uC74C"
+      alias: 
+    - stateName: "\uB2E4\uC2DC\uB208\uCE58\uBCF4\uBA74\uC11C\uB098\uC634"
+      alias: 
+    - stateName: "\uBE75\uBA39\uC74C"
+      alias: 
+    - stateName: "\uB3CC\uB9DE\uACE0\uC8FD\uC74C"
+      alias: 
+    - stateName: "\uC549\uC544\uC788\uC74C"
+      alias: IDLE
+    - stateName: "\uB9D0"
+      alias: 
+    - stateName: "\uC758\uBB38+\uB9D0"
+      alias: 
+    - stateName: "\uAC77\uAE30"
+      alias: WALK_L
+    - stateName: "\uB044\uB355\uB044\uB355"
+      alias: 
+    - stateName: "\uC549\uC544\uC788\uC74C2"
+      alias: 
+    - stateName: "\uB9D02"
+      alias: 
+    - stateName: "\uC640\uC778\uC794\uB4E4\uAE30"
+      alias: 
+    - stateName: ^-^
+      alias: 
+    - stateName: "\uC74C\uC2DD\uBA39\uAE30"
+      alias: 
+    - stateName: "\uC8FD\uC74C"
+      alias: 
   - condition: 
     pairs:
     - stateName: "\uC0AC\uC545\uD55C\uD45C\uC815"
@@ -134,6 +176,28 @@ MonoBehaviour:
     - stateName: "\uBE75\uBA39\uC74C"
       alias: 
     - stateName: "\uB3CC\uB9DE\uACE0\uC8FD\uC74C"
+      alias: 
+    - stateName: "\uC549\uC544\uC788\uC74C"
+      alias: 
+    - stateName: "\uB9D0"
+      alias: 
+    - stateName: "\uC758\uBB38+\uB9D0"
+      alias: 
+    - stateName: "\uAC77\uAE30"
+      alias: 
+    - stateName: "\uB044\uB355\uB044\uB355"
+      alias: 
+    - stateName: "\uC549\uC544\uC788\uC74C2"
+      alias: 
+    - stateName: "\uB9D02"
+      alias: 
+    - stateName: "\uC640\uC778\uC794\uB4E4\uAE30"
+      alias: 
+    - stateName: ^-^
+      alias: 
+    - stateName: "\uC74C\uC2DD\uBA39\uAE30"
+      alias: 
+    - stateName: "\uC8FD\uC74C"
       alias: 
 --- !u!1 &6881908702926838121
 GameObject:
