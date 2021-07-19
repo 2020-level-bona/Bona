@@ -35,4 +35,5 @@ public enum CharacterType
     MOLE4, // 신하4
     MOLE5, // 신하5
     MOLE_DOCTOR, // 두더지 박사
+    MOLE_CHEF, // 두더지 요리사
 }
