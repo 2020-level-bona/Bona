@@ -28,4 +28,11 @@ public enum CharacterType
 
     MERMAID, // 인어
     FAIRYKING, //요정왕
+
+    MOLE1, // 신하1
+    MOLE2, // 신하2
+    MOLE3, // 신하3
+    MOLE4, // 신하4
+    MOLE5, // 신하5
+    MOLE_DOCTOR, // 두더지 박사
 }
