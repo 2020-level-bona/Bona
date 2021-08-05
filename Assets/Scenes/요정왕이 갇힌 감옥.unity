@@ -368,7 +368,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &675763194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,6 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71722026c9185f40b88e1b605aecf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
 --- !u!4 &675763195
 Transform:
   m_ObjectHideFlags: 0
@@ -454,21 +455,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -3.6666694, y: 3.3602972}
-      - {x: -9.424814, y: 2.1901922}
+    - - {x: -1.4302669, y: 0.20777869}
+      - {x: -5.3642125, y: -0.7974745}
+      - {x: -7.727303, y: -1.285661}
+      - {x: -9.540967, y: -2.7544308}
       - {x: -9.536232, y: -5.2877207}
-      - {x: -1.893209, y: -5.2666764}
-      - {x: -0.22055474, y: -2.1262822}
-      - {x: 0.1324532, y: -1.7678301}
-      - {x: 0.1581335, y: -2.184483}
-      - {x: -1.4733393, y: -5.2917557}
+      - {x: -0.54597855, y: -5.2666764}
+      - {x: 0.6444005, y: -2.6839464}
+      - {x: -0.2338872, y: -5.2917557}
       - {x: 9.466659, y: -5.3013287}
-      - {x: 9.454839, y: 2.1131918}
-      - {x: 3.2173264, y: 3.4047098}
-      - {x: 1.4765892, y: 0.4600519}
-      - {x: 1.1003753, y: 0.13883018}
-      - {x: 1.1224654, y: 0.5588931}
-      - {x: 2.783066, y: 3.472141}
+      - {x: 9.408898, y: -3.0943778}
+      - {x: 8.404, y: -2.494336}
+      - {x: 5.4624557, y: -0.4471252}
+      - {x: 2.0264168, y: 0.2077148}
+      - {x: 1.338022, y: -1.1116724}
+      - {x: 1.7591698, y: 0.1848998}
 --- !u!1 &880496617
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,9 +514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: -2
-  angle: 62.54
+  offset: 0
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!212 &880496620
@@ -693,7 +692,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 52ae6afcad3d0b14c8c79c9dfc13530b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97c4d2247a615664dbcd24bdfaf6e19f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

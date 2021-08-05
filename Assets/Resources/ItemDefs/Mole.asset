@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mole
   m_EditorClassIdentifier: 
   itemType: 11
-  sprite: {fileID: 21300000, guid: b092648e599429e4c99f03a58cc3d6b0, type: 3}
+  sprite: {fileID: 21300000, guid: c0f4e60cd82b0594db1418f7d7216b50, type: 3}
   stackable: 1

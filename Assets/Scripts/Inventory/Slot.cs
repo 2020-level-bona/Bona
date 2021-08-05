@@ -13,6 +13,9 @@ public class Slot : MonoBehaviour
 
     public Button slotButton;
 
+    public Image bgImage;
+    public Image arrowImage;
+
     ISlotListener listener;
 
     public void Initialize(int index, ISlotListener listener) {
@@ -21,6 +24,8 @@ public class Slot : MonoBehaviour
 
         qtyText.enabled = false;
         itemImage.enabled = false;
+        bgImage.enabled = false;
+        arrowImage.enabled = false;
 
         slotButton.onClick.AddListener(OnClick);
     }
@@ -44,6 +49,11 @@ public class Slot : MonoBehaviour
 
         itemImage.enabled = true;
         itemImage.sprite = item.GetSprite();
+    }
+
+    public void SetSelected(bool selected) {
+        bgImage.enabled = selected;
+        arrowImage.enabled = selected;
     }
 
     public void EraseItem() {

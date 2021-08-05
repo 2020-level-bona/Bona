@@ -45,6 +45,9 @@ public class InventoryUI : MonoBehaviour, ISlotListener, IInventoryRenderer
 
     public void OnSlotClick(int index) {
         // TODO
+        for (int i = 0; i < slots.Length; i++) {
+            slots[i].SetSelected(i == index);
+        }
     }
 
     public void Invalidate() {

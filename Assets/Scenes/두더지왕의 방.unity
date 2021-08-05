@@ -133,6 +133,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mole
       objectReference: {fileID: 0}
+    - target: {fileID: 6881908702926838121, guid: e585ef6cc0deed145a1e40898cd58546,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7697186886486654947, guid: e585ef6cc0deed145a1e40898cd58546,
         type: 3}
       propertyPath: m_RootOrder
@@ -257,6 +262,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 5208630955602185103, guid: 3d51c996f783df040b601d594ccddc38,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d51c996f783df040b601d594ccddc38, type: 3}
 --- !u!1 &453387741
@@ -360,6 +370,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8007945322466567000, guid: 8880ce796a85f264686f11e6c1e75ac8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8351511334074601570, guid: 8880ce796a85f264686f11e6c1e75ac8,
         type: 3}
@@ -489,6 +504,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mole1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421539763930233303, guid: 452f731c154aff2459a9afd81cfeb9e0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 452f731c154aff2459a9afd81cfeb9e0, type: 3}
@@ -699,6 +719,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mole3
       objectReference: {fileID: 0}
+    - target: {fileID: 2773687124930674462, guid: 519331d04db46844bb6e4d73185bad86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2773687125728436662, guid: 519331d04db46844bb6e4d73185bad86,
         type: 3}
       propertyPath: palettePages.Array.data[0].pairs.Array.data[3].alias
@@ -820,6 +845,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mole5
       objectReference: {fileID: 0}
+    - target: {fileID: 3765428673251856349, guid: c00ff84a8dfd01946ab0e618c8aa9191,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3765428673251856354, guid: c00ff84a8dfd01946ab0e618c8aa9191,
         type: 3}
       propertyPath: m_RootOrder
@@ -926,6 +956,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mole2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7089152441439283189, guid: 266130076cb743946b19f22ca33a6ada,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7089152441439283190, guid: 266130076cb743946b19f22ca33a6ada,
         type: 3}
@@ -1220,16 +1255,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 9.505589, y: -0.004733324}
-      - {x: 7.3324175, y: -2.8479156}
-      - {x: 9.458031, y: 0.4955254}
-      - {x: 9.47558, y: 2.1244824}
-      - {x: 7.4478064, y: 2.645079}
-      - {x: 4.3040895, y: 2.960042}
-      - {x: 1.4881011, y: 2.896065}
-      - {x: -1.1215616, y: 2.2425034}
-      - {x: -3.8123333, y: 1.0634842}
-      - {x: -6.017479, y: -0.82398057}
+    - - {x: 9.505589, y: 1.1354928}
+      - {x: 5.092212, y: 1.8620316}
+      - {x: 4.4235773, y: 0.22745037}
+      - {x: 3.1724815, y: -1.0083547}
+      - {x: -0.13887763, y: -1.7825232}
+      - {x: -4.8555193, y: -1.1199279}
+      - {x: -5.871918, y: 0.04938434}
+      - {x: -9.487397, y: -3.97104}
       - {x: -9.480746, y: -5.23412}
       - {x: 1.2077261, y: -5.2768745}
       - {x: 5.551479, y: -5.2688646}
@@ -1420,6 +1453,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mole4
       objectReference: {fileID: 0}
+    - target: {fileID: 1078889714649512838, guid: b6ee079187627df44848d15cbd9d9c2c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1078889714807951777, guid: b6ee079187627df44848d15cbd9d9c2c,
         type: 3}
       propertyPath: palettePages.Array.data[0].pairs.Array.data[3].alias
@@ -1487,7 +1525,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1723886858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.83, y: -3.32, z: 0}
+  m_LocalPosition: {x: -3.92, y: -2.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1283484302}
@@ -1639,7 +1677,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9638778521b74604e84d296c62f93f88, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a1fb29a2b4cb1834191b1cf5b14fcb1c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

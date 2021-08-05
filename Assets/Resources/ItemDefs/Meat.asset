@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Meat
   m_EditorClassIdentifier: 
   itemType: 2
-  sprite: {fileID: 21300000, guid: d58db7036f053034fa36fb02a852df47, type: 3}
+  sprite: {fileID: 21300000, guid: be4a2bce2c56f144e9d3957836c913c7, type: 3}
   stackable: 0

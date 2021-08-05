@@ -23,7 +23,7 @@ public class ItemFactory
         Resources.LoadAll<ItemDefinition>("ItemDefs");
         
         foreach (ItemDefinition itemDefinition in Resources.FindObjectsOfTypeAll<ItemDefinition>()) {
-            itemTable.Add(itemDefinition.itemType, itemDefinition);
+            itemTable[itemDefinition.itemType] = itemDefinition;
         }
     }
 

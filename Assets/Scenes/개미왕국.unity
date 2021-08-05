@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 270704629}
   - component: {fileID: 270704630}
   m_Layer: 0
-  m_Name: KakaoTalk_20210218_021947241_03
+  m_Name: "\uBC14\uC7042"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -262,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d2cf36df209bfa245b2a2e8ecc653f72, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32feea9fdcf09c44abe5f16fcc1600d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -329,7 +329,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0bcf85cb305ca65438dd7fb548bf8c37, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 792778bb64ae03249afebf7d2906fdfa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -409,7 +409,7 @@ GameObject:
   - component: {fileID: 923946455}
   - component: {fileID: 923946456}
   m_Layer: 0
-  m_Name: KakaoTalk_20210218_021947241_04
+  m_Name: "\uC804\uACBD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -894,7 +894,7 @@ GameObject:
   - component: {fileID: 1260047360}
   - component: {fileID: 1260047359}
   m_Layer: 0
-  m_Name: KakaoTalk_20210218_021947241_01
+  m_Name: "\uBC30\uACBD"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -939,7 +939,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c9a1f5b9c37a3a74a99f1f887ea9f1ff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8cc4b4779d24b0c4ca9d9598bae9c901, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1214,7 +1214,7 @@ GameObject:
   - component: {fileID: 1745130818}
   - component: {fileID: 1745130819}
   m_Layer: 0
-  m_Name: KakaoTalk_20210218_021947241_02
+  m_Name: "\uBC14\uC7041"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1273,7 +1273,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 64be303fb2e2e3e43835c08b6e8d616f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db8ed0ef322239b4880ffd916d6ccd77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1380,6 +1380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+  coll: {fileID: 1766482863}
 --- !u!1 &1918058610
 GameObject:
   m_ObjectHideFlags: 0

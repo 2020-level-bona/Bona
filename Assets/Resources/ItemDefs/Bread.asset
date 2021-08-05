@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Bread
   m_EditorClassIdentifier: 
   itemType: 5
-  sprite: {fileID: 21300000, guid: c19fec5af5175f34693f0a082abf3972, type: 3}
+  sprite: {fileID: 21300000, guid: 319a99990da3cb04199e224b3fc6e949, type: 3}
   stackable: 0

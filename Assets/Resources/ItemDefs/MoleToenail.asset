@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: MoleToenail
   m_EditorClassIdentifier: 
   itemType: 4
-  sprite: {fileID: 21300000, guid: f795b12775e728f49bc2025324c42cb7, type: 3}
+  sprite: {fileID: 21300000, guid: 5fab3af514fcc62489802226f4edf6b2, type: 3}
   stackable: 0

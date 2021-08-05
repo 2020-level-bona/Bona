@@ -610,6 +610,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+  onlyOnce: 0
 --- !u!4 &592906875
 Transform:
   m_ObjectHideFlags: 0
@@ -1309,7 +1310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5144d157b3251a94088f4eb79e232c02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 940a5c2ac39c69a4b85c4776905160d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

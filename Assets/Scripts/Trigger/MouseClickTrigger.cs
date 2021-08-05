@@ -8,7 +8,7 @@ public class MouseClickTrigger : Trigger
 {
     Game game;
     Camera cam;
-    Collider2D coll;
+    public Collider2D coll;
 
     void OnDrawGizmos() {
         if (!coll)

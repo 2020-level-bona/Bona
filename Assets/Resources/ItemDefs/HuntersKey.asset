@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: HuntersKey
   m_EditorClassIdentifier: 
   itemType: 13
-  sprite: {fileID: 21300000, guid: 8e18e50a4eece97408d222536c804737, type: 3}
+  sprite: {fileID: 21300000, guid: dbb806cbff555e14f8234176daad5ecd, type: 3}
   stackable: 0
