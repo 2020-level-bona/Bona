@@ -16,7 +16,7 @@ public class TweenValueEntry<T> : ITweenEntry
         this.owner = owner;
         this.action = action;
         this.range = range;
-        this.duration = duration;
+        this.duration = Mathf.Max(duration, 1e-5f);
         this.finishCallback = finishCallback;
 
         start = Time.time;

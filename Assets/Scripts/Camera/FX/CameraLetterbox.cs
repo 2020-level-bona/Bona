@@ -18,8 +18,8 @@ public class CameraLetterbox : MonoBehaviour
     }
 
     void Awake() {
-        EventManager.Instance.OnCutsceneStart += ShowLetterbox;
-        EventManager.Instance.OnCutsceneFinish += HideLetterbox;
+        // EventManager.Instance.OnCutsceneStart += ShowLetterbox;
+        // EventManager.Instance.OnCutsceneFinish += HideLetterbox;
     }
 
     public void ShowLetterbox() {

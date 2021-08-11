@@ -53,8 +53,18 @@ public class ChatRenderer : MonoBehaviour
         else if (chat.Global && Input.GetMouseButtonDown(0)) {
             if (!AnimationFinished)
                 SkipAnimation();
-            else
+            else if (chat.IsPrompt == null)
                 Finish();
+        }
+
+        if (chat.IsPrompt != null && AnimationFinished) {
+            if (Input.GetKeyDown(KeyCode.Alpha1)) {
+                Session.Instance.Set(chat.IsPrompt, 1);
+                Finish();
+            } else if (Input.GetKeyDown(KeyCode.Alpha2)) {
+                Session.Instance.Set(chat.IsPrompt, 2);
+                Finish();
+            }
         }
 
         UpdatePosition();
@@ -63,7 +73,7 @@ public class ChatRenderer : MonoBehaviour
     void OnCharacterClicked(CharacterType type) {
         if (!AnimationFinished)
             SkipAnimation();
-        else
+        else if (chat.IsPrompt == null)
             Finish();
     }
 

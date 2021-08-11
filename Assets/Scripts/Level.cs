@@ -61,7 +61,9 @@ public class Level : MonoBehaviour
                 PolygonCollider2D hole = gameObject.transform.GetChild(i).GetComponent<PolygonCollider2D>();
                 if (hole != null) {
                     polygon.pathCount++;
-                    polygon.SetPath(polygon.pathCount - 1, hole.GetPath(0));
+                    Vector2[] path = hole.GetPath(0);
+                    for (int j = 0; j < path.Length; j++) path[j] += (Vector2) hole.transform.position;
+                    polygon.SetPath(polygon.pathCount - 1, path);
                 }
             }
 
@@ -78,10 +80,10 @@ public class Level : MonoBehaviour
     }
 
     public void RegisterSpawnedCharacter(CharacterType type, Character character) {
-        if (spawnedCharacters.ContainsKey(type))
-            throw new System.Exception($"CharacterType={type} 에 대해 이미 스폰된 캐릭터가 존재합니다.");
+        // if (spawnedCharacters.ContainsKey(type))
+        //     Debug.LogError($"CharacterType={type} 에 대해 이미 스폰된 캐릭터가 존재합니다.");
         
-        spawnedCharacters.Add(type, character);
+        spawnedCharacters[type] = character;
     }
 
     public Character GetSpawnedCharacter(CharacterType type) {
@@ -91,10 +93,8 @@ public class Level : MonoBehaviour
     }
 
     public Character GetControlledCharacter() {
-        foreach (Character character in spawnedCharacters.Values) {
-            WASDControl controller = character.GetComponent<WASDControl>();
-            if (controller == null || !controller.IsAvailable()) continue;
-            return character;
+        foreach (WASDControl controller in FindObjectsOfType<WASDControl>()) {
+            if (controller.GetComponent<Character>() && controller.IsAvailable()) return controller.GetComponent<Character>();
         }
         return null;
     }
@@ -109,9 +109,10 @@ public class Level : MonoBehaviour
             gameObject.transform.position = position;
             
             Character character = gameObject.GetComponent<Character>();
-            if (character != null)
+            if (character != null) {
+                RegisterSpawnedCharacter(type, character); // Immediately register
                 return character;
-            else
+            } else
                 Destroy(gameObject);
         }
         return null;

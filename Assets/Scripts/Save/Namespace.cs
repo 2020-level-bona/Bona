@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System.Linq;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -151,5 +152,13 @@ public class Namespace
 
     public bool Contains(string key) {
         return table.ContainsKey(key);
+    }
+
+    public string[] GetKeys() {
+        return table.Keys.ToArray();
+    }
+
+    public void Clear() {
+        table.Clear();
     }
 }

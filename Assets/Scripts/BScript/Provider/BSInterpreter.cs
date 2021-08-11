@@ -144,6 +144,16 @@ public class BSInterpreter : ICommandProvider
                     return new TakeCommand(lineParser);
                 case FloatCommand.Keyword:
                     return new FloatCommand(level, lineParser);
+                case FollowCommand.Keyword:
+                    return new FollowCommand(game, level, lineParser);
+                case UnFollowCommand.Keyword:
+                    return new UnFollowCommand(game, level, lineParser);
+                case SlideshowCommand.Keyword:
+                    return new SlideshowCommand(lineParser);
+                case ThrowCommand.Keyword:
+                    return new ThrowCommand(level, lineParser);
+                case PromptCommand.Keyword:
+                    return new PromptCommand(chatManager, level, lineParser);
 
                 // 제어문
                 case DoCommand.Keyword:

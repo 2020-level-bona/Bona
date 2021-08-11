@@ -137,7 +137,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &158187703
 Transform:
   m_ObjectHideFlags: 0
@@ -213,91 +213,6 @@ PrefabInstance:
         type: 3}
       propertyPath: runAllScripts
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[0].condition
-      value: '!ant.freed'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[0].pairs.Array.data[0].alias
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[0].pairs.Array.data[1].alias
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[0].pairs.Array.data[5].alias
-      value: IDLE
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[0].alias
-      value: IDLE
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[2].alias
-      value: WALK_L
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[3].alias
-      value: WALK_U
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[4].alias
-      value: WALK_D
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[0].stateName
-      value: "\uC2A4\uD0E0\uB4DC"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[1].stateName
-      value: "\uC2A4\uD0E0\uB4DC+\uB9D0"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[2].stateName
-      value: "\uAC77\uAE30(\uC88C)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[3].stateName
-      value: "\uAC77\uAE30(\uC704)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[4].stateName
-      value: "\uAC77\uAE30(\uC544\uB798)"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[5].stateName
-      value: "\uB36B\uC5D0\uAC78\uB9BC"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090764422818847008, guid: 01ba8d0648c1656449df3472d4ce5331,
-        type: 3}
-      propertyPath: palettePages.Array.data[1].pairs.Array.data[6].stateName
-      value: "\uC774\uB3D9\uBD88\uAC00"
       objectReference: {fileID: 0}
     - target: {fileID: 8621568353004135767, guid: 01ba8d0648c1656449df3472d4ce5331,
         type: 3}
@@ -417,7 +332,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d9a9faab4a419d249975572566dcba59, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3d2dfd20409f044186a531a9b0837c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -460,9 +375,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "playanim ant_prince \uB36B\uC5D0\uAC78\uB9BC\nwait 2\nmove bona \uBCF4\uB098\uC2A4\uD0E0\uB529
-    wait\nface bona east\nplayanim bona \uB358\uC9C0\uAE30\nwait 1.5\nstopanim ant_prince\nset
-    ant.freed true\nwait 1.5\nstopanim bona\n\nsay ant_prince \"\uAC10\uC0AC\uD569\uB2C8\uB2E4!
+  script: "take waterfairy 1\nwait 2\nmove bona \uBCF4\uB098\uC2A4\uD0E0\uB529 wait\nface
+    bona east\nplayanim bona \uB358\uC9C0\uAE30\nwait 0.7\nstopanim ant_prince\nset
+    freed true\nwait 0.5\nstopanim bona\n\nwait 2\n\nsay ant_prince \"\uAC10\uC0AC\uD569\uB2C8\uB2E4!
     \uC815\uB9D0 \uD070 \uC740\uD61C\uB97C \uC785\uC5C8\uC5B4\uC694\"\nsay ant_prince
     \"\uC774\uB984\uC774 \uC5B4\uB5BB\uAC8C \uB418\uC2DC\uC8E0?\"\n# \"\uB098\uB294
     \uBCF4\uB098\uC57C.\"\nsay ant_prince \"\uBCF4\uB098\uB2D8! \uC815\uB9D0 \uAC10\uC0AC\uD569\uB2C8\uB2E4.\"\nsay
@@ -472,7 +387,7 @@ MonoBehaviour:
     story.line 70\ntransfer \uAC1C\uBBF8\uC655\uAD6D"
   uniqueId: 4D02
   executionRepeat: 1
-  executionCondition: 
+  executionCondition: solved && contains(waterfairy, 1)
   isCutscene: 1
   executionWhen: 0
 --- !u!114 &210383650
@@ -511,15 +426,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 210383648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 22abcc403522be84f8f537f2c9cdc439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: 
-  uniqueId: F954
-  executionRepeat: 1
-  executionCondition: 
-  isCutscene: 0
-  executionWhen: 0
+  puzzlePrefab: {fileID: 1928422752185083127, guid: 382d39cc1fe766248ad26d9dd3c03b6a,
+    type: 3}
+  condition: '!solved && story.line < 70'
 --- !u!1 &237441590
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,6 +599,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+  coll: {fileID: 354240398}
 --- !u!60 &354240398
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1035,8 +948,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\uB36B"
       objectReference: {fileID: 0}
+    - target: {fileID: 7185387655199142003, guid: 9bb41dc1ed75e7744b568ca9d296c814,
+        type: 3}
+      propertyPath: condition
+      value: false
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bb41dc1ed75e7744b568ca9d296c814, type: 3}
+--- !u!1 &458082933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6941720237730128681, guid: 68d126a3363125247b84825af5552b44,
+    type: 3}
+  m_PrefabInstance: {fileID: 861029711}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &458082934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458082933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: false
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 1
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
 --- !u!1 &493442181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,7 +1058,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2619aa40e042cac418b48c53b36b01ec, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2d364c5e9232b194ca7a0e4f5f0526c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1147,6 +1098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e71722026c9185f40b88e1b605aecf27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  angle: 0
 --- !u!4 &781310111
 Transform:
   m_ObjectHideFlags: 0
@@ -1173,6 +1125,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1611216712382605436, guid: 68d126a3363125247b84825af5552b44,
+        type: 3}
+      propertyPath: condition
+      value: false
+      objectReference: {fileID: 0}
     - target: {fileID: 5743984635902937082, guid: 68d126a3363125247b84825af5552b44,
         type: 3}
       propertyPath: m_RootOrder
@@ -1279,9 +1236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: 0.76
-  angle: 0
+  offset: 0
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!212 &872134226
@@ -1323,7 +1278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 04c43d786d071154d9c20371dade18eb, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9eed209d4cfab8e49a866cd214a7d43e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1355,6 +1310,39 @@ MonoBehaviour:
   pageConfigs:
   - selected: 0
     condition: story.line >= 140
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 1
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+--- !u!1 &1158315840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4996299647781509261, guid: 9bb41dc1ed75e7744b568ca9d296c814,
+    type: 3}
+  m_PrefabInstance: {fileID: 451839721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1158315841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158315840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: false
     hide: 0
     position: 
     sprite: {fileID: 0}
@@ -1561,7 +1549,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 91f62982fca295845b8c8a3d5cfc183c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84dfe1b5e06f6c742a1d43a087535b2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1584,9 +1572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  z: 0
-  y: -2.62
-  angle: 0
+  offset: 0
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!1 &1536829742
@@ -1659,7 +1645,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 30f55737b62759b4183a20b5ce5b0a62, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 34b75b3898bf4fc49b7d14882043a6b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1670,6 +1656,109 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1776614041
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1776614045}
+  - component: {fileID: 1776614044}
+  - component: {fileID: 1776614043}
+  - component: {fileID: 1776614042}
+  m_Layer: 0
+  m_Name: "\uAC1C\uBBF8\uC560\uB2C8\uBA54\uC774\uC158"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1776614042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776614041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim ant_prince \uC774\uB3D9\uBD88\uAC00"
+  uniqueId: 7AB6
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &1776614043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776614041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim ant_prince \uB36B\uC5D0\uAC78\uB9BC"
+  uniqueId: 7B4A
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &1776614044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776614041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: '!solved'
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 1776614043}
+  - selected: 0
+    condition: '!freed'
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 1776614042}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+--- !u!4 &1776614045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776614041}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7114477, y: -2.2762442, z: -2.3168793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839011656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,7 +1860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "set story.line 140\nif trap >= 2\nset trapped true\nmove mermaid \uC778\uC5B4\uC7A1\uD788\uB294\uC790\uB9AC\nplayanim
+  script: "if trap >= 2\nset trapped true\nmove mermaid \uC778\uC5B4\uC7A1\uD788\uB294\uC790\uB9AC\nplayanim
     mermaid \uB36B\uC5D0\uAC78\uB9BC\nend"
   uniqueId: 2DC4
   executionRepeat: 1
@@ -1845,7 +1934,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936977439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.46, y: -3.53, z: -1.6496707}
+  m_LocalPosition: {x: -0.44, y: -3.8, z: -1.6496707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1935,12 +2024,12 @@ PrefabInstance:
     - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.39
+      value: -3.66
       objectReference: {fileID: 0}
     - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
         type: 3}
@@ -2049,7 +2138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029629290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -3.41, z: 0}
+  m_LocalPosition: {x: -0.4, y: -3.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 237441591}
@@ -2090,6 +2179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+  coll: {fileID: 2029629294}
 --- !u!60 &2029629294
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -65,6 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+  coll: {fileID: 0}
 --- !u!114 &3291207242462523081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,6 +96,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
+  zIndex: 0
 --- !u!1 &7543921699312623486
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,4 +223,8 @@ MonoBehaviour:
     - stateName: "\uB5A8\uC5B4\uC9C4\uBCA0\uB9AC \uB4E4\uACE0\uC788\uB294 \uC694\uC815"
       alias: 
     - stateName: "\uBB3C \uC3D8\uAE30"
+      alias: 
+    - stateName: "\uB540\uD758\uB9AC\uBA74\uC11C\uB044\uB355\uC774\uAE30"
+      alias: 
+    - stateName: "\uC2A4\uD0E0\uB5292"
       alias: 

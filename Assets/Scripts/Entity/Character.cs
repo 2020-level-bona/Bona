@@ -8,7 +8,13 @@ public class Character : MonoBehaviour
     public CharacterType type = CharacterType.UNKNOWN;
 
     Level level;
-    public Movable movable {get; private set;}
+    private Movable _movable;
+    public Movable movable {
+        get {
+            if (!_movable) _movable = GetComponent<Movable>();
+            return _movable;
+        }
+    }
     Animator animator;
     AnimationPalette animationPalette;
     List<IAnimationController> animationControllers;
@@ -19,7 +25,6 @@ public class Character : MonoBehaviour
         level = FindObjectOfType<Level>();
         level.RegisterSpawnedCharacter(type, this);
 
-        movable = GetComponent<Movable>();
         animator = GetComponentInChildren<Animator>();
         animationPalette = animator.GetComponent<AnimationPalette>();
         animationControllers = new List<IAnimationController>();

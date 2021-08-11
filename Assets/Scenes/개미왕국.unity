@@ -163,21 +163,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 9.308388, y: 0.6897202}
-      - {x: 0.012003839, y: 1.3618157}
-      - {x: -9.3079195, y: 0.8261496}
-      - {x: -9.296299, y: -2.8361764}
-      - {x: -5.842537, y: -3.8025851}
-      - {x: -1.4467947, y: -1.998961}
-      - {x: -0.4018225, y: -2.7702348}
-      - {x: -1.9953303, y: -4.940976}
+    - - {x: -0.52539533, y: -2.5694284}
+      - {x: -0.39031804, y: -3.4852989}
+      - {x: -1.5164847, y: -4.3540034}
+      - {x: -3.2087421, y: -4.8313494}
+      - {x: -3.3240385, y: -5.305446}
       - {x: 1.1254578, y: -5.323243}
-      - {x: 3.6619506, y: -4.5860705}
-      - {x: 1.8742406, y: -3.2609284}
-      - {x: 2.4600651, y: -2.4248884}
-      - {x: 4.8108153, y: -3.0837593}
-      - {x: 5.970188, y: -3.5767813}
-      - {x: 9.349292, y: -1.5733459}
+      - {x: 9.516226, y: -5.3275094}
+      - {x: 9.548986, y: -0.5337255}
+      - {x: 5.245204, y: -2.4302032}
+      - {x: 5.7863817, y: -3.6012568}
+      - {x: 5.327867, y: -4.400203}
+      - {x: 4.0058756, y: -4.620232}
+      - {x: 2.3982782, y: -3.8923185}
+      - {x: 1.6288086, y: -2.867506}
+      - {x: 0.7955651, y: -1.9394381}
 --- !u!4 &22680950
 Transform:
   m_ObjectHideFlags: 0
@@ -192,6 +192,94 @@ Transform:
   m_Father: {fileID: 961304349}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &98618517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98618518}
+  - component: {fileID: 98618519}
+  m_Layer: 0
+  m_Name: "\uAC1C\uBBF8\uC2DC\uC791"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &98618518
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98618517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.14, y: -3.93, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2017973771}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &98618519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98618517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
+--- !u!1 &201257516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 201257517}
+  - component: {fileID: 201257518}
+  m_Layer: 0
+  m_Name: "\uBCF4\uB098\uC810\uD504"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &201257517
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201257516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.41, y: -2.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2017973771}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &201257518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201257516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
 --- !u!1 &270704628
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +453,7 @@ GameObject:
   - component: {fileID: 861661980}
   - component: {fileID: 861661981}
   m_Layer: 0
-  m_Name: "\uAC1C\uBBF8\uC655\uC790 \uBC14\uC704\uC790\uB9AC"
+  m_Name: "\uAC1C\uBBF8\uC810\uD504"
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -379,11 +467,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 861661979}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.63, y: -2.58, z: 0}
+  m_LocalPosition: {x: 0.61, y: -2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2017973771}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &861661981
 MonoBehaviour:
@@ -520,6 +608,11 @@ PrefabInstance:
     - target: {fileID: 674761947, guid: 8880ce796a85f264686f11e6c1e75ac8, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 497436696386316977, guid: 8880ce796a85f264686f11e6c1e75ac8,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3524682553823460213, guid: 8880ce796a85f264686f11e6c1e75ac8,
         type: 3}
@@ -992,7 +1085,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1918058611}
-  - {fileID: 1766482861}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1065,6 +1157,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36da66586c3337b4589339d1b3d7a015, type: 3}
+--- !u!1 &1535158978
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1535158979}
+  - component: {fileID: 1535158980}
+  m_Layer: 0
+  m_Name: "\uC0AC\uB77C\uC9C0\uB294\uC9C0\uC810"
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1535158979
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535158978}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.7, y: -2.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2017973771}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1535158980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535158978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
 --- !u!1001 &1553444862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1203,6 +1339,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d51c996f783df040b601d594ccddc38, type: 3}
+--- !u!1 &1676002242 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8621568353004135767, guid: 01ba8d0648c1656449df3472d4ce5331,
+    type: 3}
+  m_PrefabInstance: {fileID: 1553444862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1676002243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676002242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line >= 90
+    hide: 1
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
 --- !u!1 &1745130817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,11 +1462,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1766482861}
-  - component: {fileID: 1766482863}
-  - component: {fileID: 1766482864}
   - component: {fileID: 1766482862}
+  - component: {fileID: 1766482863}
   m_Layer: 0
-  m_Name: "#8-4 \uD070\uBC14\uC704"
+  m_Name: "\uD68C\uC0C1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1310,12 +1478,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1766482860}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -4.26, y: -2.49, z: 0}
   m_LocalScale: {x: 1.9652, y: 1.9652, z: 1.9652}
   m_Children: []
-  m_Father: {fileID: 1369232188}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1766482862
 MonoBehaviour:
@@ -1329,44 +1497,80 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "speed bona 0.7\nmove bona \uBCF4\uB098\uC2DC\uC791\nspeed bona 1.0\nwait
-    3\nsay bona \"\uC5EC\uAE30\uAC00 \uC655\uAD6D\uC774\uC57C? \"\nsay bona \"\uB0B4
-    \uC0C1\uC0C1\uACFC\uB294 \uB9CE\uC774 \uB2E4\uB974\uB124.\"\nsay ant_prince \"\uB208\uBD80\uC2E0
-    \uD638\uD654\uB85C\uC6C0\uC744 \uC790\uB791\uD558\uB358 \uC655\uAD6D\uC774\uC5C8\uB2F5\uB2C8\uB2E4.\"\nsay
-    ant_prince \"\uADF8\uB4E4\uC774 \uB098\uD0C0\uB098\uAE30 \uC804 \uAE4C\uC9C0\uB294\uC694.\"\nsay
-    ant_prince \"\uC9C0\uAE08\uC740 \uADF8\uC800 \uBA78\uB9DD\uD55C \uC655\uAD6D\uC77C
-    \uBFD0\uC774\uC9C0\uC694.\"\r\nsay bona \"\uADF8\uB4E4? \uBA78\uB9DD?\"\nsay
-    ant_prince \"\uC77C\uB2E8 \uC549\uC73C\uC138\uC694. \uB2E4 \uB9D0\uC500\uB4DC\uB9B4\uAC8C\uC694.\"\r\nwait
-    1\nplayanim bona \uC549\uAE30\nplayanim ant_prince \uAC77\uAE30(\uC88C)\nmove
-    ant_prince \"\uAC1C\uBBF8\uC655\uC790 \uBC14\uC704\uC790\uB9AC\"\nwait 1\nplayanim
-    ant_prince \"\uC758\uC790\uC5D0 \uC62C\uB77C\uAC00 \uC11C\uAE30\"\nwait 0.5\nplayanim
-    ant_prince \uD5DB\uAE30\uCE68\nwait 1\nplayanim ant_prince \"\uD314 \uB4E4\uACE0
-    \uB9D0\uD558\uB294 \uC900\uBE44\"\nwait 1\nfadeout 2 wait\n//\uD68C\uC0C1 \uC774\uBBF8\uC9C0
-    \uBC0F BGM\nfadein 2 wait\n\nplayanim ant_prince \uC2A4\uD0E0\uB4DC\nplayanim
-    bona \uC549\uAE30+\uBC15\uC218\nwait 2\nplayanim bona \uC549\uAE30\n\nset story.line
-    80\n\n"
+  script: "speed bona 0.7\nspeed ant_prince 0.7\nfloat bona true\nfloat ant_prince
+    true\ndo\nmove ant_prince \uC911\uAC04 wait\nmove ant_prince \uAC1C\uBBF8\uC2DC\uC791\nend\nmove
+    bona \uC911\uAC04 wait\nmove bona \uBCF4\uB098\uC2DC\uC791 wait\nwait 1\nthrow
+    bona \uBCF4\uB098\uC810\uD504 wait\nface bona east\nplayanim bona \uC758\uC790\uC5D0\uC62C\uB77C\uAC00\uC549\uAE30\nwait
+    0.2\nplayanim bona \uC549\uAE30\n\nwait 1\nthrow ant_prince \uAC1C\uBBF8\uC810\uD504
+    wait\nface ant_prince west\nplayanim ant_prince \"\uC758\uC790\uC5D0 \uC62C\uB77C\uAC00
+    \uC11C\uAE30\"\nwait 1\nplayanim ant_prince \uD5DB\uAE30\uCE68\nwait 2\r\nplayanim
+    ant_prince \"\uD314 \uB4E4\uACE0 \uB9D0\uD558\uB294 \uC900\uBE44\"\nwait 1\r\nfadeout
+    2 wait\nslideshow ant\nfadein 2 wait\nplayanim ant_prince \uC2A4\uD0E0\uB4DC\nwait
+    1\nplayanim bona \uC549\uAE30+\uBC15\uC218\nwait 3\nplayanim bona \uC549\uAE30\nset
+    story.line 80\n\nsay ant_prince \"\uC800\uB294 \uB3C4\uC6C0\uC744 \uAD6C\uD558\uAE30
+    \uC704\uD574 \uB450\uB354\uC9C0 \uC655\uAD6D\uC744 \uB098\uC654\uB2E4\uAC00 \uB36B\uC5D0
+    \uAC78\uB9B0 \uCC38\uC774\uC5C8\uC5B4\uC694.\"\nsay ant_prince \"\uC815\uB9D0
+    \uD070\uC77C\uC774\uC5C8\uB294\uB370, \uBCF4\uB098\uB2D8\uC774 \uC800\uB97C \uAD6C\uD574\uC8FC\uC2E0
+    \uAC70\uC608\uC694.\"\n//face bona west\r\n//playanim bona \"\uC758\uC790\uC5D0\uC62C\uB77C\uAC00\uC549\uAE30\"\n//wait
+    1\n//face bona east\n//playanim bona \"\uC549\uAE30\"\n\n# \"\uC751, \uB108\uB97C
+    \uBC1C\uACAC\uD574\uC11C \uC815\uB9D0 \uB2E4\uD589\uC774\uC57C.\"\nsay ant_prince
+    \"\u2026\uBCF4\uB098\uB2D8, \uC5FC\uCE58\uBD88\uAD6C\uD558\uACE0 \uBD80\uD0C1
+    \uD558\uB098 \uB4DC\uB824\uB3C4 \uB420\uAE4C\uC694?\"\nsay ant_prince \"\uBCF4\uB098\uB2D8\uC740
+    \uBD84\uBA85 \uC800\uD76C \uAC1C\uBBF8 \uC885\uC871\uC758 \uC6B4\uBA85\uC758
+    \uC639\uC0AC\uC138\uC694!\"\nsay ant_prince \"\uADF8\uB7EC\uB2C8 \uBD80\uB514
+    \uC800\uD76C \uC885\uC871\uC744 \uB450\uB354\uC9C0\uB85C\uBD80\uD130 \uD574\uBC29\uC2DC\uCF1C
+    \uC8FC\uC138\uC694!\"\nwait 1\nplayanim bona \uC549\uAE30+\uB540\uBED8\uBED8\nwait
+    1\n# \"\uC5B4? \uC544\uB2C8, \uB09C \uC544\uBB34\uAC83\uB3C4 \uC544\uB2CC\uB370\u2026\"\nplayanim
+    bona \uC549\uAE30\n# \"\uB0B4\uAC00 \uB450\uB354\uC9C0\uB97C \uC5B4\uB5BB\uAC8C
+    \uC774\uACA8.\"\n# \"\uC5C4\uCCAD \uD06C\uACE0, \uC5C4\uCCAD \uAC15\uD558\uB2E4\uBA70\"\n\nsay
+    ant_prince \"\uBCF4\uB098\uB2D8\uC740 \uC694\uC815\uC758 \uD798\uC744 \uC0AC\uC6A9\uD558\uB294
+    \uB9C8\uBC95\uC0AC \uC2DC\uC796\uC544\uC694.\"\nplayanim ant_prince \uD314\uD719\uD719\nsay
+    ant_prince \"\uBCF4\uB098\uB2D8\uC758 \uD798\uC774\uB77C\uBA74 \uB450\uB354\uC9C0
+    \uB530\uC704 \uC190\uC27D\uAC8C \uD574\uCE58\uC6B8 \uC218 \uC788\uC5B4\uC694.\"\nstopanim
+    ant_prince\n\nplayanim bona \uC549\uAE30+\uC808\uB808\uC808\uB808\n# \"\uC544\uB2C8,
+    \uB09C \uC57D\uD574!\"\nplayanim bona \uC549\uAE30\n# \"\uC694\uC815\uC740 \uB108\uB3C4
+    \uC4F8 \uC218 \uC788\uC5B4.\"\n# \"\uADF8\uB0E5 \uB358\uC9C0\uAE30\uB9CC \uD558\uBA74
+    \uB418\uB294 \uAC78\u2026\"\n# \"\uADF8\uB9AC\uACE0 \uB0B4\uAC00 \uB358\uC9C0\uAE34
+    \uD588\uC9C0\uB9CC, \uC694\uC815\uB4E4\uC740 \uB0B4 \uCE5C\uAD6C\uC57C.\"\nplayanim
+    bona \uC549\uAE30+(+\uB9D0\n# \"\uB450\uB354\uC9C0\uB791 \uC2F8\uC6B0\uB2E4\uAC00
+    \uC694\uC815\uB4E4\uC774 \uB9CE\uC774 \uC5C6\uC5B4\uC9C0\uB294 \uAC74 \uC2EB\uC5B4.\"\nplayanim
+    bona \uC549\uAE30 \n\nsay ant_prince \"\uADF8\uAC74 \uAC71\uC815 \uB9C8\uC138\uC694,
+    \uBCF4\uB098\uB2D8. \uC694\uC815\uC744 \uB9CE\uC774 \uC0AC\uC6A9\uD558\uC9C0
+    \uC54A\uC544\uB3C4 \uB3FC\uC694.\"\nsay ant_prince \"\uC81C\uAC00 \uC694\uC815
+    \uC655\uC744 \uC7A1\uC744 \uC218 \uC788\uB3C4\uB85D \uB3C4\uC640\uB4DC\uB9B4\uAC8C\uC694.\"\n\nplayanim
+    bona \uC549\uAE30+(+\uB9D0 // \uC624\uC9C1 \uB9C8\uC9C0\uB9C9 \uD504\uB808\uC784\uB9CC\n#
+    \"\uC694\uC815 \uC655?\"\nplayanim bona \uC549\uAE30\n\nsay ant_prince \"\uB124,
+    \uC655\uC758 \uD798\uC740 \uC774\uB7F0 \uC791\uC740 \uC694\uC815\uACFC\uB294
+    \uBE44\uAD50\uB3C4 \uB418\uC9C0 \uC54A\uC9C0\uC694.\"\nsay ant_prince \"\uADF8
+    \uD798\uC774\uB77C\uBA74 \uBB50\uB4E0\uC9C0 \uD560 \uC218 \uC788\uC5B4\uC694.\"\nsay
+    ant_prince \"\uC81C\uAC00 \uB3C4\uC6B8\uD14C\uB2C8, \uBD80\uB514 \uC800\uD76C\uB97C
+    \uD574\uBC29\uC2DC\uD0A4\uC2DC\uACE0 \uB2F9\uC2E0\uC774 \uC18C\uB9DD\uD558\uB294
+    \uBC14\uB97C \uC774\uB8E8\uC138\uC694.\"\n\nplayanim bona \uC549\uAE30+\uC808\uB808\uC808\uB808\n#
+    \"\uB098\uB294 \uAC15\uD55C \uD798 \uAC19\uC740 \uAC70 \uD544\uC694 \uC5C6\uC5B4.\"\nplayanim
+    bona \uC549\uAE30\n# \"\uB0B4\uAC00 \uC6D0\uD558\uB294 \uAC74 \uCE5C\uAD6C\uC640
+    \uAC00\uC871\uC774\uC57C.\"\nplayanim bona \uC549\uAE30+(+\uB9D0\n# \"\uD63C\uC790\uB294
+    \uD56D\uC0C1 \uC678\uB85C\uC6E0\uC73C\uB2C8\uAE4C.\"\nplayanim bona \uC549\uAE30\n#
+    \"\uB124\uAC00 \uB0B4 \uAC00\uC871\uC774 \uB418\uC5B4\uC8FC\uBA74 \uC88B\uACA0\uC5B4.\"\n\nsay
+    ant_prince \"!!\"\nsay ant_prince \"\uAC1C\uBBF8 \uC885\uC871\uC774 \uD574\uBC29\uB418\uC5B4\uB3C4
+    \uC800\uB294 \uD3C9\uC0DD \uBCF4\uB098\uB2D8\uC758 \uCE5C\uAD6C\uC774\uC790 \uAC00\uC871\uC77C
+    \uAC70\uC608\uC694.\"\nsay ant_prince \"\uAC10\uC0AC\uD569\uB2C8\uB2E4, \uBCF4\uB098\uB2D8!\"\nsay
+    ant_prince \"\uC544, \uC77C\uB2E8 \uBC31\uC131\uB4E4\uC5D0\uAC8C \uB3CC\uC544\uAC00\uC57C\uACA0\uC5B4\uC694.\"\nsay
+    ant_prince \"\uB0B4\uC77C\uBD80\uD130 \uAC19\uC774 \uC694\uC815 \uC655\uC744
+    \uCC3E\uC544\uBD10\uC694.\"\n\nwait 2\nthrow ant_prince \uAC1C\uBBF8\uC2DC\uC791
+    wait\nfloat ant_prince false\nmove ant_prince \uC0AC\uB77C\uC9C0\uB294\uC9C0\uC810
+    wait\nwait 1\nplayanim ant_prince \uC190\uD754\uB4E4\uACE0\uC778\uC0AC\uD558\uAE30\nwait
+    2\nstopanim ant_prince\nhide ant_prince\n\nwait 2\n\nthrow bona \uBCF4\uB098\uC2DC\uC791\nplayanim
+    bona \uC758\uC790\uC5D0\uC11C\uB0B4\uB824\uC624\uAE30\nwait 0.2\nstopanim bona\nwait
+    1\nmove bona \uBCF4\uB098\uC885\uB8CC wait\nwait 1\n# \"\uC88B\uC544, \uC694\uC815
+    \uC655\uC744 \uC7A1\uACE0, \uAC1C\uBBF8\uB4E4\uC744 \uAD6C\uCD9C\uD558\uBA74
+    \uB418\uB294 \uAC70\uC57C!\"\n\nspeed bona 1\nfloat bona false\n\nset story.line
+    90"
   uniqueId: DE34
-  executionRepeat: 0
-  executionCondition: story.line >= 70
-  isCutscene: 0
+  executionRepeat: 1
+  executionCondition: story.line == 70
+  isCutscene: 1
   executionWhen: 0
---- !u!58 &1766482863
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766482860}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.5667732, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.0667732
---- !u!114 &1766482864
+--- !u!114 &1766482863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1375,12 +1579,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766482860}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
+  m_Script: {fileID: 11500000, guid: c2159b812e931aa469071a20513a34bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
-  coll: {fileID: 1766482863}
+  onlyOnce: 0
 --- !u!1 &1918058610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,11 +1689,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1971241237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.88, y: -2.81, z: 0}
+  m_LocalPosition: {x: -4.15, y: -4.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2017973771}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1971241239
 MonoBehaviour:
@@ -1531,11 +1735,60 @@ Transform:
   m_LocalPosition: {x: 3.0794542, y: -0.039138313, z: -275.52792}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2034769584}
   - {fileID: 1971241238}
+  - {fileID: 98618518}
   - {fileID: 861661980}
+  - {fileID: 1535158979}
+  - {fileID: 2123441565}
+  - {fileID: 201257517}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2034769583
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2034769584}
+  - component: {fileID: 2034769585}
+  m_Layer: 0
+  m_Name: "\uC911\uAC04"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2034769584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034769583}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.66, y: -5.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2017973771}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2034769585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034769583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
 --- !u!1 &2079025525
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,3 +1823,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2123441564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2123441565}
+  - component: {fileID: 2123441566}
+  m_Layer: 0
+  m_Name: "\uBCF4\uB098\uC885\uB8CC"
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2123441565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123441564}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.53, y: -4.11, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2017973771}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2123441566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123441564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4

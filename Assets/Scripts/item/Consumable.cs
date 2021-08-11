@@ -10,6 +10,8 @@ public class Consumable : MonoBehaviour
 
     public string saveIdentifier => $"i_{uniqueName}";
 
+    public string condition;
+
     Item item;
 
     Inventory inventory;
@@ -38,9 +40,11 @@ public class Consumable : MonoBehaviour
     }
 
     void Consume() {
-        inventory.AddItem(item);
-        SetAsConsumed();
-        Destroy(gameObject);
+        if (condition == null || condition.Length == 0 || Expression.CastAsBool(Expression.Eval(condition))) {
+            inventory.AddItem(item);
+            SetAsConsumed();
+            Destroy(gameObject);
+        }
     }
 
     void CheckUniqueName() {

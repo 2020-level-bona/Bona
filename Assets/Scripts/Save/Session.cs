@@ -21,6 +21,8 @@ public class Session : ISession
     public static Namespace General => Instance.GetNamespace("general");
     public static Namespace Setting => Instance.GetNamespace("setting");
     public static Namespace Statistic => Instance.GetNamespace("statistic");
+    public static Namespace Follow => Instance.GetNamespace("follow");
+    public static Namespace Temp = new Namespace("temp", new Dictionary<string, object>());
 
     // public SessionHolder sessionHolder;
     Dictionary<string, object> table; // @Temporary
@@ -34,6 +36,7 @@ public class Session : ISession
     }
 
     public Namespace GetNamespace(string name) {
+        if (name == "temp") return Temp;
         if (table == null)
             table = new Dictionary<string, object>();
         if (!table.ContainsKey(name))
@@ -81,10 +84,14 @@ public class Session : ISession
         table = null;
     }
 
-    public void Save() {
-        EventManager.Instance.OnPreSave?.Invoke();
+    public void ClearTemp() {
+        Temp.Clear();
+    }
 
-        fileIO.Write(Serialize());
+    public void Save(bool writeToFile = true) {
+        EventManager.Instance.OnPreSave.Invoke();
+
+        if (writeToFile) fileIO.Write(Serialize());
     }
 
     public void Load() {

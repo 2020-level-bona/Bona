@@ -21,12 +21,18 @@ public class Game : MonoBehaviour
 
     public Inventory inventory;
 
+    public CharacterFollowManager characterFollowManager;
+
     void Awake() {
         level = FindObjectOfType<Level>();
         chatManager = FindObjectOfType<ChatManager>();
         cameraController = FindObjectOfType<CameraController>();
 
         inventory = new Inventory();
+
+        characterFollowManager = FindObjectOfType<CharacterFollowManager>();
+
+        ScriptSession.cutsceneSessionSemaphore = 0; // Dirty @Hack
     }
 
     void Start() {
@@ -41,8 +47,8 @@ public class Game : MonoBehaviour
         Tween.Instance.Update();
     }
 
-    public void TransferScene(string sceneName) {
-        // Session.Instance.Save();
+    public void TransferScene(string sceneName, bool save = true) {
+        Session.Instance.Save(false);
 
         Session.General.Set("lastScenePath", SceneManager.GetActiveScene().path);
         SceneManager.LoadScene(sceneName);

@@ -156,7 +156,7 @@ MonoBehaviour:
     \"\uBC30\uACE0\uD30C...\"\nstopanim bona\n"
   uniqueId: 9B50
   executionRepeat: 0
-  executionCondition: 
+  executionCondition: story.line == 0
   isCutscene: 0
   executionWhen: 0
 --- !u!114 &68049502
@@ -409,6 +409,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageConfigs:
   - selected: 0
+    condition: story.line >= 50
+    hide: 1
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+  - selected: 0
     condition: story.line >= 30
     hide: 0
     position: 
@@ -497,7 +504,7 @@ GameObject:
   m_Layer: 0
   m_Name: "\uBCF4\uB098"
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -558,11 +565,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "move bona \uBCF4\uB098\nmove waterfairy \uC694\uC815\nwait 1\nset berry
-    true\nset bona.berry false\nwait 1\nplayanim bona \"\uBB3C\uC758 \uC694\uC815
-    \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nplayanim waterfairy \"\uBB3C\uBC29\uC6B8
-    \uB9CC\uB4E4\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nwait 2\nset moreu.torch true //
-    \uBAA8\uB974 \uC560\uB2C8\uBA54\uC774\uC158\nshow moreu \uB4F1\uC7A5\nstopanim
+  script: "speed bona 0.5\nspeed waterfairy 0.5\nmove waterfairy \uC694\uC815\nmove
+    bona \uBCA0\uB9AC\uB193\uB294\uC9C0\uC810 wait\nwait 1\nset berry true\nset bona.berry
+    false\nwait 1\nmove bona \uBCF4\uB098 wait\nwait 2\nplayanim bona \"\uBB3C\uC758
+    \uC694\uC815 \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nplayanim waterfairy
+    \"\uBB3C\uBC29\uC6B8 \uB9CC\uB4E4\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nwait 5\nset
+    moreu.torch true // \uBAA8\uB974 \uC560\uB2C8\uBA54\uC774\uC158\nshow moreu \uB4F1\uC7A5\nstopanim
     bona\nstopanim waterfairy\nface bona east\nspeed moreu 0.5\nwait 1\nmove moreu
     \uBAA8\uB974 wait\nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\nsay moreu \"\uB531
     \uAC78\uB838\uC5B4, \uC774 \uB9C8\uB140!\"\nsay moreu \"\uC5B4\uCA50\uC9C0 \uC694\uC998
@@ -570,8 +578,8 @@ MonoBehaviour:
     \uC6B0\uB9AC\uB97C \uB2E4 \uC8FD\uC77C \uC148\uC774\uC9C0?\"\nplayanim moreu
     \"\uBD95\uBD95 \uD718\uB450\uB974\uAE30\"\nsay moreu \"\uC804\uBD80 \uC774\uB97C\uAC70\uC57C!\"\nstopanim
     moreu\nwait 1\nspeed moreu 1\nmove moreu \uB4F1\uC7A5 wait\nhide moreu\nface
-    bona west\nsay bona !!\nstopanim bona\n\nset moreu.torch false\nset story.line
-    40"
+    bona west\nsay bona !!\nstopanim bona\n\nspeed bona 1\nspeed waterfairy 1\nset
+    moreu.torch false\nset story.line 40"
   uniqueId: 9B50
   executionRepeat: 1
   executionCondition: story.line >= 30 && story.line < 40
@@ -637,7 +645,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1055860339}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &441256565
 MonoBehaviour:
@@ -792,7 +800,7 @@ GameObject:
   m_Layer: 0
   m_Name: "\uC694\uC815"
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -808,7 +816,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1985889891}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &901639790
 MonoBehaviour:
@@ -931,7 +939,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1619726459}
   - {fileID: 441256564}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1206,6 +1213,7 @@ GameObject:
   - component: {fileID: 1619726461}
   - component: {fileID: 1619726460}
   - component: {fileID: 1619726463}
+  - component: {fileID: 1619726464}
   m_Layer: 0
   m_Name: "\uCE68\uB300"
   m_TagString: Untagged
@@ -1220,12 +1228,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619726458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1055860339}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1619726460
 MonoBehaviour:
@@ -1286,7 +1294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runAllScripts: 1
+  runAllScripts: 0
   runInCutscene: 0
   coll: {fileID: 1619726461}
 --- !u!114 &1619726463
@@ -1301,13 +1309,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "# \"\uD751\uD751, \uC694\uC815\uC544 \uBBF8\uC548\uD574\u2026\"\nfadeout
-    1 wait\nwait 1\nfadein 1 wait\n"
+  script: "speed bona 0.5\nmove bona \uC694\uC815 wait\nwait 1\n# \"\uD751\uD751,
+    \uC694\uC815\uC544 \uBBF8\uC548\uD574\u2026\"\nfadeout 2 wait\nwait 2\nfadein
+    2 wait\nset story.line 60\nspeed bona 1\n"
   uniqueId: 2A6D
   executionRepeat: 1
   executionCondition: 
-  isCutscene: 0
+  isCutscene: 1
   executionWhen: 0
+--- !u!114 &1619726464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619726458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line == 50
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 1619726463}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 1619726460}
+    autoExecutor: {fileID: 0}
+--- !u!1 &1632608715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1632608716}
+  - component: {fileID: 1632608717}
+  m_Layer: 0
+  m_Name: "\uBCA0\uB9AC\uB193\uB294\uC9C0\uC810"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1632608716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632608715}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.75, y: -0.42, z: -6.9197607}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1985889891}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632608717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1632608715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
 --- !u!1 &1701278229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,7 +1401,7 @@ GameObject:
   m_Layer: 0
   m_Name: "\uBAA8\uB974"
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1476,7 +1556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724573744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 0.1, z: 0}
+  m_LocalPosition: {x: 0.603, y: -0.083, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1544,7 +1624,7 @@ MonoBehaviour:
   uniqueId: 762C
   executionRepeat: 1
   executionCondition: 
-  isCutscene: 1
+  isCutscene: 0
   executionWhen: 0
 --- !u!1 &1763427138
 GameObject:
@@ -1559,7 +1639,7 @@ GameObject:
   m_Layer: 0
   m_Name: "\uB4F1\uC7A5"
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1789,9 +1869,10 @@ Transform:
   - {fileID: 1763427139}
   - {fileID: 1701278230}
   - {fileID: 268350341}
+  - {fileID: 1632608716}
   - {fileID: 901639789}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2020329368
 PrefabInstance:

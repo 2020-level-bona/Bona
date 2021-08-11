@@ -30,11 +30,10 @@ public class Switcher : MonoBehaviour
     }
 
     void Start() {
-        SwitchPage(CalcIndex());
-
         Trigger trigger = GetComponent<Trigger>();
         if (trigger)
             trigger.AddListener(OnTriggered);
+        SwitchPage(CalcIndex());
     }
 
     void Update() {

@@ -108,6 +108,14 @@ public class Debugger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F11)) {
             Session.Instance.Clear();
         }
+        if (Input.GetKeyDown(KeyCode.RightBracket)) {
+            Time.timeScale = Time.timeScale * 2;
+            Debug.Log("Timescale = " + Time.timeScale);
+        }
+        if (Input.GetKeyDown(KeyCode.LeftBracket)) {
+            Time.timeScale = Time.timeScale / 2;
+            Debug.Log("Timescale = " + Time.timeScale);
+        }
 
         if (showColliders) {
             UpdateColliderDebugMaterialColors();

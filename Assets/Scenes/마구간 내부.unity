@@ -532,7 +532,7 @@ Transform:
   - {fileID: 692941809}
   - {fileID: 1505818972}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558273389
 GameObject:
@@ -647,7 +647,7 @@ Transform:
   - {fileID: 1671381372}
   - {fileID: 1232374664}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692941808
 GameObject:
@@ -1081,6 +1081,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1295155755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 659923101181394840, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_Name
+      value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 659923101181394855, guid: ad1d26c8081e18c4c884d04e9c12c086,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad1d26c8081e18c4c884d04e9c12c086, type: 3}
 --- !u!1001 &1485798562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1209,7 +1278,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 463404854}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1512663975
+--- !u!114 &1512663976
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1221,19 +1290,78 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "playanim bona \"\uB180\uB780 \uD45C\uC815\"\nplayanim moreu \uC9D0\uC5D0\uAE54\uB9BC\nwait
-    1\nplayanim bona \"\uB180\uB780 \uD45C\uC815+\uB9D0\"\nsay bona \"\uC5B4\uB5BB\uAC8C
-    \uC880 \uD574\uBD10!\"\n\nplayanim waterfairy \"\uBB3C \uC3D8\uAE30\"\nwait 2\nplayanim
-    bona \uC6B8\uAE30\nwait 3\n\n//\uC694\uC815 \uC544\uC774\uD15C \uD68D\uB4DD\n//\uC694\uC815
-    \uC544\uC774\uD15C \uC0AC\uC6A9\nmove bona \uBCF4\uB098\uC694\uC815\uB358\uC9C0\uAE30\nplayanim
-    bona \uB358\uC9C0\uAE30\n//\uBB38\uCABD \uBD88\uC774 \uAEBC\uC9C4\uB2E4.\nwait
-    3\n\nplayanim bona \uC6B8\uAE30+\uAC77\uAE30\nmove bona \uBCF4\uB098\uD1F4\uC7A5\n\nfadeout
-    1 wait\n//set story.line \ntransfer \"\uB9C8\uAD6C\uAC04 \uC678\uBD80\"\n\n\n\n\n\n\n\n\n\n\n"
-  uniqueId: 1A6C
-  executionRepeat: 1
-  executionCondition: 
+  script: 'hide waterfairy
+
+    give waterfairy 1
+
+    set consumeWaterfairy true
+
+    unfollow
+    waterfairy'
+  uniqueId: F2EA
+  executionRepeat: 0
+  executionCondition: story.line == 40 && readyToConsumeWaterfairy
   isCutscene: 0
   executionWhen: 0
+--- !u!1 &1545634080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2384330026491775078, guid: f20a86e74b2ee4dd2ba44934fd9c5890,
+    type: 3}
+  m_PrefabInstance: {fileID: 31783794}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1545634081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545634080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "stopanim moreu\nmove bona \uBCF4\uB098\uB358\uC9C0\uAE30\uC704\uCE58 wait\nface
+    bona west\nwait 2\nplayanim bona \uB358\uC9C0\uAE30\nwait 0.7\nstopanim bona\nplayanim
+    moreu \uB3CC\uB9DE\uC74C\nwait 1\nplayanim moreu \uD718\uCCAD\uAC70\uB9BC\nwait
+    1\n//\uC9D1\uC774 \uBB34\uB108\uC9C4\uB2E4\nplayanim moreu \uC9D0\uC5D0\uAE54\uB9BC\n//\uD683\uBD88
+    \uB5A8\uC5B4\uC9C4\uB2E4\n//\uAC74\uBB3C\uC5D0 \uBD88\uC774 \uBD99\uB294\uB2E4\nsay
+    moreu \"\uC73C\uC545! \uC0B4\uB824\uC918!\" \nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\nwait
+    2\n# \"\uC5B4\uB5BB\uAC8C \uC880 \uD574\uBD10!\"\nwait 2\nface waterfairy west\nplayanim
+    waterfairy \"\uBB3C \uC3D8\uAE30\"\nwait 3\nstopanim waterfairy\nstopanim bona\nset
+    bona.angry false\nset bona.cry true\nset readyToConsumeWaterfairy true"
+  uniqueId: 5248
+  executionRepeat: 0
+  executionCondition: story.line == 40
+  isCutscene: 1
+  executionWhen: 0
+--- !u!114 &1545634082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545634080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line == 40
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 1
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
 --- !u!1 &1603963921
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,9 +1373,8 @@ GameObject:
   - component: {fileID: 1603963923}
   - component: {fileID: 1603963925}
   - component: {fileID: 1603963922}
-  - component: {fileID: 1603963924}
   m_Layer: 0
-  m_Name: Scene 5-2
+  m_Name: "\uC2DC\uC791 \uCEF7\uC52C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1265,20 +1392,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "playanim bona \uAE30\uBCF8(\uC88C)\nplayanim moreu \uC2A4\uD0E0\uB4DC\nshow
-    moreu \uBAA8\uB974\uC2DC\uC791\nsay moreu \"\uD765, \uAC78\uB824\uB4E4\uC5C8\uAD70!\"\nplayanim
-    bona \"\uD654\uB09C \uD45C\uC815\"\nsay moreu \"\uC5EC\uAE30 \uAC00\uB9CC\uD788
-    \uC788\uC5B4, \uC774 \uAD34\uBB3C\uB4E4\uC544!\" \nsay moreu \"\uC5B4\uB978\uB4E4\uC744
-    \uBD88\uB7EC\uC62C \uAC70\uB2C8\uAE4C!\"\nplayanim bona \"\uD654\uB09C \uD45C\uC815+\uB9D0\"\nsay
-    bona \"\uC57C, \uC704\uD5D8\uD558\uC796\uC544!\"\nsay bona \"\uC624\uBC84\uD558\uC9C0
-    \uB9C8, \uC9C4\uC9DC!\"\nplayanim bona \"\uD654\uB09C \uD45C\uC815\"\nsay moreu
+  script: "face moreu east\nspeed bona 0.5\nmove bona \uBCF4\uB098\uB358\uC9C0\uAE30\uC704\uCE58
+    wait\nwait 1\nsay moreu \"\uD765, \uAC78\uB824\uB4E4\uC5C8\uAD70!\"\nset bona.angry
+    true\nsay moreu \"\uC5EC\uAE30 \uAC00\uB9CC\uD788 \uC788\uC5B4, \uC774 \uAD34\uBB3C\uB4E4\uC544!\"
+    \nsay moreu \"\uC5B4\uB978\uB4E4\uC744 \uBD88\uB7EC\uC62C \uAC70\uB2C8\uAE4C!\"\nplayanim
+    bona \"\uD654\uB09C \uD45C\uC815+\uB9D0\"\nsay bona \"\uC57C, \uC704\uD5D8\uD558\uC796\uC544!\"\nsay
+    bona \"\uC624\uBC84\uD558\uC9C0 \uB9C8, \uC9C4\uC9DC!\"\nstopanim bona\nsay moreu
     \"\uB108\uB098 \uD5C8\uD2BC\uC9D3 \uD558\uC9C0 \uB9C8!\"\nsay moreu \"\uB0B4
     \uB9D0 \uC548 \uB4E4\uC73C\uBA74 \uD63C\uB0B4\uC904 \uAC70\uC57C!\" \nsay moreu
-    \"\uC5C4\uB9C8\uAC00 \uB9C8\uB140\uB294 \uD654\uD615\uC744 \uC2DC\uD0A8\uB314\uC5B4.\"\nplayanim
-    moreu \uC2A4\uD0E0\uB4DC\n\n\n\n\n\n\n\n\n\n"
+    \"\uC5C4\uB9C8\uAC00 \uB9C8\uB140\uB294 \uD654\uD615\uC744 \uC2DC\uD0A8\uB314\uC5B4.\"\n\n"
   uniqueId: E18E
   executionRepeat: 0
-  executionCondition: 
+  executionCondition: story.line == 40
   isCutscene: 1
   executionWhen: 0
 --- !u!4 &1603963923
@@ -1293,36 +1418,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1603963924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1603963921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: "playanim bona \"\uD654\uB09C \uD45C\uC815\"\nshow moreu \uBAA8\uB974\uC2DC\uC791\nwait
-    1\nmove bona \uBCF4\uB098\uD683\uBD88\nplayanim moreu \"\uBD95\uBD95 \uD718\uB450\uB974\uAE30\"\nwait
-    1\nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\nwait 1\nplayanim bona \"\uD654\uB09C
-    \uD45C\uC815\"\nmove bona \uB098\uAC00\uB824\uB294\uBCF4\uB098\nwait 1\nsay bona 
-    \"\uADF8\uB0E5 \uB098\uAC08 \uC218 \uB294 \uC5C6\uC5B4.\"\n\nmove bona \uBCF4\uB098\uB358\uC9C0\uAE30\uC704\uCE58\nwait
-    1\n//\uBAA8\uB974\uC5D0\uAC8C \uB3CC \uB358\uC9C0\uAE30(\uC544\uC774\uD15C \uC0AC\uC6A9)\nplayanim
-    bona \uB358\uC9C0\uAE30\nwait 2\nplayanim bona \"\uD654\uB09C \uD45C\uC815\"\nplayanim
-    moreu \uB3CC\uB9DE\uC74C\nwait 1\nplayanim moreu \uD718\uCCAD\uAC70\uB9BC\nwait
-    1\n//\uC9D1\uC774 \uBB34\uB108\uC9C4\uB2E4\nplayanim moreu \uC9D0\uC5D0\uAE54\uB9BC\n//\uD683\uBD88
-    \uB5A8\uC5B4\uC9C4\uB2E4\n//\uAC74\uBB3C\uC5D0 \uBD88\uC774 \uBD99\uB294\uB2E4\nsay
-    moreu \"\uC73C\uC545! \uC0B4\uB824\uC918!\" \nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\n"
-  uniqueId: D48E
-  executionRepeat: 0
-  executionCondition: 
-  isCutscene: 0
-  executionWhen: 0
 --- !u!114 &1603963925
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1441,7 +1538,7 @@ Transform:
   m_Children:
   - {fileID: 298790372}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1671381371
 GameObject:
@@ -1536,6 +1633,10 @@ GameObject:
   - component: {fileID: 1956945123}
   - component: {fileID: 1956945122}
   - component: {fileID: 1956945121}
+  - component: {fileID: 1956945125}
+  - component: {fileID: 1956945126}
+  - component: {fileID: 1956945128}
+  - component: {fileID: 1956945127}
   m_Layer: 0
   m_Name: "\uB9C8\uAD6C\uAC04 \uC678\uBD80\uB85C"
   m_TagString: Untagged
@@ -1558,7 +1659,7 @@ MonoBehaviour:
   targetScene:
     sceneAsset: {fileID: 102900000, guid: 4cd2ab5dcef45394cacfa7cca2c67f62, type: 3}
     scenePath: "Assets/Scenes/\uB9C8\uAD6C\uAC04 \uC678\uBD80.unity"
-  condition: 
+  condition: story.line != 40
 --- !u!114 &1956945122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1571,7 +1672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runAllScripts: 1
+  runAllScripts: 0
   runInCutscene: 0
   coll: {fileID: 1956945123}
 --- !u!60 &1956945123
@@ -1615,5 +1716,163 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1956945125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956945120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "playanim bona \uC808\uB808\uC808\uB808\nif readyToConsumeWaterfairy\n#
+    \"\uBD88\uC774 \uBD99\uC5B4\uC11C \uB098\uAC08 \uC218 \uC5C6\uC5B4.\"\nelse\n#
+    \"\uADF8\uB0E5 \uB098\uAC08 \uC218\uB294 \uC5C6\uC5B4.\"\nend\nstopanim bona"
+  uniqueId: 12BA
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &1956945126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956945120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "move bona \uBCF4\uB098\uB358\uC9C0\uAE30\uC704\uCE58 wait\nface bona east\nwait
+    1\nplayanim bona \uB358\uC9C0\uAE30\nwait 0.7\nstopanim bona\nset readyToEscape
+    true"
+  uniqueId: 6F43
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 1
+  executionWhen: 0
+--- !u!114 &1956945127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956945120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: readyToEscape
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 1956945128}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: consumeWaterfairy
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 1956945126}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 1956945125}
+    autoExecutor: {fileID: 0}
+--- !u!114 &1956945128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1956945120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "set bona.cry false\nset story.line 50\ntransfer \"\uB9C8\uAD6C\uAC04 \uC678\uBD80\""
+  uniqueId: 26AA
+  executionRepeat: 1
+  executionCondition: 
+  isCutscene: 0
+  executionWhen: 0
+--- !u!1 &2045089667
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045089670}
+  - component: {fileID: 2045089669}
+  - component: {fileID: 2045089668}
+  m_Layer: 0
+  m_Name: "\uD683\uBD88\uB85C \uC704\uD611"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2045089668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045089667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "if dist(bona, moreu) < 3\nplayanim moreu \"\uBD95\uBD95 \uD718\uB450\uB974\uAE30\"\nwait
+    0.5\nelse\nstopanim moreu\nend"
+  uniqueId: 4B4E
+  executionRepeat: 1
+  executionCondition: story.line == 40 && !readyToConsumeWaterfairy
+  isCutscene: 0
+  executionWhen: 0
+--- !u!114 &2045089669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045089667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2159b812e931aa469071a20513a34bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
+  onlyOnce: 0
+--- !u!4 &2045089670
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045089667}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.54, y: -2.07, z: -7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
