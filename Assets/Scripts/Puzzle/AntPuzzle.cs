@@ -15,18 +15,20 @@ public class AntPuzzle : MonoBehaviour
         images = gameObject.GetComponentsInChildren<Image>();
         System.Random random = new System.Random(227);
         for (int i = 0; i < images.Length; i++) {
+            int idx = i;
             Image image = images[i];
             Button button = image.gameObject.GetComponent<Button>();
-            button.onClick.AddListener(() => Rotate(image));
+            button.onClick.AddListener(() => Rotate(image, idx));
             int cnt = random.Next(4);
             for (int j = 0; j < cnt; j++) image.rectTransform.Rotate(Vector3.forward, 90f);
             count[i] = cnt;
         }
     }
 
-    void Rotate(Image image) {
+    void Rotate(Image image, int idx) {
         if (done) return;
         image.rectTransform.Rotate(Vector3.forward, 90f);
+        count[idx] = (count[idx] + 1) % 4;
         bool pass = true;
         for (int i = 0; i < 25; i++) {
             if (count[i] != 0) {

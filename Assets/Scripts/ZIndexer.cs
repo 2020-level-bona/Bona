@@ -44,6 +44,6 @@ public class ZIndexer : MonoBehaviour
     }
 
     ZIndexable[] GetZIndexables() {
-        return FindObjectsOfType<MonoBehaviour>().OfType<ZIndexable>().Where((it) => true).ToArray();
+        return FindObjectsOfType<MonoBehaviour>().OfType<ZIndexable>().Where((it) => it.ShouldZIndex()).ToArray();
     }
 }

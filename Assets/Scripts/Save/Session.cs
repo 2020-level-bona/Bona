@@ -89,8 +89,7 @@ public class Session : ISession
     }
 
     public void Save(bool writeToFile = true) {
-        EventManager.Instance.OnPreSave.Invoke();
-
+        EventManager.Instance.OnPreSave?.Invoke();
         if (writeToFile) fileIO.Write(Serialize());
     }
 

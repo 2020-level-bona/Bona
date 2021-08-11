@@ -175,7 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "camadd ant_prince\nsay ant_prince \"\uBC8C\uC368 \uC655\uC744 \uC7A1\uC73C\uC2DC\uB824\uACE0\uC694?
+  script: "move bona \uBCF4\uB098\uC2A4\uD0E0\uB529 wait\ncamadd ant_prince\nsay
+    ant_prince \"\uBC8C\uC368 \uC655\uC744 \uC7A1\uC73C\uC2DC\uB824\uACE0\uC694?
     \uACC4\uD68D\uC774 \uC788\uC73C\uC2E0\uAC00\uC694?\"\nsay bona \"\uC190\uC73C\uB85C
     \uD0C1! \uC7A1\uC544\uC11C \uAC00\uBC29\uC5D0 \uB123\uC73C\uBA74 \uB3FC. \uB098
     \uC5C4\uCCAD \uC798 \uC7A1\uC544!\"\nsay bona \"\uC790, \uC655\uC5D0\uAC8C \uAC00\uBCFC\uAE4C!\"\ncamdel
@@ -183,7 +184,7 @@ MonoBehaviour:
   uniqueId: FD8B
   executionRepeat: 1
   executionCondition: story.line >=90  && story.line < 120
-  isCutscene: 0
+  isCutscene: 1
   executionWhen: 0
 --- !u!114 &142936533
 MonoBehaviour:
@@ -348,6 +349,13 @@ MonoBehaviour:
     triggerExecutor: {fileID: 0}
     autoExecutor: {fileID: 0}
   - selected: 0
+    condition: story.line == 20
+    hide: 1
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+  - selected: 0
     condition: 
     hide: 0
     position: 
@@ -433,6 +441,50 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: f81fd8df990c73c41ad2c4496cdceb78, type: 3}
     scenePath: "Assets/Scenes/\uB450\uB354\uC9C0\uC655\uC758 \uBC29.unity"
   condition: false
+--- !u!1 &342649615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 342649617}
+  - component: {fileID: 342649616}
+  m_Layer: 0
+  m_Name: Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &342649616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342649615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71722026c9185f40b88e1b605aecf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 0
+--- !u!4 &342649617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342649615}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8236496, y: 0.05639823, z: -9.222799}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &390686440
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +621,7 @@ MonoBehaviour:
     wait\nhide waterfairy\nwait 1\ncamdel waterfairy\n\nset story.line 20"
   uniqueId: C5FC
   executionRepeat: 0
-  executionCondition: contains(fork, 1)
+  executionCondition: hand(fork)
   isCutscene: 1
   executionWhen: 0
 --- !u!114 &513811934
@@ -950,12 +1002,12 @@ PrefabInstance:
     - target: {fileID: 8621568353004135770, guid: 01ba8d0648c1656449df3472d4ce5331,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.85
+      value: 4.39
       objectReference: {fileID: 0}
     - target: {fileID: 8621568353004135770, guid: 01ba8d0648c1656449df3472d4ce5331,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.66
       objectReference: {fileID: 0}
     - target: {fileID: 8621568353004135770, guid: 01ba8d0648c1656449df3472d4ce5331,
         type: 3}
@@ -1965,21 +2017,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "do\nmove bona \uBCF4\uB098\uC2A4\uD0E0\uB529 wait\nface bona east\nend\ndo\nmove
-    ant_prince \uAC1C\uBBF8\uC2A4\uD0E0\uB529 wait\nface ant_prince west\nend\nwait
-    2\n# \"\uC774\uAC8C \uB3C4\uB300\uCCB4 \uBB58\uAE4C? \uCEE4\uB2E4\uB780 \uBFD4
-    \uAC19\uAE30\uB3C4 \uD574.\"\n# \"\uC544 \uADF8\uB798. \uC0AC\uC81C\uB2D8\uD55C\uD14C
-    \uAC00\uC11C \uBB3C\uC5B4\uBCF4\uC790.\"\nplayanim ant_prince \uC5B4\uAE68\uC73C\uC4F1+\uB5A8\uB5A0\uB984\uD574\uD558\uAE30\nwait
+  script: "unfollow ant_prince\ndo\nmove bona \uBCF4\uB098\uC2A4\uD0E0\uB529 wait\nface
+    bona east\nend\ndo\nmove ant_prince \uAC1C\uBBF8\uC2A4\uD0E0\uB529 wait\nface
+    ant_prince west\nend\nwait 2\n# \"\uC774\uAC8C \uB3C4\uB300\uCCB4 \uBB58\uAE4C?
+    \uCEE4\uB2E4\uB780 \uBFD4 \uAC19\uAE30\uB3C4 \uD574.\"\n# \"\uC544 \uADF8\uB798.
+    \uC0AC\uC81C\uB2D8\uD55C\uD14C \uAC00\uC11C \uBB3C\uC5B4\uBCF4\uC790.\"\nplayanim
+    ant_prince \uC5B4\uAE68\uC73C\uC4F1+\uB5A8\uB5A0\uB984\uD574\uD558\uAE30\nwait
     1\nplayanim ant_prince \uC5B4\uAE68\uC73C\uC4F1+\uB9D0\nsay ant_Prince \"\uBCC4\uB85C
     \uC88B\uC740 \uC0DD\uAC01 \uAC19\uC9C0\uB294 \uC54A\uC544\uC694. \uC0AC\uC81C\uB4E4\uC740
     \uB2E4 \uAC70\uC9D3\uB9D0\uC7C1\uC774\uAC70\uB4E0\uC694.\"\nstopanim ant_prince\nplayanim
     bona \"\uD654\uB09C \uD45C\uC815+\uB9D0\"\nsay BONA \"\uC6B0\uB9AC \uC0AC\uC81C\uB2D8\uC740
     \uB2EC\uB77C! \uBCD1\uC5D0 \uAC78\uB9B0 \uC0AC\uB78C\uB3C4 \uCE58\uB8CC\uD574\uC8FC\uACE0,
     \uB098\uD55C\uD14C\uB3C4 \uC5C4\uCCAD \uCE5C\uC808\uD558\uC2E0\uAC78.\"\nstopanim
-    bona "
+    bona\nfollow ant_prince bona"
   uniqueId: A8E8
   executionRepeat: 0
-  executionCondition: 
+  executionCondition: story.line == 120
   isCutscene: 1
   executionWhen: 0
 --- !u!4 &2038810849

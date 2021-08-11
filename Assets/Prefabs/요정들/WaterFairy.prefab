@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
-  coll: {fileID: 0}
+  coll: {fileID: 2977158026209440047}
 --- !u!114 &3291207242462523081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,9 +94,9 @@ MonoBehaviour:
   size: {x: 1, y: 1}
   baseSpeed: 5
   speedMultiplier: 1
-  ignoreRoad: 0
+  ignoreRoad: 1
   useFlip: 1
-  zIndex: 0
+  ignoreZIndex: 0
 --- !u!1 &7543921699312623486
 GameObject:
   m_ObjectHideFlags: 0

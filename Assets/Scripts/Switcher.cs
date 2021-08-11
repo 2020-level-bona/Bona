@@ -12,7 +12,9 @@ public class Switcher : MonoBehaviour
     Movable movable;
 
     int index = -1;
+    public bool hided {get; private set;}
 
+#if UNITY_EDITOR
     void OnValidate() {
         if (pageConfigs == null)
             return;
@@ -23,6 +25,7 @@ public class Switcher : MonoBehaviour
                 pageConfig.selected = false;
         }
     }
+#endif
 
     void Awake() {
         level = FindObjectOfType<Level>();
@@ -96,6 +99,7 @@ public class Switcher : MonoBehaviour
             trigger.enabled = !hide;
         foreach (Trigger trigger in GetComponentsInChildren<Trigger>())
             trigger.enabled = !hide;
+        this.hided = hide;
     }
 
     void SetPosition(string position) {

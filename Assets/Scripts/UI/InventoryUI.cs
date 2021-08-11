@@ -34,7 +34,7 @@ public class InventoryUI : MonoBehaviour, ISlotListener, IInventoryRenderer
     }
     
     private void Update() {
-        if(Input.GetKeyDown(KeyCode.I)) {
+        if(Input.GetKeyDown(KeyCode.E)) {
             activeInventory = !activeInventory;
             InventoryUIPanel.SetActive(activeInventory);
         }
@@ -44,10 +44,10 @@ public class InventoryUI : MonoBehaviour, ISlotListener, IInventoryRenderer
     }
 
     public void OnSlotClick(int index) {
-        // TODO
         for (int i = 0; i < slots.Length; i++) {
             slots[i].SetSelected(i == index);
         }
+        inventory.selectedSlot = index;
     }
 
     public void Invalidate() {

@@ -17,7 +17,7 @@ public class WASDControl : MonoBehaviour
     }
 
     void Update() {
-        if (IsAvailable()) {
+        if (!ScriptSession.IsPlayingCutscene && IsAvailable()) {
             movable.MoveDirection(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")));
             EventManager.Instance.OnPlayerMove?.Invoke(transform.position);
         }

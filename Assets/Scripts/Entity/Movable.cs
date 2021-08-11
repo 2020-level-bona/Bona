@@ -23,7 +23,7 @@ public class Movable : MonoBehaviour, ZIndexable
     }
     public Vector2 velocity {get; private set;}
 
-    public bool zIndex = false;
+    public bool ignoreZIndex = false;
 
     void OnDrawGizmos() {
         Gizmos.color = Color.blue;
@@ -100,7 +100,7 @@ public class Movable : MonoBehaviour, ZIndexable
     }
 
     public bool ShouldZIndex() {
-        return zIndex;
+        return !ignoreZIndex;
     }
 
     public Vector2 GetCoordinate() {

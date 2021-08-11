@@ -5,25 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
-
-    void Start(){
-        
-
-    }
-
-
-
     public static bool GameIsPaused = false;
-
     public GameObject PauseMenuUI;
+    Game game;
+
+    void Awake() {
+        game = FindObjectOfType<Game>();
+    }
 
     void Update () {
           if(Input.GetKeyDown(KeyCode.Escape)){
               if (GameIsPaused){
                   Resume();
-              } else
-              {
+              } else {
                   Pause();
               }
           }
@@ -33,13 +27,16 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        game.overlayCanvas++;
     }
     void Pause(){
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        game.overlayCanvas--;
     }
     public void LoadMenu(){
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }

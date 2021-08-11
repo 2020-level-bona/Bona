@@ -6,6 +6,15 @@ using UnityEngine;
 public class PuzzleUI : MonoBehaviour
 {
     public string variablePath;
+    Game game;
+
+    void Awake() {
+        game = FindObjectOfType<Game>();
+    }
+
+    void Start() {
+        game.overlayCanvas++;
+    }
 
     public void OnSolve() {
         Session.Instance.Set(variablePath, true);
@@ -14,6 +23,7 @@ public class PuzzleUI : MonoBehaviour
 
     public void OnClose() {
         Destroy(gameObject);
+        game.overlayCanvas--;
     }
 
     IEnumerator Close() {

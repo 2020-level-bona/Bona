@@ -21,6 +21,7 @@ public class BScriptExecutor : MonoBehaviour
     
     public ScriptExecutorState state {get; private set;}
 
+#if UNITY_EDITOR
     void OnValidate() {
         game = FindObjectOfType<Game>();
         level = FindObjectOfType<Level>();
@@ -36,6 +37,7 @@ public class BScriptExecutor : MonoBehaviour
         if (uniqueId == null || uniqueId == "")
             uniqueId = Random.Range(0, 1 << 16).ToString("X4");
     }
+#endif
 
     void Awake() {
         game = FindObjectOfType<Game>();
@@ -87,7 +89,9 @@ public class BScriptExecutor : MonoBehaviour
                 session = null;
             }
         }
+        #if UNITY_EDITOR
         EditorUtility.SetDirty(this); // 인스펙터 Refresh
+        #endif
     }
 
     public List<Token> GetTokens() {

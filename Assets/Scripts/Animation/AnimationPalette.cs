@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+#endif
 
 [RequireComponent(typeof(Animator))]
 public class AnimationPalette : MonoBehaviour
 {
     [SerializeField]
     AnimationPalettePage[] palettePages;
-
+#if UNITY_EDITOR
     void OnValidate() {
         if (palettePages == null)
             return;
@@ -44,7 +46,7 @@ public class AnimationPalette : MonoBehaviour
             states.Add(childAnimatorState.state.name);
         return states;
     }
-
+#endif
     public string GetState(string stateNameOrAlias) {
         foreach (AnimationPalettePage palettePage in palettePages) {
             if (palettePage.IsAvailable()) {

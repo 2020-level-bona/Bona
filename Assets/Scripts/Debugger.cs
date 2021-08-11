@@ -43,77 +43,77 @@ public class Debugger : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1)) {
-            SceneManager.LoadScene("AllScenes");
-        }
-        if (Input.GetKeyDown(KeyCode.F5)) {
-            // if (showZIndexThreshold) {
-            //     foreach (GameObject gameObject in zIndexThresholdObjects) {
-            //         Destroy(gameObject);
-            //     }
+        // if (Input.GetKeyDown(KeyCode.F1)) {
+        //     SceneManager.LoadScene("AllScenes");
+        // }
+        // if (Input.GetKeyDown(KeyCode.F5)) {
+        //     // if (showZIndexThreshold) {
+        //     //     foreach (GameObject gameObject in zIndexThresholdObjects) {
+        //     //         Destroy(gameObject);
+        //     //     }
 
-            //     showZIndexThreshold = false;
-            // } else {
-            //     zIndexThresholdObjects = new List<GameObject>();
-            //     foreach (ZIndex zIndex in FindObjectsOfType<ZIndex>()) {
-            //         GameObject gameObject = new GameObject("Z Index Threshold");
-            //         gameObject.transform.position = new Vector3(0, 0, 0);
+        //     //     showZIndexThreshold = false;
+        //     // } else {
+        //     //     zIndexThresholdObjects = new List<GameObject>();
+        //     //     foreach (ZIndex zIndex in FindObjectsOfType<ZIndex>()) {
+        //     //         GameObject gameObject = new GameObject("Z Index Threshold");
+        //     //         gameObject.transform.position = new Vector3(0, 0, 0);
 
-            //         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
-            //         lineRenderer.startWidth = lineRenderer.endWidth = 0.03f;
+        //     //         LineRenderer lineRenderer = gameObject.AddComponent<LineRenderer>();
+        //     //         lineRenderer.startWidth = lineRenderer.endWidth = 0.03f;
 
-            //         lineRenderer.positionCount = 2;
-            //         lineRenderer.SetPosition(0, new Vector3(-100, zIndex.y - 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
-            //         lineRenderer.SetPosition(1, new Vector3(100, zIndex.y + 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
+        //     //         lineRenderer.positionCount = 2;
+        //     //         lineRenderer.SetPosition(0, new Vector3(-100, zIndex.y - 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
+        //     //         lineRenderer.SetPosition(1, new Vector3(100, zIndex.y + 100 * Mathf.Tan(zIndex.angle * Mathf.Deg2Rad), -9.5f));
 
-            //         zIndexThresholdObjects.Add(gameObject);
-            //     }
+        //     //         zIndexThresholdObjects.Add(gameObject);
+        //     //     }
 
-            //     showZIndexThreshold = true;
-            // }
-        }
-        if (Input.GetKeyDown(KeyCode.F6)) {
-            if (showColliders) {
-                foreach (GameObject gameObject in colliderDebugObjects) {
-                    Destroy(gameObject);
-                }
+        //     //     showZIndexThreshold = true;
+        //     // }
+        // }
+        // if (Input.GetKeyDown(KeyCode.F6)) {
+        //     if (showColliders) {
+        //         foreach (GameObject gameObject in colliderDebugObjects) {
+        //             Destroy(gameObject);
+        //         }
 
-                showColliders = false;
-            } else {
-                if (playerMovable) {
-                    colliderDebugObjects = new List<GameObject>();
-                    foreach (PolygonCollider2D floor in level.floorPolygons) {
-                        GameObject gameObject = new GameObject("Floor Collider Mesh");
-                        gameObject.transform.position = new Vector3(0, 0, -9);
+        //         showColliders = false;
+        //     } else {
+        //         if (playerMovable) {
+        //             colliderDebugObjects = new List<GameObject>();
+        //             foreach (PolygonCollider2D floor in level.floorPolygons) {
+        //                 GameObject gameObject = new GameObject("Floor Collider Mesh");
+        //                 gameObject.transform.position = new Vector3(0, 0, -9);
                         
-                        MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
-                        renderer.sharedMaterial = Instantiate(colliderDebugMaterial);
+        //                 MeshRenderer renderer = gameObject.AddComponent<MeshRenderer>();
+        //                 renderer.sharedMaterial = Instantiate(colliderDebugMaterial);
 
-                        MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
-                        meshFilter.mesh = floor.CreateMesh(false, false);
+        //                 MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
+        //                 meshFilter.mesh = floor.CreateMesh(false, false);
 
-                        colliderDebugObjects.Add(gameObject);
-                    }
+        //                 colliderDebugObjects.Add(gameObject);
+        //             }
 
-                    showColliders = true;
-                }
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.F9)) {
-            Session.Instance.Save();
-        }
-        if (Input.GetKeyDown(KeyCode.F10)) {
-            Session.Instance.Load();
-        }
-        if (Input.GetKeyDown(KeyCode.F11)) {
-            Session.Instance.Clear();
-        }
+        //             showColliders = true;
+        //         }
+        //     }
+        // }
+        // if (Input.GetKeyDown(KeyCode.F9)) {
+        //     Session.Instance.Save();
+        // }
+        // if (Input.GetKeyDown(KeyCode.F10)) {
+        //     Session.Instance.Load();
+        // }
+        // if (Input.GetKeyDown(KeyCode.F11)) {
+        //     Session.Instance.Clear();
+        // }
         if (Input.GetKeyDown(KeyCode.RightBracket)) {
-            Time.timeScale = Time.timeScale * 2;
+            Time.timeScale = Mathf.Min(Time.timeScale * 2, 8f);
             Debug.Log("Timescale = " + Time.timeScale);
         }
         if (Input.GetKeyDown(KeyCode.LeftBracket)) {
-            Time.timeScale = Time.timeScale / 2;
+            Time.timeScale = Mathf.Max(Time.timeScale / 2, 0.25f);
             Debug.Log("Timescale = " + Time.timeScale);
         }
 

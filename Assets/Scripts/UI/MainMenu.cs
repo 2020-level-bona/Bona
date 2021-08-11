@@ -5,38 +5,59 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject continueButton;
+    Coroutine coroutine;
 
-    public DataManager datamanager;
-
-    void Start()
-    {
-        
+    void Start() {
+        Session.Instance.Load();
+        continueButton.SetActive(Session.General.Contains("currentScene"));
+        coroutine = null;
     }
 
-    void Update()
-    {
-        
+    void Update() {
+        Tween.Instance.Update();
     }
 
     public void OnClickNewGame(){
+        if (coroutine != null) return;
+        coroutine = StartCoroutine(NewGame());
+    }
+
+    IEnumerator NewGame() {
+        FindObjectOfType<CameraFader>().FadeOut();
+        yield return new WaitForSeconds(1.5f);
+        Session.Instance.Clear();
+        Session.General.Set("currentScene", "보나의 집 안");
+        Session.Instance.Save();
         SceneManager.LoadScene("보나의 집 안");
     }
 
-
-
     public void OnClickContinue(){
-        Debug.Log("계속하기");
-        //dataManager.GameLoad();
+        if (coroutine != null) return;
+        coroutine = StartCoroutine(ContinueGame());
     }
 
+    IEnumerator ContinueGame() {
+        FindObjectOfType<CameraFader>().FadeOut();
+        yield return new WaitForSeconds(1.5f);
 
+        string currentScene = Session.General.GetString("currentScene");
+        if (currentScene != null) SceneManager.LoadScene(currentScene);
+    }
 
     public void OnClickQuit(){
-#if UNITY_EDITOR
-      UnityEditor.EditorApplication.isPlaying = false;
-#else
-      Application.Quit();
-#endif
+        if (coroutine != null) return;
+        coroutine = StartCoroutine(QuitGame());
+    }
 
+    IEnumerator QuitGame() {
+        FindObjectOfType<CameraFader>().FadeOut();
+        yield return new WaitForSeconds(1.5f);
+
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
     }
 }

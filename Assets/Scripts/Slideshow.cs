@@ -9,6 +9,7 @@ public class Slideshow : MonoBehaviour
     public Sprite[] images;
     public float timePerImage = 5f;
     Image[] imageInstances;
+    Game game;
 
     void Awake() {
         imageInstances = new Image[images.Length];
@@ -23,9 +24,11 @@ public class Slideshow : MonoBehaviour
             imageInstances[i] = instance.AddComponent<Image>();
             imageInstances[i].sprite = images[i];
         }
+        game = FindObjectOfType<Game>();
     }
 
     void Start() {
+        game.overlayCanvas++;
         StartCoroutine(Show());
     }
 
@@ -44,6 +47,7 @@ public class Slideshow : MonoBehaviour
         }
         entry = cameraFader.FadeOut();
         yield return new WaitUntil(() => entry.HasDone());
+        game.overlayCanvas--;
         Destroy(gameObject);
     }
 }

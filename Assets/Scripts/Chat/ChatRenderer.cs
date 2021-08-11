@@ -19,6 +19,7 @@ public class ChatRenderer : MonoBehaviour
     public bool AnimationFinished {get; private set;} = false;
 
     Coroutine animationCoroutine;
+    Game game;
 
     public void Initialize(Chat chat, Movable movable, ChatboxCoordinator chatboxCoordinator) {
         this.chat = chat;
@@ -28,7 +29,7 @@ public class ChatRenderer : MonoBehaviour
 
     void Awake() {
         rectTransform = GetComponent<RectTransform>();
-
+        game = FindObjectOfType<Game>();
         uiText = GetComponent<Text>();
         if (uiText == null)
             uiText = GetComponentInChildren<Text>();
@@ -50,7 +51,7 @@ public class ChatRenderer : MonoBehaviour
     void Update() {
         if (!movable)
             Finish();
-        else if (chat.Global && Input.GetMouseButtonDown(0)) {
+        else if (chat.Global && game.overlayCanvas == 0 && Input.GetMouseButtonDown(0)) {
             if (!AnimationFinished)
                 SkipAnimation();
             else if (chat.IsPrompt == null)

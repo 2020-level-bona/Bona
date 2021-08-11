@@ -23,6 +23,8 @@ public class Game : MonoBehaviour
 
     public CharacterFollowManager characterFollowManager;
 
+    public int overlayCanvas = 0;
+
     void Awake() {
         level = FindObjectOfType<Level>();
         chatManager = FindObjectOfType<ChatManager>();
@@ -48,9 +50,12 @@ public class Game : MonoBehaviour
     }
 
     public void TransferScene(string sceneName, bool save = true) {
-        Session.Instance.Save(false);
-
-        Session.General.Set("lastScenePath", SceneManager.GetActiveScene().path);
+        // @Hardcoded
+        if (sceneName != "MainMenu") {
+            Session.General.Set("lastScenePath", SceneManager.GetActiveScene().path);
+            Session.General.Set("currentScene", sceneName);
+            Session.Instance.Save(save);
+        }
         SceneManager.LoadScene(sceneName);
     }
 

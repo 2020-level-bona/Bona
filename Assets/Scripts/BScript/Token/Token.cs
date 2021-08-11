@@ -23,10 +23,10 @@ public class Token
     {
         return str;
     }
-    public static implicit operator Token(UnityEditor.SerializedProperty property) {
-        return new Token(property.FindPropertyRelative("lineNumber").intValue,
-            property.FindPropertyRelative("str").stringValue,
-            property.FindPropertyRelative("startIndex").intValue,
-            (TokenType) property.FindPropertyRelative("type").enumValueIndex);
-    }
+    // public static implicit operator Token(UnityEditor.SerializedProperty property) {
+    //     return new Token(property.FindPropertyRelative("lineNumber").intValue,
+    //         property.FindPropertyRelative("str").stringValue,
+    //         property.FindPropertyRelative("startIndex").intValue,
+    //         (TokenType) property.FindPropertyRelative("type").enumValueIndex);
+    // }
 }

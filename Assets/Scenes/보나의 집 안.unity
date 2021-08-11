@@ -157,7 +157,7 @@ MonoBehaviour:
   uniqueId: 9B50
   executionRepeat: 0
   executionCondition: story.line == 0
-  isCutscene: 0
+  isCutscene: 1
   executionWhen: 0
 --- !u!114 &68049502
 MonoBehaviour:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  offset: -2.63
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!212 &234481920
@@ -565,21 +565,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "speed bona 0.5\nspeed waterfairy 0.5\nmove waterfairy \uC694\uC815\nmove
-    bona \uBCA0\uB9AC\uB193\uB294\uC9C0\uC810 wait\nwait 1\nset berry true\nset bona.berry
-    false\nwait 1\nmove bona \uBCF4\uB098 wait\nwait 2\nplayanim bona \"\uBB3C\uC758
-    \uC694\uC815 \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nplayanim waterfairy
-    \"\uBB3C\uBC29\uC6B8 \uB9CC\uB4E4\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nwait 5\nset
-    moreu.torch true // \uBAA8\uB974 \uC560\uB2C8\uBA54\uC774\uC158\nshow moreu \uB4F1\uC7A5\nstopanim
-    bona\nstopanim waterfairy\nface bona east\nspeed moreu 0.5\nwait 1\nmove moreu
-    \uBAA8\uB974 wait\nplayanim bona \"\uB180\uB780 \uD45C\uC815\"\nsay moreu \"\uB531
-    \uAC78\uB838\uC5B4, \uC774 \uB9C8\uB140!\"\nsay moreu \"\uC5B4\uCA50\uC9C0 \uC694\uC998
-    \uC218\uC0C1\uD588\uC5B4.\"\nsay moreu \"\uADF8 \uC774\uC0C1\uD55C \uAD34\uBB3C\uB85C
-    \uC6B0\uB9AC\uB97C \uB2E4 \uC8FD\uC77C \uC148\uC774\uC9C0?\"\nplayanim moreu
-    \"\uBD95\uBD95 \uD718\uB450\uB974\uAE30\"\nsay moreu \"\uC804\uBD80 \uC774\uB97C\uAC70\uC57C!\"\nstopanim
-    moreu\nwait 1\nspeed moreu 1\nmove moreu \uB4F1\uC7A5 wait\nhide moreu\nface
-    bona west\nsay bona !!\nstopanim bona\n\nspeed bona 1\nspeed waterfairy 1\nset
-    moreu.torch false\nset story.line 40"
+  script: "speed bona 0.5\nspeed waterfairy 0.5\nunfollow waterfairy\nmove waterfairy
+    \uC694\uC815\nmove bona \uBCA0\uB9AC\uB193\uB294\uC9C0\uC810 wait\nwait 1\nset
+    berry true\nset bona.berry false\nwait 1\nmove bona \uBCF4\uB098 wait\nwait 2\nplayanim
+    bona \"\uBB3C\uC758 \uC694\uC815 \uAC74\uB4DC\uB9AC\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nplayanim
+    waterfairy \"\uBB3C\uBC29\uC6B8 \uB9CC\uB4E4\uBA70 \uC7A5\uB09C\uCE58\uAE30\"\nwait
+    5\nset moreu.torch true // \uBAA8\uB974 \uC560\uB2C8\uBA54\uC774\uC158\nshow
+    moreu \uB4F1\uC7A5\nstopanim bona\nstopanim waterfairy\nface bona east\nspeed
+    moreu 0.5\nwait 1\nmove moreu \uBAA8\uB974 wait\nplayanim bona \"\uB180\uB780
+    \uD45C\uC815\"\nsay moreu \"\uB531 \uAC78\uB838\uC5B4, \uC774 \uB9C8\uB140!\"\nsay
+    moreu \"\uC5B4\uCA50\uC9C0 \uC694\uC998 \uC218\uC0C1\uD588\uC5B4.\"\nsay moreu
+    \"\uADF8 \uC774\uC0C1\uD55C \uAD34\uBB3C\uB85C \uC6B0\uB9AC\uB97C \uB2E4 \uC8FD\uC77C
+    \uC148\uC774\uC9C0?\"\nplayanim moreu \"\uBD95\uBD95 \uD718\uB450\uB974\uAE30\"\nsay
+    moreu \"\uC804\uBD80 \uC774\uB97C\uAC70\uC57C!\"\nstopanim moreu\nwait 1\nspeed
+    moreu 1\nmove moreu \uB4F1\uC7A5 wait\nhide moreu\nface bona west\nsay bona !!\nstopanim
+    bona\n\nspeed bona 1\nspeed waterfairy 1\nfollow waterfairy bona\nset moreu.torch
+    false\nset story.line 40"
   uniqueId: 9B50
   executionRepeat: 1
   executionCondition: story.line >= 30 && story.line < 40
@@ -830,7 +831,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  face: 4
+  face: 3
 --- !u!1 &930728034
 GameObject:
   m_ObjectHideFlags: 0
@@ -912,6 +913,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &991317070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 659923101181394840, guid: ad1d26c8081e18c4c884d04e9c12c086,
+    type: 3}
+  m_PrefabInstance: {fileID: 231117580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &991317071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991317070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: -0.54
+  alwaysBehindFloor: -1
+  alwaysFrontFloor: -1
 --- !u!1 &1055860338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1559,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c0012ed1b2f8f5643bcd05d78f634505, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 330796c1411422a458dab29d01e5ed62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1579,14 +1601,14 @@ MonoBehaviour:
     condition: berry
     hide: 0
     position: 
-    sprite: {fileID: 21300000, guid: f942c8dbd953fcf4dba205f60312b4fb, type: 3}
+    sprite: {fileID: 21300000, guid: b37977a1c1b5666449deaf0b20936f71, type: 3}
     triggerExecutor: {fileID: 1724573751}
     autoExecutor: {fileID: 0}
   - selected: 0
     condition: 
     hide: 0
     position: 
-    sprite: {fileID: 21300000, guid: c0012ed1b2f8f5643bcd05d78f634505, type: 3}
+    sprite: {fileID: 21300000, guid: 330796c1411422a458dab29d01e5ed62, type: 3}
     triggerExecutor: {fileID: 1724573752}
     autoExecutor: {fileID: 0}
 --- !u!114 &1724573751

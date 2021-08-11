@@ -1399,10 +1399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "playanim believers \uBB34\uB98E\uAFC7\uACE0\uC788\uAE30\nwait 2\nplayanim
-    priest \uC190\uAC00\uB77D\uD295\uAE30\uAE30\n// \uBE5B???\nwait 2\nstopanim priest\nwait
-    3\nmove bona \uC0AC\uC81C\uC55E\nwait 3\nset giveBread true\nplayanim priest
-    \uBE75\uC8FC\uAE30\nplayanim bona \"\uBE75 \uBC1B\uAE30\"\nmove \uC0AC\uC81C\uAC00\uC8FC\uB294\uBE75
+  script: "face bona west\nplayanim believers \uBB34\uB98E\uAFC7\uACE0\uC788\uAE30\nwait
+    2\nplayanim priest \uC190\uAC00\uB77D\uD295\uAE30\uAE30\n// \uBE5B???\nwait 2\nstopanim
+    priest\nwait 3\nmove bona \uC0AC\uC81C\uC55E\nwait 3\nset giveBread true\nplayanim
+    priest \uBE75\uC8FC\uAE30\nplayanim bona \"\uBE75 \uBC1B\uAE30\"\nmove \uC0AC\uC81C\uAC00\uC8FC\uB294\uBE75
     \uBCF4\uB098\uC190\uC704\uCE58 wait\nwait 1\nset giveBread false\nstopanim bona\nplayanim
     believers \uC6C3\uC73C\uBA70\uBC15\uC218\uCE58\uAE30\nwait 2\nstopanim priest\nwait
     3\nplayanim priest \uC73C\uC4F1\uD558\uAE30\nwait 3\nplayanim priest \uC0AC\uB78C\uB4E4\uC5D0\uAC8C\uC778\uC0AC\uD558\uAE30\nwait
@@ -1417,7 +1417,7 @@ MonoBehaviour:
     priest \uAE5C\uC9DD\uB180\uB78C\nwait 3\nset showToenail false\nstopanim bona\nhide
     bona 0\nplayanim priest \uBCF4\uB098\uB370\uB824\uAC00\uAE30\nspeed priest 0.5\nmove
     priest \uBE44\uBC00\uBC29\uC785\uAD6C wait\nset story.badEnding true\ntransfer
-    \"\uC0AC\uC81C\uC758 \uBE44\uBC00 \uBC29\"\n\n// 2\uBC88\uC744 \uC120\uD0DD\uD55C
+    \"\uC0AC\uC81C\uC758 \uBE44\uBC00 \uBC29\" false\n\n// 2\uBC88\uC744 \uC120\uD0DD\uD55C
     \uACBD\uC6B0\nelse\n# \"\uC74C, \uC800\uB3C4 \uAE30\uB3C4\uB97C \uC62C\uB9AC\uACE0
     \uC2F6\uC5B4\uC694.\"\n# \"\uC544, \uC2E0\uD0C1\uC774\uB791 \uCD95\uBCF5\uB3C4
     \uBC1B\uC73C\uBA74 \uC88B\uACA0\uC5B4\uC694.\"\nplayanim priest \uB044\uB355\uB044\uB355\nwait
@@ -1766,7 +1766,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 1
   useFlip: 1
-  zIndex: 0
+  ignoreZIndex: 1
 --- !u!212 &1180716357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2918,7 +2918,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 1
   useFlip: 1
-  zIndex: 0
+  ignoreZIndex: 0
 --- !u!212 &2130367526
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3079,7 +3079,7 @@ MonoBehaviour:
     \uC804 \uBAA8\uB450\uAC00 \uC88B\uC740\uB370. \uC81C\uAC8C \uAC00\uC871\uC774
     \uC5C6\uC5B4\uC11C \uADF8\uB7F0\uAC00 \uBD10\uC694.\"\nsay priest \"\uC774\uB7F0,
     \uBCF4\uB098\uAC00 \uB9CE\uC774 \uC18D\uC0C1\uD588\uACA0\uAD6C\uB098.\"\n# \"\uC800\uB3C4
-    \uC5B4\uB978 \uAC00\uC871\uC774 \uC0DD\uAE30\uBA74 \uC88B\uACA0\uC5B4\uC694.
+    \uC5BC\uB978 \uAC00\uC871\uC774 \uC0DD\uAE30\uBA74 \uC88B\uACA0\uC5B4\uC694.
     \uC815\uB9D0 \uC18C\uC911\uD788 \uC544\uAEF4\uC904 \uAC70\uC608\uC694. \uBAA8\uB974\uCC98\uB7FC
     \uB54C\uB9AC\uC9C0\uB3C4 \uC54A\uAD6C\uC694.\"\nsay priest \"\uADF8\uB798 \uBCF4\uB098\uC57C.
     \uB108\uC5D0\uAC8C \uC18C\uC911\uD55C \uAC00\uC871\uC774 \uC0DD\uAE30\uAE38 \uD568\uAED8

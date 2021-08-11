@@ -11,6 +11,8 @@ public class Inventory {
 
     IInventoryRenderer inventoryRenderer;
 
+    public int selectedSlot = 0;
+
     public Inventory() {
         for (int i = 0; i < NUM_SLOTS; i++) {
             if (Session.Inventory.Contains(i.ToString()))
@@ -85,6 +87,12 @@ public class Inventory {
         for (int i = 0; i < NUM_SLOTS; i++) {
             if (items[i] != null)
                 Session.Inventory.Set(i.ToString(), items[i]);
+            else
+                Session.Inventory.Remove(i.ToString());
         }
+    }
+
+    public Item GetSelectedItem() {
+        return items[selectedSlot];
     }
 }

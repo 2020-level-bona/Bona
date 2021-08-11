@@ -28,6 +28,9 @@ public class ExpressionTokenizer
             if (EatDist(line, expression, ref index))
                 continue;
             
+            if (EatHand(line, expression, ref index))
+                continue;
+            
             string token = EatToken(line, ref index);
             if (token.ToLower() == "true")
                 expression.Add(true);
@@ -51,16 +54,16 @@ public class ExpressionTokenizer
         }
     }
 
+    static Regex doubleRegex = new Regex(@"^\d+\.\d+");
+    static Regex longRegex = new Regex(@"^\d+");
     static bool EatNumber(string line, List<object> expression, ref int index) {
         if (char.IsDigit(line[index])) {
-            Regex doubleRegex = new Regex(@"^\d+\.\d+");
             Match match = doubleRegex.Match(line.Substring(index));
             if (match.Success) {
                 expression.Add(double.Parse(match.Value));
                 index += match.Value.Length;
                 return true;
             }
-            Regex longRegex = new Regex(@"^\d+");
             match = longRegex.Match(line.Substring(index));
             if (match.Success) {
                 expression.Add(long.Parse(match.Value));
@@ -137,8 +140,8 @@ public class ExpressionTokenizer
         return false;
     }
 
+    static Regex itemContainsRegex = new Regex(@"contains\(([^,]*),([^,]*)\)");
     static bool EatItem(string line, List<object> expression, ref int index) {
-        Regex itemContainsRegex = new Regex(@"contains\(([^,]*),([^,]*)\)");
         Match match = itemContainsRegex.Match(line.Substring(index));
         if (match.Success && match.Index == 0) {
             string itemTypeStr = match.Groups[1].Value;
@@ -167,8 +170,8 @@ public class ExpressionTokenizer
         return false;
     }
 
+    static Regex eatDistRegex = new Regex(@"dist\(([^,]*),([^,]*)\)");
     static bool EatDist(string line, List<object> expression, ref int index) {
-        Regex eatDistRegex = new Regex(@"dist\(([^,]*),([^,]*)\)");
         Match match = eatDistRegex.Match(line.Substring(index));
         if (match.Success && match.Index == 0) {
             string characterATypeStr = match.Groups[1].Value;
@@ -202,6 +205,29 @@ public class ExpressionTokenizer
                     expression.Add(Vector2.Distance(characterA.transform.position, characterB.transform.position));
                 }
             }
+
+            return true;
+        }
+        return false;
+    }
+
+    static Regex eatHandRegex = new Regex(@"hand\((.+)\)");
+    static bool EatHand(string line, List<object> expression, ref int index) {
+        Match match = eatHandRegex.Match(line.Substring(index));
+        if (match.Success && match.Index == 0) {
+            string itemTypeStr = match.Groups[1].Value;
+            ItemType itemType;
+            try {
+                itemType = (ItemType) System.Enum.Parse(typeof(ItemType), itemTypeStr, true);
+            } catch {
+                throw new BSSyntaxException(-1, $"{itemTypeStr}은(는) 올바른 아이템 타입명이 아닙니다.");
+            }
+            index += match.Length;
+
+            Inventory inventory = Game.Instance.inventory;
+            Item itemSelected = inventory.GetSelectedItem();
+            if (itemSelected == null || itemSelected.type != itemType) expression.Add(false);
+            else expression.Add(true);
 
             return true;
         }

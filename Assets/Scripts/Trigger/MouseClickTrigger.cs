@@ -25,7 +25,7 @@ public class MouseClickTrigger : Trigger
     }
 
     void Update() {
-        if (Input.GetMouseButtonDown(0)) {
+        if (game.overlayCanvas == 0 && Input.GetMouseButtonDown(0)) {
             Vector2 worldPos = cam.ScreenToWorldPoint(Input.mousePosition);
             if (coll.OverlapPoint(worldPos)) {
                 Invoke();

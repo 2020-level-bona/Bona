@@ -565,10 +565,7 @@ GameObject:
   - component: {fileID: 847664935}
   - component: {fileID: 847664934}
   - component: {fileID: 847664933}
-  - component: {fileID: 847664936}
-  - component: {fileID: 847664939}
   - component: {fileID: 847664937}
-  - component: {fileID: 847664938}
   m_Layer: 0
   m_Name: "\uBAA8\uB974\uC758 \uC9D1\uC73C\uB85C"
   m_TagString: Untagged
@@ -606,7 +603,7 @@ MonoBehaviour:
     \"\uB0A8\uC758 \uC9D1\uC774\uC796\uC544!\"\n"
   uniqueId: 4C11
   executionRepeat: 1
-  executionCondition: 
+  executionCondition: story.line < 60
   isCutscene: 0
   executionWhen: 0
 --- !u!114 &847664934
@@ -621,7 +618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runAllScripts: 1
+  runAllScripts: 0
   runInCutscene: 0
   coll: {fileID: 847664935}
 --- !u!61 &847664935
@@ -650,24 +647,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.31, y: 3.5525408}
   m_EdgeRadius: 0
---- !u!114 &847664936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847664931}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: "transfer \"\uBAA8\uB974\uC758 \uC9D1\""
-  uniqueId: D931
-  executionRepeat: 0
-  executionCondition: story.line >= 130 && story.line < 140
-  isCutscene: 0
-  executionWhen: 0
 --- !u!114 &847664937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -683,52 +662,7 @@ MonoBehaviour:
   targetScene:
     sceneAsset: {fileID: 102900000, guid: dbe945a4cab8c444d9272d804e0f11f0, type: 3}
     scenePath: "Assets/Scenes/\uBAA8\uB974\uC758 \uC9D1.unity"
-  condition: story.line >= 130
---- !u!114 &847664938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847664931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pageConfigs:
-  - selected: 0
-    condition: story.line >= 60
-    hide: 0
-    position: 
-    sprite: {fileID: 0}
-    triggerExecutor: {fileID: 847664939}
-    autoExecutor: {fileID: 0}
-  - selected: 0
-    condition: 
-    hide: 0
-    position: 
-    sprite: {fileID: 0}
-    triggerExecutor: {fileID: 847664933}
-    autoExecutor: {fileID: 0}
---- !u!114 &847664939
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 847664931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  script: "transfer \"\uBAA8\uB974\uC758 \uC9D1\""
-  uniqueId: D932
-  executionRepeat: 0
-  executionCondition: 
-  isCutscene: 0
-  executionWhen: 0
+  condition: story.line >= 60
 --- !u!1 &951663581
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1619051812}
+  - component: {fileID: 1619051813}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -1444,6 +1379,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1619051813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1619051811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71722026c9185f40b88e1b605aecf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 0
 --- !u!1 &1629528978 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2384330026491775078, guid: f20a86e74b2ee4dd2ba44934fd9c5890,
