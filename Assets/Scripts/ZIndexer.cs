@@ -20,7 +20,7 @@ public class ZIndexer : MonoBehaviour
     void OnDrawGizmos() {
         Gizmos.color = Color.red;
         foreach (ZIndexable zIndexable in GetZIndexables()) {
-            Gizmos.DrawLine(new Vector3(-10, -10 * Mathf.Tan(angle * Mathf.Deg2Rad) + zIndexable.GetCoordinate().y, 0), new Vector3(10, 10 * Mathf.Tan(angle * Mathf.Deg2Rad) + zIndexable.GetCoordinate().y, 0));
+            Gizmos.DrawLine(new Vector3(-10, -10 * Mathf.Tan(angle * Mathf.Deg2Rad) + getDepth(zIndexable.GetCoordinate()), 0), new Vector3(10, 10 * Mathf.Tan(angle * Mathf.Deg2Rad) + getDepth(zIndexable.GetCoordinate()), 0));
         }
     }
 

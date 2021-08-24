@@ -109,7 +109,7 @@ public class Debugger : MonoBehaviour
         //     Session.Instance.Clear();
         // }
         if (Input.GetKeyDown(KeyCode.RightBracket)) {
-            Time.timeScale = Mathf.Min(Time.timeScale * 2, 8f);
+            Time.timeScale = Mathf.Min(Time.timeScale * 2, 16f);
             Debug.Log("Timescale = " + Time.timeScale);
         }
         if (Input.GetKeyDown(KeyCode.LeftBracket)) {

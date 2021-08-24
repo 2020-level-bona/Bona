@@ -121,6 +121,100 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &98114489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 98114490}
+  - component: {fileID: 98114493}
+  - component: {fileID: 98114492}
+  - component: {fileID: 98114491}
+  m_Layer: 0
+  m_Name: "\uC601\uC8FC\uC758\uC131\uC73C\uB85C"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &98114490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98114489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.2, y: -8.52, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 528058725}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &98114491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98114489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
+  coll: {fileID: 98114492}
+--- !u!60 &98114492
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98114489}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.9072361, y: 4.7826843}
+      - {x: -1.8910651, y: 1.4478775}
+      - {x: 0.84208405, y: 1.479666}
+      - {x: 0.8781705, y: 4.8719487}
+      - {x: -0.44758368, y: 5.7446394}
+--- !u!114 &98114493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98114489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d5c3e0a25cd54ea0aa5193f09cba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene:
+    sceneAsset: {fileID: 102900000, guid: 2cda990e2423bbf4892e6590ba056729, type: 3}
+    scenePath: "Assets/Scenes/\uC601\uC8FC\uC758 \uC131.unity"
+  condition: story.line >= 130
 --- !u!1 &155801104
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +374,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &528058724
 GameObject:
@@ -311,6 +405,7 @@ Transform:
   m_Children:
   - {fileID: 1494648458}
   - {fileID: 697822272}
+  - {fileID: 98114490}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -864,8 +959,8 @@ MonoBehaviour:
     \uC11C\uB85C \uBBFF\uC5B4\uC8FC\uACE0 \uBD80\uD0C1\uB3C4 \uB4E4\uC5B4\uC8FC\uB294\uAC70\uC57C.\n#
     \uD56D\uC0C1 \uD55C\uB9C8\uC74C \uD55C\uB73B\uC774\uC57C! \uB124\uAC00 \uC2EB\uC73C\uBA74
     \uB098\uB3C4 \uC2EB\uC5B4.\nwait 0.5\nplayanim ant_prince \uC6C3\uAE30+\uB9D0\nwait
-    3\nstopanim ant_prince\nspeed bona 1\nfloat ant_prince true\nfollow ant_prince
-    bona\ncamdel ant_prince\nwait 1\nfloat ant_prince false"
+    3\nstopanim ant_prince\nspeed bona 1\n// float ant_prince true\n// follow ant_prince
+    bona\ncamdel ant_prince\n// wait 1\n// float ant_prince false"
   uniqueId: 045C
   executionRepeat: 0
   executionCondition: story.line >= 130
@@ -898,7 +993,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141916570
 GameObject:
@@ -981,6 +1076,50 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1158833944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1158833946}
+  - component: {fileID: 1158833945}
+  m_Layer: 0
+  m_Name: "\uC2E0\uC804\uB4E4\uC5B4\uAC00\uB294\uC704\uCE58"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1158833945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158833944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 3
+--- !u!4 &1158833946
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158833944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.42, y: 8.7, z: -2.9648438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1279488915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1356,11 +1495,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532964067}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.559999, y: 9.68, z: -5.4257812}
+  m_LocalPosition: {x: 10.74, y: 8.77, z: -5.4257812}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1607472137
 GameObject:
@@ -1392,15 +1531,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "float ant_prince true\ncamdel bona\ncamadd ant_prince\nmove ant_prince
-    \uC228\uB294\uC9C0\uC810\nwait 2\nshow priest \uC2E0\uC804\uC55E\nwait 1\nsay
-    priest \"\uD760, \uC694\uC815\uB4E4\uC744 \uC5B4\uB5BB\uAC8C \uC54C\uC558\uB294\uC9C4
+  script: "float ant_prince true\ncamdel bona\ncamadd ant_prince\ncamfinish\nmove
+    ant_prince \uC228\uB294\uC9C0\uC810\nwait 2\nshow priest \uC2E0\uC804\uC55E\nwait
+    1\nsay priest \"\uD760, \uC694\uC815\uB4E4\uC744 \uC5B4\uB5BB\uAC8C \uC54C\uC558\uB294\uC9C4
     \uBAA8\uB974\uC9C0\uB9CC\"\nsay priest \"\uADF8\uB798\uB3C4 \uC774 \uC2E0\uBE44\uD55C
     \uBAA9\uAC78\uC774\uB97C \uC5BB\uC5C8\uC73C\uB2C8 \uC774\uB4DD\uC774\uAD70!\"\nsay
     priest \"\uC815\uB9D0\uC774\uC9C0 \uC54C \uC218 \uC5C6\uB294 \uAF2C\uB9F9\uC774\uB77C\uB2C8\uAE4C.\"\nwait
     1\nmove priest \uC0AC\uC81C\uC0AC\uB77C\uC9C0\uB294\uC9C0\uC810 wait\nhide priest\nwait
     1\nplayanim ant_prince \uB180\uB78C 2\nwait 2\nmove ant_prince \uC2E0\uC804\uC55E
-    wait\nfloat ant_prince false\nset story.controlAnt true\nset story.line 170"
+    wait\nwait 2\nspeed ant_prince 0.5\nmove ant_prince \uC2E0\uC804\uB4E4\uC5B4\uAC00\uB294\uC704\uCE58
+    wait\nhide ant_prince\nwait 1\n\nset story.controlAnt true\nset story.line 170\ntransfer
+    \uC2E0\uC804"
   uniqueId: 8738
   executionRepeat: 0
   executionCondition: story.line >= 160
@@ -1433,7 +1574,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1644924950
 GameObject:

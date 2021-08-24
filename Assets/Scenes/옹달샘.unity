@@ -229,7 +229,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &35980006
 MonoBehaviour:
@@ -825,7 +825,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageConfigs:
   - selected: 0
-    condition: trap >= 1
+    condition: trap >= 1 && !trapped
     hide: 0
     position: 
     sprite: {fileID: 21300000, guid: 248c80c182ab3bf49b406f8db323a24d, type: 3}
@@ -850,7 +850,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &384527111
 SpriteRenderer:
@@ -934,7 +934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageConfigs:
   - selected: 0
-    condition: trap >= 2
+    condition: trap >= 2 && !trapped
     hide: 0
     position: 
     sprite: {fileID: 21300000, guid: 5659316938467b242a37e9906e38d117, type: 3}
@@ -1009,7 +1009,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &451839721
 PrefabInstance:
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b4b0267ce80754fb2ae8280d7ca7b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: 0
+  offset: 0.8
   alwaysBehindFloor: -1
   alwaysFrontFloor: -1
 --- !u!212 &872134226
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageConfigs:
   - selected: 0
-    condition: story.line >= 140
+    condition: story.line >= 130 && !takeNecklace
     hide: 0
     position: 
     sprite: {fileID: 0}
@@ -1452,6 +1452,62 @@ MonoBehaviour:
     sprite: {fileID: 0}
     triggerExecutor: {fileID: 0}
     autoExecutor: {fileID: 0}
+--- !u!114 &1128204422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128204420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: 'give necklace_of_mermail 1
+
+    hide mermaid
+
+    wait 1
+
+    set takeNecklace
+    true'
+  uniqueId: 8E2A
+  executionRepeat: 1
+  executionCondition: trapped && !takeNecklace
+  isCutscene: 1
+  executionWhen: 0
+--- !u!114 &1128204423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128204420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  runAllScripts: 1
+  runInCutscene: 0
+  coll: {fileID: 1128204424}
+--- !u!58 &1128204424
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128204420}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.5
 --- !u!1 &1158315840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4996299647781509261, guid: 9bb41dc1ed75e7744b568ca9d296c814,
@@ -1606,7 +1662,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1358218540
 GameObject:
@@ -1887,7 +1943,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839011656
 GameObject:
@@ -1958,7 +2014,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1848771575
 GameObject:
@@ -1990,7 +2046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "if trap >= 2\nset trapped true\nmove mermaid \uC778\uC5B4\uC7A1\uD788\uB294\uC790\uB9AC\nplayanim
+  script: "if trap >= 2\nset trapped true\nteleport mermaid \uC778\uC5B4\uC7A1\uD788\uB294\uC790\uB9AC\nplayanim
     mermaid \uB36B\uC5D0\uAC78\uB9BC\nend"
   uniqueId: 2DC4
   executionRepeat: 1
@@ -2024,7 +2080,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891223928
 GameObject:
@@ -2068,7 +2124,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1936977439
 GameObject:
@@ -2112,7 +2168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1962663350
 PrefabInstance:
@@ -2183,108 +2239,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36da66586c3337b4589339d1b3d7a015, type: 3}
---- !u!1001 &2008848447
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.41
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -3.66
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538448, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2384618216876538475, guid: 371eaa169a2c1074aa28b154ddeea382,
-        type: 3}
-      propertyPath: m_Name
-      value: "\uC778\uC5B4\uBAA9\uAC78\uC774"
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 371eaa169a2c1074aa28b154ddeea382, type: 3}
---- !u!1 &2008848448 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2384618216876538475, guid: 371eaa169a2c1074aa28b154ddeea382,
-    type: 3}
-  m_PrefabInstance: {fileID: 2008848447}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2008848449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008848448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pageConfigs:
-  - selected: 0
-    condition: trapped
-    hide: 0
-    position: 
-    sprite: {fileID: 0}
-    triggerExecutor: {fileID: 0}
-    autoExecutor: {fileID: 0}
-  - selected: 0
-    condition: 
-    hide: 1
-    position: 
-    sprite: {fileID: 0}
-    triggerExecutor: {fileID: 0}
-    autoExecutor: {fileID: 0}
 --- !u!1 &2029629290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,11 +2286,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   script: "if trap == 0 and contains(trap, 1)\nset trap 1 // \uB36B\uC774 \uC124\uCE58\uB428\ntake
     trap 1\nelif trap == 1 and contains(flower, 1)\nset trap 2 // \uAF43\uC774 \uC124\uCE58\uB428\ntake
-    flower 1\nelse\n# \"\uC0B4\uC9DD \uD30C\uC778 \uD754\uC801\uC774\uC57C. \uC5EC\uAE30\uC11C
-    \uB3D9\uBB3C\uC744 \uC0AC\uB0E5\uD588\uB358 \uAC78\uAE4C?\"\nend"
+    flower 1\nelif trap == 0\n# \"\uC0B4\uC9DD \uD30C\uC778 \uD754\uC801\uC774\uC57C.
+    \uC5EC\uAE30\uC11C \uB3D9\uBB3C\uC744 \uC0AC\uB0E5\uD588\uB358 \uAC78\uAE4C?\"\nend"
   uniqueId: F86C
   executionRepeat: 1
-  executionCondition: 
+  executionCondition: story.line >= 130
   isCutscene: 0
   executionWhen: 0
 --- !u!114 &2029629293
@@ -2543,7 +2497,7 @@ PrefabInstance:
     - target: {fileID: 841000525487246837, guid: ba7804fd8894d814dab8e503bdab6afa,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 841000525487246837, guid: ba7804fd8894d814dab8e503bdab6afa,
         type: 3}

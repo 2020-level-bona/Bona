@@ -94,6 +94,10 @@ public class CameraController : MonoBehaviour
         return null;
     }
 
+    public List<ICameraOperator> GetCameraOperators() {
+        return cameraOperators;
+    }
+
     // FIXME: 카메라 오퍼레이터 관련 메소드 리팩토링
     public bool ContainsCameraOperator(ICameraOperator cameraOperator) {
         return cameraOperators.Contains(cameraOperator);

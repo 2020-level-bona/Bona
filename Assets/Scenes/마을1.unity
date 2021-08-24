@@ -143,7 +143,7 @@ MonoBehaviour:
     \uB108 \uD63C\uC790\uC788\uB2C8?\""
   uniqueId: 69AA
   executionRepeat: 1
-  executionCondition: story.line >= 0
+  executionCondition: 
   isCutscene: 0
   executionWhen: 0
 --- !u!114 &11892902
@@ -161,9 +161,71 @@ MonoBehaviour:
   script: "say dog \"\uC2EC\uC2EC...\""
   uniqueId: BE83
   executionRepeat: 1
-  executionCondition: 'story.line >= 130 '
+  executionCondition: story.line >= 130 && !hand(mole) && !playing
   isCutscene: 0
   executionWhen: 0
+--- !u!114 &11892903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11892900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "move bona \uBCF4\uB098\uC5F4\uC1E0\uBC1B\uB294\uC790\uB9AC wait\nface
+    bona east\nwait 1\ntake mole 1\nplayanim dog \uC5F4\uC1E0\uC8FC\uAE30\nwait 3\ngive
+    hunters_key 1\nplayanim dog \uB450\uB354\uC9C0\uAC16\uACE0\uB180\uAE30\nset play
+    true"
+  uniqueId: FEAD
+  executionRepeat: 1
+  executionCondition: story.line >= 130 && hand(mole)
+  isCutscene: 1
+  executionWhen: 0
+--- !u!114 &11892904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11892900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f894183450de04095cf1fd50623b01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pageConfigs:
+  - selected: 0
+    condition: story.line < 130
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 11892901}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: play
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 0}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: '!hand(mole)'
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 11892902}
+    autoExecutor: {fileID: 0}
+  - selected: 0
+    condition: 
+    hide: 0
+    position: 
+    sprite: {fileID: 0}
+    triggerExecutor: {fileID: 11892903}
+    autoExecutor: {fileID: 0}
 --- !u!1001 &26218411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -392,6 +454,50 @@ CircleCollider2D:
   m_Offset: {x: 0.53, y: 4.55}
   serializedVersion: 2
   m_Radius: 3
+--- !u!1 &451337201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 451337203}
+  - component: {fileID: 451337202}
+  m_Layer: 0
+  m_Name: "\uBCF4\uB098\uC5F4\uC1E0\uBC1B\uB294\uC790\uB9AC"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &451337202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451337201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
+--- !u!4 &451337203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451337201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.81, y: 0.48, z: -7.879883}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &773887092
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +671,7 @@ GameObject:
   - component: {fileID: 847664935}
   - component: {fileID: 847664934}
   - component: {fileID: 847664933}
+  - component: {fileID: 847664936}
   - component: {fileID: 847664937}
   m_Layer: 0
   m_Name: "\uBAA8\uB974\uC758 \uC9D1\uC73C\uB85C"
@@ -618,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runAllScripts: 0
+  runAllScripts: 1
   runInCutscene: 0
   coll: {fileID: 847664935}
 --- !u!61 &847664935
@@ -647,6 +754,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.31, y: 3.5525408}
   m_EdgeRadius: 0
+--- !u!114 &847664936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847664931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  script: "if !first_enter\n# \"\uC544\uBB34\uB3C4 \uC5C6\uC5B4\uC11C \uB4E4\uC5B4\uAC08
+    \uC218 \uC788\uC5B4.\"\nset first_enter true\nend\ntransfer \"\uBAA8\uB974\uC758
+    \uC9D1\""
+  uniqueId: 4578
+  executionRepeat: 1
+  executionCondition: story.line >= 60
+  isCutscene: 0
+  executionWhen: 0
 --- !u!114 &847664937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,7 +789,7 @@ MonoBehaviour:
   targetScene:
     sceneAsset: {fileID: 102900000, guid: dbe945a4cab8c444d9272d804e0f11f0, type: 3}
     scenePath: "Assets/Scenes/\uBAA8\uB974\uC758 \uC9D1.unity"
-  condition: story.line >= 60
+  condition: false
 --- !u!1 &951663581
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,6 +2174,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 2598797376511167315, guid: 280845f9e0586654ba16bc457021563c,
+        type: 3}
+      propertyPath: coll
+      value: 
+      objectReference: {fileID: 2598797375353500870}
+    - target: {fileID: 2598797376511167315, guid: 280845f9e0586654ba16bc457021563c,
+        type: 3}
+      propertyPath: runAllScripts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2598797376511167327, guid: 280845f9e0586654ba16bc457021563c,
         type: 3}
       propertyPath: m_RootOrder
@@ -2104,6 +2241,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 280845f9e0586654ba16bc457021563c, type: 3}
+--- !u!61 &2598797375353500870 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2598797376511167314, guid: 280845f9e0586654ba16bc457021563c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2598797375353500869}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3898698594450420047
 PrefabInstance:
   m_ObjectHideFlags: 0

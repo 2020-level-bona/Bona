@@ -63,7 +63,7 @@ MonoBehaviour:
   speedMultiplier: 1
   ignoreRoad: 0
   useFlip: 1
-  zIndex: 1
+  ignoreZIndex: 0
 --- !u!1 &6591873500797853539
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,9 +188,9 @@ MonoBehaviour:
     - stateName: "\uBE75\uAE0B"
       alias: 
     - stateName: "\uB450\uB354\uC9C0\uB4E4\uACE0\uC544\uB798\uB85C\uAC77\uAE30"
-      alias: 
+      alias: WALK_D
     - stateName: "\uC190\uC9C8\uB41C\uACE0\uAE30\uB4E4\uACE0\uC704\uB85C\uAC77\uAE30"
-      alias: 
+      alias: WALK_U
     - stateName: "\uC549\uC544\uC11C\uC2F1\uAE00\uBC99\uAE00\uC6C3\uAE30"
       alias: 
     - stateName: "\uACE0\uAE30\uD488\uACE0\uACBD\uACC4\uD558\uAE30"

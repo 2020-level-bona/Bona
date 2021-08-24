@@ -33,6 +33,8 @@ public class ShowCommand : IActionCommand
         if (!character) {
             character = level.SpawnCharacter(characterType, target);
             character.gameObject.AddComponent<SpriteEffector>().Show(duration);
+        } else if (character.GetComponent<SpriteEffector>() && character.GetComponent<SpriteEffector>().hide) {
+            character.GetComponent<SpriteEffector>().Show(duration);
         }
         character.GetComponent<Movable>().MoveTo(target);
         character.GetComponent<Movable>().SetFace(target.face);

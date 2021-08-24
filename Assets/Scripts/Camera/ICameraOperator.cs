@@ -11,6 +11,8 @@ public interface ICameraOperator
     void Update();
 
     void ResetState();
+    
+    void ForceFinish();
 
     bool HasDone();
 }

@@ -37,6 +37,11 @@ public abstract class Follower : ICameraOperator
         cameraVelocity = Vector2.zero;
     }
 
+    public void ForceFinish() {
+        position = GetCurrentTarget();
+        cameraVelocity = Vector2.zero;
+    }
+
     public virtual bool HasDone() {
         return false;
     }

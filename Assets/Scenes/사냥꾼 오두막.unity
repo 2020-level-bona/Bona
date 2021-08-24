@@ -872,6 +872,7 @@ GameObject:
   - component: {fileID: 983434824}
   - component: {fileID: 983434823}
   - component: {fileID: 983434822}
+  - component: {fileID: 983434825}
   m_Layer: 0
   m_Name: "\uBB38"
   m_TagString: Untagged
@@ -905,9 +906,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "if open or contains(hunters_key, 1)\nset open true\ntake hunters_key 1\ntransfer
-    \"\uC624\uB450\uB9C9 \uC548\"\nelse\n# \"\uC7A0\uACBC\uC5B4. \uC5F4\uC1E0\uAC00
-    \uD544\uC694\uD574.\"\nend"
+  script: "if contains(hunters_key, 1) && !open\nset open true\ntake hunters_key
+    1\nend\n\nif open\ntransfer \"\uC624\uB450\uB9C9 \uC548\"\nelse\n# \"\uC7A0\uACBC\uC5B4.
+    \uC5F4\uC1E0\uAC00 \uD544\uC694\uD574.\"\nend"
   uniqueId: 6619
   executionRepeat: 1
   executionCondition: 
@@ -957,6 +958,22 @@ PolygonCollider2D:
       - {x: -0.9853389, y: -1.9649141}
       - {x: 0.46262604, y: -1.4873097}
       - {x: 0.46145892, y: 0.729604}
+--- !u!114 &983434825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983434820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d5c3e0a25cd54ea0aa5193f09cba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene:
+    sceneAsset: {fileID: 102900000, guid: 21d8dc3df039c7f4aa52fb6612063969, type: 3}
+    scenePath: "Assets/Scenes/\uC624\uB450\uB9C9 \uC548.unity"
+  condition: false
 --- !u!1 &1366358988
 GameObject:
   m_ObjectHideFlags: 0

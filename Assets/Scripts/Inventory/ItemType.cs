@@ -19,6 +19,7 @@ public enum ItemType{
        HUNTERS_KEY, // 사냥꾼의 집 열쇠
        TRAP, // 덫
        DROPPED_BAG, // 떨어진 가방
+       GREEN_WATER, // 초록 물약
        DUMMY, // 테스트
        DUMMY2 // 테스트
 }
