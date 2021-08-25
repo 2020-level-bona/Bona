@@ -146,12 +146,12 @@ PrefabInstance:
     - target: {fileID: 7697186886486654947, guid: e585ef6cc0deed145a1e40898cd58546,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.19
+      value: -0.94
       objectReference: {fileID: 0}
     - target: {fileID: 7697186886486654947, guid: e585ef6cc0deed145a1e40898cd58546,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.75
+      value: 1.66
       objectReference: {fileID: 0}
     - target: {fileID: 7697186886486654947, guid: e585ef6cc0deed145a1e40898cd58546,
         type: 3}
@@ -192,6 +192,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8184406645519179046, guid: e585ef6cc0deed145a1e40898cd58546,
+        type: 3}
+      propertyPath: ignoreRoad
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e585ef6cc0deed145a1e40898cd58546, type: 3}
@@ -299,14 +304,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "move bona \uC228\uB294\uACF3 wait\nplayanim bona \uC228\uC5B4\uC788\uC74C\nwait
+  script: "unfollow ant_prince\nmove ant_prince \uC228\uB294\uACF32\nmove bona \uC228\uB294\uACF3
+    wait\nplayanim bona \uC228\uC5B4\uC788\uC74C\nplayanim ant_prince \uC228\uC5B4\uC788\uC74C\nwait
     2\nshow priest \uC0AC\uC81C\uB4F1\uC7A5\nplayanim priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uC2A4\uD0E0\uB4DC\nspeed
-    priest 0.5\nmove priest \uC0AC\uC81C wait\nplayanim bona \uC228\uC5B4\uC788\uC74C+\uB180\uB78C\nwait
-    2\nplayanim priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uB9D0\nsay priest \"\uC870\uB9CC\uAC04
-    \uB9C8\uC744 \uC0AC\uB78C \uBAA8\uB450\uB97C \uD55C \uBC88\uC5D0 \uBC14\uCE58\uC9C0.\"\nplayanim
-    priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uC2A4\uD0E0\uB4DC\n\nplayanim mole \uC758\uBB38+\uB9D0\nsay
-    mole \"\uC6B0\uB9AC\uC57C \uC88B\uC9C0\uB9CC, \uAC11\uC790\uAE30 \uC65C \uADF8\uB7EC\uB294
-    \uAC70\uC9C0?\"\nstopanim mole\n\nplayanim priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uB9D0\nsay
+    priest 0.5\nmove priest \uC0AC\uC81C wait\nplayanim bona \uC228\uC5B4\uC788\uC74C+\uB180\uB78C\nplayanim
+    ant_prince \uB180\uB78C\nwait 2\nplayanim priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uB9D0\nsay
+    priest \"\uC870\uB9CC\uAC04 \uB9C8\uC744 \uC0AC\uB78C \uBAA8\uB450\uB97C \uD55C
+    \uBC88\uC5D0 \uBC14\uCE58\uC9C0.\"\nplayanim priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uC2A4\uD0E0\uB4DC\n\nplayanim
+    mole \uC758\uBB38+\uB9D0\nsay mole \"\uC6B0\uB9AC\uC57C \uC88B\uC9C0\uB9CC, \uAC11\uC790\uAE30
+    \uC65C \uADF8\uB7EC\uB294 \uAC70\uC9C0?\"\nstopanim mole\n\nplayanim priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uB9D0\nsay
     priest \"\uC2AC\uC2AC \uC774 \uB9C8\uC744\uC744 \uB730 \uC0DD\uAC01\uC774\uC57C.\"\nplayanim
     priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uC2A4\uD0E0\uB4DC\n\nplayanim mole \uB9D0\nsay
     mole \"\uBC18\uAC11\uACE0\uB3C4 \uC544\uC26C\uC6B4 \uC18C\uC2DD\uC774\uAD70.
@@ -318,9 +324,11 @@ MonoBehaviour:
     priest \uC778\uC5B4\uBAA9\uAC78\uC774+\uC2A4\uD0E0\uB4DC\n\nplayanim bona \uC228\uC5B4\uC788\uC74C+\uB180\uB78C+\uB9D0\n#
     \"\uB9C8\uC744 \uC0AC\uB78C\uB4E4\uC774 \uC704\uD5D8\uD574! \uBAA8\uB450\uB97C
     \uC9C0\uCF1C\uC57C \uD574!\"\nplayanim bona \uC228\uC5B4\uC788\uC74C+\uB180\uB78C\n\nwait
-    1\nstopanim bona\n\ndo\nmove priest \uC0AC\uC81C\uB4F1\uC7A5 wait\nhide priest\nend\nwait
-    2\ndo\nspeed mole 0.5\nmove mole \uC0AC\uC81C\uB4F1\uC7A5 wait\nhide mole\nend\n\nset
-    story.line 220"
+    1\nplayanim bona \uC228\uC5B4\uC788\uC74C\nplayanim ant_prince \uC228\uC5B4\uC788\uC74C\n\ndo\nmove
+    priest \uC0AC\uC81C\uB4F1\uC7A5\nwait 1\nhide priest\nend\n\nwait 2\n\ndo\nspeed
+    mole 0.5\nthrow mole \uB450\uB354\uC9C0\uC655\uB0B4\uB824\uC624\uAE30 wait\nmove
+    mole \uC0AC\uC81C\uB4F1\uC7A5\nwait 2\nhide mole\nend\n\nwait 5\nstopanim bona\nstopanim
+    ant_prince\nfollow ant_prince bona\n\nset story.line 220"
   uniqueId: 3F93
   executionRepeat: 0
   executionCondition: 
@@ -1131,40 +1139,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ad683f2311c55940babc7584811de3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  script: "move bona \uC228\uB294\uACF3 wait\n\nwait 2\nplayanim mole1 \uB9D0\nsay
-    mole1 \"\uD3D0\uD558, \uC694\uC815 \uC655\uC774 \uC8FD\uC5B4\uC788\uC2B5\uB2C8\uB2E4!\"\nstopanim
-    mole1\n\nplayanim mole \uB9D0\nsay mole \"\uBB50? \uC0AC\uC81C\uC5D0\uAC8C \uC655\uC744
-    \uB118\uACA8\uC57C \uD558\uB294\uB370?\"\nsay mole \"\uD070\uC77C\uC774\uAD70.
-    \uC774 \uC77C\uC744 \uBE4C\uBBF8\uB85C \uC6B0\uB9AC\uC5D0\uAC8C \u2018\uBCD1\u2019\uC744
-    \uBFCC\uB9B0\uB2E4\uBA74\u2026\"\nsay mole \"\u2026\uC544\uC9C1\uB3C4 \uC778\uAC04\uC774
-    \uB9CE\uC774 \uD544\uC694\uD55C\uAC00?\"\nstopanim mole\n\nplayanim mole_doctor
-    \uB9D0\nsay mole_doctor \"\uC778\uAC04 \uC5F0\uAD6C\uB294 \uAC70\uC758 \uB9C8\uBB34\uB9AC
-    \uB2E8\uACC4\uC785\uB2C8\uB2E4. 2~3\uBA85\uB9CC \uC788\uC73C\uBA74 \uCDA9\uBD84\uD569\uB2C8\uB2E4.\"\nstopanim
-    mole_doctor\n\nplayanim mole \uB9D0\nsay mole \"\uADF8 \uC815\uB3C4\uB294 \uC6B0\uB9AC
-    \uD798\uB9CC\uC73C\uB85C\uB3C4 \uC7A1\uC544 \uC62C \uC218 \uC788\uC9C0.\"\nsay
-    mole \"\uB4DC\uB514\uC5B4 \uC6B0\uB9AC \uB450\uB354\uC9C0 \uC885\uC871\uC774
-    \uC9C0\uC0C1\uC744 \uC9C0\uBC30\uD558\uAC8C \uB418\uACA0\uAD6C\uB098!\"\nsay
-    mole \"\uADF8\uB807\uB2E4\uBA74 \uC0AC\uC81C\uC758 \uB3C4\uC6C0\uC740 \uD544\uC694
-    \uC5C6\uB2E4. \uC694\uC815 \uC655\uC774 \uC8FD\uC740 \uAC83\uC744 \uC0AC\uC81C\uAC00
-    \uC54C\uAE30 \uC804\uC5D0 \uC6B0\uB9AC\uAC00 \uBA3C\uC800 \uC8FD\uC774\uC790!\"\nstopanim
-    mole\n\nplayanim mole2 \uB9D0\nsay mole2 \"\uC5B4\uB5BB\uAC8C \uBD80\uB974\uC8E0?
-    \uC548 \uADF8\uB798\uB3C4 \uB545\uAD74\uC740 \uC2EB\uB2E4\uBA70 \uC798 \uC624\uC9C0
-    \uC54A\uB294\uB370.\"\nstopanim mole2\n\nplayanim mole3 \uB9D0\nsay mole3 \"\uBC24\uC5D0
-    \uCF71 \uBB3C\uC5B4\uBC84\uB9BD\uC2DC\uB2E4!\"\nstopanim mole3\n\nplayanim mole1
-    \uB9D0\nsay mole1 \"\uC2E0\uC804\uC5D0 \uBD88\uC744 \uC9C0\uB985\uC2DC\uB2E4!\"\nstopanim
+  script: "unfollow ant_prince\ndo\nmove ant_prince \uC228\uB294\uACF32 wait\nplayanim
+    ant_prince \uC228\uC5B4\uC788\uC74C\nend\n\nmove bona \uC228\uB294\uACF3 wait\nplayanim
+    bona \uC228\uC5B4\uC788\uC74C\n\nwait 2\nplayanim mole1 \uB9D0\nsay mole1 \"\uD3D0\uD558,
+    \uC694\uC815 \uC655\uC774 \uC8FD\uC5B4\uC788\uC2B5\uB2C8\uB2E4!\"\nstopanim mole1\n\nplayanim
+    mole \uB9D0\nsay mole \"\uBB50? \uC0AC\uC81C\uC5D0\uAC8C \uC655\uC744 \uB118\uACA8\uC57C
+    \uD558\uB294\uB370?\"\nsay mole \"\uD070\uC77C\uC774\uAD70. \uC774 \uC77C\uC744
+    \uBE4C\uBBF8\uB85C \uC6B0\uB9AC\uC5D0\uAC8C \u2018\uBCD1\u2019\uC744 \uBFCC\uB9B0\uB2E4\uBA74\u2026\"\nsay
+    mole \"\u2026\uC544\uC9C1\uB3C4 \uC778\uAC04\uC774 \uB9CE\uC774 \uD544\uC694\uD55C\uAC00?\"\nstopanim
+    mole\n\nplayanim mole_doctor \uB9D0\nsay mole_doctor \"\uC778\uAC04 \uC5F0\uAD6C\uB294
+    \uAC70\uC758 \uB9C8\uBB34\uB9AC \uB2E8\uACC4\uC785\uB2C8\uB2E4. 2~3\uBA85\uB9CC
+    \uC788\uC73C\uBA74 \uCDA9\uBD84\uD569\uB2C8\uB2E4.\"\nstopanim mole_doctor\n\nplayanim
+    mole \uB9D0\nsay mole \"\uADF8 \uC815\uB3C4\uB294 \uC6B0\uB9AC \uD798\uB9CC\uC73C\uB85C\uB3C4
+    \uC7A1\uC544 \uC62C \uC218 \uC788\uC9C0.\"\nsay mole \"\uB4DC\uB514\uC5B4 \uC6B0\uB9AC
+    \uB450\uB354\uC9C0 \uC885\uC871\uC774 \uC9C0\uC0C1\uC744 \uC9C0\uBC30\uD558\uAC8C
+    \uB418\uACA0\uAD6C\uB098!\"\nsay mole \"\uADF8\uB807\uB2E4\uBA74 \uC0AC\uC81C\uC758
+    \uB3C4\uC6C0\uC740 \uD544\uC694 \uC5C6\uB2E4. \uC694\uC815 \uC655\uC774 \uC8FD\uC740
+    \uAC83\uC744 \uC0AC\uC81C\uAC00 \uC54C\uAE30 \uC804\uC5D0 \uC6B0\uB9AC\uAC00
+    \uBA3C\uC800 \uC8FD\uC774\uC790!\"\nstopanim mole\n\nplayanim mole2 \uB9D0\nsay
+    mole2 \"\uC5B4\uB5BB\uAC8C \uBD80\uB974\uC8E0? \uC548 \uADF8\uB798\uB3C4 \uB545\uAD74\uC740
+    \uC2EB\uB2E4\uBA70 \uC798 \uC624\uC9C0 \uC54A\uB294\uB370.\"\nstopanim mole2\n\nplayanim
+    mole3 \uB9D0\nsay mole3 \"\uBC24\uC5D0 \uCF71 \uBB3C\uC5B4\uBC84\uB9BD\uC2DC\uB2E4!\"\nstopanim
+    mole3\n\nplayanim mole1 \uB9D0\nsay mole1 \"\uC2E0\uC804\uC5D0 \uBD88\uC744 \uC9C0\uB985\uC2DC\uB2E4!\"\nstopanim
     mole1\n\nplayanim mole4 \uB9D0\nsay mole4 \"\uC544\uB1E8, \uC81C\uAC00 \uC774
     \uB0A0\uCE74\uB85C\uC6B4 \uBC1C\uD1B1\uC73C\uB85C \uC0E5!\"\nstopanim mole4\n\nwait
-    2\n\nplayanim bona \uC228\uC5B4\uC788\uC74C\nsay bona \"\uC131\uB300\uD55C \uB9CC\uCC2C\uC744
-    \uC5F4\uC5B4 \uCD08\uB300\uD569\uC2DC\uB2E4! \uC74C\uC2DD\uC5D0 \uB3C5\uC744
-    \uD0D1\uC2DC\uB2E4!\"\nstopanim bona\n\nwait 3\n\nplayanim mole1 O-O\nplayanim
-    mole2 O-O\nplayanim mole3 O-O\nplayanim mole4 O-O\nplayanim mole5 O-O\nplayanim
-    mole_doctor \uBC15\uC218\uC9DD\uC9DD\nplayanim mole \uB044\uB355\uB044\uB355\n\nwait
-    3\n\nsay mole2 \"\uADF8\uB7FD\uC2DC\uB2E4! \uC0AC\uC81C\uC5D0\uAC8C\uC11C \uBC97\uC5B4\uB098,
+    2\n\nplayanim bona \uC228\uC5B4\uC788\uC74C+\uB9D0\nsay bona \"\uC131\uB300\uD55C
+    \uB9CC\uCC2C\uC744 \uC5F4\uC5B4 \uCD08\uB300\uD569\uC2DC\uB2E4! \uC74C\uC2DD\uC5D0
+    \uB3C5\uC744 \uD0D1\uC2DC\uB2E4!\"\nplayanim bona \uC228\uC5B4\uC788\uC74C\n\nplayanim
+    mole1 O-O\nplayanim mole2 O-O\nplayanim mole3 O-O\nplayanim mole4 O-O\nplayanim
+    mole5 O-O\nplayanim mole_doctor \uC2A4\uD0E0\uB4DC\nplayanim mole \uC758\uBB38\n\nwait
+    3\n\nplayanim mole1 \uD658\uD638\nplayanim mole2 \uD658\uD638\nplayanim mole3
+    \uD658\uD638\nplayanim mole4 \uD658\uD638\nplayanim mole5 \uD658\uD638\nplayanim
+    mole_doctor \uBC15\uC218\uC9DD\uC9DD\nplayanim mole \uB044\uB355\uB044\uB355\nsay
+    mole2 \"\uADF8\uB7FD\uC2DC\uB2E4! \uC0AC\uC81C\uC5D0\uAC8C\uC11C \uBC97\uC5B4\uB098,
     \uC6B0\uB9AC \uC655\uAD6D\uC774 \uC790\uB9BD\uD558\uB294 \uC601\uAD11\uC758 \uCCAB\uAC78\uC74C\uB3C4
     \uAE30\uB150\uD569\uC2DC\uB2E4!\"\n\nwait 2\n\nplayanim mole5 \uD658\uD638+\uB9D0\nsay
     mole5 \"\uADF8\uB7FC \uC81C\uAC00 \uC0AC\uC81C\uC5D0\uAC8C \uC800\uB141 \uCD08\uB300
-    \uD3B8\uC9C0\uB97C \uBCF4\uB0B4\uACA0\uC2B5\uB2C8\uB2E4.\"\n\nfadeout 1 wait\n\nset
-    story.line 240\ntransfer \uC8FC\uBC29"
+    \uD3B8\uC9C0\uB97C \uBCF4\uB0B4\uACA0\uC2B5\uB2C8\uB2E4.\"\n\nfadeout 1 wait\n\nfollow
+    ant_prince bona\nset story.line 240\ntransfer \uC8FC\uBC29"
   uniqueId: E1E9
   executionRepeat: 1
   executionCondition: story.line == 230
@@ -1197,7 +1209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1143112453
 GameObject:
@@ -1386,6 +1398,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1410053269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1410053271}
+  - component: {fileID: 1410053270}
+  m_Layer: 0
+  m_Name: "\uB450\uB354\uC9C0\uC655\uB0B4\uB824\uC624\uAE30"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1410053270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410053269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
+--- !u!4 &1410053271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410053269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.06, y: -1.97, z: -7.4142485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1452713835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1508,8 +1564,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1723886859}
   - component: {fileID: 1723886862}
-  - component: {fileID: 1723886861}
   - component: {fileID: 1723886860}
+  - component: {fileID: 1723886861}
   m_Layer: 0
   m_Name: "\uC232\uC73C\uB85C \uD1B5\uD558\uB294 \uBB38"
   m_TagString: Untagged
@@ -1556,11 +1612,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1723886858}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f045f9d3da2a0943ab633562b91df85, type: 3}
+  m_Script: {fileID: 11500000, guid: 5604786443f7fc640aba7349eb4f88a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   runAllScripts: 1
   runInCutscene: 0
+  coll: {fileID: 1723886862}
 --- !u!60 &1723886862
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1586,10 +1643,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.51687527, y: 2.4931977}
-      - {x: -4.033626, y: -1.7470508}
-      - {x: -3.1834953, y: -2.0150616}
-      - {x: 0.07045174, y: 2.2233727}
+    - - {x: -0.4193263, y: 7.21459}
+      - {x: -3.5068593, y: 4.1059155}
+      - {x: -3.5932033, y: -1.3907447}
+      - {x: -0.43680573, y: 1.7941551}
 --- !u!1 &1765657810
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1656,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1765657811}
+  - component: {fileID: 1765657812}
   m_Layer: 0
   m_Name: Floors
   m_TagString: Untagged
@@ -1621,6 +1679,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1765657812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765657810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e71722026c9185f40b88e1b605aecf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 0
 --- !u!1 &1859537409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1677,7 +1748,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1fb29a2b4cb1834191b1cf5b14fcb1c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb3b8dc4185923740b807c1bd78f34fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1701,4 +1772,48 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1930840790
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1930840792}
+  - component: {fileID: 1930840791}
+  m_Layer: 0
+  m_Name: "\uC228\uB294\uACF32"
+  m_TagString: Untagged
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1930840791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930840790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d2bdd0442f717543b51d74745d99a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  face: 4
+--- !u!4 &1930840792
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930840790}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.55, y: -2.64, z: -7.4142485}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -20,6 +20,7 @@ public enum ItemType{
        TRAP, // 덫
        DROPPED_BAG, // 떨어진 가방
        GREEN_WATER, // 초록 물약
+       PRIEST_CLOTHES, // 사제 옷
        DUMMY, // 테스트
        DUMMY2 // 테스트
 }
