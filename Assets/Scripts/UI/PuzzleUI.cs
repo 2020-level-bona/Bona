@@ -13,7 +13,7 @@ public class PuzzleUI : MonoBehaviour
     }
 
     void Start() {
-        game.overlayCanvas++;
+        if (game != null) game.overlayCanvas++;
     }
 
     public void OnSolve() {

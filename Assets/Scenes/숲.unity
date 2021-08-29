@@ -372,6 +372,7 @@ GameObject:
   m_Component:
   - component: {fileID: 278219609}
   - component: {fileID: 278219612}
+  - component: {fileID: 278219613}
   - component: {fileID: 278219611}
   - component: {fileID: 278219610}
   m_Layer: 0
@@ -440,6 +441,22 @@ MonoBehaviour:
   targetScene:
     sceneAsset: {fileID: 102900000, guid: f81fd8df990c73c41ad2c4496cdceb78, type: 3}
     scenePath: "Assets/Scenes/\uB450\uB354\uC9C0\uC655\uC758 \uBC29.unity"
+  condition: false
+--- !u!114 &278219613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278219608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585d5c3e0a25cd54ea0aa5193f09cba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene:
+    sceneAsset: {fileID: 102900000, guid: 425edcc10b9ad30449be9fa7cdbb4964, type: 3}
+    scenePath: "Assets/Scenes/\uC2DD\uB2F9.unity"
   condition: false
 --- !u!1 &342649615
 GameObject:

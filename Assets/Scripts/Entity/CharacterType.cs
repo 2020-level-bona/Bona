@@ -36,4 +36,7 @@ public enum CharacterType
     MOLE5, // 신하5
     MOLE_DOCTOR, // 두더지 박사
     MOLE_CHEF, // 두더지 요리사
+
+    CARRIAGE, // 마차
+    PASSING_GUY, // 지나가는 사람
 }

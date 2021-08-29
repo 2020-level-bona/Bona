@@ -2013,7 +2013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22abcc403522be84f8f537f2c9cdc439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzlePrefab: {fileID: 7532509987102404117, guid: e653614c44439d14994bb00c8a9b4768,
+  puzzlePrefab: {fileID: 9109608813712916939, guid: 173d2cbc1511c4943ba1ef747a8d8120,
     type: 3}
   condition: '!solved'
 --- !u!60 &2004881021

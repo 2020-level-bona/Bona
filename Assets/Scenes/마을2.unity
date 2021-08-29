@@ -1750,7 +1750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pageConfigs:
   - selected: 0
-    condition: story.line >= 160
+    condition: story.line >= 160 && story.line < 220
     hide: 1
     position: 
     sprite: {fileID: 0}
