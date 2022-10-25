@@ -1,15 +1,19 @@
 # Bona
-'보나' 게임 저장소입니다.
 
-#### 유니티 버전: `2019.4.19f1`
-호환을 위해 동일한 버전을 사용해주세요.
+![bona](https://user-images.githubusercontent.com/14082448/197696261-92995e17-3553-45a0-9e90-1c74a504e15a.png)
 
-#### 로컬 PC에 프로젝트 생성하는 법
-- 먼저 `Bona`라는 이름의 2D 프로젝트를 새로 생성해줍니다. 반드시 유니티 버전을 확인해주세요.
-- 프로젝트가 생성되면, 유니티를 종료하고 프로젝트가 생성된 폴더의 경로를 확인합니다.
-- 커맨드 창을 열고, 해당 경로로 이동합니다.
-- Git을 시작하기 위해 `git init`을 입력합니다.
-- 다음으로 원격 저장소를 등록하기 위해 `git remote add origin https://github.com/2020-level-bona/Bona.git`을 입력합니다.
-- 마지막으로 `git pull origin main`을 입력하면 개발을 시작할 준비가 끝납니다!
+'보나' 게임 저장소입니다. 포인트-앤-클릭 장르의 게임으로 '보나'라는 주인공을 중심으로 이야기가 전개됩니다.
 
-항상 작업을 시작하기 전에 `git pull origin main`으로 원격 저장소와 동기화해주세요.
+[게임 다운로드](https://drive.google.com/file/d/1AHVaOJ__xlCk2oesG9KouR1CIua-EmVX/view?usp=sharing)
+
+### BScript
+
+![bona_editor](https://user-images.githubusercontent.com/14082448/197699740-76f014de-28e7-40ed-bc46-3d2e3017d2fb.png)
+
+- 에디터에서 컷씬과 이벤트를 구현할 수 있게 도와줍니다.
+- 실시간으로 문법 오류와 실행 상태를 표시해줍니다.
+- 세션 상태 변수를 읽고 수정할 수 있습니다.
+- 관련 구현은 [여기](https://github.com/2020-level-bona/Bona/tree/main/Assets/Scripts/BScript)에서 확인하실 수 있습니다.
+- 스펙은 [여기](https://github.com/2020-level-bona/Bona/blob/main/Assets/Docs/bscript-docs.md)에서 확인하실 수 있습니다.
+
+[여기](https://github.com/2020-level-bona/Bona/tree/main/Assets/Tests)에서 전체 테스트 코드를 확인하실 수 있습니다.
